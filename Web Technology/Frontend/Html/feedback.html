@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        legend {
+            text-align: center;
+        }
+        textarea {
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+    <form action="">
+        <h1 style="text-align: center;">My Feedback Form</h1>
+        <fieldset>
+            <legend>Personal Details</legend>
+            <ul>
+                <li>
+                    <label for="name">Name</label>
+                    <input id="name" type="text" placeholder="Name">
+                </li>
+                <br>
+                <li>
+                    <label for="email">Email Id.</label>
+                    <input id="email" type="email" placeholder="Email">
+                </li>
+                <br>
+                <li>
+                    <label for="pass">Password:</label>
+                    <input id="pass" type="password" placeholder="Password">
+                </li>
+            </ul>
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>Please check all the emotions that applay to you:</legend>
+            <ul>
+                <li>
+                    <input type="checkbox" name="emotions" id="angry" value="angry">
+                    <label for="angry">Angry</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="emotions" id="sad" value="sad">
+                    <label for="sad">Sad</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="emotions" id="happy" value="happy">
+                    <label for="happy">Happy</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="emotions" id="ambivalent" value="ambivalent">
+                    <label for="ambivalent">Ambivalent</label>
+                </li>
+            </ul>
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>How satisfy were you with our service?</legend>
+            <input type="radio" name="satisfaction" id="very-satisfied" value="very-satisfied">
+            <label for="very-satisfied">Very Satisfied</label>
+            <br>
+            <input type="radio" name="satisfaction" id="satisfied" value="satisfied">
+            <label for="satisfied">Satisfied</label>
+            <br>
+            <input type="radio" name="satisfaction" id="didn't-care" value="didn't-care">
+            <label for="didn't-care">Didn't care</label>
+            <br>
+            <input type="radio" name="satisfaction" id="dissatisfied" value="dissatisfied">
+            <label for="dissatisfied">Dissatisfied</label>
+            <br>
+            <input type="radio" name="satisfaction" id="very-dissatisfied" value="very-dissatisfied">
+            <label for="very-dissatisfied">Very Dissatisfied</label>
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>Further comments:</legend>
+            <textarea id="comments" placeholder="Your feedback here..."></textarea>
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>Bio photo:</legend>
+            <input id="pic" type="file" accept="image/*">
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>Location</legend>
+            <select name="location" id="location">
+                <option value="default">Select Location</option>
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="australia">Australia</option>
+            </select>
+        </fieldset>
+
+        <br><br>
+
+        <input type="button" value="Submit">
+
+    </form>
+    
+</body>
+</html>

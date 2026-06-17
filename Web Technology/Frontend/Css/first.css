@@ -1,0 +1,9 @@
+@import url(./home.css);
+
+body {
+    background: black;
+}
+
+p {
+    background: green;
+}

@@ -1,0 +1,105 @@
+/*  universal selector  */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*  id selector  */
+#startHeading {
+    color: red;
+}
+
+/*  class selector  */
+.testing {
+    background: rgb(202, 202, 247);
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+    padding: 5px;
+    border: 2px solid nav1;
+}
+
+.development {
+    color: rgb(109, 67, 216);
+    font-size: x-large;
+}
+
+/*  paragraph selector */
+p {
+    color:rgb(104, 124, 61);
+}
+
+/*  Grouping selector */
+.development, .para, #startHeading {
+    width: 800px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* ----------------------------------- */
+/* decendent selector - target all child element */
+/* .box p {
+    color: green;
+} */
+
+/* only the next child */
+.box > p {
+    color: green;
+}
+
+/* adjacent sibiling selector */
+.head1 + p {
+    color: pink;
+}
+
+/* general sibling */
+.head1 ~ p {
+    color: red;
+}
+
+
+/* ------------------------- */
+input[type] {
+    background-color: black;
+}
+
+input[type="email"] {
+    background-color: red;
+}
+
+input[name="xyz"] {
+    color: blue;
+}
+
+image[src = "https://images.pexels.com/photos/36694789/pexels-photo-36694789.jpeg"]{
+    border: 5px solid black;
+}
+
+a[href="./home.html"] {
+    color: rgb(204, 255, 0);
+    background: black;
+    text-decoration: none;
+}
+
+/* Button */
+button:hover {
+    background-color: black;
+    color: white;
+} 
+button:active {
+    background: red;
+    color: white;
+    border-radius: 20px;
+}
+input:checked+label {
+    color: red;
+}
+p::first-line {
+    color: rgb(32,2,255);
+}
+p::first-letter {
+    background-color: yellow;
+    color: black;
+}
+p::before {
+    content: "This content is added using CSS. ";
+}

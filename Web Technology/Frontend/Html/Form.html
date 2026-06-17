@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="" method="get">
+        <label for="fname">First Name</label>
+        <input id="fname" type="text" placeholder="First Name" name="firstName" required>
+        <br><br>
+        <label for="lname">Last Name</label>
+        <input id="lname" type="text" placeholder="Last Name" name="lastName">
+        <br><br>
+        <label for="email">Email Id.</label>
+        <input id="email" type="email" placeholder="Email" name="email" required>
+        <br><br>
+        <label for="pass">Password</label>
+        <input id="pass" type="password" placeholder="password" name="password" required minlength="3" maxlenght="8" pattern="[A-Za-z]+">
+        <br><br>
+        <fieldset>
+            <legend>Gender</legend>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label>  
+            <input type="radio" name="gender" id="other" value="other">
+            <label for="other">Other</label>
+        </fieldset>
+        <br><br>
+
+        <!-- // for radio button -->
+        <fieldset>
+            <legend>Types of buttons</legend>
+            <button type="submit" onclick="return confirm('Are you sure you want to submit the form?');">Submit</button>
+            <button type="reset" onclick="return confirm('Are you sure you want to reset the form?');">Reset</button>
+            <br>
+            <!-- // alternative  -->
+            <input type="button" value="Submit" >
+            <input type="button" value="Reset">
+        </fieldset>
+        
+        <br><br>
+        <!-- // for checkbox -->
+        <fieldset>
+            <legend>Skills</legend>
+            <input type="checkbox" name="skills" id="html" value="html">
+            <label for="html">HTML</label>
+            <input type="checkbox" name="skills" id="css" value="css">
+            <label for="css">CSS</label>
+            <input type="checkbox" name="skills" id="js" value="js">
+            <label for="js">JavaScript</label>
+            <input type="checkbox" name="skills" id="react" value="react">
+            <label for="react">React</label>
+        </fieldset>
+
+        <!-- address -->
+        <label for="address">Address:</label>
+        <textarea id="address" placeholder="Address"></textarea>
+        <br><br>
+
+        <!-- // for select dropdown -->
+        <label for="country">Country:</label>
+        <select id="country">
+            <option value="default">Select Option</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="australia">Australia</option>
+        </select>
+
+        <br><br>
+        <label for="file">Upload File:</label>
+        <input type="file" id="file">
+
+        <br><br>
+        <input type="number" id="num" placeholder="Number">
+        <input type="tel" placeholder="Tel">
+
+    </form>
+
+    <br><hr><hr><br>
+
+    <!-- Action and method -->
+    <form action="https://httpbin.org/post" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="heuy" placeholder="heelllo guys">
+        <button>Submit</button>
+    </form>
+</body>
+</html>

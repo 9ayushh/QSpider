@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.parent {
+    height: 100%;
+    width: 100%;   
+    background-color: black;
+    color: white;
+    font-size: 40px;
+}
+
+.child {
+    height: 400px;
+    width: 500px;
+    background-color: red;
+    /* font-size: 2em; change according to the parent */
+    font-size: 2rem; /* no relation with parent */
+}
+
+.gchild {
+    height: 50%;
+    width: 50%;
+    background-color: blue;
+}
