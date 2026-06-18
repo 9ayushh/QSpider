@@ -205,8 +205,34 @@ Type Casting
             - byte to char
             - char to byte
 
-86 65 78 83 72 73 75 65
-118 97 110 115 104 105 107 97
+----------------------------------------------------------------
+Activity
+1. Write a java program to store and print your name, age, dateOfBirth and contact number
+2. Write a java program to convert a character into a number.
+3. Write a java program to store int value into the byte, short, long, float, double, char type variable.
+4. Write a java program to convert the double value(56.09) into int type and print it.
+5. Write a java program to store char type data('A') inside the short and int type variable and print it.
+6. Write a java program to store boolean type data(true) inside the int type variable and print it.
+----------------------------------------------------------------
+
+Scope of a Variable
+    - The visibility of a variable is known as the scope of a variable 
+    - Based on the scope 
+
+    - local
+        - The variable declared inside a method block or any other vllock except the class block is known as a local variable
+        - Characteristics of local variable
+            - 
+    - static
+    - non-static
+
+- default value are for static and non-static.
+- local value gives error while accessing without initialization.
+
+-----------------------------------------------------------------
+Operators
+
+
      
 
 

@@ -101,7 +101,7 @@ Statements
             - mainly used to fetch the data from multiple table simultaneously
 
     2. Data Definition Language (DDL)
-        - used to give structure to the database
+        - used to deals with the table structure in the database
 
         - CREATE
         - RENAME
@@ -127,7 +127,32 @@ Statements
         - GRANT
         - REVOTE
 
+    * Imp - What is the difference between TRUNCATE, DROP and DELETE *
+        - TRUNCATE -> when we want to delete the data but not the structure
+            - mainly used to delete all the data from a table without affecting table structure
+            - Cannot be recycle/restored
+            - DDL Statement
+            - Syntax: TRUNCATE TABLE TABLE_NAME;
 
+        - DROP -> when we want to delete the data as well as structure
+            - mainly used to delete all the data as well as table structure
+            - DROP
+                |__ Recycle Bin    
+                    |__ PURGE TABLE TABLE_NAME; -> To permanently delete the table
+                    |__ FLASHBACK TABLE TABLE_NAME TO BEFORE DROP; -> To restore the table
+            - DDL Statement
+            - Syntax: DROP TABLE TABLE_NAME;
+            - Syntax: DROP TABLE TABLE_NAME PURGE; -> To permanently delete
+
+        - DELETE -> when we want to delete rows 
+            - mainly used to delete a specific row or particular row
+            - Cannot be recycle/restored
+            - DML Statement
+            - Syntax: DELETE FROM TABLE_NAME WHERE <FILTER CONDITION>;
+
+
+
+ 
 
 
 

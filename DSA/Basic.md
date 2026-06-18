@@ -71,3 +71,33 @@
         1 0 1 0 1 
         0 1 0 1 0 
         1 0 1 0 1 
+
+        11111
+        00000
+        11111
+        00000
+        11111
+
+        10101
+        10101
+        10101
+        10101
+        10101
+
+        abcde
+        abcde
+        abcde
+        abcde
+        abcde
+
+        ABCDE
+        ABCDE
+        ABCDE
+        ABCDE
+        ABCDE
+
+        aaaaa
+        bbbbb
+        ccccc
+        ddddd
+        eeeee

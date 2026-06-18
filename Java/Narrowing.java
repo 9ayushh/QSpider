@@ -117,9 +117,5 @@ public class Narrowing {
         byte charToByte = (byte) charVal;
         System.out.println(charToByte);
 
-
-
-
-
     }
 }

@@ -114,5 +114,36 @@ CSS
                 - Css viewport units are relatice length measurements vased entirely on the dimensions of the browser's visible window area (the viewport).
                 - ex: vw(viewport width), vh(viewport height), vmin, vmax, etc...
 
+    - Elements
+        - opening tag + closing tag + content
+        - There are three types of elements
+            - Block element
+                - Those elements which occupies the complete width of the screen irrespective of there content
+                - We can change the size of block element
+            - inline element
+                - which occupies the width according to the content resident inside it
+                - we cannot change the size of inline element
+            - inline-block element
+                - Those element which is having the property of both block and inline element are known as inline-block element
+
+    - Box Model
+        - When we run html code inside the browser all the elements present inside the html will be represented as a rectangular box inside a browser, this representation is known as box model
+        - It consist of 4 parts
+            1. margin
+                - give the space outside the border
+                - the space between the elements are known as margin
+            2. border
+                - give the boundary
+                - outline of content is known as border
+            3. padding
+                - give the space between the border and content is known as padding
+            4. content
+
+        - Properties
+            - box-sizing: border-box;
+            - box-sizing: content-box;
+
+
+                
 
     

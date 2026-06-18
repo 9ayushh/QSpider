@@ -1,0 +1,23 @@
+Structure of Introduction
+    - How to introduce yourself
+
+    - Clear Introduction
+    - Prepare Yourself
+
+    - Name (Starting)
+    - Native Place (One Line)
+    - Education/Qualification
+        - Graduation
+        - 12th
+        - 10th
+    - Skills
+    - Projects
+    - Experience / Internship
+    - Certification
+    - Achievment
+    - Hobbies
+    - Goals
+        - short term
+        - long term
+
+

@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    /* display: inline; */
+    border: 3px solid black;
+    height: 200px;
+    width: 200px;
+    padding: 30px;
+}
+
+span {
+    display: block;
+    border: 3px solid;
+    height: 200px;
+    width: 300px;
+}
+
+p {
+    display: inline-block;
+    border: 2px solid red;
+    height: 200px;
+    width: 400px;
+}
+
+.marginDemo {
+    margin: 50px; /* for all */
+    margin: 50px 40px; /* for top-bottom left-right */
+    margin: 50px 40px 30px; /* for top left-right bottom */
+    margin: 50px 40px 30px 20px; /* for top right bottom left */
+
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+}
+
+.paddingDemo {
+    padding: 50px; /* for all */
+    padding: 50px 40px; /* for top-bottom left-right */
+    padding: 50px 40px 30px; /* for top left-right bottom */
+    padding: 50px 40px 30px 20px; /* for top right bottom left */
+
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
+
+.borderDemo {
+    border-width: 10px;
+    border-style: dotted;
+    border-style: double;
+    border-style: dashed;
+    border-style: groove;
+    border-style: hidden;
+    border-color: red;
+
+    border: 5px solid blue;
+
+    border-top: 5px solid red;
+
+    border-left-width: 5px;
+    border-left-style: dashed;
+    border-left-color: red;
+
+    border-bottom-width: 5px;
+    border-bottom-style: double;
+    border-bottom-color: pink;
+
+    border-radius: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.borderbox {
+    border: 5px solid yellow;
+    border-radius: 50%;
+}
