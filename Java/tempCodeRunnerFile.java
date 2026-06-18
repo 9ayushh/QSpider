@@ -1,2 +1,3 @@
 
-        // System.out.println(boolToIn
+        // int firstDigit = d1 % 10;
+        // System.out.println(LastDigit1);

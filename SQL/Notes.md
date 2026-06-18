@@ -95,6 +95,14 @@ Statements
             - mainly used to fetch the data from the databases and display it over the output console.
         - PROJECTION
             - mainly used to retrive the data by selecting only the columns
+            - Syntax:
+                SELECT * / [distinct] COLNAME / EXPRESSION [alias]
+                FROM TABLE_NAME;
+
+            - There are predefine words in SQL... some are SELECT, FROM, WHERE, etc...
+            - Way of writing  --->  top to bottom
+            - Way of execution  --->  bottom to top
+
         - SELECTION
             - mainly used to retrive the data by selecting rows and columns
         - JOINS
@@ -110,7 +118,7 @@ Statements
         - DROP
 
     3. Data Manipulation Language (DML)
-        - it deals with the data in database
+        - it deals with the data of a table.
 
         - INSERT
         - UPDATE
@@ -118,14 +126,19 @@ Statements
 
     4. Transaction Control Language (TCL)
         - COMMIT
+            - to save the transaction parmanently
         - SAVEPOINT
+            - to save the transaction temporary
         - ROLLBACK
+            - to delete the savepoints/ to fall back to the previous savepoint
 
     5. Data Control Language (DCL)
         - to give access to the data
 
         - GRANT
+            - give the access of data to other users
         - REVOTE
+            - to take back the access of the data from other users
 
     * Imp - What is the difference between TRUNCATE, DROP and DELETE *
         - TRUNCATE -> when we want to delete the data but not the structure
@@ -152,7 +165,30 @@ Statements
 
 
 
- 
+# TASK  
+    - Write the table   
+    1. DEPT
+        DEPTNO |  DNAME          |  LOC
 
+        10     |  ACCOUNTING     |  NEW YORK
+        20     |  RESEARCH       |  DALLAS
+        30     |  SALES          |  CHICAGO
+        40     |  OPERATIONS     |  BOSTON
 
+    2. EMP
+        EMPNO |  ENAME   |   JOB         |   MGR   |  HIREDATE    |   SAL    |  COMM    |  DEPTNO
 
+        7369  |  SMITH   |   CLERK       |   7902  |  17-DEC-80   |    800   |          |  20
+        7499  |  ALLEN   |   SALESMAN    |   7698  |  20-FEB-81   |   1600   |    300   |  30
+        7521  |  WARD    |   SALESMAN    |   7698  |  22-FEB-81   |   1250   |    500   |  30
+        7566  |  JONES   |   MANAGER     |   7839  |  02-APR-81   |   2975   |          |  20
+        7654  |  MARTIN  |   SALESMAN    |   7698  |  28-SEP-81   |   1250   |   1400   |  30
+        7698  |  BLAKE   |   MANAGER     |   7839  |  01-MAY-81   |   2850   |          |  30
+        7782  |  CLARK   |   MANAGER     |   7839  |  09-JUN-81   |   2450   |          |  10
+        7788  |  SCOTT   |   ANALYST     |   7566  |  19-APR-87   |   3000   |          |  20
+        7839  |  KING    |   PRESIDENT   |         |  17-NOV-81   |   5000   |          |  10
+        7844  |  TURNER  |   SALESMAN    |   7698  |  08-SEP-81   |   1500   |      0   |  30
+        7876  |  ADAMS   |   CLERK       |   7788  |  23-MAY-87   |   1100   |          |  20
+        7900  |  JAMES   |   CLERK       |   7698  |  03-DEC-81   |    950   |          |  30
+        7902  |  FORD    |   ANALYST     |   7566  |  03-DEC-81   |   3000   |          |  20
+        7934  |  MILLER  |   CLERK       |   7782  |  23-JAN-82   |   1300   |          |  10
