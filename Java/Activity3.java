@@ -1,5 +1,3 @@
-import javax.security.auth.Subject;
-
 public class Activity3 {
     public static void main(String[] args) {
         // 1. Print the factorial of 8

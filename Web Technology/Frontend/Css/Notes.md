@@ -143,6 +143,12 @@ CSS
             - box-sizing: border-box;
             - box-sizing: content-box;
 
+    - Text & Font
+        - 
+
+
+    - Background
+
 
                 
 

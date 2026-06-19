@@ -1,37 +1,219 @@
-Core Java
+Programming language:
+  - A language by which we give certain set of instructions to our machine in order to perform some tasks.
+  - Types:
+    1. Machine level or low level programming language --> easily readable and understandable by machine 
+        e.g Binary language
 
-Uptill now
-programming lang
-types 
-java
-history
-structure
-execution
-- Pointer ( complex ) --> java is simple (no pointers)
-data
-    - primitive and non-primitive
-types
-print data
-diff bw print and println
-tokens - 
-    6 types of tokens
-        - Comments
-        - keywords 53
-        - Identifiers
-        - literals
-        - Seperators
-        - Operators
-AScaii
-A - 
-Z - 
-a - 
-z -
+    2. Assembly level or mid level programming language --> provides some predefined words to do some specific tasks
+        pre- defined words are known as Mnemonics e.g. ADD, SUB, MUL, DIV etc. It uses assembler to translate these words into machine readable format. e.g 8086 Architecture instruction set.
 
-Separaters - punctuations
-comments - //,/**/
+    3. High level programming language --> Easily readable, executable and understandable by a programmer 
+        for machines to unerstand we use compiler and interpreter.
+
+----------------------------------------------------------------------------------------------------------------
+
+Java:
+  -high level object oriented programming language used to build web apps, mobile applications, enterprise software systems and test the applications.
+
+  -Java is platform independent language which means code written in java can run on any system that supports JVM (Java Virtual Machine)
+
+  -Java is known for its simple syntax because it doesnt have the concept of pointers as pointers are a bit complex so without it java is simple
+
+  -easier, portable 
+  - more secure and robust with strong memory management
+  -follows the principle of WORA (Write Once, Run Anywhere)
+
+  -Uses both compiler and interpreter.
+  -James Gosling is the father of Java.
+
+----------------------------------------------------------------------------------------------------------------
+
+  // instructions are always written inside the class
+  e.g
+  public class HelloWorld{                       //Defines a class named HelloWorld and an opening bracket for class
+    public static void main(String [] args)      //this is main method, the entry point for any java program
+    {                                            // an openning bracket for method
+      System.out.println("Hello World!");        //print statement
+    }
+  }
+
+  -to run java program in cmd or console run 2 commands
+  1. javac filename.java
+  2. java filename
+
+  -javac compiles the code into byte code and creates .class filename
+  - JVM reads .class file and interprets the bytecode
+  - A class in java can be executed only if main method is created as {--public static void main(String [] args)--} 
+  - A class file created in java without main method can only be compiled but can't be executed because java program execution starts from main method as it is not present the program will not be executed.
+
+--------------------------------------------------------------------------------------------------------------
+
+History of Java:
+  - developed by James Gosling and his team at Sun Microsystems in 1991.
+  - Java was first called Greentalk then renamed Oak and later named Java inspired by coffee beans
+  - Java was released publically in 1995.
+  - JDK 1.0 --> Jan 1996
+  - JDK 1.1 --> Feb 1997
+    '
+  - JDK 1.8 (8) --> Mar 2024 (used in industry) 
+    '
+  - Java SE 26 (LTS) --> Mar 2026 latest version of Java
+
+  1991- 2010 --> Sun Microsystems
+  in 2006 --> became open source
+  2010- present --> Oracle 
+
+---------------------------------------------------------------------------------------------------------------
+
+Features of Java:
+  1. Platform independent
+  2. Simple
+  3. Object oriented
+  4. Portable
+  5. High performance
+  6. Secure 
+  7. Robust 
+  8. Multithreaded etc
+
+---------------------------------------------------------------------------------------------------------------
+
+JDK:
+  - Java Development Kit is a package which consists of java development tools like javac compiler and JRE for extension
+  - Development tools + JRE
+
+JRE:
+  - Java Runtime Environment consists of JVM and built in class files which is required for execution of program
+  - JVM + System Libraries
+
+JVM:
+  - Java Virtual Machine helps to convert bytecode into current system understandable language with the help of interpreter 
+  - JIT Compiler: Just In Time compiler is an integral part of JVM, it helps improve the performance of java programs by compiling byte codes into nature machine code at runtime, enhances performance  
+
+---------------------------------------------------------------------------------------------------------------
+
+Data/ Literals:
+  -Infomation used in programming languagies called data.
+  -Types:
+    1. Primitive data --> single value
+    2. Non- primitive data --> multi value
+  
+  1. Primitive data:
+      it has 3 types:
+       a. Number data --> consistes of +ve, -ve, whole, decimal numbers
+       b. Character data --> anything enclosed within a single quote (' ') and length is 1
+       c. Boolean data --> used to write logical values. 2 boolean literals.
+
+    Number data: 
+      -We can print the number data directly inside the printing statement or we can store directly inside the variable.
+      - is of two types: 
+        1. Integer
+          |--> byte
+          |--> short 
+          |--> int 
+          |--> long 
+
+        2. Floating point number
+          |--> float 
+          |--> double
+    
+    Character data:
+      - anything enclosed within a single quote (' ') and length is 1. Java supports 65000+ characters.
+      - Every character has one uniques value known as ASCII(American Standard Code for Information Interchange) value.
+
+      Char     ASCII value
+      A         65
+      B         66
+      C         67
+      :
+      Z         90
+      :
+      a         97
+      b         98
+      :
+      z         122
+
+    Boolean Data:
+      - Used to write logical values. 2 boolean literals
+      a. true          b. false
+      - both are keywords
+      - true represents logical high (1)
+      - false represents logical low (0)
+
+  2. Non Primitive Data:
+      Multi value data is known as non primitive data
+      It has different types:
+        1. String data
+        2. NULL 
+        3. Object reference etc 
+
+--------------------------------------------------------------------------------------------------------------
+
+Variable:
+  - It is a container used to store data.
+  - Based on which type of data is stored in variable, we have 2 types of variables:
+    1. Primitive --> used to store primitive data
+    2. Non Primitive --> used to store non primitive data
+
+--------------------------------------------------------------------------------------------------------------
+
+Printing Statement:
+  - Used to print the data
+  - These are of 3 types:
+    1. print
+    2. println 
+    3. printf 
+
+  1. print:
+    - System.out.print(data)
+    - Used only to print data
+    - We can't use print statement withpout passing any data, if used then we will get compile time error
+
+  2. println:
+    - System.out.println(data)
+    - used to print data as well as create new line
+    - we can use it without passing any data, it is just used to print new lines
+
+--------------------------------------------------------------------------------------------------------------
+
+Tokens:
+  - Smallest unit of programming language used to compose the statement 
+  - tokens are of 6 types:
+    1. Keywords 
+    2. Identifiers 
+    3. Seperators 
+    4. Comments
+    5. Data/ Literals 
+    6. Operators 
+
+  Comments: It is used to specify the java code 
+    - 2 types:
+        1. Line oriented --> single line comment '//'
+        2. Block oriented --> multi line comment '/* .... */'
+
+  Keywords: Pre defined words which java compiler can understand 
+    - every keyword is associated with a sppecific task 
+    - a programmer can't change the meaning of a keyword 
+
+    Note: We have 53 keywords in java w.r.t. JDK 1.8
+    Rule: Keywords are always written in lower case 
+
+  Identifiers: The name given to components of java by the programmer is called as identifiers. 
+    - List of components:
+      - class
+      - method
+      - variables 
+      - interface etc 
+    
+    - Rules of identifiers:
+      1. Allowed characters are A-Z, a-z, 0-9, _, $
+      2. First letter shouldn't be a digit
+      3. Keyword can't be used as identifier
+      4. Character space is not allowed in between the identifier 
+      5. Only two special characters are allowed i.e. _ , $
+      6. Only start with A-Z, a-z, _, $
 
 -----------------------------------------------
-create a variable
+Create a variable
 - concept - data types - used to create a variable
 
 Syntax:
@@ -125,7 +307,7 @@ Assignment
 ----------------------------------------
 Type Casting
     - process of converting one type of data into another type of data.
-    - It is of two type of typecasting
+    - It is of two type:
         1. Primitive
         2. Non-primitive
 
@@ -133,7 +315,7 @@ Type Casting
         - The process of converting one type of primitive data into another type of primitive data is known as primitive typecasting.
 
         - Two types
-            - small to large (Widing) / Implicite primitive typecasting
+            - small to large (Widening) / Implicite primitive typecasting
             - large to small (Narrowing) / Explicite primitive typecasting
 
         - In this typecasting, boolean is not going to take part
@@ -223,7 +405,7 @@ Scope of a Variable
         3. Non-static variable
 
     - local
-        - The variable declared inside a method block or any other vllock except the class block is known as a local variable
+        - The variable declared inside a method block or any other block except the class block is known as a local variable
         - Characteristics of local variable
             - We can't use local variables without initialization, if we try to use a local variables without initialization then we will get compile-time-error.
             - Local variables will not be initialized with default values.
@@ -271,6 +453,7 @@ Operators - symbols by which we perform specific tasks
         5. Conditional
         6. Increment/Decrement
 
+-------------------------------------------
 Activity - ActivityToPrint
     - WAP to print the sum of 2 integer number.
     - WAP to print the sum of 2 floating point number.

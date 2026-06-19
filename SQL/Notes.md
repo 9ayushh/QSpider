@@ -178,17 +178,62 @@ Statements
     2. EMP
         EMPNO |  ENAME   |   JOB         |   MGR   |  HIREDATE    |   SAL    |  COMM    |  DEPTNO
 
-        7369  |  SMITH   |   CLERK       |   7902  |  17-DEC-80   |    800   |          |  20
-        7499  |  ALLEN   |   SALESMAN    |   7698  |  20-FEB-81   |   1600   |    300   |  30
-        7521  |  WARD    |   SALESMAN    |   7698  |  22-FEB-81   |   1250   |    500   |  30
-        7566  |  JONES   |   MANAGER     |   7839  |  02-APR-81   |   2975   |          |  20
-        7654  |  MARTIN  |   SALESMAN    |   7698  |  28-SEP-81   |   1250   |   1400   |  30
-        7698  |  BLAKE   |   MANAGER     |   7839  |  01-MAY-81   |   2850   |          |  30
-        7782  |  CLARK   |   MANAGER     |   7839  |  09-JUN-81   |   2450   |          |  10
-        7788  |  SCOTT   |   ANALYST     |   7566  |  19-APR-87   |   3000   |          |  20
-        7839  |  KING    |   PRESIDENT   |         |  17-NOV-81   |   5000   |          |  10
-        7844  |  TURNER  |   SALESMAN    |   7698  |  08-SEP-81   |   1500   |      0   |  30
-        7876  |  ADAMS   |   CLERK       |   7788  |  23-MAY-87   |   1100   |          |  20
-        7900  |  JAMES   |   CLERK       |   7698  |  03-DEC-81   |    950   |          |  30
-        7902  |  FORD    |   ANALYST     |   7566  |  03-DEC-81   |   3000   |          |  20
-        7934  |  MILLER  |   CLERK       |   7782  |  23-JAN-82   |   1300   |          |  10
+        7369  |  SMITH   |   CLERK       |   7902  |  17-DEC-80   |    800   |          |  20     |  RESEARCH       |  DALLAS
+        7499  |  ALLEN   |   SALESMAN    |   7698  |  20-FEB-81   |   1600   |    300   |  30     |  SALES          |  CHICAGO
+        7521  |  WARD    |   SALESMAN    |   7698  |  22-FEB-81   |   1250   |    500   |  30     |  SALES          |  CHICAGO
+        7566  |  JONES   |   MANAGER     |   7839  |  02-APR-81   |   2975   |          |  20     |  RESEARCH       |  DALLAS
+        7654  |  MARTIN  |   SALESMAN    |   7698  |  28-SEP-81   |   1250   |   1400   |  30     |  SALES          |  CHICAGO
+        7698  |  BLAKE   |   MANAGER     |   7839  |  01-MAY-81   |   2850   |          |  30     |  SALES          |  CHICAGO
+        7782  |  CLARK   |   MANAGER     |   7839  |  09-JUN-81   |   2450   |          |  10     |  ACCOUNTING     |  NEW YORK
+        7788  |  SCOTT   |   ANALYST     |   7566  |  19-APR-87   |   3000   |          |  20     |  RESEARCH       |  DALLAS
+        7839  |  KING    |   PRESIDENT   |         |  17-NOV-81   |   5000   |          |  10     |  ACCOUNTING     |  NEW YORK
+        7844  |  TURNER  |   SALESMAN    |   7698  |  08-SEP-81   |   1500   |      0   |  30     |  SALES          |  CHICAGO
+        7876  |  ADAMS   |   CLERK       |   7788  |  23-MAY-87   |   1100   |          |  20     |  RESEARCH       |  DALLAS
+        7900  |  JAMES   |   CLERK       |   7698  |  03-DEC-81   |    950   |          |  30     |  SALES          |  CHICAGO
+        7902  |  FORD    |   ANALYST     |   7566  |  03-DEC-81   |   3000   |          |  20     |  RESEARCH       |  DALLAS
+        7934  |  MILLER  |   CLERK       |   7782  |  23-JAN-82   |   1300   |          |  10     |  ACCOUNTING     |  NEW YORK
+
+-------------------------------------
+Day 6...
+
+Activity
+
+Projection:
+    - Write a query to display (WAQTD) name of all the employees
+        SELECT ENAME FROM EMP;
+    - Write a query to display (WAQTD) department name of all the employees
+        SELECT DNAME FROM DEPT;
+    - Write a query to display (WAQTD) name, job and salary of all the employees
+        SELECT ENAME, JOB, SAL FROM EMP;
+    - Write a query to display name and commission given to all the employees
+        SELECT ENAME, COMM FROM EMP;
+    - Write a query to display employee id and department number of all the employees in emp table
+        SELECT EMPNO, DEPTNO FROM EMP;
+    - Write a query to display ename and hiredate of all the employees
+        SELECT ENAME, HIREDATE FROM EMP;
+    - Write a query to display name and designation of all the employees
+        SELECT ENAME, JOB FROM EMP;
+    - Write a query to display name, job and salary given to all the employees
+        SELECT ENAME, JOB, SAL FROM EMP;
+    - Write a query to display dname present in department table
+        SELECT DNAME FROM DEPT;
+    - Write a query to display dname and location present in dept table
+        SELECT ENAME, LOC FROM DEPT;
+
+------------------------------------------------------------------------------------
+Projection:
+    - select * / [distinct] colName / exp [alias]
+
+    - distinct
+        - mainly used to avoid duplicate values into a particular column.
+        - Syntax : SELECT DISTINCT COL_NAME FROM TABLE_NAME;
+
+        - Q1 - WAQTD... Write a query to display unique job of all the employees
+        - Q2 - Write a query to display unique department of emp
+        - Q3 - Write a query to display unique salary of emp
+        - Q4 - Write a query to display unique job as well as unique salary of emp
+
+        - Characterstics of distinct clause
+            1. distinct should be pass as a first argument inside select clause
+            2. if we are passing two columns in distinct clause it will check combination of values, if combination is matching it will consider as duplicate records but combination is not matching means it consider as unique record.
+            
