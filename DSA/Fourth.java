@@ -177,11 +177,11 @@ public class Fourth {
         
         // -----------------------
 
-        for(char j='a'; j<='e'; j++){
-            for(int i=0; i< 5; i++){
-                System.out.print(j);
-            }
-            System.out.println();
-        }
+        // for(char j='a'; j<='e'; j++){
+        //     for(int i=0; i< 5; i++){
+        //         System.out.print(j);
+        //     }
+        //     System.out.println();
+        // }
     }
 }

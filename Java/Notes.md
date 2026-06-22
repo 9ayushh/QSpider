@@ -448,8 +448,25 @@ Operators - symbols by which we perform specific tasks
             - Division (/)
             - Division/Modulus (%)
         2. Assignment
+            - Simple (hard to understand by JVM)
+                - =
+                - r = r + 2;
+            - Compound (Easy to read by JVM)
+                - +=, -=, %=, /=, *=
+                - improve the performance / code optimization
+                - internally typecasting is applied
         3. Relational/Comparison
+            - It is used to create a condition
+            - It returns boolean value
+            - ==, !=, >, <, >=, <=
+            - Ex: 
+                - A person is eligible to vote
+                - Password is correct or not
         4. Logical
+            - It is used to combine the condition.
+            - OR (||)
+            - AND (&&)
+            - NOT (!)
         5. Conditional
         6. Increment/Decrement
 
@@ -541,7 +558,12 @@ Activity 3
         mark in English is 88
         mark in Hindi is 67. Full mark of every individual Subject is 100
 
+-------------------------------------------------------------------------------------------------
+- We cannot save sum or any operation of byte or short into byte or short... we have to store in **int**.
+- byte + byte => stored inside int
+- short + short => stored inside int
 
+--------------------------------------------------------------------------------------------------
 
 
 
