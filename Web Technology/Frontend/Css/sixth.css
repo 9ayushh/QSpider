@@ -21,6 +21,7 @@ div {
     border-radius: 30px;
 
     /* position: fixed; */
+    /* position: relative; */
     position: sticky;
     top: 50px;
 

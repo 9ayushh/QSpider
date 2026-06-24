@@ -176,7 +176,8 @@ Printing Statement:
 --------------------------------------------------------------------------------------------------------------
 
 Tokens:
-  - Smallest unit of programming language used to compose the statement 
+  - Smallest unit of programming language 
+  - used to compose the statement 
   - tokens are of 6 types:
     1. Keywords 
     2. Identifiers 
@@ -387,6 +388,12 @@ Type Casting
             - byte to char
             - char to byte
 
+    Non-Primitive Typecasting
+        - Converting one type of non-primitive data into another type of non-primitive data
+        - There are two types
+            1. Up casting
+            2. Down casting
+
 ----------------------------------------------------------------
 Activity
 1. Write a java program to store and print your name, age, dateOfBirth and contact number
@@ -447,7 +454,9 @@ Operators - symbols by which we perform specific tasks
             - Multiplication (*)
             - Division (/)
             - Division/Modulus (%)
+
         2. Assignment
+            - to assign the value
             - Simple (hard to understand by JVM)
                 - =
                 - r = r + 2;
@@ -455,6 +464,7 @@ Operators - symbols by which we perform specific tasks
                 - +=, -=, %=, /=, *=
                 - improve the performance / code optimization
                 - internally typecasting is applied
+
         3. Relational/Comparison
             - It is used to create a condition
             - It returns boolean value
@@ -462,13 +472,45 @@ Operators - symbols by which we perform specific tasks
             - Ex: 
                 - A person is eligible to vote
                 - Password is correct or not
+
         4. Logical
             - It is used to combine the condition.
             - OR (||)
             - AND (&&)
             - NOT (!)
-        5. Conditional
-        6. Increment/Decrement
+
+        5. Conditional Operator 
+            - It is a ternary operator
+            - Syntax
+                - operand 1 ? operand 2 : operand 3
+                - condition ? statement 1 : statement 2
+            - Operation:
+                1. The return type of operand 1 must be Boolean.
+                2. If the condition is true, Statement1 will get executed else Statement2 will get executed.
+            The return type of conditional operator depends on the operand 2 and operand 3.
+
+        6. Increment/Decrement Operator
+            - It is used to update the value by 1.
+            - This operator is used with variable
+            - Increment Operator increase the value by 1 and Decrement Operator decrease the value by 1.
+            - It is used for code optimization and interanally typecasting also applied
+            - It can be pre increment(++a) or pre decrement(--a) Or post increment(a++) or post decrement(a--)
+
+            1. Pre-increment  
+            2. Post-increment
+            3. Pre-decrement
+            4. Post-decrement
+
+            case 1 ... When it's outside the printing statement
+                - outside the prining statement
+                    - both pre and post will done first then print the statement
+
+            case 2 ... When it's inside the printing statement
+                - pre increment/decrement
+                    - the increment/decrement is done first, then print the statement
+                - post increment/decrement
+                    - the increment/decrement is done after printing the statement
+
 
 -------------------------------------------
 Activity - ActivityToPrint
@@ -564,12 +606,37 @@ Activity 3
 - short + short => stored inside int
 
 --------------------------------------------------------------------------------------------------
-
-
-
-
-
-     
+ASSIGNMENT
+----------
+Q1 - number is positive or not
+Q2 - number is negative or not
+Q3 - number is zero or not
+Q4 - number is Larger than 50 or not
+Q5 - price is more than 125.75 or not
+Q6 - number is inbetween 500 to 1000 or not excluding the given number
+Q7 - number is a 2 digit number or not
+Q8 - number is divisible by 5 or not
+Q9 - number is divisible by 7 or not
+Q10 - number is even or not
+Q11 - number is odd or not
+Q12 - number is divisible by 6 or not without directly dividing or modulus by 6
+Q13 - number is even or not without using modulus operator
+Q14 - given character is 'A'/'a' or not
+Q15 - given character is 'Q'/'q' or not
+Q16 - given character is uppercase character or not
+Q17 - given character is lowercase character or not
+Q18 - given character is alphabet or not
+Q19 - given character is digit character or not
+Q20 - given character is uppercase vowel or not
+Q21 - given character is lowercase vowel or not
+Q22 - given character is vowel or not
+Q23 - given character is uppercase consonent or not
+Q24 - given character is lowercase consonent or not
+Q25 - Find the person is eligible to vote or not
+Q26 - Find the largest among three number
+Q27 - Find the smallest among three number
+Q28 - Find the largest among three number without using AND operator
+Q29 - Find the smallest among three number without using AND operator
 
 
 

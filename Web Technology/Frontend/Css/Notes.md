@@ -148,7 +148,67 @@ CSS
     - Background
 
     - CSS position
+        - This position property in CSS defines how an HTML element is placed on a web page. It works alongside the offset coordinates (top, bottom, right, left) and z-index.
 
+        position: static(default);
+                 relative
+                  absolute
+                  fixed
+                  sticky
+        
+        position: static;
+        - In CSS, position: static; is the default positioning method for every HTML element, meaning the element automatically confroms to the normal.
+
+        position: relative;
+        - In CSS, position: relative; keeps an element in its normal spot on the page but allows you to move it around without affecting the elements around it.
+
+        position: absolute;
+        - The element is taken out of the normal page flow and you can place it exactly where you want using properties like top, left, right, and bottom.
+        - It does not stay in its original place
+        - It moves relative to its nearest positioned parent
+        - It no such parent exists -> It moves relative to the whole page (body)
+
+        position: fixed;
+        - It means the element stays in the same position on the screen, even when the user scrolls the page.
+        - It keeps an element locked to a specific spot on the screen, regardless of scrolling.
+
+        position: sticky;
+        - It means an element behaves like relative at first, but when you scroll to a certain point, it becomes fixed and sticks to the screen.
+        - It lets an element scroll normally until it reaches a specified position, when it sticks there like a fixed element.
+        
+    Flex 
+        - Flex refers to Flexbox(Flexible Box Layout), which layout model used to easily arrange, align, and distribute space among items in a row or a column. It makes web pages responsive by dynamically expanding or shrinking items.
+
+        1. display:flex
+            - Applying display: flex; to an HTML element turns it into a flex container. Its immediate child elements automatically become flex items.
+        
+        2. flex-direction
+            - flex-direction is a CSS property that sets the direction items flow inside a flexbox container
+            - It decides if items stack in a row or a column.
+
+        3. justify-content
+            - This property used to arrange and space out items horizontally inside a container.
+            - (NOTE: if you change your layout's direction to a column using flex-direction:column, justify-content flips and controls the veritcal arrangement instead).
+            - justify-content: flex-start/flex-end/center/space-around/space-between/space-evenly
+
+        4. align-items
+            - This property that controls how items inside a container line up up-and-down (vertically)
+            - (NOTE: If you change your layout direction to columns, these directions swap, but for standard rows, just remember: align-items is your vertical control!)
+            - align-items: flex-start/flex-end/center;
+
+        5. gap
+            - Gap in CSS is a property that creats space between items inside a layout.
+            - It acts like an automatic invisible divider between boxes, preventing them from touching each other.
+
+        6. flex-wrap
+            - flex-wrap is a CSS property that decides whether your items should stay on one single line or drop down to a new line when they run out of space.
+            - flex-wrap : nowrap/wrap/wrap-reverse
+
+        7. align-content
+            - controls the spacing between multiple rows or columns of flex items.
+            - It decides how extra space is distributed when your items wrap across more than one line.
+
+        
 
                 
 

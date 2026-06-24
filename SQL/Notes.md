@@ -1,14 +1,23 @@
- SQL - Structural Query Language
+SQL - Structural Query Language
+
+EF Codd's Rules
+    1. Only one value can be stored in a single cell
+    2. If we want to add same value simultaneously in two table than we must establish a realtionship b/w those two tables
+    3. RDBMS used to store the data in tabular form including meta data
+    4. The data entered into a table can be validated into steps by assigning datatype and contraints
 
 Day 2...
 5 Types of DataTypes
     1. Char
     2. Varchar
     3. Varchar2
-    4. Number
+    4. Number 
+        - Precision[Scale]
+            - Precision - 0 to 38
+            - Scale - -84 to 127
     5. Large Object
-        - Blob
-        - Clob
+        - Clob - Character large object
+        - Blob - Binary large object
 
     Extras 
         - Date
@@ -19,6 +28,7 @@ Constraints
     1. Unique
     2. Not Null
     3. Check 
+        - col_name datatype check (condition)
         example
             phone_no -> Number(10) check(phone_no > 0) check(length(phone_no) = 10)
 
@@ -236,4 +246,56 @@ Projection:
         - Characterstics of distinct clause
             1. distinct should be pass as a first argument inside select clause
             2. if we are passing two columns in distinct clause it will check combination of values, if combination is matching it will consider as duplicate records but combination is not matching means it consider as unique record.
-            
+
+    - Expression [alias]
+        - Any mathematical operation which gives us a result is known as expression
+        - ex: SAL( + EPX)
+
+        - Null Value function
+            - any expression done on null value then it will give the null as an output
+            - NVL function 
+                - NVL (COL_NAME, VALUE)
+        
+        - To display the all data with extra columns
+            - we use (.)
+            - ex: SELECT TABLE_NAME. *, COL_NAME/EXPRESSION
+                  FROM TABLE_NAME;
+
+        - Alias
+            - Alias is an alternative name given to a column or a expression
+            - Alias is temporary in nature
+            - We can provide alias with or without using AS keyword
+            - ex: 
+                1. with AS and with " "
+                    SELECT EXPRESSION AS "ALIAS" FROM TABLE_NAME;
+                        - whatever passed inside the "" will consider as a single string
+                2. with AS and without " "
+                    SELECT EXPRESSION AS ALIAS FROM TABLE_NAME;
+                        - whatever the alias is it should be a single word or seprated by _
+                3. without AS and with " "
+                    SELECT EXPRESSION "ALIAS" FROM TABLE_NAME;
+                        - whatever passed inside the "" will consider as a single string
+                4. without AS and without " "
+                    SELECT EXPRESSION ALIAS FROM TABLE_NAME;
+                        - whatever the alias is it should be a single word or seprated by _
+
+    - Q1 Write a query to display annual salary of all employees
+    - Q2 Write a query to display increment of rs 300 in a salary of all employees
+    - Q3 Write a query to display decrement of 20% of salary in an annual sal of all employees
+    - Q4 Write a query to display total salay of all employees
+    - Q4 Write a query to display details of all the employees along with that display annual salary of all employees
+
+---------------------------------------------------------------------------------------------------------------------
+ASSIGNMENT
+    1. Write a query to display name of the employee along with their annual salary
+    2. Write a query to display ENAME and JOB from all the employee with their half term salary
+    3. Write a query to display all the details of the employee along with an annual salary bonus of 2000
+    4. Write a query to display NAME, SALARY and SALARY wit hike of (any value)
+    5. Write a query to display total salary given to each employee (sal + comm)
+    6. Write a query to display name and salary with the deduction of 25%
+    7. Write a query to display name and salary with the monthly hike of 50
+    8. Write a query to display name and annual salary with the deduction of 10%
+    9. Write a query to display details of all the employees along with annual salary
+    10. Write a query to display name and designation along with 100 penality in salary
+
+
