@@ -13,18 +13,18 @@ Programming language:
 ----------------------------------------------------------------------------------------------------------------
 
 Java:
-  -high level object oriented programming language used to build web apps, mobile applications, enterprise software systems and test the applications.
+  - high level object oriented programming language used to build web apps, mobile applications, enterprise software systems and test the applications.
 
-  -Java is platform independent language which means code written in java can run on any system that supports JVM (Java Virtual Machine)
+  - Java is platform independent language which means code written in java can run on any system that supports JVM (Java Virtual Machine)
 
-  -Java is known for its simple syntax because it doesnt have the concept of pointers as pointers are a bit complex so without it java is simple
+  - Java is known for its simple syntax because it doesn't have the concept of pointers as pointers are a bit complex so without it java is simple
 
-  -easier, portable 
+  - easier, portable 
   - more secure and robust with strong memory management
-  -follows the principle of WORA (Write Once, Run Anywhere)
+  - follows the principle of WORA (Write Once, Run Anywhere)
 
-  -Uses both compiler and interpreter.
-  -James Gosling is the father of Java.
+  - Uses both compiler and interpreter.
+  - James Gosling is the father of Java.
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -148,14 +148,6 @@ Data/ Literals:
 
 --------------------------------------------------------------------------------------------------------------
 
-Variable:
-  - It is a container used to store data.
-  - Based on which type of data is stored in variable, we have 2 types of variables:
-    1. Primitive --> used to store primitive data
-    2. Non Primitive --> used to store non primitive data
-
---------------------------------------------------------------------------------------------------------------
-
 Printing Statement:
   - Used to print the data
   - These are of 3 types:
@@ -192,7 +184,7 @@ Tokens:
         2. Block oriented --> multi line comment '/* .... */'
 
   Keywords: Pre defined words which java compiler can understand 
-    - every keyword is associated with a sppecific task 
+    - every keyword is associated with a specific task 
     - a programmer can't change the meaning of a keyword 
 
     Note: We have 53 keywords in java w.r.t. JDK 1.8
@@ -214,6 +206,12 @@ Tokens:
       6. Only start with A-Z, a-z, _, $
 
 -----------------------------------------------
+Variable:
+  - It is a container used to store data.
+  - Based on which type of data is stored in variable, we have 2 types of variables:
+    1. Primitive --> used to store primitive data
+    2. Non Primitive --> used to store non primitive data
+
 Create a variable
 - concept - data types - used to create a variable
 
@@ -325,7 +323,7 @@ Type Casting
         - Note: Float is larger than long because of memory mechanism
 
         - Widening 
-            - The process of converting smaller range data into larger range data of primitive type is known as widening.
+            - The process of converting smaller range of primitive data into larger range data of primitive type is known as widening.
             - In widening, process there is no data loss. 
             - Since, there is no data loss compiler can do implicitly 
             Note: It is also possible to do explicitly but not required.

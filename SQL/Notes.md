@@ -1,26 +1,81 @@
-SQL - Structural Query Language
+SQL 
+    - Structural Query Language
+    - to communicate with the database
+
+Database
+    - container used to store the data in a systematic and organised way
+
+Data
+    raw fact that describe the attribute or entity
+        - entity object (table_name)
+        - attribute-property (col_name)
+        - rawfact-info. (information)
+
+DBMS
+    - Database Management System
+    - query language used to communicate dbms with flat files
+    - 
+
+RBMS
+    - rational databse management system
+    - used to format the data in tabular form
+
+CRUD operation
+    - Create / Insert
+    - Read / Retrive / Fetch
+    - Update
+    - Delete / Drop
+
+Relational data
+    - data is always stored in the form of tables
+
+table
+    - combination of rows and columns
+
+cell
+    - intersection of rows and columns/ smallest unit of table
 
 EF Codd's Rules
     1. Only one value can be stored in a single cell
-    2. If we want to add same value simultaneously in two table than we must establish a realtionship b/w those two tables
-    3. RDBMS used to store the data in tabular form including meta data
-    4. The data entered into a table can be validated into steps by assigning datatype and contraints
+    2. If we want to add same value simultaneously in two table than we must establish a realtionship b/w those two tables by key attributes
+    3. RDBMS used to store the data in tabular form including meta data(data about data)
+    4. The data entered into a table can be validated into two steps by assigning datatype and contraints
 
 Day 2...
-5 Types of DataTypes
+DataTypes 
+    - 
     1. Char
+        - used to stored the character data
+        - col_name char(size);
+        - 2000 characters8s
     2. Varchar
+        - include numbers/digits
+        - col_name varchar(size);
+        - 2000 characters
     3. Varchar2
+        - varchar is internally consider as varchar2
+        - updated version of varchar
+        - col_name varchar2(size);
+        - 4000 characters
     4. Number 
+        - numeric data
+        - col_name number(precision[scale])
         - Precision[Scale]
             - Precision - 0 to 38
             - Scale - -84 to 127
     5. Large Object
+        - to store large object data
         - Clob - Character large object
+            - to store large no. of character
+            - col_name clob
         - Blob - Binary large object
+            - binary values of multimedia
+            - col_name blob
 
     Extras 
         - Date
+            - DD/MON/YYYY
+            - DD/MON/YY
 
 ---------------------------------------
 Day 3...
@@ -147,7 +202,7 @@ Statements
 
         - GRANT
             - give the access of data to other users
-        - REVOTE
+        - REVOKE
             - to take back the access of the data from other users
 
     * Imp - What is the difference between TRUNCATE, DROP and DELETE *
@@ -285,17 +340,64 @@ Projection:
     - Q4 Write a query to display total salay of all employees
     - Q4 Write a query to display details of all the employees along with that display annual salary of all employees
 
----------------------------------------------------------------------------------------------------------------------
-ASSIGNMENT
-    1. Write a query to display name of the employee along with their annual salary
-    2. Write a query to display ENAME and JOB from all the employee with their half term salary
-    3. Write a query to display all the details of the employee along with an annual salary bonus of 2000
-    4. Write a query to display NAME, SALARY and SALARY wit hike of (any value)
-    5. Write a query to display total salary given to each employee (sal + comm)
-    6. Write a query to display name and salary with the deduction of 25%
-    7. Write a query to display name and salary with the monthly hike of 50
-    8. Write a query to display name and annual salary with the deduction of 10%
-    9. Write a query to display details of all the employees along with annual salary
-    10. Write a query to display name and designation along with 100 penality in salary
+    ---------------------------------------------------------------------------------------------------------------------
+    ASSIGNMENT
+        1. Write a query to display name of the employee along with their annual salary
+        2. Write a query to display ENAME and JOB from all the employee with their half term salary
+        3. Write a query to display all the details of the employee along with an annual salary bonus of 2000
+        4. Write a query to display NAME, SALARY and SALARY wit hike of (any value)
+        5. Write a query to display total salary given to each employee (sal + comm)
+        6. Write a query to display name and salary with the deduction of 25%
+        7. Write a query to display name and salary with the monthly hike of 50
+        8. Write a query to display name and annual salary with the deduction of 10%
+        9. Write a query to display details of all the employees along with annual salary
+        10. Write a query to display name and designation along with 100 penality in salary
+    --------------------------------------------------------------------------------------------------------------------------
+
+    Execution Process (of Projection)
+        - Always FROM clause will execute first
+        - FROM clause will go to the database and search for the table name
+        - If we found the table, it will be put under execution
+        - After FROM clause SELECT clause will execute
+        - The job of SELECT clause is to display data on the output screen
+        - We can pass three argument in SELECT clause 
+            1. * -> astricks - to display all the data
+            2. [distinct] col_name -> to display a particular column
+            3. expression [alias] -> to display the column with an expression / perform arthimetic operation
+        - Semicolon(;) -> it is used to execute a query
+
+Selection
+    - mainly used to retrive the row and column
+    - Syntax
+        SELECT COL_NAME/EXPRESSION
+        FROM TABLE_NAME
+        WHERE <FILTER CONDITON>;
+    - Order of Execution
+        1. FROM clause
+        2. WHERE -> [execute row by row]
+        3. SELECT -> [row by row]
+
+    - Questions
+        1. Write a query to display details of an employee if employee is working in department 20
+        2. Write a query to display details of an employee if employee is working as a manager (record is in character, so it will inside '')
+        3. Write a query to display name, job, sal of employee if employee is earning more than 2000
+        4. Write a query to display details of employee if employee is hired after 80
+    
+    ASSIGNMENT
+    1. WAQTD THE ANNUAL SALARY OF THE EMPLOYEE WHOSE NAME IS SMITH.
+    2. WAQTD NAME OF THE EMPLOYEES WORKING AS CLERK.
+    3. WAQTD SALARY OF THE EMPLOYEE WHO ARE WORKING AS SALESMAN.
+    4. WAQTD DETAILS OF ALL THE EMP WHO EARNS MORE THAN 2000.
+    5. WQATD DETAILS OF THE EMP WHOSE NAME IS JONES.
+    6. WAQTD DETAILS OF THE EMP WHO HIRED AFTER 01-JAN-81.
+    7. WAQTD NAME AND SAL ALONG WITH HIS ANNUAL SALARY IF THE ANNUAL SALARY IS MORE THAN 12000.
+    8. WAQTD EMPNO OF THE EMPLOYEES WHO ARE WORKING IN DEPT 30.
+    9. WAQTD ENAME AND HIREDATE IF THEY ARE HIRED BEFORE 1981.
+    10. WAQTD DETAILS OF THE EMPWORKING AS MANAGER.
+    11. WAQTD NAME AND SALARY GIVEN TO AN EMPLOYEE IF EMPLOYEE EARNS COMMISSION OF RS.1400.
+    12. WAQTD DETAILS OF THE EMP HAVING COMMISSION MORE THE SALARY.
+    13. WAQTD EMPNO OF EMPLOYEES HIRED BEFORE THE YEAR 87.
+    14. WAQTD DETAILS OF THE EMP WORKING AS AN ANALYST.
+    15. WAQTD DETAILS OF THE EMP EARNING MORE THAN 2000 RUPEES PER MONTH.
 
 

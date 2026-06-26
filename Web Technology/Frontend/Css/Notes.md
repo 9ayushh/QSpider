@@ -208,6 +208,21 @@ CSS
             - controls the spacing between multiple rows or columns of flex items.
             - It decides how extra space is distributed when your items wrap across more than one line.
 
+    - Flex-Item Properties
+        1. Order:
+            - The order property in CSS flexbox lets you change the visual order of your item without touching your HTML code. It rearranges items by sorting them from the lowest number to the highest number.
+            - The default value of order is 0.
+        
+        2. Flex-grow:
+            - Flex-grow is a CSS property that dictates how a flex item expands to fill any empty space inside its parent container.
+            - Negative values are invalid.
+            - The default value of flex-grow is 0.
+        
+        3. Flex-shrink
+            - controls how much an item shrinks when there isn't enough space to fit all items in a container.
+            - The default value of flex-shrink is 1.
+
+    
         
 
                 

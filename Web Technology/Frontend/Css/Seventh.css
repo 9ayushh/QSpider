@@ -1,3 +1,5 @@
+/* Flex Properties of Parent  */
+
 .flexContainer {
     height: 600px;
     width: 600px;
@@ -56,4 +58,76 @@
 
 .item3 {
     font-size: 40px;
+}
+
+
+/* Flex Properties of Child */
+.container {
+    height: 600px;
+    width: 600px;
+    background-color: black;
+    padding: 8px;
+
+    display: flex;
+
+    flex-direction: row-reverse;
+    flex-direction: column-reverse;
+    flex-direction: column;
+    flex-direction: row;
+
+    justify-content: flex-start;
+    justify-content: flex-end;
+    justify-content: space-around;
+    justify-content: space-between;
+    justify-content: space-evenly;
+    justify-content: center;
+
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: center;
+    align-items: baseline;
+
+    row-gap: 10px;
+    column-gap: 10px;
+    gap: 10px;
+
+    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
+    flex-wrap: nowrap;
+
+    align-content: flex-start;
+    align-content: flex-end;
+    align-content: space-around;
+    align-content: space-between;
+    align-content: space-evenly;
+    align-content: center;
+}
+
+.flexItem {
+    height: 150px;
+    width: 150px;
+    background-color: red;
+    border: 2px solid white;
+}
+
+.child1 {
+    flex-grow: 2;
+    flex-shrink: 2;
+    /* order:1; */
+}
+
+.child2 {
+    flex-grow: 3;
+    flex-shrink: 3;
+    /* order:1; */
+}
+
+.child3 {
+    flex-grow: 4;
+    flex-shrink: 4;
+    /* order: 2; */
+}
+
+.child4 {
+    /* order: 3; */
 }
