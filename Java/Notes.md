@@ -637,4 +637,130 @@ Q28 - Find the largest among three number without using AND operator
 Q29 - Find the smallest among three number without using AND operator
 
 
+-------------------------------------------------------------------------
+Control Statement
+-----------------
+    - It is used to control the flow of the execution of the program
+    - It is of two types
+        - Decision making statement
+        - Looping Statement
+    
+    1. Decision Making Statement
+        - The decision statement helps the programmer to skip the block of instructions from the execution if the condition is not satisfied.
+        - It is of 4 types
+            - If
+            - If-else
+            - If-else if
+            - Switch
+
+    2. Looping Statement
+        - Looping statement helps the programmer to execute the set of instructions repeatedly
+        - In java, we have different types of loop statements, they are:
+            - while loop
+            - do-while loop
+            - for loop
+            - for each / advanced for / enhanced for loop
+
+        i. while loop (entry control loop)
+            - Syntax to create while loop:
+                while (condition) {
+                    // Statement to be repeated;
+                }
+            - execution flow
+                - Case1 : when the condition is true
+                    - The loop continues
+                    - Control execute the statement which belongs to the loop.
+                    - After execution once the loop block ends, control goes back to the condition and the entire process will be repeated till the condition becomes false.
+
+                - Case2 : when the condition is false
+                    - The loop is stopped i.e. repetition is stopped. 
+                    - The loop block will not get executed.
+                    - The control comes outside the loop to the next statement.
+
+        ii. do-while loop (exit control loop)
+            - Syntax to create do-while loop:
+                do {
+                    // statement;
+                } 
+                while(condition);
+            - execution flow
+                - Case 1: When the conodition is true
+                    - Control goes to the loop block directly, execute the instructions.
+                    - Then control goes to the condition, if the condition is true the control goes back to the do block.
+                
+                - Case 2: When the condition is false
+                    - Control goes to the loop block directlyl, execute the instructions.
+                    - Then control goes to the condition, if the condition is false the loop is stops and control goes to the next statement.
+            
+        - Difference between do-while and while loop
+            - while
+                - first the condition is checked, if the condition is true then the loop block gets executed.
+                - The minimum iteration can be zero.
+                - also called as entry control loop.
+                - directly we can't pass false to the while loop, it will give compile time error
+                - ex:
+                    int a = 5, b = 10, count = 0;
+                    while (a > b) {
+                        count++;
+                        System.out.println("value of b is" + b);
+                    }
+                    System.out.println("Iteration" + count);
+                    // output : Iteration 0
+
+            - do-while
+                - in do-while, first the loop block gets executed and then the condition is checked.
+                - the minimum iteration is one.
+                - also called as exit control loop.
+                - we can pass false to do-while loop, we not get any compile time error
+                - ex: 
+                    int a = 5, b = 10, count = 0;
+                    do {
+                        count++;
+                        System.out.println("value of b is "+b);
+                    } 
+                    while (a<b);
+                    System.out.println("Iteration " + count);
+                    // Output: value of b is 10
+                    // iteration 1
+
+        iii. for loop
+            - Syntax to create for loop:
+                for (initialization; condition; update) {
+                    // statement
+                }
+            - execution flow
+                - Step1: Control go to the initialization part.
+                - Step2: Then it will go to the condition part.
+                - Step3: If the condition is true then it will enter inside the loop block.
+                - Step4: Once the execution of instruction inside the loop block is completed control will go to the update segment.
+                - Step5: Then it will go back to the condition. Step 2, 3, 4 will continue unitl the condition become false.
+
+            NOTE: 
+                - All the three segments are optional(initialization, condtion, update)
+                - If the condition is not provided, by default it is considered as true.
+
+        Assignment
+            1. 1 2 3 4 ...
+            2. A B C D ...
+            3. 1 3 5 7 ...
+            4. 100 99 98 97 ...
+            5. z y x w ...
+
+    Decision Making
+        i. if 
+            - Syntax to create if statement:
+                if(condition) {
+                    // statement
+                }
+            - execution flow
+                - if the condition is satisfied then the instruction written inside the if block gets executed or normal flow of the execution continues (Instructions written inside the if block is skipped if condition is not satisfied).
+            - ex: 
+                - WAP to check is the number even
+
+            
+
+
+            
+
+            
 

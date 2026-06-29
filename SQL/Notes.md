@@ -286,7 +286,8 @@ Projection:
         SELECT ENAME, LOC FROM DEPT;
 
 ------------------------------------------------------------------------------------
-Projection:
+Projection
+----------
     - select * / [distinct] colName / exp [alias]
 
     - distinct
@@ -367,6 +368,7 @@ Projection:
         - Semicolon(;) -> it is used to execute a query
 
 Selection
+---------
     - mainly used to retrive the row and column
     - Syntax
         SELECT COL_NAME/EXPRESSION
@@ -399,5 +401,47 @@ Selection
     13. WAQTD EMPNO OF EMPLOYEES HIRED BEFORE THE YEAR 87.
     14. WAQTD DETAILS OF THE EMP WORKING AS AN ANALYST.
     15. WAQTD DETAILS OF THE EMP EARNING MORE THAN 2000 RUPEES PER MONTH.
+
+Operators
+---------
+    - Arithematic Operators (+, -, *, /)
+    - Concatination Operators (|| -> Pipeline operator)
+    - Comparision Operators (=, != or <>)
+    - Relational Operators (<, >, <=, =>)
+    - Logical Operators (and, or, not)
+    - Special Operators
+        1. IN
+        2. NOT IN
+        3. IS
+        4. IS NOT
+        5. BETWEEN
+        6. NOT BETWEEN
+        7. LIKE
+        8. NOT LIKE
+    - Subquery
+        - ALL
+        - ANY
+    
+1. Arithematic Operator
+    - +, -, *, /
+
+2. Concatination Operators
+    - 'str' || 'str'
+    - WAQTD a string Mr Smith for all the employees
+    - WAQTD a string hi i am smith.
+
+# EDIT OR ED -> ENTER (change as you like -> save the file) -> USE / THEN ENTER
+    
+3. Comparision Operators
+4. Relational Operaotrs
+5. Logical Operators
+    - and, or, not
+
+    - WAQTD details of an emp if emp is working as a manager in dept 20
+    - WAQTD details of an emp, if emp is working as a salesman but earning less than 4000
+    - WAQTD name, job and sal of emp if emp is earning more than 2000 but less than 3000
+    - WAQTD hired date of emp if emp is hired in 81 
+    - WAQTD details of an emp if emp is either working as a manager or a salesman
+    - WAQTD details of an emp if emp is either working in dept 20 or 30
 
 

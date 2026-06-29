@@ -73,3 +73,30 @@ Can make 2 page resume... you're experience enough
     I consider myself a quick learner, a team player, and someone who enjoys taking on new challenges. I am currently looking for opportunities where I can apply my technical knowledge, learn from experienced professionals, and contribute meaningfully to the organization's growth.
 
     Thank you for giving me this opportunity. I would be happy to answer any questions you may have.
+
+
+    learn Spring Boot fundamentals, Spring Data JPA, and a bit of SQL/database basics. Here’s a focused roadmap and a minimal example so you can gauge the effort.
+
+What to study (with priorities)
+1. Spring Boot basics
+    Project structure (Maven/Gradle), application.properties, running the app
+    REST controllers: @RestController, @RequestMapping, @Get/Post/Put/DeleteMapping
+    JSON serialization with Jackson
+2. Database + JPA/Hibernate
+    MySQL setup, JDBC URL, users, schema creation
+    JPA entities: @Entity, @Id, @GeneratedValue, field mappings, validation (@NotNull, @Size)
+    Spring Data JPA repositories: CrudRepository/JpaRepository, derived query methods (findByName)
+    Transactions (basic understanding; often handled for you)
+3. Request handling patterns
+    DTOs vs Entities (at least know the concept; can start with entities directly)
+    Path variables, query params, request body
+    HTTP status codes and basic error handling (@ResponseStatus, @ExceptionHandler)
+4. Build and run
+    Maven/Gradle lifecycle
+    Testing with Postman/curl
+    Basic unit/integration tests (optional but good): @SpringBootTest, @DataJpaTest
+5. Nice-to-have
+    Validation (@Valid, BindingResult)
+    Pagination/sorting (Pageable)
+    Basic security concept (at least know that Spring Security exists, even if not implementing now)
+    Lombok to reduce boilerplate
