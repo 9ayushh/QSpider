@@ -444,4 +444,87 @@ Operators
     - WAQTD details of an emp if emp is either working as a manager or a salesman
     - WAQTD details of an emp if emp is either working in dept 20 or 30
 
+    - WAQTD details of an emp if emp is earning more than 1000 but working in dept 30
+    - WAQTD details of an emp if emp is earning more than 1000 but less than 4000
+    - WAQTD hiredate of emp if emp is hired in 87
+    - WAQTD details of an emp if emp is either working in dept 10 or 20
+
+6. Special Operator
+    - if we have multiple values and used to pass multiple condition, so instead of writing again and again, we have Special Operator.
+    - Syntax
+        COL_NAME IN(VAL1, VAL2, VAL3...VALn)
+    - IN
+        - used to replace = and OR
+        - mainly used to handle multiple values on the right hand side. 
+        - If any one value is satisfying the condition, it returns true.
+
+        -  WAQTD details of an emp who are working as a manager or salesman.
+    
+    - NOT IN
+        - working as !=.
+        - It works similiar like In operator.
+        - If any value is not satisfying the condition then it returns true
+
+        - WAQTD details of an emp who are not working as a manager or salesman
+
+    - IS    
+        - mainly used to compare the Null values
+        - Syntax
+            COL_NAME IS NULL
+
+        - WAQTD details of an emp if emp is not earning any comm.
+
+    - IS NOT
+        - mainly used to compare not NULL values
+
+        - WAQTD details of an emp if emp is earning some comm.
+
+    - BETWEEN
+        - mainly used to obtain a value between a given range 
+        - It includes ranges as well.
+        - Syntax
+            COL_NAME BETWEEN LOWER_RANGE AND HIGHER RANGE
+
+        - WAQTD details of emp if emp is earning in the range of 2000 and 3000
+
+    - NOT BETWEEN
+        - mainly used to accept the values which are out of a given range
+        - it exclude the range as well.
+
+        - WAQTD hiredate of emp if emp is hired in 81.
+
+    - LIKE
+        - mainly used to match the patterns
+        - Syntax
+            COL_NAME LIKE 'PATTERN'
+
+        - operator
+            % -> three function
+                - used to accept multiple characters
+                - it will accept a character multiple times
+                - it will accepts no character as well
+
+            _ -> 
+                - it will accept only a single character
+
+        - WAQTD name of emp which is Starting with S
+            - SELECT ENAME FROM EMP WHERE ENAME LIKE 'S%';
+        - WAQTD ENAME which ends with A
+        - WAQTD ENAME which consist of a letter A.
+        - WAQTD ENAME which consist of  two letter A.
+        - WAQTD ENAME whose second char is M.
+            SELECT * FROM EMP WHERE ENAME LIKE '_M%';
+        - WAQTD HIREDATE if emp is hired in 81.
+        - WAQTD HIREDATE if emp is hired in FEB.
+
+    - NOT LIKE
+        - mainly used to exclude the pattern
+            
+
+
+
+
+
+
+
 

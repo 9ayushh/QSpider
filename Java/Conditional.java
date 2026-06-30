@@ -15,8 +15,16 @@ public class Conditional {
 
         // for loop
         // for(initialization/Declaration; condtional; increment/decrement/relational) {}
-        for( ; ;) {
-            System.out.println("hey");
+        // for( ; ;) {
+        //     System.out.println("hey");
+        // }
+
+        char ch = 'A';
+        while (ch < 100) {
+            System.out.println(ch);
+            ch += 2;
         }
+
+        
     }
 }

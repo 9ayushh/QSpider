@@ -642,18 +642,10 @@ Control Statement
 -----------------
     - It is used to control the flow of the execution of the program
     - It is of two types
-        - Decision making statement
         - Looping Statement
+        - Decision making statement
     
-    1. Decision Making Statement
-        - The decision statement helps the programmer to skip the block of instructions from the execution if the condition is not satisfied.
-        - It is of 4 types
-            - If
-            - If-else
-            - If-else if
-            - Switch
-
-    2. Looping Statement
+    1. Looping Statement
         - Looping statement helps the programmer to execute the set of instructions repeatedly
         - In java, we have different types of loop statements, they are:
             - while loop
@@ -746,7 +738,23 @@ Control Statement
             4. 100 99 98 97 ...
             5. z y x w ...
 
-    Decision Making
+        Assignment
+            - A to Z
+            - a to z
+            - all even number from 10 to 100
+            - all odd num from 1 to 1000
+            - print all 2 digit number
+
+            * do these in reverse
+
+    1. Decision Making Statement
+        - The decision statement helps the programmer to skip the block of instructions from the execution if the condition is not satisfied.
+        - It is of 4 types
+            - If
+            - If-else
+            - If-else if
+            - Switch
+
         i. if 
             - Syntax to create if statement:
                 if(condition) {
@@ -755,7 +763,22 @@ Control Statement
             - execution flow
                 - if the condition is satisfied then the instruction written inside the if block gets executed or normal flow of the execution continues (Instructions written inside the if block is skipped if condition is not satisfied).
             - ex: 
-                - WAP to check is the number even
+                - WAP to check is the number even.
+
+        ii. if-else
+            - Syntax to create if-else statement:
+                if(condition) {
+                    // statement 1
+                }
+                else{
+                    // statement 2
+                }
+            - execution flow
+                - if condition is true then statement inside the if block gets executed otherwise statement inside the else block gets executed.
+            - ex: 
+                - WAP to check is the number even or odd.
+
+
 
             
 
