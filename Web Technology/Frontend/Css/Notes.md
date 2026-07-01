@@ -223,20 +223,55 @@ CSS
                 - The default value of flex-shrink is 1.
 
     Grid
-        - CSS Grid is a ..
+        - CSS Grid is a highly powerful two-dimensional layout system built directly into CSS. Unlike Flexbox, which primarily handles content in a single direction (either rows or columns), CSS Grid lets you align and arrange elements in both horizontal rows and vertical columns simultaneously.
+        - It works on a parent-child relationship: It turns a parent element into a grid container, and its direct children automatically become grid items.
+            1. display : grid
+                - It is a CSS rule that turns an HTML element into a grid container, letting you arrange its content into two dimensions. It gives you total control over web layouts by letting you work in two dimensions simultaneously: horizontally and vertically.
+            2. grid-template-rows :
+                - The grid-template-rows property in CSS tells the browser how many rows a grid layout should have and how tall each row should be.
+            3. grid-template-columns :
+                - It is a CSS property that tells the browser how many columns a grid should have and how wide each column should be.
+            4. grid-row-start / grid-row-end
+                - grid-row-start and grid-row-end tell a grid item exactly which horizontal lines to start and stop at, which controls its vertical position and height.
+            5. grid-column-start / grid-column-end
+                - grid-column-start and grid-column-end are CSS properties that tell a specific item inside a grid container where to start and where to stop horizontally.
 
-
-    
     Font-Awesome
         - Used to give the icons
             - fontawesome.com/v4/icons
             - fontawesome - cdnjs.com/libraries/font-awesome
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-            
+    Transition in CSS
+        - CSS transition is a tool used to make changes to a website's style happen smoothely over time instead of instantly
 
-    
+        1. transition-property:
+            transition-property in CSS tells which CSS property you want to animate smoothly
+
+        2. transition-duration
+            tranisition-duration tells the browser how much time a css transition should take from the start to the end of the change.
+
+        3. transition-timing-function
+            - transition-timing-function defines the speed curve of a CSS transition. It tells the browser how the transition progresses from the start to the end, such as starting slowly, ending slowly, or moving at a constant speed.
+
+                - linear → Moves at the same speed.
+                - ease → Slow → Fast → Slow (default).
+                - ease-in → Slow at first, then speeds up.
+                - ease-out → Fast at first, then slows down.
+                - ease-in-out → Slow → Fast → Slow.
         
+        4. transition-delay
+            - transition-delay specifies how long the browser should wait before starting the transition.
+
+    Transform
+        - The transform property is used to change the position, size, rotation, or shape of an element without affecting the layout of other elements.
+            1. transform: translateX() = moves an element horizontally (left or right) along the X-axis.
+            2. transform: translateY() = moves an element vertically (top or down) along the Y-axis
+            3. transform: translate() = moves an element both horizontally and vertically at the same time.
+            4. transform: rotate() = rotates an element clockwise or counterclockwise around its center.
+            5. transform: skew() = slants(tilts) an element along the X-axis, Y-axis, or both without rotating it.
+        
+    Animation
 
                 
 

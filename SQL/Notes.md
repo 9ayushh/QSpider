@@ -519,12 +519,30 @@ Operators
 
     - NOT LIKE
         - mainly used to exclude the pattern
+
+
+ASS 1
+    12
+    
+ASS 2
+    9. OUT OF SYLLABUS
+    11.
+    12.
+    18.
+    21. HOW CAN WE EXACTLY USED
+    47.
+    90.
+    97.
+    127. STUDENT TABLE
+    211.
+    215.
+    227.
+    257.
+    -----------------------
+
+    56. SOLVED BUT EASILY GET SOLVED
+    60.
+    65.
             
-
-
-
-
-
-
 
 
