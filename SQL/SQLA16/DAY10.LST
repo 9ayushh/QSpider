@@ -1,0 +1,270 @@
+SQL> SELECT MAX(SAL)
+  2  FROM EMP;
+
+  MAX(SAL)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+      5000                                                                                                                                                                                              
+
+SQL> SELECT MIN(SAL), ENAME
+  2  FROM EMP
+  3  WHERE JOB =
+  4  'MANAGER';
+SELECT MIN(SAL), ENAME
+                 *
+ERROR at line 1:
+ORA-00937: not a single-group group function 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT MIN(SAL)
+  2  FROM EMP
+  3  WHERE JOB =
+  4* 'MANAGER'
+SQL> /
+
+  MIN(SAL)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+      2450                                                                                                                                                                                              
+
+SQL> SELECT AVG(SAL)
+  2  FROM EMP
+  3  WHERE JOB = 'SALESMAN'
+  4  AND SAL > 1000;
+
+  AVG(SAL)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+      1400                                                                                                                                                                                              
+
+SQL> SELECT SUM(SAL)
+  2  FROM EMP
+  3  WHERE COMM IS NULL;
+
+  SUM(SAL)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+     23425                                                                                                                                                                                              
+
+SQL> SELECT COUNT()
+  2  FROM EMP
+  3  WHERE XYZ;
+SELECT COUNT()
+       *
+ERROR at line 1:
+ORA-00909: invalid number of arguments 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT COUNT(EMPNO)
+  2  FROM EMP
+  3* WHERE COMM IS NOT NULL
+SQL> ;
+  1  SELECT COUNT(EMPNO)
+  2  FROM EMP
+  3* WHERE COMM IS NOT NULL
+SQL> /
+
+COUNT(EMPNO)                                                                                                                                                                                            
+------------                                                                                                                                                                                            
+           4                                                                                                                                                                                            
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT COUNT()
+  2  FROM EMP
+  3* WHERE COMM IS NOT NULL
+SQL> /
+SELECT COUNT()
+       *
+ERROR at line 1:
+ORA-00909: invalid number of arguments 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT COUNT(EMPNO)
+  2  FROM EMP
+  3* WHERE COMM IS NOT NULL
+SQL> /
+
+COUNT(EMPNO)                                                                                                                                                                                            
+------------                                                                                                                                                                                            
+           4                                                                                                                                                                                            
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT COUNT(COMM)
+  2* FROM EMP
+SQL> /
+
+COUNT(COMM)                                                                                                                                                                                             
+-----------                                                                                                                                                                                             
+          4                                                                                                                                                                                             
+
+SQL> SELECT MAX(COMM)
+  2  FROM EMP;
+
+ MAX(COMM)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+      1400                                                                                                                                                                                              
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT MIN(COMM)
+  2* FROM EMP
+SQL> /
+
+ MIN(COMM)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+         0                                                                                                                                                                                              
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT MIN(COMM)
+  2* FROM EMP
+SQL> /
+
+ MIN(COMM)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+         0                                                                                                                                                                                              
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT SUM(COMM)
+  2* FROM EMP
+SQL> /
+
+ SUM(COMM)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+      2200                                                                                                                                                                                              
+
+SQL> SELECT AVG(COMM0
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00907: missing right parenthesis 
+
+
+SQL> SELECT AVG(COMM)
+  2  FROM EMP;
+
+ AVG(COMM)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+       550                                                                                                                                                                                              
+
+SQL> SELECT COUNT(COMM)
+  2  FROM EMP;
+
+COUNT(COMM)                                                                                                                                                                                             
+-----------                                                                                                                                                                                             
+          4                                                                                                                                                                                             
+
+SQL> SELECT COUNT(*)
+  2  FROM EMP;
+
+  COUNT(*)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+        14                                                                                                                                                                                              
+
+SQL> SELECT COUNT(*,COMM)
+  2  FROM EMP;
+SELECT COUNT(*,COMM)
+              *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> SELECT ENAME, MAX(SAL)
+  2  FROM EMP;
+SELECT ENAME, MAX(SAL)
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function 
+
+
+SQL> SELECT EMP. MAX(SAL), ENAME
+  2  FROM EMP;
+SELECT EMP. MAX(SAL), ENAME
+       *
+ERROR at line 1:
+ORA-00904: "EMP"."MAX": invalid identifier 
+
+
+SQL> SELECT MAX(SAL) AND ENAME
+  2  FROM EMP;
+SELECT MAX(SAL) AND ENAME
+                *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT MAX(SAL) DISPLAY ENAME
+  2  FROM EMP;
+SELECT MAX(SAL) DISPLAY ENAME
+                        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT ENAME, SAL
+  2  FROM EMP
+  3  WHERE SAL = MAX(SAL);
+WHERE SAL = MAX(SAL)
+            *
+ERROR at line 3:
+ORA-00934: group function is not allowed here 
+
+
+SQL> SELECT ENAME, SAL
+  2  FROM EMP
+  3  WHERE (SAL = MAX(SAL));
+WHERE (SAL = MAX(SAL))
+           *
+ERROR at line 3:
+ORA-00934: group function is not allowed here 
+
+
+SQL> SELECT ENAME, SAL
+  2  FROM EMP
+  3  WHERE (SELECT MAX(SAL) FROM EMP;);
+WHERE (SELECT MAX(SAL) FROM EMP;)
+                               *
+ERROR at line 3:
+ORA-00936: missing expression 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL
+  2  FROM EMP
+  3* WHERE (SELECT MAX(SAL) FROM EMP)
+SQL> /
+WHERE (SELECT MAX(SAL) FROM EMP)
+                               *
+ERROR at line 3:
+ORA-00936: missing expression 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL
+  2  FROM EMP
+  3* WHERE SAL = (SELECT MAX(SAL) FROM EMP)
+SQL> /
+
+ENAME             SAL                                                                                                                                                                                   
+---------- ----------                                                                                                                                                                                   
+KING             5000                                                                                                                                                                                   
+
+SQL> spool off;

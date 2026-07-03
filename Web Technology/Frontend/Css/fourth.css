@@ -51,11 +51,13 @@ p {
 
 .borderDemo {
     border-width: 10px;
+
     border-style: dotted;
     border-style: double;
     border-style: dashed;
     border-style: groove;
     border-style: hidden;
+    
     border-color: red;
 
     border: 5px solid blue;

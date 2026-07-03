@@ -272,7 +272,35 @@ CSS
             5. transform: skew() = slants(tilts) an element along the X-axis, Y-axis, or both without rotating it.
         
     Animation
+        - A CSS animation is away to make webpage elements change smoothly from one style to another over time. Instead of a sudden jump, the browser automatically creates a smooth, moving transiton.
 
+        - To build an animation, you only need two pieces of code:
+            1. The @keyframes Rule: This is your script. It defines what the element looks like at specific points in time (e.g., at the start, middle, and end).
+            2. The animation Properties: This is your director. It tells a specific HTML element
+            which script to play, how long to run, and whether to loop.
+
+        ==> animation-name: is a CSS property used to choose which specific movement or visual change you want to apply to an HTML element.
+
+        ==> animation-duration: is the property that tells a web browser exactly how many seconds or milliseconds an animation should take to finish one full cycle.
+
+        ==> animation-delay: is a property that tells a web browser how long to wait before starting an animation.
+
+        ==> animation-timing-function: sets the spped curve of an animation, controlling how it accelerates and decelerates over its duration.
+
+        ==> animation-iteration-count: is a CSS property that tells an animation how many times to play or loop before it stops completely
+
+        ==> animation-direction: determines whether your animation plays forward, backward, or cycles back and forth.
+
+        The 4 main Values : normal, reverse, alternate, alternate reverse
+
+    - Media Query
+        - A media query is like an "IF Statement" for your website's design. It tells the browser: "If the screen is a certain size, Then change the way the website looks."
+        - It is the main tool developers use to make websites look good on phones, tablets, and desktops without making completely separate versions of the site.
+        
+        ==> min-width means "this size or larger" (greater than or equal to) and max-width means "up to this size" (less than or equal to)
+
+        ==> min-height and max-height in CSS media queries look at the vertical height of the browser window and decide when to apply your styles based on that size.
+        
                 
 
     

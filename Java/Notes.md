@@ -747,7 +747,14 @@ Control Statement
 
             * do these in reverse
 
-    1. Decision Making Statement
+        iv. Nested loop
+            - Writing a loop statement inside another loop statemnet is known as a nested loop statement
+            - In a nested loop, the inner loop is executed completely for each and every iteration of the outer loop.
+
+
+
+
+    2. Decision Making Statement
         - The decision statement helps the programmer to skip the block of instructions from the execution if the condition is not satisfied.
         - It is of 4 types
             - If
@@ -756,6 +763,7 @@ Control Statement
             - Switch
 
         i. if 
+            - it is used to execute one block of code/instruction by having one condition.
             - Syntax to create if statement:
                 if(condition) {
                     // statement
@@ -766,6 +774,7 @@ Control Statement
                 - WAP to check is the number even.
 
         ii. if-else
+            - it is used to execute single block of code from two different/opposite statements by checking the condition only single time.
             - Syntax to create if-else statement:
                 if(condition) {
                     // statement 1
@@ -778,10 +787,34 @@ Control Statement
             - ex: 
                 - WAP to check is the number even or odd.
 
+        iii. if-else-if
+            - where we have multiple statements with multiple conditions to be checked
+            - statement must be interconnected. 
+            - Syntax to create if-else-if statement:
+                if (condition){
+                    // statement 1
+                } else if (condition) {
+                    // statement 2
+                } else if (condition) {
+                    // statement 3
+                } 
+                ...
+                else {
+                    // statement n
+                }
+            - In this syntax, else is optional.
+            - execution workflow
+                - If the condition is satisfied then the instruction written inside the if block gets executed if not satisfied, the condition is checked in the else if block from top to bottom order and if the condition is satisfied in any of the else if block then, only that else if block is gets exevuted if not satisfied else block gets exevuted remaining blocks are skipped.
 
-
-            
-
+            - Print the month name based on month number.
+            - Print the day name based on day number.
+            - Print the number of days available in the month based on the month number.
+            - Check given character is uppercase character or lowercase character or digit character or special character
+            - Find out largest of two numbers
+            - If the character is in uppercase, convert it into lowercase and if the character is in lowercase, convert it into uppercase
+            - Check the digit is even or odd.
+        
+        
 
             
 

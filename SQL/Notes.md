@@ -430,7 +430,7 @@ Operators
     - WAQTD a string Mr Smith for all the employees
     - WAQTD a string hi i am smith.
 
-# EDIT OR ED -> ENTER (change as you like -> save the file) -> USE / THEN ENTER
+*EDIT OR ED -> ENTER (change as you like -> save the file) -> USE / THEN ENTER*
     
 3. Comparision Operators
 4. Relational Operaotrs
@@ -516,21 +516,27 @@ Operators
             SELECT * FROM EMP WHERE ENAME LIKE '_M%';
         - WAQTD HIREDATE if emp is hired in 81.
         - WAQTD HIREDATE if emp is hired in FEB.
+        - WAQTD name of emp which consist of %
+            // use of escape character - ESCAPE 'anyCharacter'
+            SELECT ENAME FROM EMP WHERE ENAME LIKE '%@%%' ESCAPE '@';
+
+            - Insert Syntax
+                INSERT INTO TABLE_NAME(COL_NAMES) VALUE(1001, 'NIBDA%_')
 
     - NOT LIKE
         - mainly used to exclude the pattern
 
-
-ASS 1
-    12
-    
-ASS 2
+-------------------------------------------------------------------------
+ASS 2 // skiped questions
     9. OUT OF SYLLABUS
     11.
     12.
     18.
     21. HOW CAN WE EXACTLY USED
     47.
+    56.
+    60.
+    65.
     90.
     97.
     127. STUDENT TABLE
@@ -538,11 +544,69 @@ ASS 2
     215.
     227.
     257.
-    -----------------------
+-------------------------------------------------------------------------
 
-    56. SOLVED BUT EASILY GET SOLVED
-    60.
-    65.
+Functions
+---------
+    - it is a block of code or a set of instruction used to perform a specific task
+    - functions are of two types
+        1. pre-defined function
+        2. user-defined functions
+
+    1. pre-defined function
+        - Single row function
+            - which accepts multiple input and gives multiple respective output.
+            - ex:
+                - length('harshal') // 7
+                - length('rule') // 4
+        - Multi row function / aggregrate function / group function
+            - which accepts multiple input in a single shot and gives a single output
+            - types
+                - MAX()
+                - MIN()
+                - AVG()
+                - SUM()
+                - COUNT() // it returns total no. of rows/values present in a column
+            - Chacterstics
+                - We can only pass single argument inside a multi row function.
+                - Multi row functions ignores all NULL values 
+                - We are not suppose to pass any col_name along with multi row function inside SELECT clause
+                - We cannot pass the multi row function inside the WHERE clause
+                - Count is the only function which accepts * as an argument to count the rows (always use * with count, by default)
+
+            - WAQTD max sal of emp;
+            - WAQTD min sal earned by a manager
+            - WAQTD avg sal earned by emp who are working as a salesman but earning more than 1000
+            - WAQTD total sal earned by emp who are not earning any comm
+            - WAQTD total no. of emp who are earning some comm
+            - WAQTD max sal of emp along with that display the name of emp who is earning max sal
+        
+        - Group by
+            - mainly used to group similar kind of records
+            - Syntax:
+                SELECT GROUP_FUNCTION / MULTI_ROW_FUNCTION / GROUP_BY_EXPRESSION
+                FROM TABLE_NAME
+                [WHERE <FILTER CONDITION>]
+                GROUP BY COL_NAME/EXPRESSION ;
+            - order of execution
+                1. FROM clause
+                2. WHERE (row by row)
+                3. GROUP BY (row by row)
+                4. SELECT
+            - Characterstics
+                - We can pass an expression/col_name with the group function 
+                - The col_name which is passed in GROUP BY function is known as the Group by expression when passed with group function
+                - The grouping is done by the combination of all the columns
+
+            - WAQTD total number of emp working in each dept
+                SELECT COUNT(*), DEPTNO FROM EMP GROUP BY DEPTNO;
+            - WAQTD total no. of emp in each job along with that display the name
+                SELECT COUNT(*), ENAME FROM EMP GROUP BY JOB, ENAME;
+                - Group by will group by the combination
+            - WAQTD total no. of emp present in each job if emp is earning more than 2000 but hired in 81
+            - WAQTD max sal earned by emp in each dept if emp is not earning any comm
             
+
+
 
 
