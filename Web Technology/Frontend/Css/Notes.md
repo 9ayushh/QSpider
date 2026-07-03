@@ -144,8 +144,29 @@ CSS
             - box-sizing: content-box;
 
     - Text & Font
+        - line-height
+        - letter-spacing
+        - word-spacing
+
+        - text-decoration-line
+        - text-decoration-thickness
+        - text-decoration-style
+        - text-decoration-color
+        - text-align
+        - text-transform
+        - text-shadow
+
+        - font-size
+        - font-weight
+        - font-style
+        - font-family
     
-    - Background
+    - Background Image 
+        - background-image: url();
+        - background-color
+        - background-repeat
+        - background-position
+        - background-size
 
     - CSS position
         - This position property in CSS defines how an HTML element is placed on a web page. It works alongside the offset coordinates (top, bottom, right, left) and z-index.
@@ -300,7 +321,7 @@ CSS
         ==> min-width means "this size or larger" (greater than or equal to) and max-width means "up to this size" (less than or equal to)
 
         ==> min-height and max-height in CSS media queries look at the vertical height of the browser window and decide when to apply your styles based on that size.
-        
+
                 
 
     
