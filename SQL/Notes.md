@@ -586,7 +586,7 @@ Functions
             - Syntax:
                 SELECT GROUP_FUNCTION / MULTI_ROW_FUNCTION / GROUP_BY_EXPRESSION
                 FROM TABLE_NAME
-                [WHERE <FILTER CONDITION>]
+                [WHERE <FILTER CONDITION>]   --> filter condition - COL_NAME OPERATOR VALUE
                 GROUP BY COL_NAME/EXPRESSION ;
             - order of execution
                 1. FROM clause
@@ -606,7 +606,91 @@ Functions
             - WAQTD total no. of emp present in each job if emp is earning more than 2000 but hired in 81
             - WAQTD max sal earned by emp in each dept if emp is not earning any comm
             
+        - Having
+            - Syntax:
+                SELECT GROUP FUNCTION / GROUP BY EXPRESSION
+                FROM TABLE_NAME
+                [WHERE <FILTER CONDITION>]
+                GROUP BY COL_NAME / EXPRESSION
+                HAVING <GROUP FILTER CONDITION>
 
+                // Group filter condition is nothing but condition on multi row function
+
+            - execution flow
+                1. FROM ...
+                2. WHERE (row by row)
+                3. GROUP BY (row by row)
+                4. HAVING (group by group)
+                5. SELECT (group by group)
+
+            - WAQTD total no. of emp working in each dept if each dept consist of more than 1 emp
+            - WAQTD max sal, min sal earned by emp in each job if total sal in each job must be greater than 3000
+
+        - Order by
+            - mainly used to arrange the data either in acending or decending order
+            - Syntax:
+                SELECT COL_NAME/EXPRESSION
+                FROM TABLE_NAME
+                [WHERE <FILTER CONDITION>]
+                [GROUP BY COL_NAME/EXP]
+                [HAVING <GFC>]
+                ORDER BY COL_NAME/EXPRESSION [ASC]/DESC
+            
+            - order of execution
+                1. FROM
+                2. WHERE
+                3. GROUP BY
+                4. HAVING
+                5. SELECT
+                6. ORDER BY
+            
+            - WAQTD details of an emp arrange the data in ascending order according to the sal
+            - WAQTD details of an emp arrange the data in desc according to the sal
+    
+Sub Query
+---------
+    - A query written inside an another query is known as subquery.
+    __________________
+    |    Outer Query  |
+    |                 |
+    |  ____Output___  |
+    |  |           |  |  ---------> Result
+    |  |   Inner   |  |
+    |  |   Query   |  |
+    |  |___________|  |
+    |_________________|
+
+    result <--- Outer Query <--- Inner query
+
+    CASE 1
+        - Whenever an unknown is present in a question, to find out this unknown we use subquery CASE 1 concept
+        - Order of execution
+            1. (FROM -> Subquery
+            2. WHERE -> subquery
+            3. SELECT -> subquery)
+            4. FROM -> outerquery
+            5. WHERE -> outerquery
+            6. SELECT -> outerquery
+
+        - WAQTD name of emp who are earning more than 2000 // general question
+        - WAQTD name of emp who are earning more than Scott.
+            SELECT ENAME
+            FROM EMP
+            WHERE (SAL > (SELECT SAL FROM EMP WHERE ENAME='SCOTT'));
+        - WAQTD name of emp who are working in a same job as Allen
+        - WAQTD details of an emp who are working in a same dept as smith
+        - WAQTD details of an emp if emp is hire before blake
+
+    CASE 2
+        - Whenever data to be displayed it's present in one table and condition to be applied is present in another table, then we use subquery CASE 2 concept
+        - order of execution
+            - same as case 1
+
+        - WAQTD name of emp if emp is working in sales dept
+        - WAQTD department name and location of Johns ...
+        - WAQTD name of emp if emp is working in new york
+
+            
 
 
 

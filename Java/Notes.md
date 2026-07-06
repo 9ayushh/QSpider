@@ -752,8 +752,6 @@ Control Statement
             - In a nested loop, the inner loop is executed completely for each and every iteration of the outer loop.
 
 
-
-
     2. Decision Making Statement
         - The decision statement helps the programmer to skip the block of instructions from the execution if the condition is not satisfied.
         - It is of 4 types

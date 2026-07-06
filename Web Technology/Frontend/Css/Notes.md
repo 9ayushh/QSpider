@@ -172,7 +172,7 @@ CSS
         - This position property in CSS defines how an HTML element is placed on a web page. It works alongside the offset coordinates (top, bottom, right, left) and z-index.
 
         position: static(default);
-                 relative
+                  relative
                   absolute
                   fixed
                   sticky
