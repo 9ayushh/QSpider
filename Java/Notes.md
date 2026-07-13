@@ -750,6 +750,26 @@ Control Statement
         iv. Nested loop
             - Writing a loop statement inside another loop statemnet is known as a nested loop statement
             - In a nested loop, the inner loop is executed completely for each and every iteration of the outer loop.
+            
+            program...
+            1.
+            101010
+            101010
+            101010
+            101010
+            
+            2.
+            111111
+            000000
+            111111
+            000000
+
+            3.
+            ###########
+            &&&&&&&&&&&
+            ###########
+            &&&&&&&&&&&
+            ###########
 
 
     2. Decision Making Statement
@@ -804,6 +824,7 @@ Control Statement
             - execution workflow
                 - If the condition is satisfied then the instruction written inside the if block gets executed if not satisfied, the condition is checked in the else if block from top to bottom order and if the condition is satisfied in any of the else if block then, only that else if block is gets exevuted if not satisfied else block gets exevuted remaining blocks are skipped.
 
+            Questions
             - Print the month name based on month number.
             - Print the day name based on day number.
             - Print the number of days available in the month based on the month number.
@@ -812,9 +833,158 @@ Control Statement
             - If the character is in uppercase, convert it into lowercase and if the character is in lowercase, convert it into uppercase
             - Check the digit is even or odd.
         
+        iv. switch statement:
+            - Syntax:
+                switch(val / var / expression)
+                {
+                case value / constant expression:
+                {
+                    // statement
+                }
+                [break;]
+                case value / constant expression:
+                {
+                    // statement
+                [break;]
+                }
+                ...
+                [default:
+                {
+                    // default statement
+                }]
+                }
+
+            - Why we use Switch?
+                - High performance
+                - Grouping
+
+            Ques 1: Write a java program to print the month name based on the month number
+            Ques 2: Write a java program to print number of days availabe in the month based on the month number 
+            Ques 3: Write a java program to check if the given character is vowel or consonent 
+
+Method:
+-------
+    - It is a block of statement which is going to get execute if you are going to call it.
+
+    - Characteristics / Rules to work with method 
+        - Method should be defined inside the class
+        - We can define more than one method inside the class 
+        - We can't define a method inside a method
+        - But we can call a method from another method 
+    
+    - Syntax of defining the method:
+        [access modifier] [modifier] return_type methodName ( [formal argument])  //method declaration
+        {  //method signature
+            //instructions
+        }  //method definition is whole structure
+
+        In this above syntax access modifier, modifier and formal argument are optional 
+
+    - Method call statement: It is used to call a method 
+        Syntax:
+            Method Name ([actual argument]);
+        - In this syntax actual argument is optional 
+        - The syntax will be varied based on the method structure
+
+    1. Method signature:
+        - Method name
+        - Method argument
+
+    2. Method declaration:
+        - Access modifier
+        - modifier
+        - return type
+        - method signature
+
+    3. Method definition:
+        - method declaration
+        - methodbody / implementation / block 
+
+    - Types of Methods: There are many more types of methods 
+        - Based on the number of arguments, methods are classsified into 2 types:
+            1. No- argument method
+                - A method which does not have formal argument is known as no - argument method
+                - ex: 
+                    public static void demo()
+                    {
+                        System.out.println("demo() no argument method");
+                    }
+
+            2. Parameterized method
+                - The method which has formal argument is known as parameterized method. These are used to accept the data 
+                - ex: public static void demo(int a)
+                    {
+                        System.out.println("demo(int a) parameterized method");
+                    }
+
+                - Rules to call parameterized method:
+                    1. The number of actual argument should be same as the number of formal argument
+                    2. The type of corresponding actual argument should be same as the type of formal argument, if not compiler tries to convert implicit conversion if it is not possible then we will get compile time error.
+                    3. The sequesnce of actual argument should be same as the sequesnce of formal argument.
         
+            - actual argument --> arguments send in call method
+                - The values passed in the method call statement is known as Actual Argument.
+            - formal argument --> arguments send int the method
+                - A variable which is declared in a method Declaration is known as Formal Argument.
 
+            - Why Parameterized method is used instead of Non-parameterized method
+                - because it accepts the input and give the output based on the given input
+                - whereas non-parameterized is used for getting the fixed output
             
+    - Method call Statement flow:
+        - Execution of claling method is paused
+        - Control is transferred to the called method.
+        - Execution of called method begins.
+        - Once the execution of the called method is completed the control is transferred back to the calling method.
+        - Execution of calling method resumes.
+    
+    - Calling Method:
+        - The method which is trying to call another method is known as the calling method (caller).
+    - Called Method:
+        - The method which is being called by the caller is known as a called method.
 
-            
+Modifier & Access Modifier
+--------------------------
+    - Modifiers
+        - It is used to change the characterstics of java components
+        - ex:
+            strictfp
+            final
+            static 
+            abstract
+            public
+            private
+            protected
+            transient
+            volatile 
+            ... etc
 
+    - Access Modifier (Access Specifier -> in C/C++)
+        - It is used to change/modify the accessibility of java components
+
+        - We have 4 types of Access Modifiers
+            1. private
+                - It is a class level Modifier, it is responsible for variables, methods and constructors.
+                - If the member of a class is prefixed with a private modifier then it is accessible only within the class; accessing outside the class is not possible.
+
+            2. default
+                - The accessibility of default Modifiers is only within the package. It can't be accessed from outside the package.
+                - If you don't declare any access Modifiers then it is considered as a default access modifier.
+
+            3. protected
+                - The access level of a protected modifier is within the package and outside the package through child class.
+                - If you don't make the child class, it cannot be accessed from outside the package.
+
+            4. public
+                - The access level of the public modifier is everywhere.
+                - It can be accessed from within the class, outside the class, within the package as well as outside the package.
+
+        - Scope of Access Modifiers
+            Access Modifiers | Within the class | Within the package | Outside the package | Outside the package by child class
+            private          | Yes              | No                 | No                  | No
+            default          | Yes              | Yes                | No                  | No
+            protected        | Yes              | Yes                | No                  | Yes
+            public           | Yes              | Yes                | Yes                 | Yes
+
+        - The Scope of the access Modifiers based on the accessibility is:
+            private < default < protected < public 

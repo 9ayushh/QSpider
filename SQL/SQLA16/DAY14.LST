@@ -1,0 +1,764 @@
+SQL> CREATE TABLE STUDENT
+  2  (
+  3  SID NUMBER(4)
+  4  CHECK(SID > 0)
+  5  CHECK(LENGTH(SID) = 4)
+  6  NOT NULL UNIQUE
+  7  ,
+  8  SNAME VARCHAR(20) NOT NULLL,
+  9  DOB DATE,
+ 10  PHONE_NO NUMBER(10) CHECK(PHONE_NO > 0) CHECK(LENGTH(PHONE_NO) = 10)
+ 11  ;
+SNAME VARCHAR(20) NOT NULLL,
+                      *
+ERROR at line 8:
+ORA-00905: missing keyword 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  CREATE TABLE STUDENT
+  2  (
+  3  SID NUMBER(4) CHECK(SID > 0) CHECK(LENGTH(SID) = 4) PRIMARY KEY,
+  4  SNAME VARCHAR(20) NOT NULL,
+  5  DOB DATE,
+  6  PHONE_NO NUMBER(10) CHECK(PHONE_NO > 0) CHECK(LENGTH(PHONE_NO) = 10)
+  7* )
+SQL> /
+
+Table created.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                                                                       
+------------------------------ ------- ----------                                                                                                                                                       
+DEPT                           TABLE                                                                                                                                                                    
+EMP                            TABLE                                                                                                                                                                    
+BONUS                          TABLE                                                                                                                                                                    
+SALGRADE                       TABLE                                                                                                                                                                    
+STUDENT                        TABLE                                                                                                                                                                    
+
+SQL> DESC STUDENT
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                               NOT NULL NUMBER(4)
+ SNAME                                                                                                             NOT NULL VARCHAR2(20)
+ DOB                                                                                                                        DATE
+ PHONE_NO                                                                                                                   NUMBER(10)
+
+SQL> CREATE TABLE TRAINER
+  2  (
+  3  ;
+
+*
+ERROR at line 3:
+ORA-00904: : invalid identifier 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  CREATE TABLE TRAINER
+  2  (
+  3  TID NUMBER(4) CHECK(TID > 0) CHECK(LENGTH(TID) = 4) PRIMARY KEY,
+  4  TNAME VARCHAR(30) NOT NULL,
+  5  COURSE VARCHAR(40)
+  6* )
+  7  /
+
+Table created.
+
+SQL> DESC TRAINER;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ TID                                                                                                               NOT NULL NUMBER(4)
+ TNAME                                                                                                             NOT NULL VARCHAR2(30)
+ COURSE                                                                                                                     VARCHAR2(40)
+
+SQL> RENAME TABLE STUDENT TO STUD;
+RENAME TABLE STUDENT TO STUD
+       *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1* RENAME STUDENT TO STUD
+SQL> /
+
+Table renamed.
+
+SQL> DESC STUD;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                               NOT NULL NUMBER(4)
+ SNAME                                                                                                             NOT NULL VARCHAR2(20)
+ DOB                                                                                                                        DATE
+ PHONE_NO                                                                                                                   NUMBER(10)
+
+SQL> ALTER TABLE STUDENT
+  2  ADD EMAIL VARCHAR(30) UNIQUE;
+ALTER TABLE STUDENT
+*
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  ALTER TABLE STUD
+  2* ADD EMAIL VARCHAR(30) UNIQUE
+SQL> /
+
+Table altered.
+
+SQL> DESC STUD;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                               NOT NULL NUMBER(4)
+ SNAME                                                                                                             NOT NULL VARCHAR2(20)
+ DOB                                                                                                                        DATE
+ PHONE_NO                                                                                                                   NUMBER(10)
+ EMAIL                                                                                                                      VARCHAR2(30)
+
+SQL> ALTER TABLE STUD
+  2  RENAME COLUMN EMAIL TO MAIL_ID;
+
+Table altered.
+
+SQL> ALTER TABLE STUD
+  2  DROP COLUMN MAIL_ID;
+
+Table altered.
+
+SQL> DESC STUD;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                               NOT NULL NUMBER(4)
+ SNAME                                                                                                             NOT NULL VARCHAR2(20)
+ DOB                                                                                                                        DATE
+ PHONE_NO                                                                                                                   NUMBER(10)
+
+SQL> ALTER TABLE STUD
+  2  MODIFY COLUMN SNAME
+  3  ;
+
+*
+ERROR at line 3:
+ORA-00905: missing keyword 
+
+
+SQL> ALTER TABLE STUD
+  2  MODIFY SNAME VARCHAR(30);
+
+Table altered.
+
+SQL> DESC STUD;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                               NOT NULL NUMBER(4)
+ SNAME                                                                                                             NOT NULL VARCHAR2(30)
+ DOB                                                                                                                        DATE
+ PHONE_NO                                                                                                                   NUMBER(10)
+
+SQL> ALTER TABLE STUD
+  2  MODIFY SNAME NULL TO NOT NULL;
+MODIFY SNAME NULL TO NOT NULL
+                  *
+ERROR at line 2:
+ORA-01735: invalid ALTER TABLE option 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  ALTER TABLE STUD
+  2* MODIFY SNAME VARCHAR(30) NOT NULL
+SQL> /
+MODIFY SNAME VARCHAR(30) NOT NULL
+       *
+ERROR at line 2:
+ORA-01442: column to be modified to NOT NULL is already NOT NULL 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  ALTER TABLE STUD
+  2* MODIFY SNAME VARCHAR(30) NULL
+SQL> /
+
+Table altered.
+
+SQL> DESC  STUD;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                               NOT NULL NUMBER(4)
+ SNAME                                                                                                                      VARCHAR2(30)
+ DOB                                                                                                                        DATE
+ PHONE_NO                                                                                                                   NUMBER(10)
+
+SQL> ALTER TABLE STUD
+  2  ADD CONSTRAINT UNIQUE(PHONE_NO);
+ADD CONSTRAINT UNIQUE(PHONE_NO)
+                      *
+ERROR at line 2:
+ORA-01735: invalid ALTER TABLE option 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  ALTER TABLE STUD
+  2* ADD CONSTRAINT UK_PHONE_NO UNIQUE(PHONE_NO)
+SQL> /
+
+Table altered.
+
+SQL> DESC STUD;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                               NOT NULL NUMBER(4)
+ SNAME                                                                                                                      VARCHAR2(30)
+ DOB                                                                                                                        DATE
+ PHONE_NO                                                                                                                   NUMBER(10)
+
+SQL> SELECT *
+  2  FROM USER_CONSTRAINTS;
+
+OWNER                          CONSTRAINT_NAME                C TABLE_NAME                     SEARCH_CONDITION                                                                                         
+------------------------------ ------------------------------ - ------------------------------ --------------------------------------------------------------------------------                         
+R_OWNER                        R_CONSTRAINT_NAME              DELETE_RU STATUS   DEFERRABLE     DEFERRED  VALIDATED     GENERATED      BAD RELY LAST_CHAN INDEX_OWNER                                   
+------------------------------ ------------------------------ --------- -------- -------------- --------- ------------- -------------- --- ---- --------- ------------------------------                
+INDEX_NAME                     INVALID VIEW_RELATED                                                                                                                                                     
+------------------------------ ------- --------------                                                                                                                                                   
+SCOTT                          SYS_C005460                    C STUD                           SID > 0                                                                                                  
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                               
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+SCOTT                          SYS_C005461                    C STUD                           LENGTH(SID) = 4                                                                                          
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                               
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+SCOTT                          SYS_C005462                    C STUD                           PHONE_NO > 0                                                                                             
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                               
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+SCOTT                          SYS_C005463                    C STUD                           LENGTH(PHONE_NO) = 10                                                                                    
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                               
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+SCOTT                          SYS_C005465                    C TRAINER                        "TNAME" IS NOT NULL                                                                                      
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                               
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+SCOTT                          SYS_C005466                    C TRAINER                        TID > 0                                                                                                  
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                               
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+SCOTT                          SYS_C005467                    C TRAINER                        LENGTH(TID) = 4                                                                                          
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                               
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+SCOTT                          FK_DEPTNO                      R EMP                                                                                                                                     
+SCOTT                          PK_DEPT                        NO ACTION ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     USER NAME               30-AUG-05                                               
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+SCOTT                          PK_DEPT                        P DEPT                                                                                                                                    
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     USER NAME               30-AUG-05 SCOTT                                         
+PK_DEPT                                                                                                                                                                                                 
+                                                                                                                                                                                                        
+SCOTT                          PK_EMP                         P EMP                                                                                                                                     
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     USER NAME               30-AUG-05 SCOTT                                         
+PK_EMP                                                                                                                                                                                                  
+                                                                                                                                                                                                        
+SCOTT                          UK_PHONE_NO                    U STUD                                                                                                                                    
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     USER NAME               11-JUL-26 SCOTT                                         
+UK_PHONE_NO                                                                                                                                                                                             
+                                                                                                                                                                                                        
+SCOTT                          SYS_C005464                    P STUD                                                                                                                                    
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26 SCOTT                                         
+SYS_C005464                                                                                                                                                                                             
+                                                                                                                                                                                                        
+SCOTT                          SYS_C005468                    P TRAINER                                                                                                                                 
+                                                                        ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26 SCOTT                                         
+SYS_C005468                                                                                                                                                                                             
+                                                                                                                                                                                                        
+
+13 rows selected.
+
+SQL> SET PAGES 500 LINES 500
+SQL> SELECT * FROM USER_CONSTRAINTS;
+
+OWNER                          CONSTRAINT_NAME                C TABLE_NAME                     SEARCH_CONDITION                                                                 R_OWNER                        R_CONSTRAINT_NAME              DELETE_RU STATUS   DEFERRABLE     DEFERRED  VALIDATED     GENERATED      BAD RELY LAST_CHAN INDEX_OWNER                    INDEX_NAME                     INVALID VIEW_RELATED                                                                                        
+------------------------------ ------------------------------ - ------------------------------ -------------------------------------------------------------------------------- ------------------------------ ------------------------------ --------- -------- -------------- --------- ------------- -------------- --- ---- --------- ------------------------------ ------------------------------ ------- --------------                                                                                      
+SCOTT                          SYS_C005460                    C STUD                           SID > 0                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                                                                                                                                                           
+SCOTT                          SYS_C005461                    C STUD                           LENGTH(SID) = 4                                                                                                                                          ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                                                                                                                                                           
+SCOTT                          SYS_C005462                    C STUD                           PHONE_NO > 0                                                                                                                                             ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                                                                                                                                                           
+SCOTT                          SYS_C005463                    C STUD                           LENGTH(PHONE_NO) = 10                                                                                                                                    ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                                                                                                                                                           
+SCOTT                          SYS_C005465                    C TRAINER                        "TNAME" IS NOT NULL                                                                                                                                      ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                                                                                                                                                           
+SCOTT                          SYS_C005466                    C TRAINER                        TID > 0                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                                                                                                                                                           
+SCOTT                          SYS_C005467                    C TRAINER                        LENGTH(TID) = 4                                                                                                                                          ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26                                                                                                                                                                           
+SCOTT                          FK_DEPTNO                      R EMP                                                                                                             SCOTT                          PK_DEPT                        NO ACTION ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     USER NAME               30-AUG-05                                                                                                                                                                           
+SCOTT                          PK_DEPT                        P DEPT                                                                                                                                                                                    ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     USER NAME               30-AUG-05 SCOTT                          PK_DEPT                                                                                                                                    
+SCOTT                          PK_EMP                         P EMP                                                                                                                                                                                     ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     USER NAME               30-AUG-05 SCOTT                          PK_EMP                                                                                                                                     
+SCOTT                          UK_PHONE_NO                    U STUD                                                                                                                                                                                    ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     USER NAME               11-JUL-26 SCOTT                          UK_PHONE_NO                                                                                                                                
+SCOTT                          SYS_C005464                    P STUD                                                                                                                                                                                    ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26 SCOTT                          SYS_C005464                                                                                                                                
+SCOTT                          SYS_C005468                    P TRAINER                                                                                                                                                                                 ENABLED  NOT DEFERRABLE IMMEDIATE VALIDATED     GENERATED NAME          11-JUL-26 SCOTT                          SYS_C005468                                                                                                                                
+
+13 rows selected.
+
+SQL> ALTER TABLE STUD
+  2  DROP CONSTRAINT UK_PHONE_NO;
+
+Table altered.
+
+SQL> DESC TRAINER;
+ Name                                                                                                                                                                                                                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ TID                                                                                                                                                                                                                                                                                                   NOT NULL NUMBER(4)
+ TNAME                                                                                                                                                                                                                                                                                                 NOT NULL VARCHAR2(30)
+ COURSE                                                                                                                                                                                                                                                                                                         VARCHAR2(40)
+
+SQL> ALTER TABLE TRAINER
+  2  ADD SID NUMBER(4);
+
+Table altered.
+
+SQL> DESC TRAINER;
+ Name                                                                                                                                                                                                                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ TID                                                                                                                                                                                                                                                                                                   NOT NULL NUMBER(4)
+ TNAME                                                                                                                                                                                                                                                                                                 NOT NULL VARCHAR2(30)
+ COURSE                                                                                                                                                                                                                                                                                                         VARCHAR2(40)
+ SID                                                                                                                                                                                                                                                                                                            NUMBER(4)
+
+SQL> DESC STUD;
+ Name                                                                                                                                                                                                                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ SID                                                                                                                                                                                                                                                                                                   NOT NULL NUMBER(4)
+ SNAME                                                                                                                                                                                                                                                                                                          VARCHAR2(30)
+ DOB                                                                                                                                                                                                                                                                                                            DATE
+ PHONE_NO                                                                                                                                                                                                                                                                                                       NUMBER(10)
+
+SQL> ALTER TABLE TRAINER
+  2  ADD CONSTRAINT FK_SID_STUD FOREIGN KEY(SID)
+  3  REFERENCES STUD(SID);
+
+Table altered.
+
+SQL> DESC TRAINER;
+ Name                                                                                                                                                                                                                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ TID                                                                                                                                                                                                                                                                                                   NOT NULL NUMBER(4)
+ TNAME                                                                                                                                                                                                                                                                                                 NOT NULL VARCHAR2(30)
+ COURSE                                                                                                                                                                                                                                                                                                         VARCHAR2(40)
+ SID                                                                                                                                                                                                                                                                                                            NUMBER(4)
+
+SQL> SET PAGES 200 LINES 200;
+SQL> DESC TRAINER;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ TID                                                                                                               NOT NULL NUMBER(4)
+ TNAME                                                                                                             NOT NULL VARCHAR2(30)
+ COURSE                                                                                                                     VARCHAR2(40)
+ SID                                                                                                                        NUMBER(4)
+
+SQL> CREATE TABLE PHONE
+  2  (
+  3  PID NUMBER(4) PRIMARY KEY,
+  4  SID NUMBER(4),
+  5  CONSTRAINT FK_SID_PHONE FOREIGN KEY(SID) REFERENCES STUD(SID);
+CONSTRAINT FK_SID_PHONE FOREIGN KEY(SID) REFERENCES STUD(SID)
+                                                            *
+ERROR at line 5:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  CREATE TABLE PHONE
+  2  (
+  3  PID NUMBER(4),
+  4  SID NUMBER(4),
+  5  CONSTRAINT FK_SID_PHONE FOREIGN KEY(SID) REFERENCES STUD(SID),
+  6* CONSTRAINT PK_PID PRIMARY KEY(PID)
+SQL> /
+CONSTRAINT PK_PID PRIMARY KEY(PID)
+                                 *
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  CREATE TABLE PHONE
+  2  (
+  3  PID NUMBER(4),
+  4  SID NUMBER(4),
+  5  CONSTRAINT FK_SID_PHONE FOREIGN KEY(SID) REFERENCES STUD(SID),
+  6* CONSTRAINT PK_PID PRIMARY KEY(PID)
+SQL> /
+CONSTRAINT PK_PID PRIMARY KEY(PID)
+                                 *
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  CREATE TABLE PHONE
+  2  (
+  3  PID NUMBER(4),
+  4  SID NUMBER(4),
+  5  CONSTRAINT FK_SID_PHONE FOREIGN KEY(SID) REFERENCES STUD(SID),
+  6  CONSTRAINT PK_PID PRIMARY KEY(PID)
+  7* )
+SQL> /
+
+Table created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  CREATE TABLE LAPTOP
+  2  (
+  3  LID NUMBER(4),
+  4  SID NUMBER(4),
+  5  FOREIGN KEY(SID) REFERENCES STUD(SID)
+  6* )
+SQL> /
+
+Table created.
+
+SQL> desc laptop;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ LID                                                                                                                        NUMBER(4)
+ SID                                                                                                                        NUMBER(4)
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                                                                       
+------------------------------ ------- ----------                                                                                                                                                       
+DEPT                           TABLE                                                                                                                                                                    
+EMP                            TABLE                                                                                                                                                                    
+BONUS                          TABLE                                                                                                                                                                    
+SALGRADE                       TABLE                                                                                                                                                                    
+PHONE                          TABLE                                                                                                                                                                    
+TRAINER                        TABLE                                                                                                                                                                    
+STUD                           TABLE                                                                                                                                                                    
+LAPTOP                         TABLE                                                                                                                                                                    
+
+8 rows selected.
+
+SQL> CREATE TABLE XYZ();
+CREATE TABLE XYZ()
+                 *
+ERROR at line 1:
+ORA-00904: : invalid identifier 
+
+
+SQL> DROP TABLE STUD;
+DROP TABLE STUD
+           *
+ERROR at line 1:
+ORA-02449: unique/primary keys in table referenced by foreign keys 
+
+
+SQL> DROP TABLE LAPTOP PURGE;
+
+Table dropped.
+
+SQL> DROP TABLE PHONE;
+
+Table dropped.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                                                                       
+------------------------------ ------- ----------                                                                                                                                                       
+DEPT                           TABLE                                                                                                                                                                    
+EMP                            TABLE                                                                                                                                                                    
+BONUS                          TABLE                                                                                                                                                                    
+SALGRADE                       TABLE                                                                                                                                                                    
+TRAINER                        TABLE                                                                                                                                                                    
+STUD                           TABLE                                                                                                                                                                    
+BIN$dyjcDBFpQwiS5pGiPfqWuw==$0 TABLE                                                                                                                                                                    
+
+7 rows selected.
+
+SQL> FLASHBACK TABLE BIN$dyjcDBFpQwiS5pGiPfqWuw==$0 TO BEFORE DROP;
+FLASHBACK TABLE BIN$dyjcDBFpQwiS5pGiPfqWuw==$0 TO BEFORE DROP
+                                           *
+ERROR at line 1:
+ORA-00905: missing keyword 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1* FLASHBACK TABLE "BIN$dyjcDBFpQwiS5pGiPfqWuw==$0" TO BEFORE DROP
+SQL> /
+
+Flashback complete.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                                                                       
+------------------------------ ------- ----------                                                                                                                                                       
+DEPT                           TABLE                                                                                                                                                                    
+EMP                            TABLE                                                                                                                                                                    
+BONUS                          TABLE                                                                                                                                                                    
+SALGRADE                       TABLE                                                                                                                                                                    
+PHONE                          TABLE                                                                                                                                                                    
+TRAINER                        TABLE                                                                                                                                                                    
+STUD                           TABLE                                                                                                                                                                    
+
+7 rows selected.
+
+SQL> INSERT INTO STUD VALUE {
+  2  ;
+INSERT INTO STUD VALUE {
+                       *
+ERROR at line 1:
+ORA-00911: invalid character 
+
+
+SQL> INSERT INTO STUD VALUES (1001, 'NIBDA', '14-FEB-2001', 9876543109);
+
+1 row created.
+
+SQL> SELECT * FROM STUD;
+
+       SID SNAME                          DOB         PHONE_NO                                                                                                                                          
+---------- ------------------------------ --------- ----------                                                                                                                                          
+      1001 NIBDA                          14-FEB-01 9876543109                                                                                                                                          
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1* SELECT * FROM STUD
+SQL> INSERT INTO STUD VALUES(1002)
+  2  ;
+INSERT INTO STUD VALUES(1002)
+            *
+ERROR at line 1:
+ORA-00947: not enough values 
+
+
+SQL> INSERT INTO STUD(SID, SNAME) VALUES ( 1002, 'THIS GIRL');
+
+1 row created.
+
+SQL> SELECT * FROM STUD;
+
+       SID SNAME                          DOB         PHONE_NO                                                                                                                                          
+---------- ------------------------------ --------- ----------                                                                                                                                          
+      1001 NIBDA                          14-FEB-01 9876543109                                                                                                                                          
+      1002 THIS GIRL                                                                                                                                                                                    
+
+SQL> INSERT INTO STUD VALUES(1003, THAT GIRL, NULL, NULL);
+INSERT INTO STUD VALUES(1003, THAT GIRL, NULL, NULL)
+                                   *
+ERROR at line 1:
+ORA-00917: missing comma 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1* INSERT INTO STUD VALUES(1003, 'THAT GIRL', NULL, NULL)
+SQL> /
+
+1 row created.
+
+SQL> SELECT * FROM STUD;
+
+       SID SNAME                          DOB         PHONE_NO                                                                                                                                          
+---------- ------------------------------ --------- ----------                                                                                                                                          
+      1001 NIBDA                          14-FEB-01 9876543109                                                                                                                                          
+      1002 THIS GIRL                                                                                                                                                                                    
+      1003 THAT GIRL                                                                                                                                                                                    
+
+SQL> UPDATE STUD
+  2  SET SNAME = 'SOME GIRL'
+  3  WHERE SID = 1001;
+
+1 row updated.
+
+SQL> SELECT * FROM STUD;
+
+       SID SNAME                          DOB         PHONE_NO                                                                                                                                          
+---------- ------------------------------ --------- ----------                                                                                                                                          
+      1001 SOME GIRL                      14-FEB-01 9876543109                                                                                                                                          
+      1002 THIS GIRL                                                                                                                                                                                    
+      1003 THAT GIRL                                                                                                                                                                                    
+
+SQL> UPDATE STUD
+  2  SET SNAME = 'HELLO';
+
+3 rows updated.
+
+SQL> SELECT * FROM STUD;
+
+       SID SNAME                          DOB         PHONE_NO                                                                                                                                          
+---------- ------------------------------ --------- ----------                                                                                                                                          
+      1001 HELLO                          14-FEB-01 9876543109                                                                                                                                          
+      1002 HELLO                                                                                                                                                                                        
+      1003 HELLO                                                                                                                                                                                        
+
+SQL> UPDATE STUD
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00971: missing SET keyword 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  UPDATE STUD
+  2* SET SNAME = 'ISHA';
+  3  /
+SET SNAME = 'ISHA';
+                  *
+ERROR at line 2:
+ORA-00911: invalid character 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  UPDATE STUD
+  2* SET SNAME = 'ISHA'
+SQL> /
+
+3 rows updated.
+
+SQL> DELETE FROM STUD
+  2  WHERE SID = 1001;
+
+1 row deleted.
+
+SQL> SELECT * FROM STUD;
+
+       SID SNAME                          DOB         PHONE_NO                                                                                                                                          
+---------- ------------------------------ --------- ----------                                                                                                                                          
+      1002 ISHA                                                                                                                                                                                         
+      1003 ISHA                                                                                                                                                                                         
+
+SQL> UPDATE STUD
+  2  SET SNAME = 'THIS GIRL'
+  3  WHERE SID=1002;
+
+1 row updated.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  UPDATE STUD
+  2  SET SNAME = 'THIS GIRL'
+  3* WHERE SID=1002
+SQL> /
+
+1 row updated.
+
+SQL> SELECT * FROM STUD;
+
+       SID SNAME                          DOB         PHONE_NO                                                                                                                                          
+---------- ------------------------------ --------- ----------                                                                                                                                          
+      1002 THIS GIRL                                                                                                                                                                                    
+      1003 ISHA                                                                                                                                                                                         
+
+SQL> UPDATE STUD
+  2  SET DOB = '04-07-1956'
+  3  WHERE SID = 1003;
+SET DOB = '04-07-1956'
+          *
+ERROR at line 2:
+ORA-01843: not a valid month 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  UPDATE STUD
+  2  SET DOB = '04-07-1956'
+  3* WHERE SID = 1003
+SQL> ED
+Wrote file afiedt.buf
+
+  1  UPDATE STUD
+  2  SET DOB = '04-JUL-1956'
+  3* WHERE SID = 1003
+SQL> /
+
+1 row updated.
+
+SQL> GRANT SELECT
+  2  ON STUD
+  3  TO HR;
+
+Grant succeeded.
+
+SQL> CONN HR
+Connected.
+SQL> SELECT * FROM STUD;
+SELECT * FROM STUD
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> SHOW USER
+USER is "HR"
+SQL> SELECT * FROM STUD;
+SELECT * FROM STUD
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> DESC STUD;
+ERROR:
+ORA-04043: object STUD does not exist 
+
+
+SQL> SELECT *
+  2  FROM SCOTT.STUD;
+
+       SID SNAME                          DOB         PHONE_NO                                                                                                                                          
+---------- ------------------------------ --------- ----------                                                                                                                                          
+      1002 THIS GIRL                                                                                                                                                                                    
+      1003 ISHA                           04-JUL-56                                                                                                                                                     
+
+SQL> CONN SCOTT;
+Connected.
+SQL> REVOKE SELECT
+  2  ON STUD
+  3  FROM HR;
+
+Revoke succeeded.
+
+SQL> CONN HR/SUNNY;
+Connected.
+SQL> SELECT *
+  2  FROM SCOTT.STUD;
+FROM SCOTT.STUD
+           *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> CONN SCOTT/SUNNY;
+Connected.
+SQL> SPOOL OFF;

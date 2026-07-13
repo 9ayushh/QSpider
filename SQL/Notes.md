@@ -217,7 +217,9 @@ Statements
             - DROP
                 |__ Recycle Bin    
                     |__ PURGE TABLE TABLE_NAME; -> To permanently delete the table
+                                        \_ TABLE_NAME -> should be the bin address in "__"
                     |__ FLASHBACK TABLE TABLE_NAME TO BEFORE DROP; -> To restore the table
+                                        \_ TABLE_NAME -> should be the bin address in "__"
             - DDL Statement
             - Syntax: DROP TABLE TABLE_NAME;
             - Syntax: DROP TABLE TABLE_NAME PURGE; -> To permanently delete
@@ -690,7 +692,253 @@ Sub Query
         - WAQTD department name and location of Johns ...
         - WAQTD name of emp if emp is working in new york
 
+Types of Sub Query
+------------------
+    1. Single Row SubQuery
+    2. Multi Row SubQuery
+
+SubQuery Operators
+------------------
+
+Nested SubQuery
+---------------
+
+Employee Manger RealtionShip
+----------------------------
+
+    - WAQTD details of an emp if an emp is earning more than scott's manager and earning less than blake's manager
+
+Pseudo Columns
+--------------
+    - Pseudo columns are the false columns which are present in the backend of a table but not visible to you.
+    - There are two types of pseudo coloums which are present in sql
+        1. ROWID
+        2. ROWNUM
+
+    1. ROWID
+        - ROWID is 18 char unique id generated for each record which is present in a table.
+        - Characterstics of ROWID
+            - unique in nature
+            - it is of 18 characters
+            - it is generated while inserting a record into a table
+            - it is static in nature
+        - Accessing
+            SELECT ROWID
+            FROM EMP;
+        
+    2. ROWNUM
+        - ROWNUM is a serial number provided to each record while fetching the data from a table.
+        - Characterstics of ROWNUM
+            - it always starts with 1.
+            - it is dynamic in nature
+
+        - Accessing
+            SELECT ROWNUM
+            FROM EMP;
+
+        - WAQTD serial no. for emp data if emp are hired in 81
+        - WAQTD details of first 5 emp record 
+        - WAQTD details of the 5th emp record
+            SELECT *
+            FROM (SELECT EMP.*, ROWNUM AS SNO FROM EMP)
+            WHERE SNO = 5
+        - WAQTD details of last 5 emp records
+        - WAQTD nth max sal of emp
+            SELECT *
+            FROM (SELECT ENAME, SAL, ROWNUM AS SNO 
+                  FROM (SELECT SAL,ENAME 
+                        FROM EMP ORDER BY SAL DESC))
+            WHERE SNO = &N
+
+            - & -> used to give dynamic value
+        - (LIMIT & OFFSET) --> used in MySQL not in oracle 
+            SELECT SAL
+            FROM EMP
+            ORDER BY SAL DESC
+            LIMIT 1 -> show 1 record
+            OFFSET 4 -> skip 4 records
+            -> means shows 5th record
+
+STATEMENTS
+----------
+
+1. DDL 
+    - CREATE
+        - mainly used to create a table
+        - Syntax:
+            CREATE TABLE TRAINER
+            (
+            TID NUMBER(4) CHECK(TID > 0) CHECK(LENGTH(TID) = 4) PRIMARY KEY, // IN MYSQL -> INSTEAD OF NUMBER() => INT
+            TNAME VARCHAR(30) NOT NULL,
+            COURSE VARCHAR(40)
+            )
+
+    - RENAME
+        - mainly used to change the name of a table structure
+        - Syntax:
+            RENAME OLD_TABLE_NAME TO NEW_TABLE_NAME;
+            // IN MYSQL -> RENAME TABLE OLD_TABLE_NAME TO NEW_TABLE_NAME;
+        - DESC TABLE_NAME -> Give the description of table 
+    
+    - ALTER
+        - used to modify the stucture of a table
+
+        1. Add a new column
+        - Syntax:
+            ALTER TABLE TABLE_NAME
+            ADD COL_NAME DT CONSTRAINTS;
+        
+        2. Change the name of a particular column
+        - Syntax:
+            ALTER TABLE TABLE_NAME
+            RENAME COLUMN OLD_NAME TO NEW_NAME
+        
+        3. Delete the column
+        - Syntax:
+            ALTER TABLE TABLE_NAME
+            DROP COLUMN COL_NAME;
+        
+        4. Modify datatype
+        - Syntax:
+            ALTER TABLE TABLE_NAME
+            MODIFY COL_NAME NEW_DATATYPE;
+
+        5. Modify constraints (here we can only convert not null to null or vice versa)
+        - Syntax:
+            ALTER TABLE TABLE_NAME
+            MODIFY COL_NAME EXISTING_DATATYPE NEW_CONSTRAINTS;
+
+        6. To add a constraint separately in an existing columns
+        - Syntax:
+            ALTER TABLE TABLE_NAME
+            ADD CONSTRAINT CONTRAINT_REFERENCE_NAME CONSTRAINT_NAME(COL_NAME);
+
+            - CONTRAINT_REFERENCE_NAME -> Reference name by which system stores the data inside the metadata table
+                - CONSTRAINT_NAME_COL_NAME_TABLE_NAME
+                - ex:
+                    UK_PHONE_NO_STUD
+
+                - To check all the constraints and it's reference_name
+                    SELECT * FROM USER_CONSTRAINTS;
+            
+        7. To drop the constraint from a column
+        - Syntax
+            ALTER TABLE TABLE_NAME
+            DROP CONSTRAINT REFERENCE_NAME;
+        
+        8. To add a foreign key
+            - There are 3 ways to add a foreign key
+
+            1. 1st way
+                - we can add a foreign key by using alter statement
+                - Syntax
+                    // To add a new column inside the table
+                    ALTER TABLE TABLE_NAME
+                    ADD COL_NAME DATATYPE 
+
+                    // To set the reference
+                    ALTER TABLE TABLE_NAME
+                    ADD CONTRAINT REFERENCE_NAME CONTRAINT_NAME(COL_NAME) 
+                    REFERENCES PARENT_TABLE_NAME(PARENT_COL_NAME)
+
+            2. 2nd way
+                - we can add a foreign key while creating the table
+                - Syntax:
+                    CREATE TABLE TABLE_NAME(
+                    SID NUMBER(4),
+                    CONSTRAINT REF_NAME FOREIGN KEY(COL_NAME) REFERENCES PARENT_TABLE_NAME(PARENT_COL_NAME)
+                    )
+
+            3. shortcut way
+                - shortcut way (no use of REF_NAME)
+                - Syntax:
+                    SID NUMBER(4),
+                    FOREIGN KEY(COL_NAME) REFERENCES PARENT_TABLE_NAME(PARENT_COL_NAME)
+
+    - Truncate
+        - delete all the data from the table without affecting the table structure
+
+    - Drop
+        - delete all the data from the table as well as delete the structure 
+
+        - We cannot drop the data from a table whose primary key is used in another table
+
+- DML (Data Manipulation Language)
+    - Deals with the data 
+    1. INSERT
+        - to insert new data into the table
+        - there are two syntax
+        1. Syntax:
+            INSERT INTO TABLE_NAME VALUES (VAL1, VAL2, VAL3, VAL4);
+
+            - we cannot pass only one or two value while passing in table name, we have to give all values 
+
+        2. Syntax:
+            INSERT INTO TABLE_NAME(COL1_NAME, COL2_NAME ...) VALUES (VAL1, VAL2 ...);
+            
+            - values should be equal to columns passed
+
+    2. UPDATE
+        - mainly used to modify a specific data
+        - Syntax:
+            UPDATE TABLE_NAME
+            SET COL1_NAME = VALUE, COL2_NAME=VALUE
+            WHERE <FILTER CONDITION>
+
+        - WAQT Update gender of 'NIBDA'
+        - WAQT update student name of id 1001.
+    
+    3. DELETE
+        - mainly used to delete a specific row or specific record
+        - Syntax:
+            DELETE FROM TABLE_NAME
+            WHERE <FILTER CONDITION>
+
+- TCL (Transaction Control Language)
+    - all the DML operations are known as transactions
+    - these transactions are non auto commited means not automatically get saved
+    - to save these transactions we use TCL Statements
+
+    1. COMMIT
+        - mainly used to save all the transactions permanently
+        - Syntax:
+            COMMIT;
+
+    2. SAVEPOINT
+        - mainly used to save the transactions temporarily
+        - used to save a particular location
+        - Syntax:
+            SAVEPOINT SAVEPOINT_NAME;
+    
+    3. ROLLBACK
+        - used to delete the transaction which are saved temporarily by the savepoint.
+        - Syntax:
+            ROLLBACK TO SAVEPOINT_NAME;
+
+- DCL (Data Control Language)
+    - mainly used to control the flow of a data between the users.
+
+    1. GRANT
+        - used to give an access of a data to a particular user
+        - Syntax:
+            GRANT PERMISSION_NAME/PREVILAGE_NAME
+            ON TABLE_NAME
+            TO USER_NAME;
+
+    2. REVOKE
+        - used to take back the access of a data from a particular user
+        - Syntax:
+            REVOKE PERMISSION_NAME
+            ON TABLE_NAME
+            FROM USER_NAME;
+
+
+
+
+
+        
+
+
             
 
-
-
+    
