@@ -834,6 +834,7 @@ Control Statement
             - Check the digit is even or odd.
         
         iv. switch statement:
+            - used to execute block of code from multiple cases based on value of an expression.
             - Syntax:
                 switch(val / var / expression)
                 {
@@ -874,7 +875,7 @@ Method:
     
     - Syntax of defining the method:
         [access modifier] [modifier] return_type methodName ( [formal argument])  //method declaration
-        {  //method signature
+        {                                          //method signature
             //instructions
         }  //method definition is whole structure
 
@@ -932,7 +933,7 @@ Method:
                 - whereas non-parameterized is used for getting the fixed output
             
     - Method call Statement flow:
-        - Execution of claling method is paused
+        - Execution of calling method is paused
         - Control is transferred to the called method.
         - Execution of called method begins.
         - Once the execution of the called method is completed the control is transferred back to the calling method.
@@ -966,6 +967,7 @@ Modifier & Access Modifier
             1. private
                 - It is a class level Modifier, it is responsible for variables, methods and constructors.
                 - If the member of a class is prefixed with a private modifier then it is accessible only within the class; accessing outside the class is not possible.
+                - we can't make class private.
 
             2. default
                 - The accessibility of default Modifiers is only within the package. It can't be accessed from outside the package.
@@ -988,3 +990,154 @@ Modifier & Access Modifier
 
         - The Scope of the access Modifiers based on the accessibility is:
             private < default < protected < public 
+
+Modifier
+--------
+    - final
+        - It is a keyword and a modifier
+        - It can used with variable, class, method
+        - If we are using the final with variable, variable can be reaccess but it can't be reinitialized.
+        - ex1: without final
+            class A {
+                psvm() {
+                    int x = 10;
+                    sopln(x); // 10
+                    sopln(x); // 10
+                    int x = 20;
+                    sopln(x); // 20
+                }
+            }
+        - ex2: with final but without reinitialize
+            class A {
+                psvm() {
+                    final int x = 10;
+                    sopln(x); // 10
+                    sopln(x); // 10
+                }
+            }
+        - ex3: with final and with reinitialize
+            class A {
+                psvm() {
+                    final int x = 10;
+                    sopln(x); // 10
+
+                    x = 20; // CTE - error
+                }
+            }
+
+------------------------------------------------------------------------
+
+Story
+-----
+    Code compiled -> javac
+    byte code -> JVM
+
+    JVM does not have it's own memory
+        -> ask JRE
+
+    JRE also not have any memory 
+        -> ask RAM
+
+    Then JRE structured the data into format
+        1. Method Area -> methods/initializers (loading(static/non-static))
+        2. Static Pool Area -> static members (storing)
+            -> individual block of memory inside static pool known as Class Static Area
+        3. Stack Area -> execute
+        4. Heap Area -> non-static members (storing)
+            -> block of memory inside heap area known as Objects
+                Objects
+                    - entity of real life 
+                    - state of the object -> represented by variables
+                    - behaviour of object -> represented by methods
+
+                    - Object stored in Object Address
+                    - java doesn't give object's real address, instead it give you the reference => Object Reference
+                        -> reference format - classname@hexadecimal_value
+                    - we get the object reference address by creating the object.
+                Class
+                    - design/blueprint 
+
+        -> Give back to JVM
+
+    JVM loads all the class in the Structure
+        Loading -> 
+        Storing -> ready to use
+
+------------------------------------------------------------------------
+
+Initializer
+-----------
+    - used to initialize the variable
+    - used to execute the 
+
+    - Types
+        1.. Single line initializer
+            - ex:
+                int r = 7;
+                int x; x = 8; // not an initializer -> error
+
+            - Types
+                i. Static Initializer
+                    - ex:
+                        static int r = 8;
+
+                ii. Non-Static Initializer
+                    - ex:
+                        int r = 8;
+
+        2. Multi line initializer
+            - ex:
+                {
+                    System.out.println("hello");
+                }
+                public static void main(String[] args){
+                    System.out.println("hey");
+                }
+                {
+                    System.out.println("Bye");
+                }
+                
+            - Types
+                i. Static Initializer
+                    - ex:
+                        static 
+                        {
+                            System.out.println("Hello");
+                        }
+
+                ii. Non-Static Initializer
+                    - ex:
+                        {
+                            System.out.println("Hello");
+                        }
+
+        - Static initializer will be executed before main
+        - Non-static initializer will be executed while object creation
+
+-------------------------------------------------------------------------------
+
+Objects
+-------
+    - entity of real life 
+    - state of the object -> represented by variables
+    - behaviour of object -> represented by methods
+
+    - Object stored in Object Address
+    - java doesn't give object's real address, instead it give you the reference => Object Reference
+        -> reference format - classname@hexadecimal_value
+    - we get the object reference address by creating the object.
+
+Class
+    - design/blueprint 
+
+Class/ Concrete class
+    - complete
+
+Abstract class 
+    - highlevel design
+    - partially incomplete
+
+interface 
+    - purely incomplete
+
+

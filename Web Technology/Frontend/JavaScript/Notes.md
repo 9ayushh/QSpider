@@ -154,6 +154,8 @@ JS Engine:
       - which loops are heavy
       - which parts of the code are important (hot code)
 
+      - hot code -> the code that keeps repeating
+
       This information is sent to the JIT compiler
 
   - JIT compiler:
@@ -166,19 +168,18 @@ JS Engine:
       - Make the program much faster
       - This is why javascript can run close to native speed
 
--------------------------------------------------------------------------------------
 
 - Type Casting:
+---------------
   - Conversion of one data type into another data type is knowm as type casting.
 
   - There are two types of typecasting in javascript:
-    1. Implicit typecasting (type cohersion)
+    1. Implicit typecasting (type coersion)
         - Those typecasting which is done automatically by the js is known as Implicit typecasting.
 
     2. Explicit typecasting 
         - Those typecasting which is done manually by the developer or programmer is known as Explicit typecasting.
 
--------------------------------------------------------------------------------------
 
 Scope of a Variable
 -------------------
@@ -207,7 +208,7 @@ Scope of a Variable
                 let b = 200;
                 const c = 300;
             }
-            console.log(a);
+            console.log(a); // only accessable
             console.log(b);
             console.log(c);
 
@@ -223,30 +224,256 @@ Scope of a Variable
 
     - debugger - used to debug the code starting from where it was declared
 
-    - Hoisting
-        - Before declaration and initialization, if we are trying to access the value of a variable this is known as hoisting.
-        - It is a default js behaviour that moves all the variable declaration and fucntion declaration to the top of their scope.
-        - If we are trying to hoist the variable that is declare by using var keyword, then it will gives undefined.
-        - If we are trying to hoist the variable that is declared by using let and const, then the output will be *uncaught reference error* because the variables went into a dead zone which is known as TDZ (Temporal Dead Zone)
+Hoisting
+--------
+    - Before declaration and initialization, if we are trying to access the value of a variable this is known as hoisting.
+    - It is a default js behaviour that moves all the variable declaration and fucntion declaration to the top of their scope.
+    - If we are trying to hoist the variable that is declare by using var keyword, then it will gives undefined.
+    - If we are trying to hoist the variable that is declared by using let and const, then the output will be *uncaught reference error* because the variables went into a dead zone which is known as TDZ (Temporal Dead Zone)
 
-    - Decision / Conditional Statement
+Decision / Conditional Statement
+--------------------------------
+    - Falsy values
+        - 0
+        - false
+        - null
+        - undefined
+        - NaN
+        - ""
+        - 0n
+        - -0
 
-        - Falsy values
-            - 0
-            - false
-            - null
-            - undefined
-            - NaN
-            - ""
-            - 0n
-            - -0
+    - if-else
+        if("") {
+            console.log("truthy val");
+        } else {
+            console.log("falsy val");
+        }
 
-        - if-else
-            if("") {
-                console.log("truthy val");
-            } else {
-                console.log("falsy val");
+    - else if
+    - Switch
+
+
+Loops in JS
+-----------
+    - for
+    - while
+    - do-while
+    - nested loop
+
+    - Advance loop
+        - forEach
+        - for-in
+        - for-of
+        - map
+        - filter
+        - reduce
+
+
+Output Methods in JS
+--------------------
+
+    1. Console.log("Statement");  // It is used fro testing purpose
+    2. document.writeln("Statement"); // It is used to display the data on the UI.
+    3. alert("Password not matched"); // It is a popup method in JS
+    4. confirm("Are you 18+"); // It is another popup methods, in which two options are present
+    5. prompt("Enter your age: "); // It is a popup method, which is used to take the input from the user
+
+
+Functions
+---------
+    - code reusability and code optimization
+    - It is a reusable piece of code which helps us to avoid the repeatition of code in our program
+    - It helps us to follow dry principle (don't repeat yourself)
+
+    - Types of function
+        1. Named function
+            - Function which is having some name is called name function.
+            - Arguments: Data which is passed while calling the function is called arguments.
+            - Parameter: Function accepts arguments inside the paranthesis is called parameters.
+
+            - ex:
+                function test(a, b) {
+                    console.log(a+b);
+                }
+                test(100, 200);
+
+        2. Anonymous function
+            - Function which doesn't have any name is called anonymous function.
+
+            - ex:
+                function() {
+                    
+                }
+
+        3. Arrow function
+            - It is also known as fat arrow function. It is the shorter form of writting function.
+
+            - ex:
+                let fun = () => {
+                    console.log("arrow function");
+                }
+                fun();
+
+            - Property 1 : 
+                - If there is only 1 parameter then there is no need of using paranthesis.
+                - ex:
+                    let sum = a => {
+                        console.log(a);
+                    }
+                    sum(100);
+
+            - Property 2 : 
+                - If there is only one statement then there is no need of using curly bracket. 
+                - But if there are multiple statements and we have not used curly brackets, then output will be suffled.
+                - ex:
+                    let fun1 = () => console.log("statement 1");
+                    fun1();
+
+            - Property 3 : 
+                - If there is only one statement, which is the returned stataement then theere is no need of using curly brackets, as well as return keyword.
+                - It is known as implicit return.
+                - ex:
+                    let fun1 = data => data;
+                    console.log(fun1(1000));
+
+
+        4. IIFE (Immediate Invoke Function Expression)
+            - After creating the function immediately, we are invoking the function, is known as IIFE.
+            - It helps us to prevent the global variable pollution.
+            - ex:
+                (function() {
+                    console.log("IIFE");
+                })()
+
+                (() => {
+                    console.log("IIFE");
+                })()
+
+        5. Function with expression
+            - When we are storing function as a value inside a variable it is known as function with expression.
+            - And the stored function is known as First Class function / First Citizen function / First Order Function
+            - ex:
+                let fnWithEx = function() {
+                    console.log("Function with expression");
+                }
+                let fnWithEx2 = () => {
+                    console.log("Function with Expression");
+                }
+                fnWithEx();
+                fnWithEx2();
+
+        6. First Class / First Citizen Function
+            - The function which stored as a value inside a variable is known as First Class function / First Citizen function / First Order Function
+
+        7. Higher Order function
+            - A function which accepts another function as an argument is known as Higher Order function.
+            - ex:
+
+        8. Callback function
+            - A function which is passed as an argument is known callback function.
+
+        9. Recursive function
+            - function which calls itself, is called recursive function.
+
+        10. Generative function
+            - It is a special type of function which can paused and resume it's execution.
+            - yield : It is a keyword which is used to pause the execution of the generative function.
+            - next() : It is method which is used to resume the execution of generative function. It return an object which contains two properties.
+            - value : data which is given by yield keyword.
+            - done : It stores the boolean value, which specifies weather the execution of generative function is completed or not.
+            - ex:
+                function* genFn() {
+                    yield "data1";
+                    yield "data2";
+                    yield "data3";
+                    yield "data4";
+                }
+                let res = genFn();
+                console.log(res.next()); // data1
+                console.log(res.next()); // data2
+                console.log(res.next()); // data3
+                console.log(res.next()); // data4
+                console.log(res.next()); // undefined
+
+
+        11. Pure function
+            - Function which gives same output for the same input, or which does not modify the external state is known as pure function.
+            - ex:
+                function pure(a, b) {
+                    console.log(a*b);
+                }
+                pure(100,2); // same output for all
+                pure(100,2);
+                pure(100,2);
+
+        12. Impure function
+            - Function which gives different output for the same input, or which modifies the external state is known as impure function.
+            - ex:
+                let count = 1;
+                function impure(a, b) {
+                    console.log(a*b*count);
+                    count++;
+                }
+                impure(100,2); // different output for all
+                impure(100,2);
+                impure(100,2);
+
+    - Default parameters
+        - Default values which is initialized to the function parameters. So in case of absence of arguments these default values will be used.
+        - ex:
+            function abc(a = 100, b = 200){ // default values
+                console.log(a);
+                console.log(b);
+                console.log(a+b); // 
             }
+            abc(); // 300
+            abc(500,500); // 1000
+            abc(500); // 700
 
+    - Arguments Object 
+        - It is a default array like object preseent in the non-arow function, which allows us to access all the arguments passed while calling the function without using the parameters.
+        - ex:
+            function sum() {
+                console.log(arguments[0]);
+                console.log(arguments[1]);
+                console.log(arguments[0] + arguments[1]);
+            }
+            sum(100,200);
+    
+    - Nested Function
+        - function present inside a function is known as nested function.
+        - ex:
+            function outer() {
+                var a = 100;
+                function inner() {
+                    var b = 200;
+                    console.log(a+b);
+                }
+                inner();
+            }
+            outer();
 
-        
+        - Closure => object : 
+            - stores the data about the parent variables which are going to used in future.
+            - It is a object created by the outer function, when the inner function is trying to access the data, which is present in the outer function.
+
+    - JavaScript Currying
+        - Currying is a functional programming technique that transforms a function taking multiple arguments into a sequence of nested functions, each taking a single argument. Instead of evaluating f(a, b, c) all at once, currying decomposes it to execute as f(a)(b)(c).
+        - ex:
+            function sum(a) {
+                console.log("function 1");
+                return function(b) {
+                    console.log("function 2");
+                    return function(c) {
+                        console.log("function 3");
+                        console.log(a+b+c);
+                    }
+                }
+            }
+            // method 1
+            let fun2 = sum();
+            let fun3 = fun2();
+            fun3();
+            // method 2 
+            sum(200)(300)(100);

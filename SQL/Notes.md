@@ -158,6 +158,7 @@ Statements
 
         - SELECT
             - mainly used to fetch the data from the databases and display it over the output console.
+
         - PROJECTION
             - mainly used to retrive the data by selecting only the columns
             - Syntax:
@@ -170,6 +171,7 @@ Statements
 
         - SELECTION
             - mainly used to retrive the data by selecting rows and columns
+
         - JOINS
             - mainly used to fetch the data from multiple table simultaneously
 
@@ -695,16 +697,39 @@ Sub Query
 Types of Sub Query
 ------------------
     1. Single Row SubQuery
+        - Whenever a subquery is returning a single output or value then that subquery is known as single row subquery.
+        - SRS can be handled by normal operator as well as special operator.
+
     2. Multi Row SubQuery
+        - A Subquery which returns more than one output or value then that subquery is known as multirow subquery.
+        - MRS can only be handled by special operator e.g. IN
 
 SubQuery Operators
 ------------------
+    1. All:
+        - All operator return true if all the values present on right hand side satisfies the condition.
+        - Use of ALL 
+            >ALL (OR)       >=ALL (AND)
+            <ALL (AND)        <=ALL (OR)
+        - Always used along with relational operators.
+    
+    2. ANY:
+        - All operator return true if any one value present on right hand side satisfies the condition.
+        - use of ANY
+            >ANY (AND)        >=ANY (OR)
+            <ANY (OR)        <=ANY (AND)
+        - Always used along with relataional operator.
 
 Nested SubQuery
 ---------------
 
 Employee Manger RealtionShip
 ----------------------------
+    - Manager 
+        MGR = EMPNO -> like find employee having mgr
+    
+    - Employee
+        EMPNO = MGR -> like find employees reporting to mgr
 
     - WAQTD details of an emp if an emp is earning more than scott's manager and earning less than blake's manager
 
@@ -758,6 +783,9 @@ Pseudo Columns
             LIMIT 1 -> show 1 record
             OFFSET 4 -> skip 4 records
             -> means shows 5th record
+
+-----------------------------------------------------------------
+
 
 STATEMENTS
 ----------
@@ -933,12 +961,151 @@ STATEMENTS
             FROM USER_NAME;
 
 
+-----------------------------------------------------
 
+JOINS
+-----
+    - mainly used to fetch the data from multiple table simultaneously
 
+    - Types of JOINS
+        1. CROSS / Cartiessian JOIN
+        2. INNER / Equii JOIN
+        3. NATURAL JOIN
+        4. OUTER JOIN
+            i. LEFT OUTER JOIN
+            ii. RIGHT OUTER JOIN
+            iii. FULL OUTER JOIN
+        5. SELF JOIN
 
+    1. CROSS / Cartiessian JOIN
+        - merge all the records of table1 with the all the records of table2
+
+        - Syntax 1 => for MYSQL(uses ANSI)
+            SELECT COL/EXP
+            FROM TABLE_NAME1 CROSS JOIN TABLE_NAME2;
         
+        - Syntax 2 => for ORACLE
+            SELECT COL/EXP
+            FROM TABLE_NAME1, TABLE_NAME2;
+
+        - Drawback
+            - It does not check matching and unmatching records
+
+        - matching - if record is same as the merging record.
+        - unmatching - if record is not same as the merging record.
+
+    2. INNER / Equii JOIN
+        - mainly used to fetch the matching records
+
+        - Syntax 1 => for MYSQL(uses ANSI)
+            SELECT COL/EXP
+            FROM TABLE_NAME1 INNER JOIN TABLE_NAME2
+            ON <JOIN CONDITION>;
+        
+        - Syntax 2 => for ORACLE
+            SELECT COL/EXP
+            FROM TABLE_NAME1, TABLE_NAME2
+            WHERE <JOIN CONDITION>;
+
+        - <JOIN CONDITION> 
+            TABLE_NAME1.COMMON_COL = TABLE_NAME2.COMMON_COL
+
+    - WAQTD ename and dname if emp is working as a manager in location new york
+    - WAQTD ename, deptname, deptno, loc of emp if emp is hired in 81 but emp should be working in a research dept and loc should be dallas
+
+    3. NATURAL JOIN
+        - It will behave like an INNER JOIN if there will be a relationship available between 2 tables else it will behave like a CROSS JOIN.
+
+        - Syntax (uses ANSI)
+            SELECT CO/EXP
+            FROM TABLE_NAME1 NATURAL JOIN TABLE_NAME2;
+
+    4. OUTER JOIN
+        - mainly used to fetch unmatched as well as matched records from both the tables.
+
+        - Types
+            i. LEFT OUTER JOIN
+                - mainly used to fetch unmatched record from left table as well as matching record from both the tables.
+                - Syntax 1 (ANSI):
+                    SELECT COL/EXP
+                    FROM TABLE_NAME1 LEFT JOIN TABLE_NAME2
+                    ON <JOIN CONDITION>;
+
+                - Syntax 2 (ORACLE):
+                    SELECT COL/EXP
+                    FROM TABLE_NAME1, TABLE_NAME2
+                    WHERE <JOIN CONDITION>;
+
+                    - <JOIN CONDITION>
+                        TABLE1.COMMON_COL = TABLE2.COMMON_COL(+)
 
 
-            
+            ii. RIGHT OUTER JOIN
+                - mainly used to fetch unmatched record from right table as well as matching record from both the tables.
+                - Syntax 1 (ANSI):
+                    SELECT COL/EXP
+                    FROM TABLE_NAME1 RIGHT JOIN TABLE_NAME2
+                    ON <JOIN CONDITION>;
 
-    
+                - Syntax 2 (ORACLE):
+                    SELECT COL/EXP
+                    FROM TABLE_NAME1, TABLE_NAME2
+                    WHERE <JOIN CONDITION>;
+
+                    - <JOIN CONDITION>
+                        TABLE1.COMMON_COL(+) = TABLE2.COMMON_COL
+
+            iii. FULL OUTER JOIN
+                - mainly used to fetch unmatched and matched record from both the tables.
+                - Syntax (ANSI):
+                    SELECT COL/EXP
+                    FROM TABLE_NAME1 FULL JOIN TABLE_NAME2
+                    ON <JOIN CONDITION>;
+
+    - 5. SELF JOIN
+        - mainly used to join the table with itself
+        - Syntax 1 (ANSI):
+            SELECT COL/EXP
+            FROM TABLE_NAME1 T1 JOIN TABLE_NAME2 T2
+            ON <JOIN CONDITION>; 
+
+        - Syntax 2 (ORACLE):
+            SELECT COL/EXP
+            FROM TABLE_NAME1 T1, TABLE_NAME2 T2
+            WHERE <JOIN CONDITION>;
+        
+    - WAQTD ename & manager name of all the emp
+    - WAQTD ename & manager name of scott
+    - WAQTD ename, manager name, manager's manager name of smith
+    - WAQTD ename and manager name if emp is earning more than it's manager
+    - WAQTD ename, his dept name, manager name, manager dept name
+    - WAQTD ename, his dept name, manager name, manager dept name if emp and manager working in same loc
+
+
+IMP QUESTIONS
+    1. nth max , nth min salary (all three ways)
+    2. diff
+        - delete, drop and trucate
+        - primary key, foreign key
+        - where clause, having clause
+        - dbms, rdbms
+    3. explain all the sql statements/commands
+    4. constraints
+    5. clauses and it's functions
+    6. pseudo columns
+        - find first 5 records / last 5 records
+
+    ADVANCE (theory)
+        1. window function (practical)
+            - rownum
+            - rownum
+            - rank function
+            - lead function/lag function
+        2. index
+        3. views
+        4. triggers
+        5. acid properties
+        6. union
+        7. union all
+        8. CTE - common table expression
+        9. store procedures

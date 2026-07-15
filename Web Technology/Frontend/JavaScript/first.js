@@ -216,20 +216,289 @@
 
 // ! Hoisting
 
-var a = 10;
-function abc() {
-    console.log(a); // undefined because a is only declared by hoisting
-    var a = 10000;
-    console.log(a); // 10000
-}
-console.log(a); // 10 because a = 10
-abc();
-console.log(a); // 10 because var inside function is only work inside function
+// var a = 10;
+// function abc() {
+//     console.log(a); // undefined because a is only declared by hoisting
+//     var a = 10000;
+//     console.log(a); // 10000
+// }
+// console.log(a); // 10 because a = 10
+// abc();
+// console.log(a); // 10 because var inside function is only work inside function
 
 // ! Decision / Conditional Statement
 
-if("") {
-    console.log("truthy val");
-} else {
-    console.log("falsy val");
-}
+// if("") {
+//     console.log("truthy val");
+// } else {
+//     console.log("falsy val");
+// }
+
+// ? else if
+
+// let a = 5;
+// let b = 9;
+// let c = 3;
+// if(a > b && a > c) {
+//     // console.log("a is greater");
+//     console.log(`${a} is greater`);
+// } else if (b > c) {
+//     // console.log("b is greater");
+//     console.log(`${b} is greater`);
+// } else {
+//     // console.log("c is greater");
+//     console.log(`${c} is greater`);
+// }
+
+// ? Switch
+
+// let day = 2;
+
+// switch (day) {
+//     case "MON": {
+//         console.log(`${day} Monday`);
+//         break;
+//     }
+//     case "TUE": {
+//         console.log(`${day} Tuesday`);
+//         break;
+//     }
+//     case "WED": {
+//         console.log(`${day} Wednesday`);
+//         break;
+//     }
+//     case "THUR": {
+//         console.log(`${day} Thursday`);
+//         break;
+//     }
+//     case "FRI": {
+//         console.log(`${day} Friday`);
+//         break;
+//     }
+//     case "SAT": {
+//         console.log(`${day} Saturday`);
+//         break;
+//     }
+//     case "SUN": {
+//         console.log(`${day} Sunday`);
+//         break;
+//     }
+// }
+
+// ? Ternary operator
+
+// let a = 5;
+// let b = 6;
+// let c = (a > b)? console.log(`${a} is greater`) : console.log(`${b} is greater`);
+
+// console.log(c);
+
+// ! Loops
+
+// ? for loop
+// for(let i=0; i<5; i++){
+//     console.log(i);
+// }
+
+// ? while loop
+// let i = 0;
+// while (i< 5) {
+//     console.log(i);
+//     i++;
+// }
+
+// ? do-while loop
+// let i = 0;
+// do {
+//     console.log(i);
+//     i++;
+// } while (i < 5) 
+
+// ? nested loop
+
+
+// ! Output methods in JS
+
+// console.log("Statement");
+
+// document.writeln("Statement");
+
+// alert("Password not matched");
+
+// let res = confirm("Are you 18+");
+// console.log(res);
+
+// let no1 = Number(prompt("Enter no 1"));
+// let no2 = parseInt(prompt("Enter no 2"));
+// console.log(no1 + no2);
+// console.log(typeof no1);
+// console.log(typeof no2);
+
+// parseInt -> extract the integer value from a string
+
+// ! Function
+
+// function sorry(){
+//     document.writeln("Sorry");
+// }
+// sorry();
+
+// ? Named function
+// function test(a, b) {
+//     console.log(a+b);
+// }
+// test(100, 200);
+
+// ? Anonymous function
+// function() {
+    
+// }
+
+// ? Arrow function
+// let fun = () => {
+//     console.log("arrow function");
+// }
+// fun();
+
+// ~ Property 1
+// let sum = a => {
+//     console.log(a);
+// }
+// sum(100);
+
+// ~ Property 2
+// let fun1 = () => console.log("statement 1");
+// fun1()
+
+// ~ Property 3
+// let fun1 = data => data;
+// console.log(fun1(1000));
+
+// ? IIFE
+// (
+//     () => {
+//         var x = 5;
+//         console.log("IIFE");
+//     }
+// )()
+// console.log(x);
+// only 1 time execution.
+
+
+// ? Function with expression
+
+// let fnWithEx = function() {
+//     console.log("Function with expression");
+// } // function is known as First class function
+
+// let fnWithEx2 = () => {
+//     console.log("Function with Expression");
+// } // function is known as first class/ first citizen function
+
+// fnWithEx();
+// fnWithEx2();
+
+
+// ? Higher Order function / Callback function
+// function HOF(a, b, callback) {
+//     callback(a,b);
+// } // Higher order function
+// HOF(
+//     100, 200, 
+//     function(i, j){ console.log(i+j)} // callback function
+// );
+
+// ? Recursive Function
+// function findFactorial(n){
+//     // base case
+//     if(n==1) {
+//         return 1;
+//     }
+//     return n * findFactorial(n-1);
+// }
+// let res = findFactorial(5);
+// console.log(res);
+
+// ? Generative function
+// function* genFn() {
+//     yield "data1";
+//     yield "data2";
+//     yield "data3";
+//     yield "data4";
+//     return "data5";
+// }
+// let res = genFn();
+// console.log(res.next()); // data1
+// console.log(res.next()); // data2
+// console.log(res.next()); // data3
+// console.log(res.next()); // data4
+// console.log(res.next()); // data5 done = true
+// // undefined if return is not there
+
+// ? Pure function
+// function pure(a, b) {
+//     console.log(a*b);
+// }
+// pure(100,2); // same output for all
+// pure(100,2);
+// pure(100,2);
+
+// ? impure function
+// let count = 1;
+// function impure(a, b) {
+//     console.log(a*b*count);
+//     count++;
+// }
+// impure(100,2); // different output for all
+// impure(100,2);
+// impure(100,2);
+
+// ? default parameters
+// function abc(a = 100, b = 200){ // default values
+//     // console.log(a);
+//     // console.log(b);
+//     console.log(a+b); // 
+// }
+// abc(); // 300
+// abc(500,500); // 1000
+// abc(500); // 700
+
+// ? arguments object
+// function sum() {
+//     console.log(arguments[0]);
+//     console.log(arguments[1]);
+//     console.log(arguments[0] + arguments[1]);
+// }
+// sum(100,200);
+
+// ? Nested function
+// function outer() {
+//     var a = 100;
+    
+//     function inner() {
+//         var b = 200;
+//         console.log(a+b);
+//     }
+//     inner();
+
+// }
+// outer();
+
+// ! JavaScript Currying
+// function sum(a) {
+//     console.log("function 1");
+//     return function(b) {
+//         console.log("function 2");
+//         return function(c) {
+//             console.log("function 3");
+//             console.log(a+b+c);
+//         }
+//     }
+// }
+// // method 1
+// let fun2 = sum();
+// let fun3 = fun2();
+// fun3();
+
+// // method 2 
+// sum(200)(300)(100);
