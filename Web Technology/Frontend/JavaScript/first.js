@@ -148,9 +148,9 @@
 
 // ? Implicit typecasting
 
-// console.log([] + []);
-// console.log([] + {});
-// console.log({} + []);
+// console.log([] + []); // empty string
+// console.log([] + {}); // object object
+// console.log({} + []); // object object
 
 // console.log(typeof "str");
 // console.log(typeof str);
@@ -502,3 +502,133 @@
 
 // // method 2 
 // sum(200)(300)(100);
+
+// ? Function Hoisting
+// abc();
+// function abc() {
+//     console.log("Function hoisting");
+// }
+
+// ch();
+// var ch = function() {
+//     console.log("Function hoisting");
+// } // Uncaught error
+
+// ! String
+
+// ~ ways of creating string 
+
+// ? literal's way
+// let str = "qwertyu";
+// console.log(str);
+// console.log(typeof str);
+
+//  ? literal's way
+// let str = 'qwertyu';
+// console.log(str);
+// console.log(typeof str);
+
+// console.log("JavaScript doesn't support OOP's")
+// console.log('This is "JS" Session')
+
+// ? template literals
+// let str = `This
+// is
+// JS`;
+// console.log(str);
+// console.log(typeof str);
+
+// let sub = "JS";
+// console.log(`This is ${subj} class`);
+
+// ? Typecasting
+// let str = String(true);
+// console.log(str);
+// console.log(typeof str);
+
+// ~ Properties
+// let str = "qwertyuiopwert yui";
+// console.log(str.length);
+
+// ~ Methods
+// let str = "abcdefghijklmnopqrstuvwxyz";
+// console.log(str.at(-1));
+// console.log(typeof str.at(0));  
+// console.log(str.charAt(-1));
+// console.log(typeof str.charAt(0));
+// console.log(str.charCodeAt(0));
+// console.log(str[0]);
+
+// slice
+// let str = "A quick brown fox jumps over the lazy dog.";
+// console.log(str.slice(2,7));
+// console.log(str.slice(2)); // from 2 till end
+// console.log(str.slice(0,-7));
+// console.log(str.slice(-7,2)); // empty char
+// console.log(str.slice(-2,-7)); // empty char
+// console.log(str.slice(-7, -2));
+
+// // substring
+// console.log(str.substring(2,7));
+// console.log(str.substring(7, 2));
+// console.log(str.substring(-7,2)); // -7 converted to 0
+// console.log(str.substring(7,-7)); // -7 converted to 0 and swaped the index
+
+// UpperCase
+// console.log(str.toUpperCase());
+
+// LowerCase
+// console.log(str.toLowerCase());
+
+// padStart()
+// let str = "JAVA";
+// console.log(str.padStart(10, "A"));
+
+// padStart()
+// console.log(str.padEnd(12, "ABC"));
+
+// trimStart()
+// let userName = "  nikhil015  ";
+// console.log(userName.trimStart()); // remove space from start
+
+// trimEnd()
+// console.log(userName.trimEnd()); // remove space from end
+
+// trim()
+// console.log(userName.trim()); // remove space from start and end
+
+// replace()
+// let str = "Akshit is a good boy. Akshit is in 4th year.";
+// console.log(str.replace("Akshit", "Aman"));
+
+// replaceAll()
+// console.log(str.replace("Akshit", "Aman"));
+
+// match()
+// console.log(str.match("is"));
+
+// search()
+// console.log(str.search("Akshit"));
+
+// concat
+// let str = "JS";
+// let str2 = "JAVA";
+// let str3 = "python";
+// console.log(str.concat(str2,str3));
+
+// repeat
+// let str = "data ";
+// console.log(str.repeat(5));
+
+// indexOf
+// let str = "Akshit is a good boy. Akshit is in 4th year.";
+// console.log(str.indexOf("Akshit",0));
+
+// lastIndexOf
+// console.log(str.lastIndexOf("Akshit"));
+
+// includes
+// console.log(str.includes("Akshit"));
+
+
+

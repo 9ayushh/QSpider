@@ -7,10 +7,9 @@ JavaScript
         - fetching the data from API
         - authentication
         - authorization
-        - 
     - It is Scripting as well as programming language
     - It is object-based programming language
-    - It is partially object-oriented programming language because in js, there is prototypel inheritance
+    - It is partially object-oriented programming language because in js, there is prototyple inheritance
 
 History of JavaScript
 ---------------------
@@ -81,7 +80,6 @@ Identifier:
 
 Operators:
 ----------
-  
   Special operator:
     1. == vs ===
       ==: It checks only values
@@ -101,15 +99,18 @@ Operators:
 Data Type:
 ----------
   1. Primitive (immutable) --> can't be changed
-      i. Number 
-      ii. String 
-      iii. boolean 
-      iv. null (typeof null is object) --> treated as a value and it represents absence of a value
-      v. undefined
-      vi. bigInt
-      vii. symbol --> assign uniques identifier
+    i. Number 
+    ii. String 
+    iii. boolean 
+    iv. null (typeof null is object) --> treated as a value and it represents absence of a value
+    v. undefined
+    vi. bigInt
+    vii. symbol --> assign uniques identifier
 
   2. Non- primitive (mutable) --> can be changed
+    i. functions
+    ii. arrays
+    iii. objects
 
 
 JS Engine:
@@ -160,7 +161,7 @@ JS Engine:
 
   - JIT compiler:
     - JIT  = Just-In-Time compiler
-    - In V8, the JIT compiker is calle TurboFan.
+    - In V8, the JIT compiker is called TurboFan.
 
     - JIT compiler:
       - Takes frequently used ("hot") code
@@ -477,3 +478,178 @@ Functions
             fun3();
             // method 2 
             sum(200)(300)(100);
+
+    - Function Hoisting 
+        - It is possible in only in non-arrow function.
+        - Named function are fully hoisted.
+        - It will hoist all the functions at the top of the program.
+        - ex:
+            abc();
+            function abc() {
+                console.log("Function hoisting"); // Function hoisting
+            }
+
+String
+------
+    - Sequence of characters
+    - ways of creating strings
+        - Literal's way
+            - ex:
+                let str = "qwertyu";
+                console.log(str);
+                console.log(typeof str);
+
+        - literal's way
+            - ex:
+                let str = 'qwertyu';
+                console.log(str);
+                console.log(typeof str);
+
+        - Difference b/w "" & ''
+            - ex:
+                console.log("JavaScript doesn't support OOP's")
+                console.log('This is "JS" Session')
+
+        - template literals
+            - advantage of template literals:
+                - we can create multi-line string.
+                - string interpolation -> embeded variables inside the string is known as string interpolation
+            - ex:
+                let str = `This
+                is
+                JS`;
+                console.log(str);
+                console.log(typeof str);
+
+            - ex:
+                let sub = "JS";
+                console.log(`This is ${subj} class`);
+
+        - Typecasting
+            - ex:
+                let str = String(true);
+                console.log(str);
+                console.log(typeof str);
+
+    - Properties of String
+        - length
+            - using length property we can calculate length of string.
+            - ex:
+                let str = "qwertyuiopwertyui";
+                console.log(str.length);
+
+    - Methods of String
+        - to access the character of any string
+            - .at() // accepts negative values
+                - It accepts index and find the character present at that index.
+                - It supports negative index.
+
+            - .charAt() // give empty string on negative values
+                - It accepts index and find the character present at that index.
+                - It doesn't supports negative index.
+
+            - .charCodeAt()
+                - It accepts index value and returns the ascii value of that character present at that index.
+
+            - str[0] // by using array
+                - Property access way to get character from string
+    
+        - slice(starting index, ending index --> excluded)
+            - It is used to extract sequence of characters. It accepts two arguments starting index and ending index.
+
+        - substring()
+            - It accepts two arguments starting and ending index and return the sequence of characters.
+            - negative values are converted into 0.
+            - if starting index is greater than ending index then values are swapped.
+        
+        - .toUpperCase()
+            - It converts the string into UpperCase.
+            - ex:
+                console.log(str.toUpperCase());
+
+        - .toLowerCase()
+            - It converts the string into LowerCase.
+            - ex:
+                console.log(str.toLowerCase());
+
+        - .padStart()
+            - It is used to adds the current string with a given string at the start of the string.
+            - It accepts two arguments i.e., maxLength, "newString that we want to add."
+            - ex:
+                let str = "JAVA";
+                console.log(str.padStart(maxLength, charcters));
+
+        - .padEnd()
+            - It is used to adds the current string with a given string at the end of the string.
+            - ex:
+                let str = "JAVA";
+                console.log(str.padEnd(maxLength, charcters));
+
+        - trimStart()
+            - It removes extra whitespaces from start of the string.
+            - ex:  
+                let userName = "  nikhil015  ";
+                console.log(userName.trimStart()); // remove space from start
+
+        - trimEnd()
+            - It removes extra whitespaces from end of the string.
+            - ex:
+                console.log(userName.trimEnd()); // remove space from end
+
+        - trim()
+            - It removes extra whitespaces from both ends start as well as end of the string.
+            - ex:
+                console.log(userName.trim()); // remove space from start and end
+
+        - replace()
+            - It replaces the first matching substring in the string.
+            - ex: 
+                let str = "Akshit is a good boy. Akshit is in 4th year."
+                console.log(str.replace("find string", "replace string"))
+
+        - replaceAll()
+            - It replaces All the matching substring in the string
+            - ex:
+                console.log(str.replaceAll("find string", "replace string"))
+
+        - .match()
+            - Matches a string with a regular expression, and returns an array containing the results of that search.
+            - ex:
+                console.log(str.match("substring"));
+
+        - .search()
+            - Returns the index of the first matching substring.
+            - ex:
+                console.log(str.search("substring"));
+
+        - concat()
+            - It is used to merge two or more string, and returns a new String.
+            - ex:
+                let str = "JS";
+                let str2 = "JAVA";
+                let str3 = "python";
+                console.log(str.concat(str2,str3));
+
+        - repeat
+            - Returns a string value that is made from count copies expended together. 
+            - If count is 0, the empty string is returned.
+            - ex:
+                let str = "data ";
+                console.log(str.repeat(5));
+
+        - indexOf
+            - It returns the indexOf first matching substring, or -1 if it is not present.
+            - It accepts two arguments i.e., "substring" and "position" --> optional
+            - ex:
+                let str = "Akshit is a good boy. Akshit is in 4th year.";
+                console.log(str.indexOf("Akshit",0));
+
+        - lastIndexOf
+            - Returns the last occurrence of a substring in the string, or -1 if it is not present.
+            - ex:
+                console.log(str.lastIndexOf("Akshit"));
+
+        - includes
+            - It returns the boolean value i.e., true or false, checks whether substring is present in the string or not.
+            - ex:
+                console.log(str.includes("Akshit"));

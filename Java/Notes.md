@@ -1039,7 +1039,7 @@ Story
         -> ask RAM
 
     Then JRE structured the data into format
-        1. Method Area -> methods/initializers (loading(static/non-static))
+        1. Method Area -> methods/multi-line initializers (loading(static/non-static))
         2. Static Pool Area -> static members (storing)
             -> individual block of memory inside static pool known as Class Static Area
         3. Stack Area -> execute
@@ -1052,7 +1052,7 @@ Story
 
                     - Object stored in Object Address
                     - java doesn't give object's real address, instead it give you the reference => Object Reference
-                        -> reference format - classname@hexadecimal_value
+                        -> reference address format - classname@hexadecimal_value
                     - we get the object reference address by creating the object.
                 Class
                     - design/blueprint 
@@ -1118,7 +1118,8 @@ Initializer
 
 Objects
 -------
-    - entity of real life 
+    - entity of real life / instance of class
+    - acc. to java, it is a block of memory which is present inside the Heap Area which stores non-static members(variable, memeber, initializer)
     - state of the object -> represented by variables
     - behaviour of object -> represented by methods
 
@@ -1127,17 +1128,41 @@ Objects
         -> reference format - classname@hexadecimal_value
     - we get the object reference address by creating the object.
 
+Static/Non-static 
+    - static which value is same for all
+    - also known as shareing member
+        - adv - memory optimization
+    - non-static which value is different for all
+        - adv - security
+
 Class
     - design/blueprint 
 
 Class/ Concrete class
-    - complete
+    - full complete
 
 Abstract class 
     - highlevel design
     - partially incomplete
+    - use abstract keyword/modifier before class
+    - syntax:
+        abstract class A {
+            public static void main(String[] args){
+                // code
+            }
+        }
+    - we cannot create object of abstract class.
+
+Assignment - Create 5 Abstract classes and interface, then compile them and execute them
 
 interface 
-    - purely incomplete
+    - fully incomplete
+    - top-highlevel design
+    - interface A {
+        public static void main(String[] args){ // optional
+            // code
+        }
 
+        // code
+    }
 
