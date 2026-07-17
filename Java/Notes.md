@@ -902,6 +902,22 @@ Method:
         - methodbody / implementation / block 
 
     - Types of Methods: There are many more types of methods 
+        - Based on access modifies
+            1. Public
+            2. Protected
+            3. Private
+            4. Default
+
+        - Based on structure
+            1. Complete  -> with declaration and initialization
+            2. Incomplete -> withoud initialization only declaration
+
+        - Based on modifies
+            - There are many more...
+            - But mainly used
+                1. Static 
+                2. Non-Static
+
         - Based on the number of arguments, methods are classsified into 2 types:
             1. No- argument method
                 - A method which does not have formal argument is known as no - argument method
@@ -1025,46 +1041,6 @@ Modifier
                 }
             }
 
-------------------------------------------------------------------------
-
-Story
------
-    Code compiled -> javac
-    byte code -> JVM
-
-    JVM does not have it's own memory
-        -> ask JRE
-
-    JRE also not have any memory 
-        -> ask RAM
-
-    Then JRE structured the data into format
-        1. Method Area -> methods/multi-line initializers (loading(static/non-static))
-        2. Static Pool Area -> static members (storing)
-            -> individual block of memory inside static pool known as Class Static Area
-        3. Stack Area -> execute
-        4. Heap Area -> non-static members (storing)
-            -> block of memory inside heap area known as Objects
-                Objects
-                    - entity of real life 
-                    - state of the object -> represented by variables
-                    - behaviour of object -> represented by methods
-
-                    - Object stored in Object Address
-                    - java doesn't give object's real address, instead it give you the reference => Object Reference
-                        -> reference address format - classname@hexadecimal_value
-                    - we get the object reference address by creating the object.
-                Class
-                    - design/blueprint 
-
-        -> Give back to JVM
-
-    JVM loads all the class in the Structure
-        Loading -> 
-        Storing -> ready to use
-
-------------------------------------------------------------------------
-
 Initializer
 -----------
     - used to initialize the variable
@@ -1116,6 +1092,44 @@ Initializer
 
 -------------------------------------------------------------------------------
 
+Story
+-----
+    Code compiled -> javac
+    byte code -> JVM
+
+    JVM does not have it's own memory
+        -> ask JRE
+
+    JRE also not have any memory 
+        -> ask RAM
+
+    Then JRE structured the data into format
+        1. Method Area -> methods/multi-line initializers (loading(static/non-static))
+        2. Static Pool Area -> static members (storing)
+            -> individual block of memory inside static pool known as Class Static Area
+        3. Stack Area -> execute
+        4. Heap Area -> non-static members (storing)
+            -> block of memory inside heap area known as Objects
+                Objects
+                    - entity of real life 
+                    - state of the object -> represented by variables
+                    - behaviour of object -> represented by methods
+
+                    - Object stored in Object Address
+                    - java doesn't give object's real address, instead it give you the reference => Object Reference
+                        -> reference address format - classname@hexadecimal_value
+                    - we get the object reference address by creating the object.
+                Class
+                    - design/blueprint 
+
+        -> Give back to JVM
+
+    JVM loads all the class in the Structure
+        Loading -> 
+        Storing -> ready to use
+
+------------------------------------------------------------------------
+
 Objects
 -------
     - entity of real life / instance of class
@@ -1140,6 +1154,7 @@ Class
 
 Class/ Concrete class
     - full complete
+    - allowed only concrete methods
 
 Abstract class 
     - highlevel design
@@ -1165,4 +1180,63 @@ interface
 
         // code
     }
+    - allowed abstract methods
+
+- abstract method
+    - incomplete method
+        - where there is method declaration but no initialization
+        - ends with semicolon
+        - declared with abstract keyword
+    - abstract methods cannot be static or final or private
+    - should be non-static
+    - allowed inside abstract method and interface only not in concrete class.
+    - cannot be called object of abstract methods
+    - abstract method are only declared in abstract class not in concrete class or any other
+
+- Object Creation
+    - Syntax:
+        new Constructor;
+            OR
+        new ClassName([Actual Argument] --> optional);
+    - new -> keyword as well as operator
+        - used to create object
+    - Constructor 
+        - helps new to create object
+        - used to store non-static members inside the object
+
+- Constructor
+    - Special Type of non-static method
+    - doesn't have return type
+    - name should be same as ClassName
+
+    - we don't directly call constructor
+    - syntax:
+        new constructor;
+
+    - Assignment
+        - Create abstract methods inside abstract classes
+        - Create 5 constructor inside 5 classes
+            - Student
+            - Employee
+            - User
+            - Product
+            - Customer
+        - Create 3 objects
+            - directly create
+            - get the reference
+            - store the reference
+
+- Anonmous Object
+    - which we don't have any reference to access it.
+        new A(); // no reference stored
+    - to print refrence of any anonmous objec:
+        System.out.println(new A()); // return reference
+    - to store the object 
+        A variable = new A(); // storing the reference inside variable.
+
+
+
+    
+
+
 
