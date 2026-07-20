@@ -4,7 +4,7 @@
 // console.log(window);
 // console.log(this);
 
-// Variables
+// ! Variables
 // var a = "String";
 // var a = 243232;
 // var a = 111.11;
@@ -18,7 +18,7 @@
 // console.log("Task 2");
 // console.log("Task 3");
 
-// // for loop
+// ~ for loop
 // for(let i=0; i<100000; i++){
 //     console.log(i);
 // }
