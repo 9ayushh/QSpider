@@ -3,32 +3,32 @@ abstract class xyz {
 }
 
 public class Customer {
-    int studId;
+    int custId;
     String name;
-    int yop;
-    double percentage;
-    static String clgName;
-    static String clgAdd;
+    int yearOfJoining;
+    double amount;
+    static String branchName;
+    static String branchAdd;
+    static long branchPh;
     long phNo;
-    char section;
-    static long clgPh;
-    String degree;
+    char deptSection;
+    String dept;
 
     public static void viewBranchDetails() {
-        System.out.println(clgName);
-        System.out.println(clgAdd);
-        System.out.println(clgPh);
+        System.out.println(branchName);
+        System.out.println(branchAdd);
+        System.out.println(branchPh);
     }
 
     public void customerDetails() {
 
-        System.out.println(studId);
+        System.out.println(custId);
         System.out.println(name);
-        System.out.println(yop);
-        System.out.println(percentage);
+        System.out.println(yearOfJoining);
+        System.out.println(amount);
         System.out.println(phNo);
-        System.out.println(section);
-        System.out.println(degree);
+        System.out.println(deptSection);
+        System.out.println(dept);
     }
 
     public Customer(){
@@ -54,5 +54,9 @@ public class Customer {
         System.out.println(new Customer(6));
 
         Customer ref = new Customer("hello");
+
+        viewBranchDetails();
+
+        ref.customerDetails();
     }
 }

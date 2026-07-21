@@ -45,13 +45,17 @@ public class Student {
 
 
     public static void main(String[] args){
-        new Student();
+        // Student(); // error
 
-        System.out.println(new Student(6));
-        Student ref = new Student("hello");
-        System.out.println(ref);
+        new Student(); // anonymous object
 
-        ref.studDetails();
-        viewClgDetails();
+        new Student(1, 5); 
+
+        // System.out.println(new Student(6));
+        // Student ref = new Student("hello");
+        // System.out.println(ref);
+
+        // ref.studDetails();
+        // viewClgDetails();
     }
 }

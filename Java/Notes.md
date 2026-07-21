@@ -1295,6 +1295,54 @@ interface
         - code reusability
 
             
+Accessing Static Members
+------------------------
+    - There are two ways of accessing static members
+        1. Directly by memberName
+        2. Two ways
+            i. ClassName.memberName;
+            ii. objectReference.memberName
+    
+    - All the static members can accessed in all 3 ways from static method and non static method.
+
+    - NOTE:
+        - If it is same class we should call directly
+        - We should avoid to call static member by using object reference.
+        - When to use classname to call static member in the same class ?
+            - If static variable and local variable are having same name then to differentiate static variable from local variable, we will use ClassName with static variable.
 
 
+Accessing Non-Static Members
+------------------------
+    - There are two ways of accessing static members
+        1. Directly --> only when main method is non-static
+        2. Two ways
+            i. objectReference.memberName
+            ii. this.memberName or super.memberName;
+            
+    - Accessing non-static member from non-static method
+        - we can use all 3 ways  
+        - NOTE:
+            - If it is same class and from non-static we should call directly.
+            - We should avoid to call non-static member from non-static by using object reference.
+            - When to use this to call non-static member in the same class ?
+                - If non-static variable and local variable are having same name then to differentiate non-static variable from local variable, we will use this keyword with non-static variable.
 
+    - Accessing non-static member from static method
+        - we are having only 1 ways that is object reference
+
+
+Difference b/w static & non-static
+----------------------------------
+    - common prop | unique prop  (at least 10)
+
+Return type
+-----------
+    - It is used to specify the type of value return by the method
+    - It is of three types
+        1. void
+        2. Primitive Return Type
+        3. Non-Primitive Return Type
+
+    - To return the values, we are using return statement
+    
