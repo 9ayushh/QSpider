@@ -1166,7 +1166,7 @@ Abstract class
                 // code
             }
         }
-    - we cannot create object of abstract class.
+    - we cannot let anyone create object of abstract class.
 
 Assignment - Create 5 Abstract classes and interface, then compile them and execute them
 
@@ -1226,7 +1226,7 @@ interface
             - get the reference
             - store the reference
 
-- Anonmous Object
+- Anonymous Object
     - which we don't have any reference to access it.
         new A(); // no reference stored
     - to print refrence of any anonmous objec:
@@ -1235,8 +1235,66 @@ interface
         A variable = new A(); // storing the reference inside variable.
 
 
+- Class loader
+    - JVM calls to load the class 
+    - It loads all the members of class and
+    - it stores only static members
 
-    
+- execute
+    - Stack area uses LIFO -> from bottom to up
+    - to access the non-static members, we have to create the object in heap area
+    - in stack area, all local variable is stored inside the stack blocks
+
+- Constructor stores the non-static members inside object
+
+- Object loader
+    - stores all the non-static members by using Constructors
+
+- Static members are stored automatically (by default stored)
+- Non-static members are not stored automatically, we have to manually stored in memory
+
+- Why we have to create objects
+    - to access the non-static members
+        - because non-static members are not stored inside the memory
+
+
+- Packages
+    - container like stuctures which contains class files and interfaces
+    - package should be the first statement inside the file
+    - only one package
+    - create by the help of package keyword
+    - Two types of packages
+        1. User define 
+        2. pre define 
+            - Java library
+                - it is having subpackages like 
+                    - lang
+                    - util
+                    - io
+                    - sql
+                    - jwt
+
+    - to access packages, there are two ways
+        - fully qualified name
+            - when we only need to use only 1 time
+            main() {
+                System.out.println("hey); 
+                java.util.ArrayList h; // fully qualified name
+            }
+
+        - import statement
+            - when we want to use multiple time
+                import java.util.ArrayList;
+                import java.io.fileInputStream;
+                import java.lang.String;
+
+    - advantage
+        - maintainablity
+        - security
+        - naming confusion
+        - code reusability
+
+            
 
 
 

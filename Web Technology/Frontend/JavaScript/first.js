@@ -630,5 +630,77 @@
 // includes
 // console.log(str.includes("Akshit"));
 
+// ! Arrays
+
+// ? Create:
+
+// ~ litreal's way
+// ~ Homogenous Array
+// let arr = [10,20,30,40,50,60];
+// ~ Heterogenous Array
+// let arr2 = [1, "abc", true, 123n, null, undefined, Symbol("abc"), function(){console.log("function");},["HTML", "CSS", "JS"],{}];
+
+// ? Read
+// console.log(arr2[1]); // abc
+// arr2[7](); // function
+// console.log(arr2[8][1]); // CSS
+
+// ? Update
+// console.log(arr2);
+// arr2[4] = "newData";
+// arr2[10] = "newData2";
+// console.log(arr2);
+
+// ? Delete
+// console.log(arr);
+// delete arr[0];
+// delete arr[1];
+// console.log(arr);
+
+// ~ Property
+// ? length
+// console.log(arr.length);
+// console.log(arr2.length);
 
 
+// ! Methods of Array
+
+// ? slice
+// let arr = [10,20,30,40,50,60];
+// let newArr = arr.slice(1,3);
+// console.log(newArr);
+// console.log(arr);
+
+// ? splice
+// let arr = [10,20,30,40,50,60];
+// let newArr = arr.splice(1,3);
+// console.log(newArr);
+// console.log(arr);
+
+
+// reverse an array
+let arr = [10,20,30,40,50,60];
+// arr.reverse();
+// console.log(arr);
+
+// let l = 0;
+// let r = arr.length-1;
+// while (r > l){
+//     let temp = arr[l];
+//     arr[l] = arr[r];
+//     arr[r] = temp;
+
+//     l++;
+//     r--;
+// }
+// console.log(arr);
+
+let str = "Isha";
+
+let arrayStr = str.split("");
+
+let revStr = arrayStr.reverse();
+
+let newStr = revStr.join("");
+
+console.log(newStr);

@@ -61,8 +61,20 @@ Variables:
   - There are three types of variables:
     1. var 
         - everything is possible
+        - declaration
+        - initialization
+        - declaration & initialization
+        - re-declaration
+        - re-initialization
+
     2. let 
-        - redeclaration is not possible
+        - declaration
+        - initialization
+        - declaration & initialization
+        - re-initialization
+
+        - re-declaration is not possible
+
     3. const 
         - only declare and initialization in single line is possible
 
@@ -115,7 +127,7 @@ Data Type:
 
 JS Engine:
 ----------
-  - A javascript engine is a program inside the browser hat reads, converts and executes javascript code. It takes JS code, turns it into machine code using a compiler and runs it fast.
+  - A javascript engine is a program inside the browser that reads, converts and executes javascript code. It takes JS code, turns it into machine code using a compiler and runs it fast.
 
   - Google Chrome ----> V8 engine --> developed by google, made bu C++
   - Microsoft edge ----> V8 engine --> new
@@ -142,7 +154,7 @@ JS Engine:
       This makes it easier for the engine to understand what the code is supposed to do.
 
   - Interpreter:
-    - Ther interpreter checks the code line by line and converts it into bytecode.
+    - The interpreter checks the code line by line and converts it into bytecode.
     - In chrome's V8 engine, this interpreter is caller Ignition.
 
     - Its goal:
@@ -308,7 +320,7 @@ Functions
                 }
 
         3. Arrow function
-            - It is also known as fat arrow function. It is the shorter form of writting function.
+            - It is also known as fat arrow function. It is the shorter form of writing function.
 
             - ex:
                 let fun = () => {
@@ -653,3 +665,94 @@ String
             - It returns the boolean value i.e., true or false, checks whether substring is present in the string or not.
             - ex:
                 console.log(str.includes("Akshit"));
+        
+        - join 
+
+
+Arrays
+------
+    - It is a non primitive data type which is used to store multiple data inside a single variable.
+    - The data stored inside an array is knownb as elements.
+    - In JS array can be homogeneous as well as heterogeneous.
+
+- Ways to Create Arrays
+    - literal's ways
+        1. Homogeneous Array
+            - ex: 
+                let arr = [10,20,30,40,50,60];
+
+        2. Heterogeneous Array
+            - ex:
+                let arr2 = [1, "abc", true, 123n, null, undefined, Symbol("abc"), function(){console.log("function");},["HTML", "CSS", "JS"],{}];
+
+- Ways to Read Arrays
+    console.log(arr2[1]); // abc
+    arr2[7](); // function
+    console.log(arr2[8][1]); // CSS
+
+- Ways to Update Arrays
+    - ex:
+        console.log(arr);
+        arr[4] = "newData";
+        arr[10] = "newData2";
+        console.log(arr);
+
+- Ways to Delete
+    - ex:
+        console.log(arr);
+        delete arr[0];
+        delete arr[1];
+        console.log(arr);
+
+- Property
+    - length
+        - It gives no. of elements present inside the array.
+        - ex:
+            console.log(arr.length);
+
+- Ways of creating array
+    1. Literal's way
+        - let arr = [1, 2, "string", ture, null];
+
+    2. Constructor's way
+        - let arr = new Array(1, 2, 3, 4);
+        - console.log(arr);
+    
+    3. Array.of()
+        - let arr = Array.of(1,2,3,4);
+        - console.log(arr);
+
+- Methods of Array
+    - slice
+        - It accepts two arguments starting and ending index. 
+        - And remove the elements present between starting and ending index. 
+        - It returns new array. 
+        - It does not affect the original array
+        - syntax:
+            array.slice(starting, ending);
+        - ex:
+            let arr = [10,20,30,40,50,60];
+            let newArr = arr.slice(1,3);
+            console.log(newArr);
+            console.log(arr);
+
+
+    - splice
+        - used to delete or update the data
+        - It accepts three arguments, i.e., starting index, count(no. of element wants to delete), new elements that we wants to add. 
+        - It is used to remove, update, as well as add new Element in the array.
+        - It return new array and it modifies the original array.
+        - syntax:
+            array.splice(starting, count, [newData] -> optional)
+        - ex:
+            let arr = [10,20,30,40,50,60];
+            let newArr = arr.splice(1,3);
+            console.log(newArr);
+            console.log(arr);
+
+    - reverse
+        - Reverses the elements in an array in place. This method mutates the array and returns a reference to the same array.
+        - ex:
+            let arr = [10,20,30,40,50,60];
+            arr.reverse();
+            console.log(arr);
