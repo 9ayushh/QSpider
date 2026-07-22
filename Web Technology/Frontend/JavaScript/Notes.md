@@ -756,3 +756,120 @@ Arrays
             let arr = [10,20,30,40,50,60];
             arr.reverse();
             console.log(arr);
+
+    - flat
+        - It converts multi-dimentional array into single dimensional array.
+        - ex:
+            let arr = [1,2,3,[[[[4,5,6,[7,8,9]]]]]];
+            console.log(arr.flat(3));
+            console.log(arr.flat(Infinity)); convert all into single dimentional.
+
+    - some
+        - It accepts callback function as an argument, and executes the function for each element present inside an array.
+        - It returns true, if any one of the element matches the condition.
+        - If none of the element matched the condition then it returns false.
+
+        - syntax
+            arr.some(callbackFunction, [thisarg] -> optional);
+                callbackFunction - (Element, index, array)=> {}
+        - ex:
+            let arr = [30,60,90,120,150];
+            let result = arr.some((val) => { return val > 50;});
+            console.log(result); // boolean value - true
+
+
+    - every
+        - It accepts callback function as an argument, and executes the function for each element present inside an array. 
+        - It returns true, only when all the elements passes the condition, if any one of element present inside the array failed to match the condition then it returns false.
+
+        - syntax
+            arr.every(callbackFunction, [thisarg] -> optional);
+                callbackFunction - (Element, index, array)=> {}
+        - ex:
+            let arr = [30,60,90,120,150];
+            let result = arr.every((val) => { return val > 50;});
+            console.log(result); // boolean value - false
+
+    - push
+        - It is used to add the elements from the end of the array. 
+        - It modifies the original array.
+        - It returns the length of the updated array.
+        - ex:
+            let arr = [10,20,30];
+            console.log(arr);
+            let res = arr.push(40,50,true,"string");
+            console.log(res);
+            console.log(arr);
+    
+    - pop
+        - It is used to remove the elements from the end of the array.
+        - It modifies the original array. 
+        - It returns the removed element.
+        - ex:
+            let arr = [10,20,30];
+            console.log(arr);
+            let res = arr.pop();
+            console.log(res);
+            console.log(arr);
+
+    - shift
+        - It is used to remove the elements from the start of the array.
+        - It modifies the original array.
+        - It returns the removed element.
+        - ex:
+            let arr = [10,20,30];
+            console.log(arr);
+            let res = arr.shift();
+            console.log(res);
+            console.log(arr);
+
+    - unshift
+        - It is used to add the elements from the start of the array.
+        - It modifies the original array. 
+        - It returns the length of the updated array.
+        - ex:
+            let arr = [10,20,30];
+            console.log(arr);
+            let res = arr.unshift("Data1", "data2");
+            console.log(res);
+            console.log(arr);
+
+    - map
+        - It is used to iterate and modify the elements of the array. It accepts a callback function which is executed for all the elements present inside the array.
+        - ex:
+            let arr = [1,2,3,4,5,6,7,8,9];
+            let res = arr.map((m) => {
+                return m+" hii";
+            });
+            console.log(res);
+
+    - filter
+        - It is used to filter an array and return new array which consists only those elements which passes the condition.
+        - ex:
+            let arr = [1,2,3,4,5,6,7,8,9];
+            let res = arr.filter((m) => {
+                return m%2==0;
+            });
+            console.log(res);
+
+    - reduce
+        - It always return a single value.
+        - It accepts two arguments callback function, and initial data which is optional.
+        - Accumulator : It is the total result given by the reduce method.
+        - Current val : It store each element present inside an array.
+        - Syntax:   
+            arr.reduce(callback, initailValue);
+
+        - ex:
+            let arr = [1,2,3,4,5,6,7,8,9];
+            let res = arr.reduce((acc, currVal) => {
+                return acc+currVal;
+            });
+            console.log(res);
+
+Object
+------
+    - It is a non-primitive type, which is used to store the data in the form of key and value pairs.
+    - Key and value pairs is seperated by using colon(:).
+    - Key and value pair together is known as properties. And multiple properties are seperated by using comma(,).
+    

@@ -677,30 +677,106 @@
 // console.log(newArr);
 // console.log(arr);
 
+// ? reverse
 
-// reverse an array
-let arr = [10,20,30,40,50,60];
+// ^ reverse an array
+// let arr = [10,20,30,40,50,60];
 // arr.reverse();
 // console.log(arr);
 
-// let l = 0;
-// let r = arr.length-1;
-// while (r > l){
-//     let temp = arr[l];
-//     arr[l] = arr[r];
-//     arr[r] = temp;
+// ^ to reverse a string
+// let str = "none";
+// let arrayStr = str.split("");
+// let revStr = arrayStr.reverse();
+// let newStr = revStr.join("");
+// console.log(newStr);
 
-//     l++;
-//     r--;
-// }
+// ? flat
+// let arr = [1,2,3,[[[[4,5,6,[7,8,9]]]]]];
+
+// console.log(arr.flat(3));
+// console.log(arr.flat(Infinity)); // to remove all dimentional array
+
+// ? some
+// let arr = [30,60,90,120,150];
+// let result = arr.some((val) => {console.log(val);});
+// console.log(result); // undefined boolean value is false
+
+// let result = arr.some((val) => { return val > 50;});
+// console.log(result); // boolean value - true
+
+// ? every
+// let arr = [30,60,90,120,150];
+// let result = arr.every((val) => { return val > 50;});
+// console.log(result); // boolean value - false
+
+// ? push
+// let arr = [10,20,30];
+// console.log(arr);
+// let res = arr.push(40,50,true,"string");
+// console.log(res);
 // console.log(arr);
 
-let str = "none";
+// ? pop
+// let arr = [10,20,30];
+// console.log(arr);
+// let res = arr.pop();
+// console.log(res);
+// console.log(arr);
 
-let arrayStr = str.split("");
+// ? shift
+// let arr = [10,20,30];
+// console.log(arr);
+// let res = arr.shift();
+// console.log(res);
+// console.log(arr);
 
-let revStr = arrayStr.reverse();
+// ? unshift
+// let arr = [10,20,30];
+// console.log(arr);
+// let res = arr.unshift("Data1", "data2");
+// console.log(res);
+// console.log(arr);
 
-let newStr = revStr.join("");
+// ? map
+// let arr = [1,2,3,4,5,6,7,8,9];
 
-console.log(newStr);
+// let res = arr.map((m) => {
+//     return m+" hii";
+// });
+// console.log(res);
+
+// ? filter
+// let arr = [1,2,3,4,5,6,7,8,9];
+
+// let res = arr.filter((m) => {
+//     return m%2==0;
+// });
+// console.log(res);
+
+// ? reduce
+let arr = [1,2,3,4,5,6,7,8,9];
+
+let res = arr.reduce((acc, currVal) => {
+    return acc+currVal;
+});
+console.log(res);
+
+
+// ! Objects
+let obj = {
+    id : 1,
+    objName : "abc",
+    sal : 9876,
+    isDev : true,
+    isTester : null,
+    isMarried : undefined,
+    printName : function() {
+        console.log("function");
+    },
+    skills : ["HTML", "CSS", "JS"],
+    address : {
+        city : "delhi",
+        street : "A"
+    }
+}

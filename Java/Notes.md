@@ -1149,10 +1149,8 @@ Static/Non-static
     - non-static which value is different for all
         - adv - security
 
-Class
-    - design/blueprint 
-
 Class/ Concrete class
+    - design/blueprint 
     - full complete
     - allowed only concrete methods
 
@@ -1297,16 +1295,16 @@ interface
             
 Accessing Static Members
 ------------------------
-    - There are two ways of accessing static members
+    - There are three ways of accessing static members
         1. Directly by memberName
-        2. Two ways
+        2. Other ways
             i. ClassName.memberName;
             ii. objectReference.memberName
     
     - All the static members can accessed in all 3 ways from static method and non static method.
 
     - NOTE:
-        - If it is same class we should call directly
+        - If its in same class we should call directly
         - We should avoid to call static member by using object reference.
         - When to use classname to call static member in the same class ?
             - If static variable and local variable are having same name then to differentiate static variable from local variable, we will use ClassName with static variable.
@@ -1314,16 +1312,16 @@ Accessing Static Members
 
 Accessing Non-Static Members
 ------------------------
-    - There are two ways of accessing static members
+    - There are three ways of accessing static members
         1. Directly --> only when main method is non-static
-        2. Two ways
+        2. Other ways
             i. objectReference.memberName
             ii. this.memberName or super.memberName;
             
     - Accessing non-static member from non-static method
         - we can use all 3 ways  
         - NOTE:
-            - If it is same class and from non-static we should call directly.
+            - If its in same class and from non-static we should call directly.
             - We should avoid to call non-static member from non-static by using object reference.
             - When to use this to call non-static member in the same class ?
                 - If non-static variable and local variable are having same name then to differentiate non-static variable from local variable, we will use this keyword with non-static variable.
@@ -1335,6 +1333,40 @@ Accessing Non-Static Members
 Difference b/w static & non-static
 ----------------------------------
     - common prop | unique prop  (at least 10)
+
+    - static
+        - in static, we assign the value which is common for all.
+        - static members are defined by using static keyword.
+        - stores in class static area inside the static pool area.
+        - Static members are stored automatically (by default stored).
+        - class loader is used to stores the static members.
+        - we do not have to create object in order to store static members.
+        - there are three ways to access static members:
+            i. Directly by memberName
+            ii. ClassName.memberName
+            iii. objectReference.memberName
+        - we can use all three ways when accessing static members from both non-static and static method.
+        - if it is in same class we should call directly
+        - we should avoid to call static member by using object reference.
+        - if static variable and local variable are having same name then to differentiate static variable from local variable, we will use ClassName with static variable.
+
+
+    - non-static
+        - in non-static, we assign the value which is different for all.
+        - if we don't use static keyword, it is consider non-static.
+        - stores in object inside the heap area.
+        - Non-static members are not stored automatically, we have to manually stored in memory.
+        - constructor is used to store the non-static members.
+        - we have to create object to access non-static members.
+        - there are three ways to access non-static members:
+            i. Directly by memberName
+            ii. objectReference.memberName
+            iii. this.memberName OR super.memberName
+        - we can use all 3 ways when accessing non-static members from non-static method. But we can only use 1 way (objectReference.memberName) when accessing non-static members from static methods.
+        - while accessing from non-static method, if it is same class and from non-static we should call directly.
+        - We should avoid to call non-static member from non-static method by using object reference.
+        - if non-static variable and local variable are having same name then to differentiate non-static variable from local variable, we will use this keyword with non-static variable.
+
 
 Return type
 -----------
