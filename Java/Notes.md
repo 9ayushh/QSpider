@@ -1143,18 +1143,21 @@ Objects
     - we get the object reference address by creating the object.
 
 Static/Non-static 
+-----------------
     - static which value is same for all
-    - also known as shareing member
+    - also known as sharing member
         - adv - memory optimization
     - non-static which value is different for all
         - adv - security
 
 Class/ Concrete class
+---------------------
     - design/blueprint 
     - full complete
     - allowed only concrete methods
 
 Abstract class 
+--------------
     - highlevel design
     - partially incomplete
     - use abstract keyword/modifier before class
@@ -1169,6 +1172,7 @@ Abstract class
 Assignment - Create 5 Abstract classes and interface, then compile them and execute them
 
 interface 
+---------
     - fully incomplete
     - top-highlevel design
     - interface A {
@@ -1349,6 +1353,7 @@ Difference b/w static & non-static
         - if it is in same class we should call directly
         - we should avoid to call static member by using object reference.
         - if static variable and local variable are having same name then to differentiate static variable from local variable, we will use ClassName with static variable.
+        - advantage - memory optimization
 
 
     - non-static
@@ -1363,9 +1368,10 @@ Difference b/w static & non-static
             ii. objectReference.memberName
             iii. this.memberName OR super.memberName
         - we can use all 3 ways when accessing non-static members from non-static method. But we can only use 1 way (objectReference.memberName) when accessing non-static members from static methods.
-        - while accessing from non-static method, if it is same class and from non-static we should call directly.
+        - if it is in same class and from non-static we should call directly.
         - We should avoid to call non-static member from non-static method by using object reference.
         - if non-static variable and local variable are having same name then to differentiate non-static variable from local variable, we will use this keyword with non-static variable.
+        - advantage - security
 
 
 Return type
@@ -1374,7 +1380,87 @@ Return type
     - It is of three types
         1. void
         2. Primitive Return Type
+            - to specify return type we use primitive datatype 
+            - there are 8 primitive datatypes
         3. Non-Primitive Return Type
+            - to specify return type we use is non-primitive
+            - String, ClassName, ArrayList, etc.
 
     - To return the values, we are using return statement
+
+    - A method after execution will return a data back to the caller with the help of return statement
+
+    - Return Statement
+        - It is used to return the value.
+        - syntax :
+            [return [value/variable/expression];] => optional
+        - in this syntax, value, variable and expression are optional and return statement is also optional
+
+        - return keyword
+            - return is a keyword.
+            - It is a control transfer statement.
+            - When the return statement is executed, the execution of the method is terminated and control is transfer to the calling method.
+
+        - Steps to use return statement
+            1. Provide a return type for a method (it should not be void).
+            2. Use the return statement in the value to be returned.
+            Rule for Return Statement:
+                - The type specified as return type should be same as the type of value passed in a return statement. 
+                - return statement should be last statement & it can many but only one should be executable.
+
+    - null  
+        - default value for non-primitive data type.
     
+    - to access the value of local variable, then we can just return the variable.
+
+Void with return statement
+----------------------------
+    - Void
+        - void is a data type that is used as a return type when the method returns nothing.
+        - It is a keyword in Java
+
+        - The time of method doesn't promise to return any value, we are making method the return type void
+        - The time of method of having void return type, it can take return statement in the method but that is not compulsory.
+        - If we are taking return statement, we should not pass any value to the return statement (neither 0 nor 0.0 or null, etc.).
+
+Primitive return type and return statement
+------------------------------------------
+    - if method promises to return primitive values, we should make our method return type as primitive return type, by the help of primitive datatype 
+    - (such as byte, short, chat, int, long, boolean, float, boolean)
+
+    - in this case, return statement is compulsory.
+    - passing the value to return statement is compulsory.
+    - we can pass different value to return statement with respect to return type, if implicit typecasting is possible. Or else, we get CTE.
+
+Non Primitive return type and return statement
+----------------------------------------------
+    - if method promises to return non-primitive data, we should make our method return type as non-primitive return type, by the help of non-primitive datatype 
+    - (such as ClassName, ArrayList, HashMap, String, etc...)
+
+    - in this case, return statement is compulsory.
+    - passing the value to return statement is compulsory.
+    - we can pass different value to return statement with respect to return type, if implicit typecasting is possible. Or else, we get CTE.
+
+
+Calling the method with respect to return type and return statement
+-------------------------------------------------------------------
+    - There are three ways to call a method
+        1. directly
+        2. inside printing statement
+        3. inside variable
+
+    - If method is having void type return type, we can call only directly
+    - void -> can only access directly
+    - If we are trying to call it inside the printing statement or variable, we get CTE
+
+    - If method is having primitive return type or non-primitive return type, we can call them in all three ways.
+    - primitive/non-primitive -> can access by all three ways
+    - We can call them directly, if we don't want return value.
+    - We can call them inside the printing statement, if we want to use the return value only once.
+    - We can call them inside the variable, if we want to use the return value muliple times or again and again.
+
+Array
+-----
+
+
+
