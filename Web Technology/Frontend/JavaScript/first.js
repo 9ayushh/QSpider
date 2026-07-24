@@ -755,28 +755,314 @@
 // console.log(res);
 
 // ? reduce
-let arr = [1,2,3,4,5,6,7,8,9];
+// let arr = [1,2,3,4,5,6,7,8,9];
 
-let res = arr.reduce((acc, currVal) => {
-    return acc+currVal;
-});
-console.log(res);
+// let res = arr.reduce((acc, currVal) => {
+//     return acc+currVal;
+// });
+// console.log(res);
 
 
 // ! Objects
-let obj = {
-    id : 1,
-    objName : "abc",
-    sal : 9876,
-    isDev : true,
-    isTester : null,
-    isMarried : undefined,
-    printName : function() {
-        console.log("function");
-    },
-    skills : ["HTML", "CSS", "JS"],
-    address : {
-        city : "delhi",
-        street : "A"
-    }
-}
+// let obj = {
+//     id : 1,
+//     objName : "abc",
+//     sal : 9876,
+//     isDev : true,
+//     isTester : null,
+//     isMarried : undefined,
+//     printName : function() {
+//         console.log("function");
+//     },
+//     skills : ["HTML", "CSS", "JS"],
+//     address : {
+//         city : "delhi",
+//         street : "A"
+//     }
+// }
+
+// ? READ
+// console.log(obj);
+// console.log(obj.objName);
+// console.log(obj.isTester);
+// console.log(obj.skills[1]);
+// console.log(obj.address.city);
+// obj.printName();
+
+// ? Update
+// console.log(obj);
+// obj.isTester = false;
+// console.log(obj);
+
+// obj.newProp = "newValue";
+// console.log(obj);
+
+// ? DELETE
+// delete obj.isTester;
+// delete obj.isDev;
+// console.log(obj);
+
+
+// ~ Ways to create Object
+// ? Constructor's way
+// let obj = new Object({id : 1, objName : "abc"});
+// console.log(obj);
+
+// ? Constructor function
+// function ObjConstructor(id, name){
+//     this.empId = id;
+//     this.empName = name;
+//     this.sal = 23456;
+// }
+// let obj = new ObjConstructor(1, "abc");
+// console.log(obj);
+
+
+// ! this keyword
+// console.log(this) // window
+
+// function abc() {
+//     "use strict"
+//     console.log(this); // window, undefined
+// }
+// abc();
+
+// "use strict"
+// b = 200;
+// console.log(b);
+
+// var empName = "abc";
+
+// let obj =  {
+//     empName : "xyz",
+//     val : this, // window
+//     printName : function() {
+//         console.log(this.empName);
+//     },
+//     printName2 : () => {
+//         console.log(this.empName)
+//     }
+// }
+
+// console.log(obj.val);
+// obj.printName();
+// obj.printName2();
+
+// ? Methods of Objects
+// let obj = {
+//     id : 1,
+//     objName : "abc",
+//     sal : 1234
+// }
+
+// ~ Object.Key()
+// console.log(Object.keys(obj));
+
+// ~ Object.values() 
+// console.log(Object.values(obj));
+
+// ~ Object.entries()
+// console.log(Object.entries(obj));
+
+// ~ Object.fromEntries()
+// console.log(Object.fromEntries([["id",1], ["objName","qwert"]]));
+
+// ~ Object.freeze()
+// Object.freeze(obj);
+
+// ^ updation --> not possible
+// obj.objName = "newValue";
+
+// ^ addition --> not possible
+// obj.newProp = "newVal";
+
+// ^ deletion --> not possible
+// delete obj.id;
+
+// & Object.isFrozen()
+// console.log(Object.isFrozen(obj));
+
+// ~ Object.Seal()
+// Object.seal(obj);
+
+// ^ updation --> possible
+// obj.objName = "newValue";
+
+// ^ addition --> not possible
+// obj.newProp = "newVal";
+
+// ^ deletion --> not possible
+// delete obj.id;
+
+// & Object.isSealed()
+// console.log(Object.isSealed(obj));
+
+
+// ~ Object.assign(destination, source)
+// let obj1 = {
+//     id : 1,
+//     objName : "abc",
+//     sal : 1234
+// }
+// let obj2 = {
+//     isDev : true
+// }
+// let obj3 = {
+//     address : "qwert"
+// }
+
+// let newObj = Object.assign({}, obj1, obj2, obj3);
+// console.log(newObj);
+
+
+// ! Shallow Copy
+// let obj = {
+//     id : 1,
+//     objName : "abc",
+//     isDev : true,
+//     address : {
+//         street : "A",
+//         pin : 1234,
+//         city : "Delhi"
+//     }
+// };
+
+// ~ 1st way
+// let newObj = {...obj};
+
+// ~ 2nd way
+// let newObj = Object.assign({}, obj);
+
+// newObj.objName = "newData";
+// newObj.address.city = "Banglore";
+
+// console.log("original", obj);
+// console.log("new", newObj);
+
+// ! Deep Copy
+// let obj = {
+//     id : 1,
+//     objName : "abc",
+//     isDev : true,
+//     address : {
+//         street : "A",
+//         pin : 1234,
+//         city : "Delhi"
+//     }
+// };
+
+// ~ 1st way
+// let newObj = JSON.parse(JSON.stringify(obj));
+
+// ~ 2nd way
+// let newObj = structuredClone(obj)
+
+// newObj.id = 1000;
+// newObj.address.city = "Gurugram";
+
+// console.log("original", obj);
+// console.log("new", newObj);
+
+// ! Destructuring
+// ? Destructuring in Array
+// let arr = ["data1", "data2", "data3", "data4"];
+// let [a, b, ...remainingData] = arr;
+
+// console.log(a);
+// console.log(b);
+// console.log(remainingData);
+
+// ? Destructuring in Object
+// let obj = {
+//     id : 1,
+//     objName : "abc",
+//     idDev : true,
+//     sal : 9876,
+//     isTester : null
+// };
+
+// let {id, sal, ...data} = obj;
+
+// console.log(id);
+// console.log(sal);
+// console.log(data);
+
+// ? Destructuring in Nested Object
+// let obj = {
+//     id : 1,
+//     objName : "abc",
+//     isDev : true,
+//     address : {
+//         street : "A",
+//         pin : 1234,
+//         city : "Delhi"
+//     }
+// };
+
+// let {address} = obj;
+// let {city} = address;
+// console.log(city);
+
+// ? REST parameters
+// function abc(...data) {
+//     console.log(data);
+// }
+// abc(1,2,3,4,5,6,7,7,8,9);
+
+// ! Advance Loops
+
+// ? forEach
+// let arr = [1,2,3,4,5,6,7,8];
+// arr.forEach((val, index, array) => {
+//     console.log(val, index, array);
+// });
+
+// ? for-in
+// let obj = {
+//     id : 1,
+//     objName : "abc",
+//     sal : 8976,
+//     isDev : true
+// };
+
+// for(let data in obj) {
+//     console.log(data, obj[data]);
+// }
+
+// let arr = [10,2,3,4,5,6];
+// for(let data in arr){
+//     console.log(data, arr[data]);
+// }
+
+// ? for-of
+// let arr = [10,20,30,40,50];
+// for(let data of arr){
+//     console.log(data);
+// }
+
+// let str = "wertyu";
+// for(let data of str){
+//     console.log(data);
+// }
+
+// ~ Set
+// let unique = new Set([1,1,1,1,2,2,2,2,4,4,4,4]);
+// for(let data of unique) {
+//     console.log(data);
+// }
+
+// ! Prototype
+
+console.log(String.prototype);
+console.log(Array.prototype);
+console.log(Object.prototype);
+
+let str = "string";
+console.log(str.__proto__);
+
+let arr = [];
+console.log(arr.__proto__);
+
+console.log(String.prototype === str.__proto__);
+
+console.log(window.__proto__.__proto__.__proto__.__proto__.__proto__);

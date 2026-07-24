@@ -873,3 +873,337 @@ Object
     - Key and value pairs is seperated by using colon(:).
     - Key and value pair together is known as properties. And multiple properties are seperated by using comma(,).
     
+    - Read
+        console.log(obj);
+        console.log(obj.objName);
+        console.log(obj.isTester);
+        console.log(obj.skills[1]);
+        console.log(obj.address.city);
+        obj.printName();
+
+    - Update
+        console.log(obj);
+        obj.isTester = false;
+        console.log(obj);      
+        
+        obj.newProp = "newValue";
+        console.log(obj);
+
+    - DELETE
+        delete obj.isTester;
+        delete obj.isDev;
+        console.log(obj);
+
+    - Ways to create Object
+        - Constructor's way
+            let obj = new Object({id : 1, objName : "abc"});
+            console.log(obj);
+
+        - Constructor function
+            function ObjConstructor(id, name){
+                this.empId = id;
+                this.empName = name;
+                this.sal = 23456;
+            }
+            let obj = new ObjConstructor(1, "abc");
+            console.log(obj);
+
+    - this keyword
+        - It is a pointing machanism, which points to the current context of object.
+        - Inside name function the value of this keyword, in non-static mode, will points to the window.
+        - Inside name function the value of this keyword, in case of strict mode, will points to the undefined.
+
+        - ex:
+            console.log(this) // window
+
+            function abc() {
+                "use strict"
+                console.log(this); // window, undefined
+            }
+            abc();
+
+            "use strict"
+            b = 200;
+            console.log(b);
+
+            var empName = "abc";
+
+            let obj =  {
+                empName : "xyz",
+                val : this, // window
+                printName : function() {
+                    console.log(this.empName);
+                },
+                printName2 : () => {
+                    console.log(this.empName)
+                }
+            }
+
+            console.log(obj.val);
+            obj.printName();
+            obj.printName2();
+
+    - Methods in Object
+        - Object.keys()
+            - It returns all the keys present inside the object in the form of array
+                - console.log(Object.keys(obj));
+
+        - Object.values() 
+            - It returns all the values present inside an object in the form of array.
+                - console.log(Object.values(obj));
+
+        - Object.entries() 
+            - It returns both key and value pairs in the form of nested / multi-dimensional array
+                - console.log(Object.entries(obj));
+
+        - Object.fromEntries()
+            - It accepts multi-dimensional array and converts it into object.
+                - console.log(Object.fromEntries([["id",1], ["objName","qwert"]]));
+
+        - Object.freeze()
+            - Prevents the modification of existing property, and prevents the addition of new properties, prevents the deletion of existing properties.
+            - ex:
+                - updation --> not possible
+                obj.objName = "newValue";
+
+                - addition --> not possible
+                obj.newProp = "newVal";
+
+                - deletion --> not possible
+                delete obj.id;
+
+        - Object.isFrozen()
+            - Returns boolean value, used to check whether object is freezed or not.
+                - console.log(Object.isFrozen(obj));
+
+        - Object.seal()
+            - Does not prevents the modification of existing property, and prevents the addition of new properties, prevents the deletion of existing properties.
+            - ex:   
+                - Object.Seal()
+                Object.seal(obj);
+
+                - updation --> possible
+                obj.objName = "newValue";
+
+                - addition --> not possible
+                obj.newProp = "newVal";
+
+                - deletion --> not possible
+                delete obj.id;
+
+        - Object.isSealed()
+            - Returns boolean value, used to check whether object is sealed or not.
+                - console.log(Object.isSealed(obj));
+
+        - Object.assign(destination, source)
+            - Copy the values of all properties from one or more source objects to a target object.
+            - Returns the target object.
+            - ex:
+                let obj1 = {
+                    id : 1,
+                    objName : "abc",
+                    sal : 1234
+                }
+                let obj2 = {
+                    isDev : true
+                }
+                let obj3 = {
+                    address : "qwert"
+                }
+
+                let newObj = Object.assign({}, obj1, obj2, obj3);
+                console.log(newObj);
+
+        - Shallow Copy
+            - Copies the main container, but shares the nested items. 
+            - Changing a nested item in the copy will change the original.
+            - ex:
+                let obj = {
+                    id : 1,
+                    objName : "abc",
+                    isDev : true,
+                    address : {
+                        street : "A",
+                        pin : 1234,
+                        city : "Delhi"
+                    }
+                };
+
+                - 1st way
+                let newObj = {...obj};
+
+                - 2nd way
+                let newObj = Object.assign({}, obj);
+
+                newObj.objName = "newData";
+                newObj.address.city = "Banglore";
+
+                console.log("original", obj);
+                console.log("new", newObj);
+
+        - Deep Copy
+            - Copies the container and duplicates all nested items. 
+            - The copy is 100% independent. 
+            - Changing the copy never affects the original.
+
+            - JSON.stringify()
+                - Inbuilt method in JS that converts JS Object into JSON.
+            - JSON.parse()
+                - Inbuilt method in JS that converts JSON into JS Object.
+
+            - ex:
+                let obj = {
+                    id : 1,
+                    objName : "abc",
+                    isDev : true,
+                    address : {
+                        street : "A",
+                        pin : 1234,
+                        city : "Delhi"
+                    }
+                };
+
+                - 1st way
+                let newObj = JSON.parse(JSON.stringify(obj));
+
+                - 2nd way
+                let newObj = structuredClone(obj)
+
+                newObj.id = 1000;
+                newObj.address.city = "Gurugram";
+
+                console.log("original", obj);
+                console.log("new", newObj);
+
+Destructuring
+-------------
+- Destructuring in JavaStript is a shortcut for unpacking values from arrays or properties from objects and saving them into variables.
+- It cleaner way to extract data without writing repetitive lines of code.
+
+    1. Destructuring in Array
+        - Orders Matters
+        - JavaScript assigns values to your variables based on their exact position in case of array.
+        - You can name the variables whatever you want.
+
+        - ex:
+            let arr = ["data1", "data2", "data3", "data4"];
+            let [a, b, ...remainingData] = arr;
+
+            console.log(a);
+            console.log(b);
+            console.log(remainingData);
+
+    2. Destructuring in Object
+        - Names Matter
+        - Because object properties do not have a set order, JavaScript looks for variables that match the exact key names inside the object.
+
+        - ex:
+            let obj = {
+                id : 1,
+                objName : "abc",
+                idDev : true,
+                sal : 9876,
+                isTester : null
+            };
+
+            let {id, sal, ...data} = obj;
+
+            console.log(id);
+            console.log(sal);
+            console.log(data);
+
+    3. Destructuring in Nested Object
+        - ex:
+            let obj = {
+                id : 1,
+                objName : "abc",
+                isDev : true,
+                address : {
+                    street : "A",
+                    pin : 1234,
+                    city : "Delhi"
+                }
+            };
+
+            let {address} = obj;
+            let {city} = address;
+            console.log(city);
+    
+    - The JavaScript spread operator(...) is like unpacking a box. It takes all the individual items out of a container (like an array or an object) and spreads them out into a new place.
+
+    4. REST parameters
+        - The rest parameter is a JavaScript feature that lets a function accept any number of extra arguments and bundles them clearly into a single array.
+        - It is written using three dots (...) followed by a name of your choice.
+
+        - ex:
+            function abc(...data) {
+                console.log(data);
+            }
+            abc(1,2,3,4,5,6,7,7,8,9); 
+
+Advance Loop
+------------
+    - forEach
+        - ex:
+            let arr = [1,2,3,4,5,6,7,8];
+            arr.forEach((val, index, array) => {
+                console.log(val, index, array);
+            });
+
+    - for-in
+        - ex: 
+            let obj = {
+                id : 1,
+                objName : "abc",
+                sal : 8976,
+                isDev : true
+            };
+
+            for(let data in obj) {
+                console.log(data, obj[data]);
+            }
+
+            let arr = [10,2,3,4,5,6];
+            for(let data in arr){
+                console.log(data, arr[data]);
+            }
+
+    - for-of
+        - ex: 
+            let arr = [10,20,30,40,50];
+            for(let data of arr){
+                console.log(data);
+            }
+
+            let str = "wertyu";
+            for(let data of str){
+                console.log(data);
+            }
+
+            - Set
+            let unique = new Set([1,1,1,1,2,2,2,2,4,4,4,4]);
+            for(let data of unique) {
+                console.log(data);
+            }
+
+Prototype
+---------
+    - It is keyword, every object has an internally linked with each other, by using prototype.
+    - It is an object.
+    - ex:
+        console.log(String.prototype);
+        console.log(Array.prototype);
+        console.log(Object.prototype);
+
+        let str = "string";
+        console.log(str.__proto__);
+
+        let arr = [];
+        console.log(arr.__proto__);
+
+        console.log(String.prototype === str.__proto__);
+
+        console.log(window.__proto__.__proto__.__proto__.__proto__.__proto__);
+    
+
+

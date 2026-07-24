@@ -1461,6 +1461,55 @@ Calling the method with respect to return type and return statement
 
 Array
 -----
+    - sequence of multiple values of same datatype
+    - ways to create
+    - Syntax 1
+        datatype [] variable = {val1, val2, ...};
+
+    - Syntax 2
+        - Declaration
+        datatype [] var;
+        OR
+        datatype[] var;
+        OR
+        datatype[]var;
+        OR
+        datatype []var;
+        OR
+        datatype var[];
+        OR
+        datatype var [];
+
+        - with initialization
+        datatype[] variable = new datatype[size];
+
+
+    - WAJP to create a method which will print the integer array elements
+
+    - main is string type
+        - because we can pass multiple different type data inside the string
+
+- Main method
+    - The execution of a java program always starts from the main method defined as follows.
+    public static void main(String[] args){ }
+
+    - Purpose of the Main Method:
+        - Start the execution
+        - Control the flow of the execution
+        - End of execution
+    - NOTE: 
+        - A method can be executed only when it is called, we can call a method any number of times, therefore it is said to be code reusability.
+        - The main method is always called by JVM.
+
+    - Why main is public static void main(String[] args)
+        - main is public because jvm can call it anywhere
+        - main is static because jvm can call it without creating an object
+        - return type is void because main does not promise to return any value after execution.
+        - "main" is identifier to identify the main method from other methods of the class.
+        - (String[] args) it is a formal argument which makes main method parameterised.
+            - It is String type because we can pass different different type of data in main method.
+            - It is array type because, we can pass more than 1 data to the main method.
+            - args, it is a local variable, which is string array type, which will store those array element reference we will pass to the main method.
 
 
 
