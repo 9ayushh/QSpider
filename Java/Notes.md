@@ -1125,7 +1125,7 @@ Story
         -> Give back to JVM
 
     JVM loads all the class in the Structure
-        Loading -> 
+        Loading -> only available
         Storing -> ready to use
 
 ------------------------------------------------------------------------
@@ -1339,6 +1339,7 @@ Difference b/w static & non-static
     - common prop | unique prop  (at least 10)
 
     - static
+        - static is a keyword and modifier
         - in static, we assign the value which is common for all.
         - static members are defined by using static keyword.
         - stores in class static area inside the static pool area.
@@ -1357,6 +1358,7 @@ Difference b/w static & non-static
 
 
     - non-static
+        - non-static is not a keyword, it just a concept in modifier
         - in non-static, we assign the value which is different for all.
         - if we don't use static keyword, it is consider non-static.
         - stores in object inside the heap area.
@@ -1511,5 +1513,48 @@ Array
             - It is array type because, we can pass more than 1 data to the main method.
             - args, it is a local variable, which is string array type, which will store those array element reference we will pass to the main method.
 
+
+Method Overloading
+------------------
+    - If one class having more than 1 method of same name, but change in formal argument is known as Method Overloading.
+    - Change in formal argument means
+        - no. of formal argument should be different
+        - type of formal argument should be different
+        - sequence of formal argument should be different
+    - ex:
+        class A {
+            public static void m1(){ }
+            public static void m1(int a){ }
+            public static void m1(double a){ }
+            public static void m1(int a, double a){ }
+            public static void m1(double a, int a){ }
+        }
+
+    - We can overload both static and non-static methods
+    - Multiple method doing same work.
+    - The time of overloading, we should not focus on 
+        - return type of method
+        - variable name of the formal argument of the method
+        - access modifier and modifier of the method // not imp
+
+    - Real time java example of overloading is
+        - printing statement of PrintStream class
+            - print
+            - println
+
+
+    - System.out.println();
+    - println & print are the overloaded methods
+        - present in java.io package
+        - define in PrintStream class
+        - they are non-static methods because
+            - print & println is called by using out which is object reference variable
+        - System is a class inside java.lang package
+        - out is a static variable which is present inside the System class
+            - public final static PrintStream out = null;
+            - out is present inside java.lang package
+            
+
+    
 
 
