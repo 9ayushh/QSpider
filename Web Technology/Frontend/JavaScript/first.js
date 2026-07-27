@@ -1053,16 +1053,16 @@
 
 // ! Prototype
 
-console.log(String.prototype);
-console.log(Array.prototype);
-console.log(Object.prototype);
+// console.log(String.prototype);
+// console.log(Array.prototype);
+// console.log(Object.prototype);
 
-let str = "string";
-console.log(str.__proto__);
+// let str = "string";
+// console.log(str.__proto__);
 
-let arr = [];
-console.log(arr.__proto__);
+// let arr = [];
+// console.log(arr.__proto__);
 
-console.log(String.prototype === str.__proto__);
+// console.log(String.prototype === str.__proto__);
 
-console.log(window.__proto__.__proto__.__proto__.__proto__.__proto__);
+// console.log(window.__proto__.__proto__.__proto__.__proto__.__proto__);

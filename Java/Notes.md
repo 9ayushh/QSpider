@@ -1553,8 +1553,384 @@ Method Overloading
         - out is a static variable which is present inside the System class
             - public final static PrintStream out = null;
             - out is present inside java.lang package
+
+# Notes
+JAVA RUNTIME MEMORY
+-------------------
+    - To execute the java program a portion of memory in RAM is allocated for JRE.
+    - In that portion of memory allocated, we have different range of memory, hence they are classified as follows:
+        1. Method area
+        2. Static Pool Area
+        3. Stack area
+        4. Heap area
+
+    1. METHOD AREA
+
+        - All the methods and multi line initialiers blocks will be loaded in a method area with reference (Instruction of the methods).
+
+    2. Static Pool Area
+        - It is having many more class static area for each class.
+
+        - Class Static Area
+            - For every class there is a dedicated block of memory is created in the Static Pool Area (static pool) which is known as class static area.
+            - The static members of the class will be allocated inside the memory created for the class.
+
+    3. STACK AREA
+        - The stack area is used for the execution of instructions.
+        - For every method that is under execution a block of memory is created in this stack area which is known as a frame.
+        - Once the execution of a method is completed the frame is removed.
+
+    4. HEAP AREA
+        - In a heap area, a block of memory is created for the instance of a class (Object).
+        - Every block of memory is created with the help of reference.
+        - All the non-static members or instance member will be stored inside the object block which is present inside the Heap Area.
             
 
+STATIC
+------
+    - What is static?
+        - Static is keyword and modifier.
+        - Any member of a class is prefixed with a static modifier then it is known as a static member of a class.
+        - Static members are also known as class members.
+
+        NOTE:
+        - Static members can be prefixed only for a class members (member declared in a class).
+
+    - STATIC MEMBERS
+        - Static method
+        - Static variable
+        - Static initializers
+
+STATIC VARIABLE
+---------------
+    - Variable declared in a class block and prefixed with static modifier is known as static variable.
+
+    - Characteristics
+        - It is a member of the class.
+        - It will be assigned a default value.
+        - Memory will be allocated inside the class static area.
+        - It is global in nature, it can be used within the class as well as in different classes.
+        - We can use a static variable with the help of the class name as well as with the help of object reference.
+        - We can access the static variable from different classes directly with the help of the class name.
+
+    NOTE:
+        - If static variable and local variable are in the same name then we can differentiate static variable with the help of class name.
+
+STATIC METHOD
+-------------
+    - A method prefixed with a static modifier is known as the static method.
+
+    - Characteristics
+        - Static method block is loaded in the method area and reference of the static method is stored inside the class static area (static pool).
+        - We can use the static method with or without creating an object of the class.
+        - We can use the static method with the help of the class name.
+        - A static method of the class can be used in any class with the help of a class name.
+
+STATIC INITIALIZERS
+-------------------
+    - We have two types of static initializers. Those are:
+        1. Single line static initializer
+        2. Multi-line static initializer
+
+    1. SINGLE LINE STATIC INITIALIZER
+
+        - Syntax to create single line static initializers:
+            static data type variable = value / expression;
+
+        - Example:
+            static int a = 10;
+
+    2. MULTI-LINE STATIC INITIALIZER
+        - Syntax to create multi line static initializers:
+            static
+            {
+                // Statements;
+            }
+
+        - Example:
+            static
+            {
+                System.out.println("Welcome to ATM");
+            }
+
+    - CHARACTERISTICS
+        - Static initializers get executed implicitly during the loading process of the class.
+        - A class can have more than one static initializer they execute top to bottom order.
+
+    - PURPOSE OF STATIC INITIALIZER
+        - Static initializers are used to execute the startup instructions during the class loading process.
+        - As the static blocks get executed before the actual execution of the main method.
+
+STATIC CONTEXT
+--------------
+    - The block which belongs to the static method and multi-line static initializer is known as static context.
+    - Inside a static context, we can use the static members of the same class directly by using its name.
+    - Inside a static context, we can't use the non-static members of the same or different class directly by using its name or by using its class name.
+    - this keyword is not allowed inside the static context.
+
+
+CLASS
+-----
+    - What is class?
+        - According to real-world situations before constructing an object blueprint of the object must be designed, it provides the specification of the real world object.
+        - Similarly in object-oriented programming before creating an object the blueprint of the object must be designed which provides the specification of the object, this is done with the help of class.
+
+    - DEFINITION OF CLASS
+        - It is a user-defined non-primitive data type, it represents the blueprint of the real-world object.
+        - The class provides the specification of real-world objects.
+
+    NOTE:
+        - We can create any number of objects for a class.
+        - Multiple objects created using the same class are called Similar Objects or Identical Objects.
+
+
+OBJECT
+------
+    - What is object?
+        - Any substance which has existed in the real world is known as an object.
+        - Every object will have attributes and behaviors.
+
+    - Object in Java
+        - According to object-oriented programming, the object is a block of memory created in the heap area during the runtime, it represents a real-world object.
+        - A real-world object consists of attributes and behavior.
+        - Attributes are represented with the help of non-static variables.
+        - Behaviors are represented with the help of non-static methods.
+        - It is also known as Instance of the class. Means example of one design.
+        - The other name of Object is instance.
+
+    - STEPS TO CREATE AN OBJECT
+        STEP 1:
+            - Create a class or use an existing class if already created.
+        STEP 2:
+            - Instantiation.
+
+        - INSTANTIATION
+            - The process of creating an object is known as Instantiation.
+            - Syntax to create an object:
+                new ClassName([Actual Argument]);
+                Here,
+                ClassName([Actual Argument]) is Constructor.
+
+NEW KEYWORD
+-----------
+    - new is a keyword.
+    - It is a unary operator.
+    - It is used to create a block of memory inside the Heap Area during runtime.
+    - Once the object is created, it returns the reference of the object.
+
+    - EXAMPLE
+
+        Step 1: Designing a class
+            class Employee
+            {
+                String ename;
+                int eid;
+            }
+
+        Step 2: Instantiation
+            new Employee();
+
+ANONYMOUS OBJECT
+----------------
+    - The object which is created and whose reference is not stored is known as an Anonymous Object.
+    - Generally, while creating an object to access its properties, we store its reference using a specific reference variable with the help of a non-primitive data type.
+
+NON-PRIMITIVE DATA TYPE
+-----------------------
+    - Every class name in Java is a non-primitive data type.
+    - Non-primitive data types are used to create a non-primitive variable to store the reference of an object.
+
+    - EXAMPLE
+        class Employee
+        {
+            String ename;
+            int eid;
+        }
+
+        class Driver
+        {
+            public static void main(String[] args)
+            {
+                Employee e = new Employee();
+                System.out.println(e);      // Employee@4dvec1
+            }
+        }
+
+NON-STATIC
+----------
+    - Any member declared in a class and not prefixed with a static modifier is known as a Non-Static member of a class.
+    - Non-static members belong to an instance of a class. Hence, they are also known as Instance Members or Object Members.
+    - Memory for the non-static members is allocated inside the Heap Area (instance of a class).
+    - Non-static members will be allocated in every instance of a class.
+
+NON-STATIC MEMBERS
+------------------
+    - Non-static variable / Instance variable
+    - Non-static method / Instance method
+    - Non-static initializer / Instance initializer
+    - Constructors
+
+NON-STATIC VARIABLE
+-------------------
+    - A variable declared inside a class block and outside any method or multiline initializer block and not prefixed with a static modifier is known as a Non-Static Variable.
+
+    - Characteristics
+        - We can't use a non-static variable without creating an object inside the static context directly, but we can use it inside a non-static context.
+        - We can only use the non-static variable with the help of an object reference.
+        - Non-static variables are assigned default values during the object loading process.
+        - Multiple copies of non-static variables are created (one copy for every object).
+
+NON-STATIC METHOD
+-----------------
+    - A method declared in a class block and not prefixed with a static modifier is known as a Non-Static Method.
+
+    - Characteristics
+        - A method block will be loaded inside the Method Area and a reference of the method will be stored inside the instance (object) of a class.
+        - We can't call a non-static method inside the static context without creating an object, but we can use it inside a non-static context.
+        - We can't access a non-static method with the help of the class name.
+        - A non-static method can be accessed directly inside a non-static context by its name, but it can't be accessed directly inside a static context by its name.
+        - The same rule is applicable to non-static variables.
+
+NON-STATIC CONTEXT
+------------------
+    - The block which belongs to the non-static method and multi-line non-static initializer is known as Non-Static Context.
+    - Inside a non-static context, we can use both static and non-static members of the same class directly by using their names.
+
+NON-STATIC INITIALIZERS
+-----------------------
+    - Non-static initializers execute during the loading process of an object.
+    - Non-static initializers execute once for every instance (object) created.
+
+PURPOSE OF NON-STATIC INITIALIZERS
+----------------------------------
+    - Non-static initializers are used to execute the startup instructions for an object.
+
+    - TYPES OF NON-STATIC INITIALIZERS
+        1. Single-line Non-Static Initializer
+        2. Multi-line Non-Static Initializer
+
+    1. SINGLE-LINE NON-STATIC INITIALIZER
+        - Syntax:
+            datatype variable = value / reference;
+
+    2. MULTI-LINE NON-STATIC INITIALIZER
+
+        - Syntax:
+            {
+                // statements;
+            }
+
+        - NOTE:
+            - All non-static initializers execute from top to bottom for every object creation.
+
+THIS KEYWORD
+------------
+    - `this` is a keyword.
+    - It is a non-static variable that holds the reference of the current executing object.
+
+    - USES OF THIS
+        - Used to access the members of the current object.
+        - Used to give the reference of the current object.
+        - Used to differentiate a local variable from a non-static variable when both have the same name.
+        - Used to call another constructor of the same class using the `this()` call statement.
+
+TRACE THE GIVEN PROGRAM
+-----------------------
+    class Demo
+    {
+        {
+            System.out.println("Multi line non-static initializer");
+        }
+
+        static int a = 20;
+
+        static
+        {
+            System.out.println("Value of a is " + a);
+        }
+
+        int b;
+        String str = "Hello";
+
+        public static void main(String[] args)
+        {
+            Demo d = new Demo();
+            d.test();
+        }
+
+        void test()
+        {
+            System.out.println("Instance Method");
+        }
+    }
+
+CONSTRUCTOR
+-----------
+    - A Constructor is a special type of non-static method whose name is the same as the class name.
+    - A constructor does not have any return type.
+
+    - Syntax
+        [access_modifier] ClassName([Formal_Arguments])
+        {
+            // initialization
+        }
+
+    - PURPOSE OF CONSTRUCTOR
+        - During the execution of a constructor:
+            - Non-static members of the class are loaded into the object.
+            - If there are non-static initializers in the class, they execute from top to bottom.
+            - After that, the programmer-written instructions inside the constructor are executed.
+
+        NOTE:
+            - If the programmer does not create a constructor, the compiler automatically provides a **Default Constructor**.
+
+CLASSIFICATION OF CONSTRUCTORS
+------------------------------
+    - Constructors are classified into two types based on the formal arguments:
+        1. No-Argument Constructor
+        2. Parameterized Constructor
+
+    1. NO-ARGUMENT CONSTRUCTOR
+        - A constructor that does not have any formal arguments is called a No-Argument Constructor.
     
+        - Syntax to create a No-Argument Constructor
+            [access_modifier] ClassName()
+            {
+                // code;
+            }
 
+        - Note
+            - If the programmer fails to create a constructor, then the compiler implicitly adds a no-argument constructor, which is known as the **Default Constructor**.
 
+    2. PARAMETERIZED CONSTRUCTOR
+        - A constructor that has one or more formal arguments is called a Parameterized Constructor.
+
+LOADING PROCESS OF AN OBJECT
+----------------------------
+    - The `new` keyword creates a block of memory in the heap area with a reference.
+    - The constructor is called.
+
+    - During the execution of the constructor:
+        1. All the non-static members of the class are loaded into the object.
+        2. If there are non-static initializers, they are executed from top to bottom.
+        3. Programmer-written instructions inside the constructor are executed.
+
+    - The execution of the constructor is completed.
+    - The object is created successfully.
+    - The reference of the object is returned by the `new` keyword.
+    - These steps are repeated for every object creation.
+
+PARAMETERIZED CONSTRUCTOR
+-------------------------
+    - A constructor that has one or more formal arguments is known as a Parameterized Constructor.
+
+    - Syntax to create a Parameterized Constructor
+        [access_modifier] ClassName([Formal_Argument])
+        {
+            // statement;
+        }
+
+    - PURPOSE OF THE PARAMETERIZED CONSTRUCTOR
+        - Parameterized constructors are used to initialize the non-static variables by accepting the data from the constructor in the object creation statement.
+
+--------------------------------------------------

@@ -1,4 +1,4 @@
-# JavaScript
+# JavaScript - M5
     
 JavaScript
 ----------
@@ -1206,4 +1206,76 @@ Prototype
         console.log(window.__proto__.__proto__.__proto__.__proto__.__proto__);
     
 
+
+BOM / Window
+------------
+    - BOM stands for Browser Object model
+    - whenever we opens any  browser, the browser itself consider as an object, this object is known as BOM.
+    - The another name of BOM is window, it is the global object in the frontend JS
+
+    - Some main object present inside the BOM is:
+        - document (DOM)
+        - navigator
+        - location
+        - screen
+        - history
+
+    - DOM
+        - DOM stands for Document Object Model
+        - whenever we run html code inside the browser, browser creates a tree like structure of our html. This tree like structure is known as DOM Tree.
+        - Inside the DOM tree, all the html elements are represented in the form of nodes.
+        - This DOM tree is created to manipulate the html through the JavaScript (manipulate means adding the element, removing the element, adding the attribute, removing the attribute, adding the style, removing the style, etc...)
+
+
+        - getElementById()
+            - used to target html elemlent based on the id attribute. 
+            - In this method there is no need of using the symbols.
+
+        - getElementsByClassName()
+            - used to target html element based on the class attribute.
+            - It targets all the matching html elements have the same class attribute.
+            - It stores all the targetted element inside an array like object known as HTMLCollection.
+
+        - getElementsByTagName()
+            - Used to target html element based on their tag name. 
+            - It targets all the matching html elements have the same tag.
+            - It stores all the targetted element inside an array like object knwon as HTMLCollection.
+
+        - querySelector()
+            - used to target html elements based on id, class, attribute as well as tagName.
+            - It target only the first matching element. 
+            - In this method we have to use the symbols for id(#) and class(.) a;sp/
+
+        - querySelectorAll()
+            - used to target html elements based on id, class, attribute as well as tagName.
+            - It target all the matching elements inside an array like object known as NodeList.
+            - IN this method we have to use the symbols for id(#) and class(.) also.
+
+        
+        * HTMLCollection VS NodeList
+
+        - Manipulating Attribute through JS
+            - ex:
+                var inp = document.querySelector("input");
+
+                - getting attribute value
+                    console.log(inp.placeholder);
+                    console.log(inp.type);
+
+                - updating attribute
+                    inp.type = "password";
+
+                - adding new attribute
+                    inp.minLength = 10;
+
+                - getAttribute() 
+                    - inbuilt method in js used to get the values of attributes present inside html
+                    console.log(inp.getAttribute('type'));
+                    console.log(inp.getAttribute('placeholder'));
+
+                - setAttribute()
+                    - inbuilt method in js used to update the values of attributes present inside html as well as adding new attributes.
+                    inp.setAttribute('type', "password");
+                    inp.setAttribute('minLength', "10");
+                    console.log(inp);
 
