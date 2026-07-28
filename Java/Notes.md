@@ -1514,46 +1514,6 @@ Array
             - args, it is a local variable, which is string array type, which will store those array element reference we will pass to the main method.
 
 
-Method Overloading
-------------------
-    - If one class having more than 1 method of same name, but change in formal argument is known as Method Overloading.
-    - Change in formal argument means
-        - no. of formal argument should be different
-        - type of formal argument should be different
-        - sequence of formal argument should be different
-    - ex:
-        class A {
-            public static void m1(){ }
-            public static void m1(int a){ }
-            public static void m1(double a){ }
-            public static void m1(int a, double a){ }
-            public static void m1(double a, int a){ }
-        }
-
-    - We can overload both static and non-static methods
-    - Multiple method doing same work.
-    - The time of overloading, we should not focus on 
-        - return type of method
-        - variable name of the formal argument of the method
-        - access modifier and modifier of the method // not imp
-
-    - Real time java example of overloading is
-        - printing statement of PrintStream class
-            - print
-            - println
-
-
-    - System.out.println();
-    - println & print are the overloaded methods
-        - present in java.io package
-        - define in PrintStream class
-        - they are non-static methods because
-            - print & println is called by using out which is object reference variable
-        - System is a class inside java.lang package
-        - out is a static variable which is present inside the System class
-            - public final static PrintStream out = null;
-            - out is present inside java.lang package
-
 # Notes
 JAVA RUNTIME MEMORY
 -------------------
@@ -1933,4 +1893,82 @@ PARAMETERIZED CONSTRUCTOR
     - PURPOSE OF THE PARAMETERIZED CONSTRUCTOR
         - Parameterized constructors are used to initialize the non-static variables by accepting the data from the constructor in the object creation statement.
 
---------------------------------------------------
+---------------------------------------------------------------------
+
+# ...
+
+
+Method Overloading
+------------------
+    - If one class having more than 1 method of same name, but change in formal argument is known as Method Overloading.
+    - Change in formal argument means
+        - no. of formal argument should be different
+        - type of formal argument should be different
+        - sequence of formal argument should be different
+    - ex:
+        class A {
+            public static void m1(){ }
+            public static void m1(int a){ }
+            public static void m1(double a){ }
+            public static void m1(int a, double a){ }
+            public static void m1(double a, int a){ }
+        }
+
+    - We can overload both static and non-static methods
+    - Multiple method doing same work.
+    - The time of overloading, we should not focus on 
+        - return type of method
+        - variable name of the formal argument of the method
+        - access modifier and modifier of the method // not imp
+
+    - Real time java example of overloading is
+        - printing statement of PrintStream class
+            - print
+            - println
+
+
+    - System.out.println();
+    - println & print are the overloaded methods
+        - present in java.io package
+        - define in PrintStream class
+        - they are non-static methods because
+            - print & println is called by using out which is object reference variable
+        - System is a class inside java.lang package
+        - out is a static variable which is present inside the System class
+            - public final static PrintStream out = null;
+            - out is present inside java.lang package
+
+Constructor Overloading
+-----------------------
+    - If one class having more than 1 constructor, but having different formal argument is known as Constructor Overloading.
+
+    - jvm by default add a constructor, if programmer fails to create a constructor
+
+    - provide flexibility to users
+
+    Student(){
+    }
+    Student(int roll, String name){
+        this.roll = roll;
+        this.name = name;
+    }
+    Student(int roll){
+        this.roll = roll;
+    }
+    Student(String name){
+        this.(); => calls no argument constructor
+        this.name = name;
+    }
+
+    - new
+    - Constructor Calling statement (use only in constructor block, should be the first statement)
+        - this call statement 
+            - can be n-1 this call statement otherwise give error (give recursion which is not allowed in constructor)
+            - calling one class constructor from another class constructor
+            - to use same class constructor
+            this.([Actual Argument])
+        - super call statement 
+            - to use parent class constructor
+            super.([Actual Argument])
+
+

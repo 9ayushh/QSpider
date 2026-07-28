@@ -1252,7 +1252,7 @@ BOM / Window
             - IN this method we have to use the symbols for id(#) and class(.) also.
 
         
-        * HTMLCollection VS NodeList
+        * HTMLCollection VS NodeList *
 
         - Manipulating Attribute through JS
             - ex:
@@ -1278,4 +1278,58 @@ BOM / Window
                     inp.setAttribute('type', "password");
                     inp.setAttribute('minLength', "10");
                     console.log(inp);
+                
+        - Accessing the Content
+            - innerHTML
+                - It reutrns content as well as tags as it is written inside the html.
+                    console.log(element.innerHTML);
+
+            - innerText
+                - It returns all the content present inside the targetted element.
+                    console.log(element.innerText);
+
+            - textContent
+                - It returns content as well as extra spaces as it is written in the html structure.
+                    console.log(ele.textContent);
+
+
+        - Adding CSS
+            - inline
+                - ex:
+                    res.style.color = "red";
+                    res.style.backgroundColor = "black";
+                    res.style.padding = "10px";
+                    res.style.borderRadius = "10px";
+
+            - internal
+                - ex:
+                    res.style.cssText = `color: green; background-color: red; padding: 10px; border-radius: 10px;`;
+
+            - external
+                - classList.add() 
+                    - used for adding class.
+                    - ex:
+                        res.classList.add("abc");
+
+                - classList.remove()
+                    - used for removing class.
+                    - ex:
+                        res.classList.remove("abc");
+
+
+                - classList.toggle()
+                    - It checks whether matching class is present in targeted element or not, if class is already present it removes the class, if it is not present it adds the class.
+                    - ex:
+                        res.classList.toggle("abc1");
+
+Event Handler in JavaScript
+---------------------------
+    - Event handler are special attribute, which is used to call a function, when the user performs some action.
+    - All the EventHandler have prefix with on keyword
+        - click Event : onclick, ondblclick
+        - form Event : onsubmit
+        - mouse Event : onmousemove, onMouseUp, onmousedown, onmousehover
+        - keyboard Event : onkeypress, onkeydown, onkeyup
+        - input Event : onfocus, onblur, onchange
+
 

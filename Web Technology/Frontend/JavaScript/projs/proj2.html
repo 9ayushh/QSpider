@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSProj2</title>
+</head>
+<body>
+    <input type="text" placeholder="text">
+    <button onclick="reverseString()">Reverse Text</button>
+
+    <p></p>
+
+    <script>
+        function reverseString(){
+            var str = document.querySelector('input');
+            var a = str.value;
+            let arrayStr = a.split("");
+            let revStr = arrayStr.reverse();
+            let newStr = revStr.join("");
+            
+            var text = document.querySelector('p')
+            text.innerText = newStr;
+        }
+        // function rev(str) {
+        //     for(int i=0; i< length)
+        // }
+    </script>
+</body>
+</html>
