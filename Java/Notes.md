@@ -1972,3 +1972,7 @@ Constructor Overloading
             super.([Actual Argument])
 
 
+# OOPs
+
+Incapsulation
+-------------

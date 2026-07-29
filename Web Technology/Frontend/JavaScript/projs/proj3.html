@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSProj3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            height: 800px;
+            width: 1200px;
+            border: 5px solid black;
+            padding: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .aside {
+            height: 680px;
+            width: 250px;
+            border: 5px solid black;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        
+        .boxes{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .box img{
+            border: 2px solid black;
+            height: 140px;
+            width: 140px;
+            border-radius: 10px;
+        }
+        
+        .main {
+            height: 680px;
+            width: 790px;
+            border: 5px solid black;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .main img {
+            height: 671px;
+            width: 781px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="aside">
+            <div class="boxes">
+                <div class="box box1" onclick="changeImage1()">
+                    <img src="https://images.unsplash.com/photo-1777060971398-d1c72a00932a?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <div class="box box2" onclick="changeImage2()">
+                    <img src="https://images.unsplash.com/photo-1777060971410-64c3944aaac2?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <div class="box box3" onclick="changeImage3()">
+                    <img src="https://images.unsplash.com/photo-1775127258166-7c3b37230d4f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <div class="box box4" onclick="changeImage4()">
+                    <img src="https://images.unsplash.com/photo-1745759620568-2da3eefbe2bd?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">    
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <img src="../../images/img1.jpeg" alt="">    
+        </div>
+    </div>
+
+    <p></p>
+
+    <script>
+        var img1 = document.querySelector('.box1');
+        var img2 = document.querySelector('.box2');
+        var img3 = document.querySelector('.box3');
+        var img4 = document.querySelector('.box4');
+        function changeImage1(){
+            var mainImage = document.querySelector('.main');
+            mainImage.innerHTML = img1.innerHTML;
+        }
+        function changeImage2(){
+            var mainImage = document.querySelector('.main');
+            mainImage.innerHTML = img2.innerHTML;
+        }
+        function changeImage3(){
+            var mainImage = document.querySelector('.main');
+            mainImage.innerHTML = img3.innerHTML;
+        }
+        function changeImage4(){
+            var mainImage = document.querySelector('.main');
+            mainImage.innerHTML = img4.innerHTML;
+        }
+    </script>
+</body>
+</html>

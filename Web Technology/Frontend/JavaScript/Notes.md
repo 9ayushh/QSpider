@@ -1333,3 +1333,33 @@ Event Handler in JavaScript
         - input Event : onfocus, onblur, onchange
 
 
+    - addEventListener
+        - It is a method in js which is used to call a function when a user perform some action.
+        - It accept three argument the first argument is the eventHandler without on keyword and second argument is the Callback function which we want to execute 
+        - Third arghument is the boolean value which represent event bubbling and event capturing.
+    
+    - EventPropogation
+        - the process of calling an event is known as event propagation there are two types of event propogation.
+        1. event bubbling 
+            - the process of calling inner event first then outer event is known as event bubbling by default all the event handler performs event bubbling.
+
+        2. event capturing
+            - the process of calling outer event first then the inner event is known as event capturing.
+            - If we want to make our evenet as capturing then we have to pass true in the last argument add event listener
+
+    
+Timing Function
+---------------
+    1. setTimeout
+        - It accepts two arguments, first argument is the callback function which we wants to execute and second argument is the time in milliseconds. 
+        - It automatically execute the callback function after given time.
+        - It executes the callback function only once.
+
+    2. clearTimeout()
+        - It accepts one argument i.e. reference of the setTimeout, which we wants to stop. 
+        - It is used to clear the setTimeout();
+
+    3. setInterval()
+        - It accepts two argument first argument is the callback function, second argument is the time in milliseconds. 
+        - It executes teh callback function after every span of time.
+        - To stop the setInterval, we uses clearInterval, which accepts the reference of the setInterval.
