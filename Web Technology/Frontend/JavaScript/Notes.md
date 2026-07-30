@@ -1340,6 +1340,10 @@ Event Handler in JavaScript
     
     - EventPropogation
         - the process of calling an event is known as event propagation there are two types of event propogation.
+        - There are 2 types of event propogation
+            1. eventBubbling
+            2. eventCapturing
+
         1. event bubbling 
             - the process of calling inner event first then outer event is known as event bubbling by default all the event handler performs event bubbling.
 
@@ -1363,3 +1367,69 @@ Timing Function
         - It accepts two argument first argument is the callback function, second argument is the time in milliseconds. 
         - It executes teh callback function after every span of time.
         - To stop the setInterval, we uses clearInterval, which accepts the reference of the setInterval.
+
+Promise
+-------
+    - It is a object.
+    - It tells completion or failure of a asynchronouse task.
+    - type of promise is object.
+
+    - There are 3 states of promises:
+        1. resolved / fullfilled
+        2. rejected / failed
+        3. pending / waiting
+    
+    - Custom promise
+        - Syntax
+            new Promise(callback(resolve, rejected))
+        - ex:
+            let p1 = new Promise((resolve, rejected) => {
+                resolve('p1 is resolved');
+                rejected('p1 is rejected');
+            });
+            console.log(p1);
+
+    - Instance methods
+        - methods which present with the promise in all state
+        - There are 3 instance methods
+            1. then
+                - invoke when the promise is resolved
+            2. catch
+                - invoke when the promise is rejected
+            3. finally
+                - invoke when the promise is either rejected or resolved
+
+    - Promise Static Methods
+        1. Promise.all()
+            - It accepts an array which consists multiple promises.
+            - It return a new Promise.
+            - It resolves when all the promise present inside the array is resolved.
+            - It rejects when any one of promise present inside the array is rejected.
+            - It does not even check other promises to resolve or reject, once after getting rejected promise.
+
+        2. Promise.allSettled()
+            - It accepts an array which consists multiple promises.
+            - It return a new Promise.
+            - It waits for all the promise present inside the array to settled down, and returns the complete information about each promises.
+
+        3. Promise.race()
+            - It acceps an array which consists multiple promises.
+            - It return a new Promise.
+            - It returns the first settled promise, either it is resolve or it is rejected.
+
+        4. Promise.any()
+            - It accepts an array which consist multiple promises.
+            - It return a new Promise. 
+            - It returns the first resolved promise. If none of the promise is resolved then it throws an aggregate error.
+
+    - fetch()
+        - to fetch api method
+        - It is the inbuilt method, which is used to fetch the data form the api server or backend.
+
+    - async await 
+        - async
+            - It is a keyword which convert a function into asynchronouse function.
+        - await
+            - It is a keyword which wait for the promise to settled down.
+            - It can be only used within async function.
+        

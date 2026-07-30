@@ -42,12 +42,12 @@ SDLC
 
 SDLC
 ----
-    - IT is a step by step procedure or standard procedure to develop a new software
+    - It is a step by step procedure or standard procedure to develop a new software
 
     Q1 - When does SDLC start ?
         - When a company wants to start with a new project, they start with SDLC
 
-    Q2 - Why should we follow SDLC. Whay will happen if we don't follow SDLC?
+    Q2 - Why should we follow SDLC. What will happen if we don't follow SDLC?
         1. We will to get to know how many engineers are required to work on the project.
         2. We will not get to know how much cost to be invested on the project
         3. There might not be proper supporting requirement document.
@@ -89,76 +89,134 @@ WaterFall Model
                             |
                             Maintainance
 
-        1. Requirement Collection
-            - IT is a requirement collection from customer place, BA will go to customer place and collect requirement's in Business language and come back to company and convert into software language and explain it to developer and test engineers. 
-            - BA will act as a bridge between company and customer.
+1. Requirement Collection
+    - It is a requirement collection from customer place, BA will go to customer place and collect requirement's in Business language and come back to company and convert into software language and explain it to developer and test engineers. 
+    - BA will act as a bridge between company and customer.
 
-            Diagram on notebook 
+    Diagram on notebook 
 
-            i. Customer will approach s/w company
-            for s/w development.
-                                        2 yrs / 2 crore
+    i. Customer will approach s/w company
+    for s/w development.
+                                2 yrs / 2 crore
 
-            ii. Infy will hire ICICI Bank Manager.
+    ii. Infy will hire ICICI Bank Manager.
 
-                                Infosys
-                            +----------------+
-                            |      PM        |
-                            |                |
-                            |  Developers    |
-                            |                |
-                            |      T.E       |
-                            +----------------+
+                        Infosys
+                    +----------------+
+                    |      PM        |
+                    |                |
+                    |  Developers    |
+                    |                |
+                    |      T.E       |
+                    +----------------+
 
-            iii. Infosys will give training on s/w for
-            ICICI Bank Manager.
+    iii. Infosys will give training on s/w for
+    ICICI Bank Manager.
 
-            iv. Infosys will send ICICI Bank Manager to
-            Customer Business (CB) as "BA"
-            for requirement collection.
+    iv. Infosys will send ICICI Bank Manager to
+    Customer Business (CB) as "BA"
+    for requirement collection.
 
-            v. BA will collect requirements in BL
-            (Business Language) and come back
-            to the company to convert BL into
-            Software Language and explain it to
-            Developers, T.E., PM, Architect, etc.
-
-
-                        Banking Business
-                        (City Bank)
-                          Customer
-                        +---------------+
-                        |   CB Manager  |
-                        +---------------+
+    v. BA will collect requirements in BL
+    (Business Language) and come back
+    to the company to convert BL into
+    Software Language and explain it to
+    Developers, T.E., PM, Architect, etc.
 
 
-                        (1000 Pages)
-                    Requirement Document
-                    +------------------------------+
-                    | Amount Transfer              |
-                    | Amount Balance               |
-                    | Loans                        |
-                    | OD                           |
-                    | Insurance                    |
-                    | Ledger Account               |
-                    +------------------------------+
-                        Business Language
+                Banking Business
+                (City Bank)
+                    Customer
+                +---------------+
+                |   CB Manager  |
+                +---------------+
 
 
-                            ICICI Bank
-                        +------------------+
-                        |   Bank Manager   |
-                        +------------------+
-            15-20 yrs Banking Domain
-                            |
-                            \_ Domain Expert
+                (1000 Pages)
+            Requirement Document
+            +------------------------------+
+            | Amount Transfer              |
+            | Amount Balance               |
+            | Loans                        |
+            | OD                           |
+            | Insurance                    |
+            | Ledger Account               |
+            +------------------------------+
+                Business Language
 
-            Senior D.E. (10 yrs)
-            Senior T.E. (6-7 yrs)
 
-            Notes (Who can handle)
-            70-80% Critical & Complex  ------> BA mandotary
-            20-30% Small & Simple      ------> D.E & T.E
+                    ICICI Bank
+                +------------------+
+                |   Bank Manager   |
+                +------------------+
+    15-20 yrs Banking Domain
+                    |
+                    \_ Domain Expert
+
+    Senior D.E. (10 yrs)
+    Senior T.E. (6-7 yrs)
+
+    Notes (Who can handle)
+    70-80% Critical & Complex  ------> BA mandotary
+    20-30% Small & Simple      ------> D.E & T.E
+
+    - Who can became a business analyst?
+        - Domain expert
+            - if a person having around 15-20 years of experience in same domain and has got good knowledge on his domain is called domain expert.
+        - Senior Developer
+        - Senior Test Engineer
+
+        NOTE: 
+            - 72% - 80% of critical and complex project BA(Business Analyst) will be present 
+            - 20% - 30% of small projects BA might not be present, so in that case Senior Developer Or Senior Test Engineer will play the role of BA.
+
+- Feasibility Study (Stage 2)
+    - once requirement collection will fdone, then we can go to the feasibility study
+    - it is done by a team, which consist of Business Analyst, Architect, HR Team, Finance Team and Project manager
+    - This is the stage where company will decide to take a project or not (we can work on this project or not) 
+    - and if we take up the project, then company will check for sufficient resource, technologies, lab setups and this is the stage, where company will get to know, if the company will get profit or not, this process is known as feasibility study.
+
+    i. Role of Project manager
+        - Project manager will interact with business analyst, hr team, finanace team and architect and gather the information.
+        - He will decide to take up the project or not.
+
+    ii. Role of Architect
+        - Architect will always think from technical point of view and he will decide, technically is it possible to implement the project or not, if it is possible which kind of technology to be used, this decision is taken by architech.
+
+    iii. Role of Business Analayst
+        - Business Analayst will be involve in requirement.
+        - BA will go to customer place and collect requirements in business language and comeback to company and convert the business language into software language and explain it to developer and test engineers.
+
+    iv. Role of finance team
+        - finance team will always think from money point of view (pov) and they see what is the operational cost required to work on the project and if they invest money do they get profit or not.
+
+    v. Role of HR Team
+        - 
+
+    1. Business analyst
+        - explain all requirement to all the team.
+    2. Architect (multiple technical programming language - knowledge)
+        - Technical Feasibility
+            - decide the technologies which we use to design the software
+    3. Hr Team
+        - Resource Feasibility
+        - Think on resource pov (resources)
+            -> engineers
+            -> lab set-ups
+        - If lack of resources
+            - Hiring -> for the project (technology)
+    4. Finance Team
+        - Financial feasibility
+            1. how much investment needed
+            2. how much profit we will get
+    5. Project manager (yes/no)
+        - ask the resources and finance to all the team.
+        - then decide that the project is worth or not.
+
+    
+
+
+
 
 
 

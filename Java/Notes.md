@@ -1973,6 +1973,25 @@ Constructor Overloading
 
 
 # OOPs
+- introduced by **Alen Key**
+- s for system/structure
+- program contains 6 concepts or (2 concepts and 4 principles)
+    - Concepts
+        - Object
+        - Class
+    - Principles (we can also call them concepts)
+        - Encapsulation
+        - Inheritance
+        - Polymorphism
+        - Abstraction
+
+- is java purly object oriented programming language?
+    - No, it doesn't contain all object oriented concepts.
+
+- purely object oriented programming language
+    - Small talk -> purely oops language (by Alen Key)
 
 Incapsulation
 -------------
+
+

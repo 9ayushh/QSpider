@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            height: 500px;
+            width: 500px; 
+            padding: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #000030;
+            gap: 50px;
+            border: 20px double black;
+            color: white;
+        }
+
+        input{
+            width: 400px;
+            height: 30px;
+        }
+
+        button{
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text" placeholder="Enter username...">
+        <input type="password" placeholder="Enter password...">
+        <input type="password" placeholder="Confirm password...">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- 
+        username should not be blank
+        remove the password after submission 
+    -->
+
+    <script>
+        let form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            console.log('form submitted');
+
+            let pass = document.querySelectorAll('input')[1].value;
+            let confirmPass = document.querySelectorAll('input')[2].value;
+
+            if(pass === confirmPass) {
+                alert("SignUp Successfully");
+            } else {
+                alert("Password Not Matched");
+            }
+        })
+
+
+    </script>
+</body>
+</html>

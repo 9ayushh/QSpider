@@ -133,15 +133,16 @@
 //     }
 // }
 
+// ^ .addEventListener('eventHandler', callback, boolean(false))
 
+// ? event bubbling
 // let bt = document.querySelector("button");
 // bt.addEventListener("click", ()=> {
 //     console.log("button is clicked");
 //     bt.classList.toggle("abc");
 // });
 
-// ^ .addEventListener('eventHandler', callback, boolean(false))
-
+// ? event capturing
 // let gp = document.querySelector('.grand-parent');
 // gp.addEventListener("click", ()=> {
 //     console.log("gp is clicked");
@@ -180,12 +181,161 @@
 
 
 // ? setInterval(callback, time)
-var i = 0;
-let clear = setInterval(() => {
-    console.log('Time', i++);
-}, 1000)
+// var i = 0;
+// let clear = setInterval(() => {
+//     console.log('Time', i++);
+// }, 1000)
 
-document.querySelector('button').addEventListener('click', function(){
-    clearInterval(clear);
-    alert('function cancelled');
-})
+// document.querySelector('button').addEventListener('click', function(){
+//     clearInterval(clear);
+//     alert('function cancelled');
+// })
+
+// ! Promise
+
+// ~ Custom promise
+// * new Promise(callback(resolve, rejected))
+
+// let p1 = new Promise((resolve, rejected) => {
+//     resolve('p1 is resolved');
+//     rejected('p1 is rejected');  
+// });
+// console.log(p1);
+
+// ~ Instance methods
+// ? then
+// ? catch
+// ? finally
+
+// p1.then((res) => {
+//     console.log(res);
+// }).catch((err) => {
+//     console.log(err);
+// }).finally(() => {
+//     console.log("finally");
+// })
+
+
+//--------------------------------------------
+// let p1 = new Promise((a,b) => {
+//     a('abc');
+//     b('xyz');
+// });
+// p1.then((res) => {
+//     console.log(res);
+// }).catch((err) => {
+//     console.log(err);
+// }).finally(() => {
+//     console.log("finally");
+// });
+
+//--------------------------------------------
+
+// * Promise All
+// let p1 = new Promise((res, rej) => {
+//     res('p1 resolved');
+// });
+// let p2 = new Promise((res, rej) => {
+//     res('p2 resolved');
+// });
+// let p3 = new Promise((res, rej) => {
+//     res('p3 resolved');
+// });
+
+// let pTotal = Promise.all([p1, p2, p3]);
+// pTotal.then((res) => {
+//     console.log(res);
+// }).catch((err) => {
+//     console.log(err);
+// });
+
+// * Promise.allSettled
+// let p1 = new Promise((res, rej) => {
+//     res('p1 resolved');
+// });
+// let p2 = new Promise((res, rej) => {
+//     rej('p2 rejected');
+// });
+// let p3 = new Promise((res, rej) => {
+//     res('p3 resolved');
+// });
+
+// let pTotal = Promise.allSettled([p1, p2, p3]);
+// pTotal.then((res) => {
+//     console.log(res);
+// }).catch((err) => {
+//     console.log(err);
+// });
+
+// * Promise.race
+// let p1 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         res('p1 resolved');
+//     }, 4000);
+// });
+// let p2 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         rej('p2 rejected');
+//     }, 2000);
+// });
+// let p3 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         res('p3 resolved');
+//     }, 3000);
+// });
+
+// let pTotal = Promise.race([p1, p2, p3]);
+// pTotal.then((res) => {
+//     console.log(res);
+// }).catch((err) => {
+//     console.log(err);
+// });
+
+// * Promise.any
+// let p1 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         res('p1 resolved');
+//     }, 4000);
+// });
+// let p2 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         rej('p2 rejected');
+//     }, 2000);
+// });
+// let p3 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         res('p3 resolved');
+//     }, 3000);
+// });
+
+// let pTotal = Promise.any([p1, p2, p3]);
+// pTotal.then((res) => {
+//     console.log(res);
+// }).catch((err) => {
+//     console.log(err);
+// });
+
+
+// -----------------------
+// ! fetch()
+
+// ~ OLD method
+// let res = fetch("https://api.github.com/users");
+
+// res.then((data) => {
+//     return data.json();
+// }).then((actualData)=>{
+//     console.log(actualData);
+// }).catch((err) => {
+//     console.log(err);
+// });
+
+// ~ NEW method
+// ? async await
+// async function abc() {
+//     let res = await fetch("https://api.github.com/users");
+//     let actualRes = await res.json();
+//     console.log(actualRes);
+// }
+// abc();
+
