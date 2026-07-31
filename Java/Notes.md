@@ -2022,4 +2022,62 @@ Encapsulation
         - security
         - make data member only readable or writeable or both or neither.
 
+ENCAPSULATION
+-------------
+- The process of binding the state (attributes/fields) and behavior of an object together is known as encapsulation.
+- We can achieve encapsulation in Java with the help of a class. A class contains both the state and behavior of an object.
 
+
+    - ADVANTAGE OF ENCAPSULATION
+        - By using encapsulation, we can achieve data hiding.
+
+    - DATA HIDING
+        - It is the process of restricting the direct access of data members of an object and providing indirect secured access to data members through methods of the same object. This is known as data hiding.
+        - Data hiding helps to verify and validate the data before storing and modifying it.
+
+    - STEPS TO ACHIEVE DATA HIDING
+        - Step 1:
+            - Prefix the data members of a class with the `private` access modifier.
+        - Step 2:
+            - Design public Getter and Setter methods.
+
+    - PRIVATE MODIFIER
+        - `private` is an access modifier.
+        - `private` is a class-level modifier.
+        - If the members of a class are prefixed with the `private` modifier, then those members can only be accessed within the same class.
+
+    - NOTE:
+        - Data hiding can be achieved with the help of the `private` modifier.
+
+    - GETTER METHOD
+        - The getter method is used to fetch (read) the data.
+        - The return type of the getter method is the type of the hidden value.
+
+    - SETTER METHOD
+        - The setter method is used to update or modify the data.
+        - The return type of the setter method is always `void`.
+
+    - NOTE
+        - Validation and verification can be performed in the getter/setter methods before storing the data and before reading private data members.
+
+        - If you want to make your hidden data member **only readable**, create only the **Getter** method.
+        - If you want to make your hidden data member **only modifiable**, create only the **Setter** method.
+        - If you want to make your hidden data member **both readable and modifiable**, create both **Getter** and **Setter** methods.
+        - If you want to make your hidden data member **neither readable nor modifiable**, do not create either a Getter or Setter method.
+
+    - ADVANTAGES
+        - Provides security to the data members.
+        - We can verify and validate the data before modifying it.
+        - We can make the data member of a class:
+            - Only readable
+            - Only modifiable
+            - Both readable and modifiable
+            - Neither readable nor modifiable
+
+
+real life example of encapsulation
+    - any registration page which provides validation and verification
+
+real life java language
+    - Thread
+        - it has priority

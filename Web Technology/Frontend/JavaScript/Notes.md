@@ -727,7 +727,7 @@ Arrays
     - slice
         - It accepts two arguments starting and ending index. 
         - And remove the elements present between starting and ending index. 
-        - It returns new array. 
+        - It returns a new array. 
         - It does not affect the original array
         - syntax:
             array.slice(starting, ending);
@@ -911,7 +911,7 @@ Object
 
     - this keyword
         - It is a pointing machanism, which points to the current context of object.
-        - Inside name function the value of this keyword, in non-static mode, will points to the window.
+        - Inside name function the value of this keyword, in non-strict mode, will points to the window.
         - Inside name function the value of this keyword, in case of strict mode, will points to the undefined.
 
         - ex:
@@ -1032,6 +1032,7 @@ Object
 
                 - 1st way
                 let newObj = {...obj};
+
 
                 - 2nd way
                 let newObj = Object.assign({}, obj);
