@@ -902,6 +902,10 @@ Method:
         - methodbody / implementation / block 
 
     - Types of Methods: There are many more types of methods 
+        - Based on the task
+            1. Getter method
+            2. Setter method
+
         - Based on access modifies
             1. Public
             2. Protected
@@ -909,8 +913,8 @@ Method:
             4. Default
 
         - Based on structure
-            1. Complete  -> with declaration and initialization
-            2. Incomplete -> withoud initialization only declaration
+            1. Complete (class) -> with declaration and initialization
+            2. Incomplete (abstract) -> withoud initialization only declaration
 
         - Based on modifies
             - There are many more...
@@ -1991,7 +1995,31 @@ Constructor Overloading
 - purely object oriented programming language
     - Small talk -> purely oops language (by Alen Key)
 
-Incapsulation
+Encapsulation
 -------------
+- Based on the work, methods are of two types
+    1. getter method
+        - use to fetch the data
+        - we expect return from getter
+        - return type is the type of return value
+    2. setter method
+        - use to set/modify the data
+        - return type is void
+
+- Encapsulation
+    - binding state and behavior of an object together.
+    - restricting the direct access of data members of an object
+    - providing the indirect access via the methods of same class
+
+- Data hiding
+    - resticting the direct access of data members by providing the indirect secure access by the method of the object.
+
+    - Steps to achive data hiding
+        - making the data members private
+        - making the setter and getter
+            
+    - Advantage
+        - security
+        - make data member only readable or writeable or both or neither.
 
 

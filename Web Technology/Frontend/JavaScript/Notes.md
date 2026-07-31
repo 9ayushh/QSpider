@@ -666,13 +666,14 @@ String
             - ex:
                 console.log(str.includes("Akshit"));
         
-        - join 
+        - join()
+        - split()
 
 
 Arrays
 ------
     - It is a non primitive data type which is used to store multiple data inside a single variable.
-    - The data stored inside an array is knownb as elements.
+    - The data stored inside an array is known as elements.
     - In JS array can be homogeneous as well as heterogeneous.
 
 - Ways to Create Arrays
@@ -1432,4 +1433,45 @@ Promise
         - await
             - It is a keyword which wait for the promise to settled down.
             - It can be only used within async function.
-        
+    
+Web Storages in JS
+-------------------
+    - Web Storages are the inbuilt storage present inside our browser.
+    - There are 2 types of web storages 
+        1. local storage
+        2. session storage
+    
+    1. Local Storage
+        - Local storage persist the data even after closing the browser.
+        - The size of local storage is around 2-8 mb (depends on the browser).
+
+        - setItem()
+            localStorage.setItem("id", 1);
+            localStorage.setItem("name", "abc");
+            localStorage.setItem("sal", 5678);
+
+        - getItem()
+            let res = localStorage.getItem("name");
+            console.log(res);
+
+        - removeItem()
+            localStorage.removeItem("id");
+
+        - clear()
+            localStorage.clear();
+
+    2. Session Storage
+        - Session Storage persist the data only for a particular time.
+        - The size of a session storage is around 2-8 mb (depends on the browser).
+
+    - setItem()
+        - used to set the data inside the local storage.
+
+    - getItem() 
+        - used to get the data from the local storage.
+    
+    - removeItem()
+        - used to remove only some paritcular data.
+
+    - clear()
+        - used to clear the complete data form the localStorage.

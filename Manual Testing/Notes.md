@@ -170,7 +170,7 @@ WaterFall Model
             - 72% - 80% of critical and complex project BA(Business Analyst) will be present 
             - 20% - 30% of small projects BA might not be present, so in that case Senior Developer Or Senior Test Engineer will play the role of BA.
 
-- Feasibility Study (Stage 2)
+2. Feasibility Study (Stage 2)
     - once requirement collection will fdone, then we can go to the feasibility study
     - it is done by a team, which consist of Business Analyst, Architect, HR Team, Finance Team and Project manager
     - This is the stage where company will decide to take a project or not (we can work on this project or not) 
@@ -191,7 +191,8 @@ WaterFall Model
         - finance team will always think from money point of view (pov) and they see what is the operational cost required to work on the project and if they invest money do they get profit or not.
 
     v. Role of HR Team
-        - 
+        - HR will always think from resource pov.
+        - They will check whether no. of engineers and lab setups are available or not.
 
     1. Business analyst
         - explain all requirement to all the team.
@@ -212,6 +213,249 @@ WaterFall Model
     5. Project manager (yes/no)
         - ask the resources and finance to all the team.
         - then decide that the project is worth or not.
+
+
+3. Design
+    - Here we do, HLD and LLD of software
+
+    1. HLD 
+        - It is the architecture of the software product to be developed
+        - It is done by architect and Senior Developers
+
+    2. LLD
+        - It describes, how each and every features in the product should work.
+        - It is done by Senior Developers
+
+    - HLD - High level design / External Architecture
+    - LLD - Low level design / Internal Architecture
+
+- 3 Tier Architecture / N Tier Architecture / High Level Design
+    chrome( contain api ) 
+        |
+        | (Request)
+        | 
+    Web Server (validate) -> by HTTP Protocol
+        |
+        | (Request)
+        | 
+    Application Server (contain multiple files like home, login, etc...)
+        |
+        | (Request)
+        | 
+    DataBase Server ( contain user information)
+        |
+        | (Response)
+        | 
+    Application Server (contain multiple files like home, login, etc...)
+        |
+        | (Response)
+        | 
+    Web Server (validate) -> by HTTP Protocol
+        |
+        | (Response)
+        | 
+    Client (result)
+
+- Low Level Design
+    - In detail strucutre of each and every application
+    - Internal features designs
+
+4. Coding
+    - Once after design is completed, we go for coding stage.
+    - It is done by Senior Developers, Junior Developers, and Freshers by looking into low level design (LLD) and requirement
+
+    - Image - url(pasted-image.png)
+    ========================================================================================
+DL (Dev Lead) --> 1. Sr. Developer
+                  (8+ years of exp)
+                        |
+            -------------------------------
+            |       Critical Features        |
+            |-------------------------------|
+            |  Signup                       |
+            |  Login                        |
+            |  Compose                      |
+            |  Inbox                        |
+            |                               |
+            -------------------------------
+
+        2. Jr. Developers
+        (2 to 8 years of exp)
+                        |
+            -------------------------------
+            |        Major Features         |
+            |-------------------------------|
+            |  Draft                        |
+            |  Trash                        |
+            |  Sent                         |
+            |  Spam                         |
+            |  Delete                       |
+            -------------------------------
+
+        3. Freshers
+                    |
+            -------------------------------
+            |        Minor Features         |
+            |-------------------------------|
+            |  Cancel                       |
+            |  Help                         |
+            |  Terms and Conditions         |
+            |  Feedback                     |
+            -------------------------------
+
+
+             Software                                     Java Program
+
+    ---------------------------------        --------------------------------------------
+   |            Software             |      | public class Main {                        |
+   |                                 |      |                                            |
+   |   X                 Y           |      |     public static void main(String[] args) |
+   | +---------+      +---------+    |      |     {                                      |
+   | |  100    |      |   90    |    |      |         int X = 100;                       |
+   | +---------+      +---------+    |      |         int Y = 90;                        |
+   |                                 |      |                                            |
+   |          +-----------+          |      |         if (X > Y) {                       |
+   |          |  COMPARE  |          |      |             System.out.println(            |
+   |          +-----------+          |      |                 "X is greater " + X);      |
+   |                ||               |      |         }                                  |
+   |                \/               |      |         else {                             |
+   -----------------------------------      |             System.out.println(            |
+                  |                         |                 "Y is greater " + Y);      |
+                  |                         |         }                                  |
+                  v                         |     }                                      |
+       X is greater                         | }                                          |
+       It should print value                 --------------------------------------------
+
+    -------------------------------------------------------------------------------
+
+    - ex:
+        - chats     --> 
+        - calling   -->
+        - settings  -->     critical features ( By Senior Developer )
+        - groups    -->
+        - payment   -->
+
+        - status    -->
+        - community -->     major features  (By Junior Develper)
+        - channels  -->
+
+        - meta ai   -->
+        - camera    -->     minor features  (Fresher)
+        - help      -->
+
+    - Assigned by => Developer Lead
+
+5. Testing
+    - Once the coding is completed, developers will give the software to the test engineers, where the test engineers will test the software by entering all possible inputs into software to find out defects in the software according to customer requirements is called as testing.
+
+                                            Customer (Req) (Business Language)
+
+    CITY BANK
+    Login (10 Pages)
+
+    +-----------------+                           2 yrs / 3 Cr                           +------------------+
+    |                 | ---------------------------------------------------------------> |                  |
+    |    CUSTOMER     |                                                                  |     INFOSYS      |
+    |                 |             Customer will approach software company              |                  |
+    +-----------------+                  for software development                        +------------------+
+
+                 
+                      1. Requirement Collection (BA)
+
+                        BA will convert Business Language into Software Language
+                                        |
+                                        V
+                        If any user opens browser & enters URL:
+                                    www.cb.com
+                                    +--------------------------------+
+                                    |          Login Page            |
+                                    |--------------------------------|
+                                    |                                |
+                                    |  UN   [______________] ---------> UN text field should
+                                    |                                |  accept between 2–8
+                                    |  Pwd  [______________] ---------> characters.
+                                    |                                |
+                                    | [ LOGIN ]   [ CANCEL ] ---------> Password should
+                                    |                                |  accept minimum
+                                    +--------------------------------+  6 characters and
+                                                                        include at least
+                                                                        1 special character.
+
+                        2. Feasibility Study
+
+                        3. Design (Architect)
+                            a) HLD
+                            b) LLD
+
+                        4. Coding
+                            (Sr. Developer, Jr. Developer,
+                            Freshers)
+
+
+                5. Developer will give software to T.E
+                                 |
+                                 |
+                                 V
+                             T.E (Testing)
+                Open the browser & enter URL: www.cb.com
+          +-----------------------------------------------+
+          |                 Login Page                    |
+          |-----------------------------------------------|
+          |                                               |
+          |  UN   [______________] ----------------------------------------------------------------------+
+          |                                               |                                              |
+          |  Pwd  [______________] --------------------+  |                                              |
+          |                                            |  |                                              |
+          | [ LOGIN ]   [ CANCEL ]                     |  |                                              |
+          +--------------------------------------------+  |                                              |
+                                                          |                                              |
+                                                          |                                              |
+                                                          V                                              |
+                                                                                                         |
+                        i. ABC ---------------------- Not Accepting ---------- Defect                    |
+                        ii. AB12CD ------------------- Not Accepting ---------- Defect                   |
+                        iii. 67890543 ----------------- Accept                                           |
+                        iv. dfgh&^4%$ ---------------- Not Accepting                                     |
+                        v. $#%^&* ------------------- Accept                                             |
+                        vi. B ------------------------ Accepting ------------- Defect                    |
+                                                                                                         |
+                                                                                                         |
+        vii. XYZ782T ------------------ Accepting ------------ Defect                                    |
+        viii. ayush123 ----------------- Accept                          <-------------------------------+
+        ix. admin@12 ----------------- Accept
+        x. abc --------------------- Not Accepting
+
+
+    - Assigned test by => Test Lead
+    - Tester have to create a Defect Report which contain all the defects
+    - Then tester give the report to developer to fix the defects
+    - Then Developer provide the fixed software to the tester and tester again test the defects
+    - This is known as Retesting.
+
+    - Retesting (only on the defected part)
+        - testing the defects again is known as retesting.
+
+6. Installation
+    - Deployment
+        - By Devops (Development operation)
+    
+    - Deployed on Production Server
+        - Where the software is deployed
+
+7. Maintanance
+    - Maintance Period
+        - timeperiod given to customer by which we maintain the software for free, after that charges will be there.
+
+    - SLA
+        - Service Level Agreement
+
+    - Changes done
+        - Adding a feature
+        - Removing a feature
+        - Modifying a feature
+        - Fixing a Bug
+
+
 
     
 

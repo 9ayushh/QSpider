@@ -339,3 +339,34 @@
 // }
 // abc();
 
+// ! Local Storage
+// ? setItem()
+// localStorage.setItem("id", 1);
+// localStorage.setItem("name", "abc");
+// localStorage.setItem("sal", 5678);
+
+// ? getItem()
+// let res = localStorage.getItem("name");
+// console.log(res);
+
+// ? removeItem()
+// localStorage.removeItem("id");
+
+// ? clear()
+// localStorage.clear();
+
+// ! Session Storage
+// ? setItem()
+// sessionStorage.setItem("id", 1);
+// sessionStorage.setItem("name", "abc");
+// sessionStorage.setItem("sal", 5678);
+
+// ? getItem()
+// let res = sessionStorage.getItem("name");
+// console.log(res);
+
+// ? removeItem()
+// sessionStorage.removeItem("id");
+
+// ? clear()
+// sessionStorage.clear();
