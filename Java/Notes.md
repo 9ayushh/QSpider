@@ -2027,7 +2027,6 @@ ENCAPSULATION
 - The process of binding the state (attributes/fields) and behavior of an object together is known as encapsulation.
 - We can achieve encapsulation in Java with the help of a class. A class contains both the state and behavior of an object.
 
-
     - ADVANTAGE OF ENCAPSULATION
         - By using encapsulation, we can achieve data hiding.
 
@@ -2075,9 +2074,181 @@ ENCAPSULATION
             - Neither readable nor modifiable
 
 
-real life example of encapsulation
+- real life example of encapsulation
     - any registration page which provides validation and verification
 
-real life java language
+- real life java language
     - Thread
         - it has priority
+
+
+Garbage Collection
+------------------
+
+- Definition
+    - The process of removing the dereferenced object from the memory and making the memory free for the new object is known as Garbage Collection.
+
+
+- Garbage Collector
+    - It is done by the Garbage Collector, which is represented by a method called:
+        gc()
+
+    - This method is present inside the System class and, by nature, it is static.
+
+    - To call it, we use:
+        System.gc();
+        - But it is automatically invoked by the JVM.
+
+    - It is a daemon thread.
+
+
+- Finalize Method
+    - Before the Garbage Collector removes the object from the memory, it calls the finalize() method to perform the clean-up process.
+
+
+- Clean-up Process
+    - The clean-up process means checking whether:
+        - The object is actually dereferenced or not.
+        - Any pending work of the object is left or not before collecting the object.
+    - ex:
+        User u1 = new User();
+        System.out.println(u1.x); // 0
+        User u2 = u1;
+        u1 = null;
+
+    - NOTE:
+        - The object will not be removed immediately by the Garbage Collector (GC).
+
+
+    - Questions
+        1. Where is the finalize() method present?
+            - It is present inside the Object class.
+
+        2. How many ways can we make an object dereferenced?
+            - There are 3 ways by which we can make an object dereferenced:
+                1. By creating an anonymous object.
+                2. By making the reference variable of an object null.
+                3. By assigning a new reference to an existing object reference variable.
+
+
+## WAYS TO MAKE AN OBJECT DEREFERENCED
+
+1) By Creating an Anonymous Object
+    - Example:
+        class User {
+            int x;
+            public User() {
+            }
+            public static void main(String[] args) {
+                System.out.println(new User().x);   // 0
+                new User().m1();
+            }
+            void m1() {
+                System.out.println("Hi");
+            }
+        }
+
+    - Explanation:
+        - The object is created without storing its reference in any variable.
+        - After the statement executes, the object becomes dereferenced and is eligible for Garbage Collection.
+
+
+2) By Making the Reference Variable Null
+    - Example:
+        User u1 = new User();
+        System.out.println(u1.x);      // 0
+        System.out.println(u1.m1());
+        u1 = null;
+        System.out.println(u1.x);      // Error -> NullPointerException
+
+    - Explanation:
+        - When the reference variable is assigned null, it no longer points to the object. 
+        - The object becomes dereferenced and is eligible for Garbage Collection.
+
+
+3) By Assigning a New Reference
+    - Example:
+        User a = new User();
+        User b = new User();
+        a = b;
+    - Explanation:
+        After executing:
+            a = b;
+
+        - The object originally referenced by 'a' loses its reference (provided
+        no other reference points to it). 
+        - That object becomes dereferenced and is eligible for Garbage Collection.
+
+
+    - NOTE:
+        - Because of this feature, Java supports:
+            - Robust:
+                - Dynamic Memory Allocation
+                - Automatic Memory Management
+
+- NOTE
+    - Garbage collection will not collect by default all the dereferenced object.
+    - It can be collect those dereferenced object which are created by new keyword.
+
+    - ex:
+        String obj; // this will not collected by the garbage collector.
+
+        String s = "Hy";
+        s = "Bye";
+
+===========================================================================================
+
+Relationship
+------------
+
+- Definition
+    - Connection or association between two objects is known as Relationship.
+
+                      Employee
+                    /    |    \
+                   /     |     \
+                HR    Manager   Car
+
+    - (An employee can be associated with multiple objects such as HR, Manager, Car, etc.)
+
+
+- Types of Relationship
+    - There are two types of relationships:
+        1. HAS-A Relationship
+        2. IS-A Relationship
+
+    1) HAS-A RELATIONSHIP
+        - If one object depends on another object, this type of relationship is known as HAS-A Relationship.
+        - It is based on object dependency.
+        - HAS-A Relationship is of two types:
+            1. Composition  -> Complete Dependency
+            2. Aggregation  -> Partial Dependency
+
+        1. Composition
+            - Complete dependency.
+            - If the parent object is destroyed, the child object is also
+            destroyed.
+            - ex:
+                House  ----contains----> Rooms
+
+
+        2. Aggregation
+            - Partial dependency.
+            - The child object can exist independently even if the parent object is destroyed.
+            - ex:
+                College ----has----> Students
+
+
+    2) IS-A RELATIONSHIP
+        - The Parent-Child relationship is known as IS-A Relationship.
+        - It represents Inheritance.
+
+        - ex:
+                 Animal
+                   │
+            ┌──────┴──────┐
+            │             │
+            Dog          Cat
+
+            Dog IS-A Animal
+            Cat IS-A Animal

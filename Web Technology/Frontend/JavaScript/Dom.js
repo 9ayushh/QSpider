@@ -370,3 +370,67 @@
 
 // ? clear()
 // sessionStorage.clear();
+
+//^ -------------------------------------------
+// * Event loop : Event loop is a mechanism in js that continuously check ...
+// * whether the call stacks empty and moves tasks from queues to the stack for execution  .
+//* call stack : A DS wheer js execute code line by line (LIFO)
+
+// * web api : Feature provide by the browser (not js itself ) to handle async task like : 
+
+// setTimeout
+// dom event 
+// API calls 
+
+// callback queue  (Task Queue) : A queue where call back from async operation wait before execution , 
+// microtask queue : A high priority queue for : promise(.then)
+
+// Event loop is a process that 
+// check if call stack is empty 
+// first execute microtask 
+// then execute callback queue tasks 
+
+// console.log("start")
+// setTimeout(()=>{
+//   console.log("timeout 1")
+
+//   Promise.resolve().then(()=>{
+//     console.log("promise 1")
+//   })
+// })
+// Promise.resolve().then(()=>{
+//   console.log("promise 2 ")
+
+//   setTimeout(()=>{
+//     console.log("timeout 2");
+//   },0);
+// })
+// console.log("end");
+
+// *o/p is 
+// start 
+// end 
+// promise 2
+// timeout1
+// promise 1
+// timeout 2
+
+//  for (var i = 0 ; i<4;i++){
+//   setTimeout(()=>{
+//     console.log(i)
+//   },0)
+//  }
+
+console.log("A");
+
+Promise.resolve().then(()=>{
+  console.log("B")
+  Promise.resolve().then(()=>{
+    console.log("C")
+  })
+})
+
+setTimeout(()=>{
+  console.log("D")
+})
+console.log("E")
