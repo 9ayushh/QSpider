@@ -2056,7 +2056,7 @@ ENCAPSULATION
         - The setter method is used to update or modify the data.
         - The return type of the setter method is always `void`.
 
-    - NOTE
+    - NOTE:
         - Validation and verification can be performed in the getter/setter methods before storing the data and before reading private data members.
 
         - If you want to make your hidden data member **only readable**, create only the **Getter** method.
@@ -2214,12 +2214,12 @@ Relationship
 
 - Types of Relationship
     - There are two types of relationships:
-        1. HAS-A Relationship
-        2. IS-A Relationship
+        1. HAS-A Relationship (dependency type)
+        2. IS-A Relationship (parent-child type)
 
     1) HAS-A RELATIONSHIP
         - If one object depends on another object, this type of relationship is known as HAS-A Relationship.
-        - It is based on object dependency.
+        - It is based on level of object dependency.
         - HAS-A Relationship is of two types:
             1. Composition  -> Complete Dependency
             2. Aggregation  -> Partial Dependency
@@ -2252,3 +2252,43 @@ Relationship
 
             Dog IS-A Animal
             Cat IS-A Animal
+
+## Inheritance
+--------------
+- The property of one class inherited by child class
+- there are two words
+    - extends
+        - C to C
+        - I to I
+    - implements
+        - I to C
+
+- There are 5 types of Inheritance
+    1. Single level
+    2. Multi Level
+    3. Hierarchical
+    4. Multiple (not in java by class)
+        - only possible when all the parent classes are incomplete
+        - can be achive by interface not by class
+    5. Hybrid
+
+- Not inherited
+    - private
+    - constructor
+    - static members
+
+
+## Non Primitive TypeCasting
+----------------------------
+- There should be a IS-A Relationship 
+- There are two types of Non-primitive typecasting
+    1. upcasting
+    2. downcasting
+
+1. UpCasting
+    - Converting child into parent
+    - A a = new B();
+
+2. DownCasting
+    - B b = (B) a;
+

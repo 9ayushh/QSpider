@@ -1,5 +1,5 @@
 public class Employee {
-    private int empid;
+    private int empid=6;
     private String ename;
     private long phno;
     int pwd = 9934;

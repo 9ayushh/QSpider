@@ -6,10 +6,10 @@
 - Step 2 : Installing dependencies
     - npm create vite@latest
     - project name : ______________
-    - package : _________________
+    - package : _________________(package.json)
     - framework : react
     - variant : javascript(choosed) / typescript / js with react / typescript with react
-    - linter : enlint (choosed) / oslint
+    - linter : enlint (choosed) / oxlint(latest)
 
 - Step 3 : Your project is running on given localhost...
     - npm run dev
@@ -57,7 +57,6 @@
         - which is used to run a package directly without installing it permanently.
         - It downloads the packages temporary, execute it and download it permanently and deletes the packages after execution.
 
-- ### Features
     - React used vite as a module bundler 
         - Vite is a fast and modern tool which is used to create run and built react application.
             - A module bundle combines all react files (html(images), css, js) into optimized file so the browser understand them.
@@ -95,7 +94,67 @@
 
 - ### Features of React
     - Single page application
-    - Component based architecture
-    - Declarative
-    - virtual DOM 
+        - Single page application loads the single html file and dynamically updates it's content as the user interact with app. 
+        - This results in faster in smoother transition providing more app like experience.
 
+    - Component based architecture
+        - It is a way to build react application by breaking them into reusable, independent piece of code.
+        - In react, we have 2 types of component
+            1. Class Based Component
+            2. Function Based Component
+
+    - Declarative
+        - React is Declarative because we describe what the UI should look like based on the state.
+        - React automatically update the DOM accordingly.
+        
+    - virtual DOM 
+        (Real DOM => Virtual DOM => Updated Virtual DOM)
+        - It is the lightweight copy of real DOM
+        - React uses virtual DOM to improve its performance instead of updating the actual real DOM, react first update the virtual DOM and figures out what change and then only updated data is patched to the real DOM.
+
+        - Q. What is Reconciliation 
+            - In reconciliation, the old virtual DOM is compare to the new Virtual DOM to identify the changes that needs to be updated in the real DOM.
+            - Whenever something changes in the application, react creates a new virtual DOM in this new virtual DOM tree each element of the application is represented as a node.
+            - When the state or prop of a component changes, react creates a new virtual DOM and then compares it with the privious virtual DOM tree, this comparision is called Diffing.
+            - React uses Hofman Diffing algorithm to efficiently compares the old virtual DOM tree and newly Updated DOM tree.
+            - After finding the difference, react updates only the changed node or element into the real DOM instead of re-rendering the entire application.
+            - This process improves react application performance and makes it faster.
+
+    -  React Fiber (At the time when a large amount of data is changed)
+        - It is the new reconciliation engine, which is introduced in React 16.
+        - It is an improved version of react reconciliation algorithm that makes rendering faster, smoother and un-interuptable.
+        - React fiber helps react to handle large rendering task into small chunks so important user interactions remains fast and smooth.
+
+
+- Difference between Class Based Component and Function Based Component
+    - Class Based Component
+        - JS classes
+        - Statefull
+        - Life Cycle Methods
+        - Hooks
+        - Render Method
+        - this keyword
+
+    - Function Based Component
+        - JS functions 
+        - Stateless
+        - No Life Cycle Methods
+        - No Hooks
+        - No render Method
+        - No this keyword
+
+- NOTE: 
+    - If we wants to display multiple elements from one component then we have to wrap all the elements under a single parent element
+
+- div is used to display multi elements but div takes a node in DOM, so to remove this wrapper.
+
+- Fragment
+    - A fragment in react is used to group multiple elements without adding extra node in the DOM tree.
+    - fragment helps us to avoid extra div wrapper
+    - There are two ways for creating fragments
+        - By using Fragment keyword.
+            <Fragment></Fragment>
+            - we can provides attribute to the fragment
+        - By using no keyword and no tags 
+            <></>
+            - we cannot provides any attribute to this fragment

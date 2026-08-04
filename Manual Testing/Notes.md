@@ -265,7 +265,8 @@ WaterFall Model
     - It is done by Senior Developers, Junior Developers, and Freshers by looking into low level design (LLD) and requirement
 
     - Image - url(pasted-image.png)
-    ========================================================================================
+
+========================================================================================
 DL (Dev Lead) --> 1. Sr. Developer
                   (8+ years of exp)
                         |
