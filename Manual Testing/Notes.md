@@ -36,7 +36,7 @@ SDLC
         - Hybrid Model
 
 
-    - CRS ->  
+    - CRS -> Customer Relation Specification
     - SLA -> Service Level Agreement
         - Agreement sent by the company to the user, that contain the services with the payment and time.
 
@@ -459,9 +459,43 @@ DL (Dev Lead) --> 1. Sr. Developer
 
 
     
+(spiral skip)
 
+--------------------------------------------------------------
+V Model (Verification & Validation)
 
+- It is the step by step procedure or a standard procedure to develop a new software, in V & V model all the stages are tested.
+- In order to overcome the drawback of both (waterfall and spiral model), we go for V & V model.
 
+    - v.excaliDraw.png
 
+    - Verification
+        1. verifying CRS, SRS, HLT, HLD, LLD and check whether it is according to requirement or not, is called as verification
+        2. it is done by both developer and test engineers
+        3. it is done before the software is develop
+        4. it is also known as static testing
 
+    - Validation
+        1. Testing the functionality of any application or software by executing the test cases is called as validation.
+        2. It is done by only test engineers
+        3. It is done after the software is developed
+        4. It is also called dynamic testing
 
+    - **Complete V model diagram** -> *VModel_diagram.png*
+
+    - Drawback:
+        1. Initial investment is high
+        2. Documentation is more (in every stage we should write test plan and test case)
+        3. Managing interaction between developers and test engineers will be very tough
+
+    - Advantages:
+        1. Req. changes is allowed in any stage.
+        2. Testing starts in very early stage of project development i.e. at req collection stage only
+        3. All the stages are tested because of this it avoids downward flow of defects, which intern reduces lot of re-work.
+        4. Total cost of project will be less.
+        5. The output is given simultaneously, because of this project gets completed very fast.
+
+    - Applications:
+        1. Whenever we build complex products/applications
+        2. Whenever we go for long term projects
+        3. Whenever customer is expecting ver high quality product within short time of span we go for v model

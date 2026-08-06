@@ -158,3 +158,31 @@
         - By using no keyword and no tags 
             <></>
             - we cannot provides any attribute to this fragment
+
+- ### Modules in JavaScript
+    - A module in Js is the separate file that contains reusable code 
+    - ex:
+        variable, classes, functions, etc.
+    - which can be exported and used in other files
+
+    - Modules allows you to split your code into smaller manageable pieces
+    - Instead of writing everything inside one big file, you can divide the code into multiple files and connect them using import and export.
+
+    - Types of Modules in JS
+        1. Common JS
+            - It is the module system which is used in node.js
+            - It uses `require` method and `module.export`
+        2. ES6 modules
+            - It is introduced in ES6 - (2015)
+            - It uses import and export keywords
+
+            - Types of ES Modules
+                - Named Export and Import
+                    - It allows you to export muliple variables and functions from a module using their names.
+                    - It is called named import because you must have to use the exact exported name while importing.
+                - Default Import Export
+                    - A default export is used when a module export only one main value (function, class, object, variable)
+                    - No curly brackets were used for default import.
+                    - We can give it any name while importing.
+                    - Each module can have only one default export.
+                    

@@ -1264,7 +1264,8 @@ interface
         - because non-static members are not stored inside the memory
 
 
-- Packages
+Packages
+----------
     - container like stuctures which contains class files and interfaces
     - package should be the first statement inside the file
     - only one package
@@ -2292,3 +2293,498 @@ Relationship
 2. DownCasting
     - B b = (B) a;
 
+
+--------------------------------
+## RELATIONSHIP IN JAVA (OOP)
+
+- What is Relationship?
+    - The connection (association) between two objects is known as a relationship.
+
+    - Types of Relationship
+        1. Has-a Relationship
+        2. Is-a Relationship
+
+
+    1. HAS-A RELATIONSHIP
+        - If one object is dependent on another object, it is known as Has-A Relationship.
+
+        - Types
+            1. Aggregation
+            2. Composition
+
+        1. AGGREGATION
+            - The dependency between two objects such that one object can
+            exist without the other is known as Aggregation.
+
+            - Examples
+                • Cab – Ola
+                • Train – Online Ticket Booking
+                • Bus – Passenger
+
+        2. COMPOSITION
+            - The dependency between two objects such that one object cannot exist without another object is known as Composition.
+
+            - Examples
+                • Car – Engine
+                • Human – Oxygen
+
+    2. IS-A RELATIONSHIP
+        - The relationship between two objects which is similar to the parent and child relationship is known as the Is-A relationship.
+
+        - Properties
+            - In an Is-A relationship, the child object acquires all properties of the parent object.
+
+            - The child object will have its own extra properties.
+
+            - In an Is-A relationship, we can achieve:
+                - Generalization
+                - Specialization
+
+        - NOTE 1
+            • Parents are called Generalized.
+            • Children are called Specialized.
+
+        - NOTE 2
+            Private members, constructors and static members are not inherited to the child class.
+
+        - EXAMPLE (IS-A)
+            - With the help of the child class reference type, we can use the members of the parent class as well as the child.
+            - With the help of the parent class reference, we can use only the members of the parent class but not the child class.
+            - Parent Class
+                - The parent class is also known as a Superclass or Base class.
+
+            - Child Class
+                - The child class is also known as a Subclass or Derived class.
+
+            - NOTE:
+                - Is-a relationship is achieved with the help of inheritance.
+
+
+- ## INHERITANCE
+    - The process of one class acquiring all the properties and behavior from another class is called Inheritance.
+
+    - In Java, inheritance can be achieved using:
+        1. extends keyword
+        2. implements keyword
+
+    - extends keyword
+        The 'extends' keyword is used to achieve inheritance between two classes.
+
+    - TYPES OF INHERITANCE
+        1. Single Level Inheritance
+        2. Multilevel Inheritance
+        3. Hierarchical Inheritance
+        4. Multiple Inheritance
+        5. Hybrid Inheritance
+
+    1. SINGLE LEVEL INHERITANCE
+        - One parent class having one child class is known as Single Level Inheritance.
+
+        - Diagram
+            A
+            │
+            │
+            ▼
+            B
+
+        A = Parent Class
+        B = Child Class
+
+
+    2. MULTILEVEL INHERITANCE
+        - One superclass having one subclass, and that subclass having another subclass is known as Multilevel Inheritance.
+            OR
+
+        - One parent class having more than one level of child classes through inheritance is known as Multilevel Inheritance.
+
+        - Diagram
+            A
+            │
+            ▼
+            B
+            │
+            ▼
+            C
+
+        A = Superclass
+        B = Child of A / Parent of C
+        C = Child of B
+
+    3. HIERARCHICAL INHERITANCE
+        - One parent class having more than one child at the same level or stage is known as Hierarchical Inheritance.
+
+        - Diagram
+               A
+             /   \
+            ▼     ▼
+            B     C
+
+            A = Parent Class
+            B = Child Class
+            C = Child Class
+
+    4. HYBRID INHERITANCE
+        - The combination of more than one type of inheritance is known as Hybrid Inheritance.
+
+        - Diagram (Conceptual)
+            A         B
+             \       /
+              \     /
+                 C
+               /   \
+              ▼     ▼
+              D     E
+
+
+    5. MULTIPLE INHERITANCE
+        - One child class having more than one parent class is known as Multiple Inheritance.
+
+        - Diagram
+            A      B
+             \    /
+              \  /
+                ▼
+                C
+
+        - NOTE:
+            - In Java, multiple inheritance through classes is NOT supported.
+
+
+        - NOTE ON MULTIPLE INHERITANCE
+            - Multiple inheritance has a problem known as the
+            Diamond Problem.
+            - Because of the Diamond Problem, we cannot achieve
+            multiple inheritance using classes.
+            - In Java, multiple inheritance can be achieved using
+            Interfaces.
+
+        - DIAMOND PROBLEM (BECAUSE OF CONSTRUCTOR)
+            - Assume there are two classes A and B.
+
+            - Both classes have a default (no user-defined) constructor.
+            - Class C inherits both A and B.
+            - While creating an object of class C, the child constructor automatically calls the parent constructor using no-argument super().
+
+        - Problem
+            - An ambiguity arises because it is unclear which superclass constructor should be called first.
+            - This ambiguity is known as the Diamond Problem.
+
+
+    - DIAMOND PROBLEM (BECAUSE OF METHOD)
+        - Assume there are two classes A and B.
+        - Both classes contain a method with the same signature.
+        - Class C inherits both A and B.
+
+        - Problem
+            - When we call the inherited method using the subclass reference, Java cannot determine which superclass method should be executed.
+
+        - This ambiguity is called the Diamond Problem.
+
+    - WHAT IS DIAMOND RING PROBLEM?
+
+            A              B
+         void m1()     void m1()
+              \          /
+               \        /
+                \      /
+                   C
+
+        - Problem
+            - Both parent classes define the same method (m1()).
+            - When class C tries to use m1(), the compiler cannot decide whether to execute A's m1() or B's m1().
+
+            - This ambiguity is known as the Diamond Problem.
+
+
+- THIS KEYWORD
+--------------
+    - If we want to differentiate between a local variable and a non-static (instance) variable, we use the 'this' keyword.
+
+    - NOTE
+        - The 'this' keyword holds the reference of the current executing object.
+
+- this()
+    - this() is used to call one constructor from another constructor of the same class.
+
+    - Rule
+        - We must use the this() call statement as the FIRST statement inside the constructor. 
+
+    - Example
+        class Demo {
+            Demo() {
+                this(100);      // First statement
+                System.out.println("Default Constructor");
+            }
+            Demo(int x) {
+                System.out.println("Parameterized Constructor");
+            }
+        }
+
+    - Output
+        Parameterized Constructor
+        Default Constructor
+
+- SUPER KEYWORD
+---------------
+    - The super keyword is used to access the properties and methods of the superclass from the subclass.
+
+- super()
+    - super() is used to call the superclass constructor from the subclass constructor.
+
+    - Rule
+        - The super() call statement must always be the FIRST statement inside a constructor.
+
+    - Example
+        class Parent {
+            Parent() {
+                System.out.println("Parent Constructor");
+            }
+        }
+
+        class Child extends Parent {
+            Child() {
+                super();
+                System.out.println("Child Constructor");
+            }
+        }
+
+NON-PRIMITIVE TYPE CASTING (DERIVED TYPE CASTING)
+-------------------------------------------------
+- The process of converting one reference type into another reference type is known as Non-Primitive (Derived) Type Casting.
+
+    - Rules to Achieve Non-Primitive Type Casting
+        - We can convert one reference type into another reference type only if the following conditions are satisfied:
+
+            - There must be an IS-A relationship
+                    (Parent ↔ Child).
+
+            - OR the Classes/Interfaces must have a common parent.
+
+        - EXAMPLE - 1
+            Fruit              Vegetable
+              │                    │
+              ▼                    ▼
+            Apple               Brinjal
+
+            - Allowed Conversions
+                Fruit      ↔ Apple
+                Vegetable  ↔ Brinjal
+
+            - Not Allowed
+                Fruit      ✗ Vegetable
+                Apple      ✗ Brinjal
+                Vegetable  ✗ Fruit
+                Brinjal    ✗ Apple
+
+        - EXAMPLE - 2
+
+                Fruit
+               /     \
+              ▼       ▼
+           Apple    Mango
+
+
+        - Allowed Conversions
+            Fruit ↔ Apple
+            Fruit ↔ Mango
+
+        - Not Allowed
+            Apple ✗ Mango
+            Mango ✗ Apple
+
+
+    - TYPES OF NON-PRIMITIVE TYPE CASTING
+
+        - Non-Primitive (Derived) Type Casting is classified into two types:
+            1. Upcasting
+            2. Downcasting
+
+        - UPCASTING
+            - The process of storing a child class object into a parent class reference is known as Upcasting.
+
+            - Example
+                class Animal {}
+                class Dog extends Animal {}
+                Animal a = new Dog();      // Upcasting
+
+
+NOTES ON UPCASTING
+------------------
+- 
+    - Upcasting is performed implicitly by the compiler.
+    - It is also known as Auto Upcasting.
+    - Upcasting can also be done explicitly using a typecast operator.
+    - Once a reference is upcasted, child-specific members cannot be accessed using the parent reference.
+
+    - WHY DO WE NEED UPCASTING?
+        - It is used to achieve Generalization.
+        - It helps create a generalized container so that references of different child objects can be stored using one parent reference.
+
+
+    - GENERALIZATION EXAMPLE
+
+                     Cab
+                  /   |   \
+                 ▼    ▼    ▼
+              Mini  Macro Prime
+
+        - Example
+            Cab c;
+            c = new Mini();
+            c = new Macro();
+            c = new Prime();
+
+            - Explanation
+                - Here, 'Cab' is the parent class reference that can store objects of any of its child classes (Mini, Macro, or Prime).
+
+                This is possible because of Upcasting and is an example of Generalization.
+
+
+INSTANCE OF OPERATOR
+--------------------
+- Instance
+    - The instanceof operator is a binary operator used to test whether an object belongs to a particular class or interface.
+
+    - Properties
+        - It is a binary operator.
+        - It is used to test whether an object is of the given type.
+        - The return type of this operator is boolean.
+        - If the specified object is of the given type,
+        it returns true; otherwise, it returns false.
+
+    - Syntax
+        (object_reference instanceof ClassName)
+
+    - Example
+        Animal a = new Dog();
+        System.out.println(a instanceof Animal);   // true
+        System.out.println(a instanceof Dog);      // true
+        System.out.println(a instanceof Cat);      // false
+
+
+DISADVANTAGE OF UPCASTING
+-------------------------
+- There is one major disadvantage of Upcasting:
+
+    - Once the reference is upcasted, child-specific members cannot be accessed using the parent reference.
+
+    - Note
+        - To overcome this problem, we use Downcasting.
+
+
+DOWNCASTING
+-----------
+- The process of converting a Parent (Superclass) reference into a Child (Subclass) reference is known as Downcasting.
+
+    - Example
+        Animal a = new Dog();      // Upcasting
+        Dog d = (Dog) a;           // Downcasting
+
+    - Notes
+        - Downcasting is NOT performed implicitly by the compiler.
+        - It must be done explicitly by the programmer using a typecast operator.
+
+    - WHY DO WE NEED DOWNCASTING?
+        - When a reference is upcasted, subclass members cannot be accessed.
+
+        - To access the members of a subclass, we need to downcast the reference.
+
+        - Diagram
+
+              Fruit
+                ▲
+                │
+            Upcasting
+
+              Apple
+                │
+                ▼
+            Downcasting
+
+
+CLASSCASTEXCEPTION
+------------------
+- ClassCastException is a RuntimeException.
+
+    - It occurs at runtime when an invalid downcasting operation is performed.
+
+    - When does it occur?
+        - When we try to convert a reference into a specific class, but the object is NOT actually an instance of that class, Java throws ClassCastException.
+
+    - Example
+        Case 1
+            class Parent {}
+            class Child extends Parent {}
+
+            Child c = (Child) new Parent();   // ClassCastException
+
+        Case 2
+            Parent p = new Parent();
+            Child c = (Child) p;              // ClassCastException
+
+    - Safe Way
+        - Always check with instanceof before downcasting.
+
+        if (p instanceof Child) {
+            Child c = (Child) p;
+        }
+        else {
+            System.out.println("Invalid Downcasting");
+        }
+
+
+------------------------------------------------------------
+Eclipse
+-------
+- Steps
+    - launch the eclipse
+    - create the project
+    - create the package
+    - create the class
+    - write the program and run it
+
+    convention of project -> Pascal
+    convention of package -> reverse of domain of company (com.companyName)
+
+    - Assignment
+        - create 5 project
+            - create 5 packages each
+                - create 3 class, 1 interface, 1 abstract class
+
+
+----------------------------------------------------------------
+
+Dynamic Reading
+---------------
+- 
+    - taking the input from the user by keyboard
+
+        int a = 78;
+        int b = 79;
+        int c = a + b;
+
+
+    - Scanner class -> java.util package
+        - byte : nextByte()
+        - short : nextShort()
+        - int : nextInt()
+        - long : nextLong()
+        - float : nextFloat()
+        - double : nextDouble()
+        - char : (no direct method, we jugard it) => next().charAt(0)
+        - boolean : nextBoolean()
+        - String : next() , nextLine()
+
+    * All are non-static methods
+
+    - Q. wajp read 10 student details and print it.
+
+-------------------------------------------------------
+
+Wrapper Classes
+---------------
+convert primitive data type into non primitive wrapper class
+
+Parsing
+-------
+convert primitive string into actural primitive
