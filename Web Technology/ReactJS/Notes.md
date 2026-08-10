@@ -185,4 +185,13 @@
                     - No curly brackets were used for default import.
                     - We can give it any name while importing.
                     - Each module can have only one default export.
-                    
+
+- Expression {javaScript code}
+    - used to provide js code inside the return.
+
+- ### Used State
+    - It is a React Hook, which helps function based component to make it stateless to stateful.
+    - It accepts one value which is initial value.
+    - It returns an array, which consist two values
+        - variable, which holds the initial value
+        - updater fucntion, which helps to update the initial value
