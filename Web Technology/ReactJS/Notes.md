@@ -189,9 +189,27 @@
 - Expression {javaScript code}
     - used to provide js code inside the return.
 
-- ### Used State
+- ### Use State
     - It is a React Hook, which helps function based component to make it stateless to stateful.
     - It accepts one value which is initial value.
     - It returns an array, which consist two values
         - variable, which holds the initial value
         - updater fucntion, which helps to update the initial value
+
+- ### Props
+    - It stands for properties.
+    - It is a mechanism for passing the data from one component to another.
+    - Props is available in both class based & function based component.
+    - It is passed just like we passes attribute in the HTML.
+
+    - Props drilling is passing the data from one component to nested child component.
+
+    - The disadvantage of props drilling is unnecessary re-rendering of component.
+    - To avoid this unnecessary we use one hook i.e. useContext (Context API).
+
+    - Props are immutable and unidirectional
+
+    - #### Default Props
+        - Default Props are the pre defined values that a react component uses when a specific prop is not provided by the parent component
+        - They act like backup values to ensure the component still works properly even if no values are passed.
+        

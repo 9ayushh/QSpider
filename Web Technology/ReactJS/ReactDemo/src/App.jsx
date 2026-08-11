@@ -3,7 +3,9 @@ import Cbc from "./Components/Cbc";
 import Fbc from "./Components/Fbc"
 import StateInFbc from './states/StateInFbc';
 import StateInCbc from './states/StateInCbc';
-import GrandParent from './props/GrandParent';
+import GrandParent from './propsDrilling/GrandParent';
+import ParentProp from './propsInReact/ParentProp';
+import DefaultComponent from './DefaultProps/DefaultComponent';
 
 const App = () => {
     return (
@@ -16,6 +18,9 @@ const App = () => {
             <StateInFbc/>
             <StateInCbc/>
             <GrandParent/>
+            <ParentProp/>
+            <DefaultComponent/>
+
         </div>
     )
 }

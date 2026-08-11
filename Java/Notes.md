@@ -2599,7 +2599,7 @@ NON-PRIMITIVE TYPE CASTING (DERIVED TYPE CASTING)
             1. Upcasting
             2. Downcasting
 
-        - UPCASTING
+        1. UPCASTING
             - The process of storing a child class object into a parent class reference is known as Upcasting.
 
             - Example
@@ -2608,36 +2608,65 @@ NON-PRIMITIVE TYPE CASTING (DERIVED TYPE CASTING)
                 Animal a = new Dog();      // Upcasting
 
 
-NOTES ON UPCASTING
-------------------
-- 
-    - Upcasting is performed implicitly by the compiler.
-    - It is also known as Auto Upcasting.
-    - Upcasting can also be done explicitly using a typecast operator.
-    - Once a reference is upcasted, child-specific members cannot be accessed using the parent reference.
+        - NOTES ON UPCASTING
+            - Upcasting is performed implicitly by the compiler.
+            - It is also known as Auto Upcasting.
+            - Upcasting can also be done explicitly using a typecast operator.
+            - Once a reference is upcasted, child-specific members cannot be accessed using the parent reference.
 
-    - WHY DO WE NEED UPCASTING?
-        - It is used to achieve Generalization.
-        - It helps create a generalized container so that references of different child objects can be stored using one parent reference.
+            - WHY DO WE NEED UPCASTING?
+                - It is used to achieve Generalization.
+                - It helps create a generalized container so that references of different child objects can be stored using one parent reference.
+
+            - GENERALIZATION EXAMPLE
+
+                            Cab
+                         /   |   \
+                        ▼    ▼    ▼
+                    Mini  Macro Prime
+
+                - Example
+                    Cab c;
+                    c = new Mini();
+                    c = new Macro();
+                    c = new Prime();
+
+                    - Explanation
+                        - Here, 'Cab' is the parent class reference that can store objects of any of its child classes (Mini, Macro, or Prime).
+
+                        This is possible because of Upcasting and is an example of Generalization.
+
+            - DISADVANTAGE OF UPCASTING
+                - There is one major disadvantage of Upcasting:
+                - Once the reference is upcasted, child-specific members cannot be accessed using the parent reference.
+                - Note
+                    - To overcome this problem, we use Downcasting.
 
 
-    - GENERALIZATION EXAMPLE
+        - DOWNCASTING
+            - The process of converting a Parent (Superclass) reference into a Child (Subclass) reference is known as Downcasting.
+            - Example
+                Animal a = new Dog();      // Upcasting
+                Dog d = (Dog) a;           // Downcasting
 
-                     Cab
-                  /   |   \
-                 ▼    ▼    ▼
-              Mini  Macro Prime
+            - Notes
+                - Downcasting is NOT performed implicitly by the compiler.
+                - It must be done explicitly by the programmer using a typecast operator.
 
-        - Example
-            Cab c;
-            c = new Mini();
-            c = new Macro();
-            c = new Prime();
+            - WHY DO WE NEED DOWNCASTING?
+                - When a reference is upcasted, subclass members cannot be accessed.
+                - To access the members of a subclass, we need to downcast the reference.
+                - Diagram
 
-            - Explanation
-                - Here, 'Cab' is the parent class reference that can store objects of any of its child classes (Mini, Macro, or Prime).
+                      Fruit
+                        ▲
+                        │
+                    Upcasting
 
-                This is possible because of Upcasting and is an example of Generalization.
+                      Apple
+                        │
+                        ▼
+                    Downcasting
 
 
 INSTANCE OF OPERATOR
@@ -2660,47 +2689,6 @@ INSTANCE OF OPERATOR
         System.out.println(a instanceof Animal);   // true
         System.out.println(a instanceof Dog);      // true
         System.out.println(a instanceof Cat);      // false
-
-
-DISADVANTAGE OF UPCASTING
--------------------------
-- There is one major disadvantage of Upcasting:
-
-    - Once the reference is upcasted, child-specific members cannot be accessed using the parent reference.
-
-    - Note
-        - To overcome this problem, we use Downcasting.
-
-
-DOWNCASTING
------------
-- The process of converting a Parent (Superclass) reference into a Child (Subclass) reference is known as Downcasting.
-
-    - Example
-        Animal a = new Dog();      // Upcasting
-        Dog d = (Dog) a;           // Downcasting
-
-    - Notes
-        - Downcasting is NOT performed implicitly by the compiler.
-        - It must be done explicitly by the programmer using a typecast operator.
-
-    - WHY DO WE NEED DOWNCASTING?
-        - When a reference is upcasted, subclass members cannot be accessed.
-
-        - To access the members of a subclass, we need to downcast the reference.
-
-        - Diagram
-
-              Fruit
-                ▲
-                │
-            Upcasting
-
-              Apple
-                │
-                ▼
-            Downcasting
-
 
 CLASSCASTEXCEPTION
 ------------------
@@ -2733,7 +2721,6 @@ CLASSCASTEXCEPTION
         }
 
 
-------------------------------------------------------------
 Eclipse
 -------
 - Steps
@@ -2781,10 +2768,439 @@ Dynamic Reading
 
 -------------------------------------------------------
 
+## Packages=====
+
+1. PACKAGE
+    - A package in Java is used to group related classes, interfaces and subclasses.
+    - In simple words, it is a folder or directory which consists of several classes and interfaces.
+    - Note:
+        - A package contains compiled class files.
+
+2. WHY PACKAGE?
+    - Packages are used for the following purposes:
+        1. Packages are used to avoid name conflicts.
+        2. It increases maintainability.
+        3. It is used to categorize classes and interfaces.
+        4. It increases access protection.
+        5. It is used to achieve code reusability.
+
+3. TYPES OF PACKAGES
+    - We have 2 types of packages:
+        1. Built-in packages
+        2. User-defined packages
+
+    1. BUILT-IN PACKAGE
+        - In Java, we have many built-in packages such as:
+            java.lang
+            java.util
+            java.io
+            java.sql
+            java.swing
+            java.awt
+            etc.
+
+        - These packages are provided as part of the Java platform and are available through the JDK/JRE.
+
+        - Example 1:
+            java.util.Scanner
+
+            - Here:
+                java  -> package name
+                util  -> sub-package name
+                Scanner -> class name
+            
+        - Example 2:
+            java.lang.Math
+
+            - Here:
+                java  -> package name
+                lang  -> sub-package name
+                Math  -> class name
+
+        - SUBPACKAGE
+            - A package inside another package is called a sub-package.
+            - It is used to categorize classes further.
+            - Example:
+                java
+                |
+                +-- util
+                        |
+                        +-- Scanner
+
+                - Here:
+                    java  -> package
+                    util  -> sub-package
+                    Scanner -> class
+                    
+        - HOW TO USE BUILT-IN PACKAGES
+            - We can use built-in packages in two ways:
+                1. By using fully qualified name
+                2. By using import keyword
+                
+            1. USING FULLY QUALIFIED NAME
+                - A fully qualified name contains the complete package name along with the class name.
+                - By using a fully qualified name, the compiler can understand to which package the specified class belongs.
+
+                - Example:
+                    java.util.Scanner
+
+                - Scanner is available in the java.util package.
+                - It is commonly used to read data from the user at runtime.
+
+                * CREATING SCANNER OBJECT USING FULLY QUALIFIED NAME
+                    - Example:
+                        java.util.Scanner sc =
+                            new java.util.Scanner(System.in);
+
+                    - By using the fully qualified class name, the compiler can understand that Scanner belongs to the java.util package.
+
+                    - Complete example:
+                        class FullyQualifiedExample {
+                            public static void main(String[] args) {
+                                java.util.Scanner sc =
+                                        new java.util.Scanner(System.in);
+                                System.out.println("Enter your name:");
+                                String name = sc.nextLine();
+                                System.out.println("Hello " + name);
+                                sc.close();
+                            }
+                        }
+
+
+                - DISADVANTAGE OF FULLY QUALIFIED NAME
+                    1. We need to use the fully qualified name every time when accessing the class or interface.
+                    2. Readability is low.
+
+                - To overcome this problem, we can use the import statement.
+
+            2. USING IMPORT STATEMENT
+                - The import statement is used to import classes or interfaces present in packages or sub-packages.
+
+                - Syntax:
+                    import package.subpackage.class/interface;
+
+                - By using the import statement, instead of using the fully qualified name every time, we can directly use the class name.
+                - Example:
+                    import java.util.Scanner;
+                    Scanner sc = new Scanner(System.in);
+
+                - EXAMPLE OF IMPORT
+                    import java.util.Scanner;
+                    class ImportExample {
+                        public static void main(String[] args) {
+                            Scanner sc = new Scanner(System.in);
+                            System.out.println("Enter your name:");
+                            String name = sc.nextLine();
+                            System.out.println("Hello " + name);
+                            sc.close();
+                        }
+                    }
+
+                - Note:
+                    - The import statement must be placed before the class declaration.
+
+                * RULES TO USE IMPORT STATEMENT
+                    1. Import statement should be used before the declaration of a class.
+                    2. Import statement should end with a semicolon (;).
+                    3. We can use multiple import statements in the same program.
+
+                    - Example:
+                        import java.util.Scanner;
+                        import java.util.ArrayList;
+                        import java.util.Date;
+
+                * ADVANTAGES OF IMPORT
+                    1. We can directly use the class name instead of using the fully qualified name.
+                    2. By importing a class/package once, we can use the class/interface of that package multiple times.
+
+                    - Note:
+                        java.lang
+                        - is implicitly imported by the compiler.
+
+                    - Therefore, classes such as String, Math and System can be used without explicitly importing java.lang.
+                    - Example:
+                        String name = "Ayush";
+                        System.out.println(name);
+
+                    - No explicit import is required for these classes.
+
+
+    2. USER-DEFINED PACKAGE
+        - In Java, we can create our own package.
+        - A package name should be unique. Therefore, it is common to follow the reverse of the company's domain name as the package name.
+        - Example:
+            com.companyname.projectname.modulename
+        - Syntax:
+            package packageName;
+
+        - Package names conventionally use lowercase letters.
+        - Example:
+            package com.company.project;
+        
+        * EXAMPLES OF USER-DEFINED PACKAGE
+            - Example 1:
+                package myPack;
+            - Example 2:
+                package com.testYantra.ola.Signup;
+
+            - These are examples of user-defined package declarations.
+        
+
+        * CREATING A SUBPACKAGE
+            - A subpackage can be created using:
+                package package_name.subpackage_name;
+
+            - Example:
+                package jspiders.java.part1;
+                - Here:
+                    jspiders -> package
+                    java     -> subpackage
+                    part1    -> subpackage
+
+        * RULES FOR USER-DEFINED PACKAGE
+            1. Package declaration should be the first statement in the Java source file.
+            2. A Java source file can contain only one package declaration.
+            3. A package can contain multiple classes/interfaces.
+            4. A source file can have at most one public top-level class/interface.
+            5. If you want more than one public top-level class, create a separate source file for each public class.
+            6. If a source file contains a public class/interface, the source file name must be the same as the public class/interface name.
+
+            - Example:
+                package myPack;
+                public class Demo {
+
+                }
+
+                - File name:
+                    Demo.java
+
+    - PACKAGE + IMPORT + CLASS SEQUENCE
+        - If we want to use package and import statements in the same program, we have to follow this sequence:
+            1. package
+            2. import statement
+            3. class / interface
+
+        - Example:
+            package myPack;
+            import java.util.Scanner;
+            public class Demo {
+            }
+
+        - General structure:
+            package packageName;
+            import packageName.ClassName;
+            class ClassName {
+            }
+
+
+===========================================================
+19. QUICK REVISION
+===========================================================
+
+PACKAGE
+-------
+
+A package is used to group related classes and interfaces.
+
+TYPES
+-----
+
+1. Built-in package
+2. User-defined package
+
+
+BUILT-IN PACKAGE
+----------------
+
+Example:
+
+    java.util.Scanner
+
+    java.lang.Math
+
+
+FULLY QUALIFIED NAME
+--------------------
+
+    java.util.Scanner
+
+Creating object:
+
+    java.util.Scanner sc =
+        new java.util.Scanner(System.in);
+
+
+IMPORT
+------
+
+Syntax:
+
+    import package.subpackage.className;
+
+Example:
+
+    import java.util.Scanner;
+
+Then:
+
+    Scanner sc = new Scanner(System.in);
+
+
+USER-DEFINED PACKAGE
+--------------------
+
+Syntax:
+
+    package packageName;
+
+Example:
+
+    package myPack;
+
+
+SUBPACKAGE
+----------
+
+Syntax:
+
+    package packageName.subpackageName;
+
+Example:
+
+    package jspiders.java.part1;
+
+
+ORDER OF STATEMENTS
+-------------------
+
+    package
+       ↓
+    import
+       ↓
+    class / interface
+
+
+IMPORTANT
+---------
+
+java.lang is implicitly imported.
+
+Example:
+
+    String
+    System
+    Math
+
+can be used without writing:
+
+    import java.lang.*;
+*/
+
+
+/*
+===========================================================
+20. COMPLETE EXAMPLE
+===========================================================
+
+File: Demo.java
+
+*/
+
+package myPack;
+
+import java.util.Scanner;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+
+        System.out.println("Hello " + name);
+
+        sc.close();
+    }
+}
+
+
 Wrapper Classes
 ---------------
-convert primitive data type into non primitive wrapper class
+- convert primitive data type into non primitive wrapper class
 
 Parsing
 -------
-convert primitive string into actural primitive
+- convert primitive string into actural primitive
+
+--------------------------------------------------------------------------
+
+Upcasting
+---------
+    - Syntax
+        B b = new B(); // child class
+        A a = b; // upcasting -> converting child into parent
+
+        A a = new B(); // Upcasting... (optimised)
+
+        B b = new B(); // child class object reference
+        A a = new A(); // Parent class object refernce
+        a = b; // Upcasting
+
+    - disadvantage
+        - we cannot use child variable using parent reference
+
+
+Downcasting
+-----------
+    - Syntax 
+        B b = new B(); // object reference
+        A a = b; // upcasting
+        B b1 = (B) a; // downcasting
+
+    - Note 
+        - check whether the object belong to the particular class or not.
+        - Class cast exception
+            - check the reference
+                - instanceOf
+            - handle the exception
+
+
+    - instanceof 
+        - it is a keyword
+        - take 2 values
+        - return true/false
+
+
+## POLYMORPHISM
+- It came from two greek words
+    - poly -> many
+    - morph -> methods/forms
+
+    - Compile Time Polymorphism -> depend on reference, static binding
+        - Method Overloading
+        - Construction Overloading
+        - Method Shadowing/hiding
+        - Variable Showding
+    
+    - Run Time Polymorphism -> depends on object creation, dynamic binding
+        - Method Overriding
+
+    - ### Method Shadowing / Hiding
+        - If parent class and child class having same declaration of static method
+        - change in implementation
+
+    - ### Method Overriding
+        - If parent class and child class having same declaration of non-static method
+        - change in implementation
+
+    - ### Variable Shadowing
+        - If parent class and child class having same name variable
+        - change in value
+
+    - ### Diff. B/W compiletime and runtime
+        - CompileTime
+            - static binding
+            - depends on oject
+        - RunTime
