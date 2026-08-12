@@ -2743,13 +2743,16 @@ Eclipse
 
 Dynamic Reading
 ---------------
-- 
+- The process of reading data from the user through keyboard at the execution time of the program is known as dynamic read.
+    - Steps to achieve dynamic read
+        1. Import scanner class
+            - ex: 
+                import java.util.Scanner
+        2. Create object for the Scanner class
+            Scanner sc = new Scanner(System.in);
+        3. By using reference variable sc call the required method of Scanner class to read the values / data from the user.
+
     - taking the input from the user by keyboard
-
-        int a = 78;
-        int b = 79;
-        int c = a + b;
-
 
     - Scanner class -> java.util package
         - byte : nextByte()
@@ -2768,7 +2771,7 @@ Dynamic Reading
 
 -------------------------------------------------------
 
-## Packages=====
+## Packages
 
 1. PACKAGE
     - A package in Java is used to group related classes, interfaces and subclasses.
@@ -2974,7 +2977,7 @@ Dynamic Reading
                 - File name:
                     Demo.java
 
-    - PACKAGE + IMPORT + CLASS SEQUENCE
+    - NOTE: PACKAGE + IMPORT + CLASS SEQUENCE
         - If we want to use package and import statements in the same program, we have to follow this sequence:
             1. package
             2. import statement
@@ -2992,145 +2995,88 @@ Dynamic Reading
             class ClassName {
             }
 
-
-19. QUICK REVISION
-
-PACKAGE
--------
-
-A package is used to group related classes and interfaces.
-
-TYPES
------
-
-1. Built-in package
-2. User-defined package
-
-
-BUILT-IN PACKAGE
-----------------
-
-Example:
-
-    java.util.Scanner
-
-    java.lang.Math
-
-
-FULLY QUALIFIED NAME
---------------------
-
-    java.util.Scanner
-
-Creating object:
-
-    java.util.Scanner sc =
-        new java.util.Scanner(System.in);
-
-
-IMPORT
-------
-
-Syntax:
-
-    import package.subpackage.className;
-
-Example:
-
-    import java.util.Scanner;
-
-Then:
-
-    Scanner sc = new Scanner(System.in);
-
-
-USER-DEFINED PACKAGE
---------------------
-
-Syntax:
-
-    package packageName;
-
-Example:
-
-    package myPack;
-
-
-SUBPACKAGE
-----------
-
-Syntax:
-
-    package packageName.subpackageName;
-
-Example:
-
-    package jspiders.java.part1;
-
-
-ORDER OF STATEMENTS
--------------------
-
-    package
-       ↓
-    import
-       ↓
-    class / interface
-
-
-IMPORTANT
----------
-
-java.lang is implicitly imported.
-
-Example:
-
-    String
-    System
-    Math
-
-can be used without writing:
-
-    import java.lang.*;
-*/
-
-
-/*
-===========================================================
-20. COMPLETE EXAMPLE
-===========================================================
-
-File: Demo.java
-
-*/
-
-package myPack;
-
-import java.util.Scanner;
-
-public class Demo {
-
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter your name: ");
-        String name = sc.nextLine();
-
-        System.out.println("Hello " + name);
-
-        sc.close();
-    }
-}
-
+-----------------------------------------------------------------------
 
 Wrapper Classes
 ---------------
-- convert primitive data type into non primitive wrapper class
+- What is Wrapper Class
+    - In java, every primitive datatype has a corresponding class which works like a wrapper for primitive.
+    - Hence this class is known as wrapper class.
+
+    * The wrapper class in java provides mechanism to wrap the primitive into a object.
+    * All the wrapper classes are final classes present in java.lang package.
+
+    - convert primitive data type into non primitive wrapper class
+
+        Primitive data type   ---------->   Wrapper Class
+            boolean                           Boolean
+            char                             Character
+            byte                               Byte
+            short                             Short
+            int                               Integer
+            long                              Long
+            float                             Float
+            double                            Double
+    - NOTE:
+        - Amoung these wrapper classes Byte, Short, Integer, Long, Float, Double are subclasses of Number class.
+
+    - Advantage of Wrapper Class
+        1. Autoboxing
+        2. Auto Unboxing
+        3. Parsing
+
+    - Types
+        1. Boxing
+        2. Auto Boxing
+        3. Auto UnBoxing
+
+    1. Boxing
+        - The process of coverting primitive data into corresponding non primitive wrapper type data is known as Boxing.
+        - ex:
+            Integer i = new Integer(67);
+            System.out.println(i); // 67
+            Character c = new Character('B');
+            System.out.println(c); // B
+
+            Double i = new Double(6.7);
+            System.out.println(i); // 6.7
+            Boolean c = new Boolean(true);
+            System.out.prinltn(c); // true
+            Long l = new Long(345356334);
+            System.out.println(l); // 345356334
+
+    2. Auto Boxing
+        - The process of coverting primitive data into corresponding non primitive wrapper type data implicitly is known as Auto Boxing.
+        - ex:
+            Integer i = 67;
+            System.out.println(i); // 67
+            Character c = 'B';
+            System.out.println(c); // B
+
+            Double i = 6.7;
+            System.out.println(i); // 6.7
+            Boolean c = true;
+            System.out.println(c); // true
+            Long l = 345356334;
+            System.out.println(l); // 345356334
+
+    3. Auto UnBoxing
+        - The process of converting non primitive wrapper data into corresponding primitive type data implicitly is knwon as Auto UnBoxing.
+        - ex:
+            Integer i = 67;
+            System.out.println(i); // 67
+            int b = i;
+            System.out.println(b); // 67
+
+            Character c = 'B';
+            System.out.println(c); // B
+            char b = c;
+            System.out.println(b); // B
+
 
 Parsing
 -------
-- convert primitive string into actural primitive
+- convert primitive string into actural primitive values
 
 --------------------------------------------------------------------------
 
@@ -3176,29 +3122,222 @@ Downcasting
     - poly -> many
     - morph -> methods/forms
 
-    - Compile Time Polymorphism -> depend on reference, static binding
+    - ### Compile Time Polymorphism
         - Method Overloading
         - Construction Overloading
         - Method Shadowing/hiding
         - Variable Showding
     
-    - Run Time Polymorphism -> depends on object creation, dynamic binding
+    - ### Run Time Polymorphism
         - Method Overriding
 
-    - ### Method Shadowing / Hiding
+    - #### Method Shadowing / Hiding
         - If parent class and child class having same declaration of static method
         - change in implementation
 
-    - ### Method Overriding
+    - #### Method Overriding
         - If parent class and child class having same declaration of non-static method
         - change in implementation
 
-    - ### Variable Shadowing
+    - #### Variable Shadowing
         - If parent class and child class having same name variable
         - change in value
 
-    - ### Diff. B/W compiletime and runtime
+    - #### Diff. B/W compiletime and runtime
         - CompileTime
             - static binding
-            - depends on oject
+            - depend on object reference
         - RunTime
+            - dynamic binding
+            - depends on Object creation
+
+
+POLYMORPHISM
+------------
+- Polymorphism is derived from two different Greek words 'Poly' means Numerous, 'Morphs' means form Which means Numerous form. Polymorphism is the ability of an object to exhibit different form with the same name.
+
+    - For Understanding :
+            One name              -----> Multiple forms
+            One variable name     -----> Different values
+            One method name       -----> Different behavior
+
+    - TYPES OF POLYMORPHISM:
+        - In java, we have two types of polymorphism,
+            1. Compile-time polymorphism
+            2. Runtime Polymorphism
+
+        - COMPILE-TIME POLYMORPHISM:
+            - If the binding is achieved at the compile-time and the same behavior is executed at run time is known as compile-time polymorphism.
+            - It is also said to be static polymorphism.
+            - NOTE:
+                - Binding means an association of method call to the method definition.
+            - It is achieved by :
+                1. Method overloading
+                2. constructor overloading
+                3. Variable shadowing
+                4. Method shadowing
+                5. Operator overloading (does not support in java)
+
+            1. METHOD OVERLOADING :
+                - If more than one method is created with the same name but different formal arguments in the same class are known as method overloading.
+
+                - Different formal arguments means :
+                    - Differ in no. of FA
+                    - Differ in type of FA
+                    - Differ in order of FA
+
+                - EXAMPLE: 
+                    java.io.PrintStream;
+                        println()
+                        println(int a)
+                        println(double d)
+                        println(String s)
+
+                - These are some of the overloaded methods (methods with the same name but different formal arguments) implemented in PrintStream class.
+
+            2. CONSTRUCTOR OVERLOADING :
+                - A class having more than one constructor with different formal arguments is known as constructor overloading.
+                - ex:
+                    class A
+                    {
+                        A() { }
+                        A(int a){ }
+                    }
+
+            3. METHOD SHADOWING :
+                - If the subclass and superclass have the static method with the same declaration, but different implementation is known as method shadowing.
+                - Which method implementation gets executed, depending on what?
+                    - In method shadowing binding is done at compile-time, hence it is compile-time polymorphism. The execution of the method depends on the reference type and does not depend on the type of object created.
+
+                - NOTE:
+                    - The return type should be the same or it should be a covariant(parent or child) return type.
+                    - Access modifier should be same or higher visibility than superclass method.
+                    - Method shadowing is applicable only for the static method.
+                    - It is compile time polymorphism.
+                    - Execution of implemented method depends on the reference type of an object.
+
+                - EXAMPLE : Method Shadowing
+                    class Parent {
+                        public static void test() {
+                            System.out.println("From parent");
+                        }
+                    }
+
+                    class Child extends Parent {
+                        public static void test() {
+                            System.out.println("From child");
+                        }
+
+                        public static void main(String[] args) {
+                            Parent p = new Child();
+                            p.test();    // from parent  // this is based on the ref variable type
+
+                            Child c = new Child();
+                            c.test();    // from child   // this is based on the ref variable type
+
+                            Parent p1 = new Parent();
+                            p1.test();   // from parent  // this is based on the ref variable type
+                        }
+                    }
+
+            4. VARIABLE SHADOWING :
+                - If the superclass and subclass have variables with the same name but change in values then it is known as variable shadowing.
+
+                - Which variable is used, depending on what?
+                    - In variable shadowing binding is done at compile-time, hence it is a compile-time polymorphism. The Variable used depends on the reference type and does not depend on the type of object created.
+
+                - NOTE: 
+                    - It is applicable for both static and non-static variables.
+                    - It is a compile-time polymorphism.
+                    - Variable usage depends on the type of reference and does not depend on the type of object created.
+
+                - EXAMPLE : Variable Shadowing
+                    class Parent
+                    {
+                        int x = 10; static int y = 9;
+                    }
+
+                    class Child extends Parent
+                    {
+                        int x = 20; static int y = 19;
+
+                        public static void main(String[] args)
+                        {
+                            Parent p = new Child();
+
+                            Sopln(p.x);    // 10   // this is based on the ref variable type
+                            Sopln(p.y);    // 9
+
+                            Child c = new Child();
+
+                            Sopln(c.x);    // 20   // this is based on the ref variable type
+                            Sopln(c.y);    // 19
+
+                            Parent p1 = new Parent();
+
+                            Sopln(p1.x);   // 10   // this is based on the ref variable type
+                            Sopln(p1.y);   // 9
+                        }
+                    }
+
+        - RUNTIME POLYMORPHISM :
+            - If the binding occurs at compile time but different behaviour is achieved at the runtime then it is known as runtime polymorphism.
+            - It is also known as dynamic binding.
+            - It is achieved by method overriding.
+
+            * METHOD OVERRIDING :
+                - When the subclass and superclass have non static methods with the same declaration and different in implementation, it is known as method overriding.
+
+                - Rule to achieve method overriding :
+                    - IS-A relationship is mandatory.
+                    - It is applicable only for nonstatic methods.
+                    - The signature of the subclass method and superclass method should be the same.
+                    - The return type of the subclass and superclass method should be the same until the 1.4 version but, from the 1.5 version, covariant return type in the overriding method is acceptable (subclass return type should be the same or child to the parent class return type).
+                    - Access modifier should be same or higher visibility than superclass method.
+
+                - EXAMPLE : Method Overriding
+                    class Parent {
+                        public void test() {
+                            System.out.println("From parent");
+                        }
+                    }
+
+                    class Child extends Parent {
+                        @Override
+                        public void test() {
+                            System.out.println("From child");
+                        }
+
+                        public static void main(String[] args) {
+                            Parent p = new Child();
+                            p.test(); // from child  // this is based on the object created
+
+                            Child c = new Child();
+                            c.test(); // from child  // this is based on the object created
+
+                            Parent p1 = new Parent();
+                            p1.test(); // from parent  // this is based on the object created
+                        }
+                    }
+
+                    Child c = new Child();
+                    c.test(); // from child
+
+                    Parent p = c;
+                    p.test(); // from child
+
+                - Internal runtime object is a child so child test() will get executed, it does not depend on the reference type.
+
+                - NOTE:
+                    - Variable overriding is not applicable.
+
+        - @Override :
+            - It is an annotation which giving the more information to the compiler about the operation we are performing which is overriding.
+            - Also by this one we can specify the method is declared in parent but child is only changing the implementation.
+            - It is not mandatory to use. But highly recommended to use.
+            - If we will use, compiler will check the overriding process in prior.
+
+-------------------
+### Abstraction
+hiding the implementation
+- achive by the either abstract class and interface.

@@ -138,7 +138,7 @@
     - Function Based Component
         - JS functions 
         - Stateless
-        - No Life Cycle Methods
+        - No Life Cycle Methods => can be done by using hook (useEffect)
         - No Hooks
         - No render Method
         - No this keyword
@@ -213,3 +213,28 @@
         - Default Props are the pre defined values that a react component uses when a specific prop is not provided by the parent component
         - They act like backup values to ensure the component still works properly even if no values are passed.
         
+    ### LifeCycle
+
+    - There are three phase
+        1. mounting phase
+            - Whenever any component is renders first time on the UI, this phase is called mounting phase
+        2. updation phase
+            - Whenever in state or prop of a component changes and the component gets re-rendered, this phase comes under updation phase
+        3. unmounting phase
+            - Whenever the component is removed from the UI, this phase is known as unmounting phase
+
+        - Note:
+            - Besides these three main phases, there is one more phase that is error handling
+            - error handling in react lifecycle is a process where react catches the error and prevents the entire app from crashing
+            - react introduce this feature in react 16 with error boundaries
+    
+    ### useEffect
+    - useEffect is a React hook, which helps us to handling the side effect in react application.
+    - side effects like, 
+        fetch the data from api
+        removing eventListener
+        updating DOM, etc.
+    - This hook can also be used for checking the phases of function based component
+    - It accepts two argument, 
+        1. Callback function which we wants to execute
+        2. Dependency Array
