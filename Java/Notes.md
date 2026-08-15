@@ -3627,3 +3627,80 @@ Interface
                     | I3 extends I2
                     ↓
             I3...
+
+    - HIERARCHICAL INHERITANCE
+
+                            interface I1
+                             /        \
+                            /          \
+                           ↓            ↓
+        interface I2 extends I1       interface I3 extends I1
+
+- MULTIPLE INHERITANCE
+
+    - MULTIPLE INHERITANCE WITH RESPECT TO INTERFACE
+
+            interface I1          interface I2
+                \                  /
+                 \                /
+                  \              /
+                   ↓            ↓
+             interface C extends I1, I2
+
+    - MULTIPLE INHERITANCE WITH RESPECT TO CLASS
+
+            interface I1          interface I2
+                \                  /
+                 \                /
+                  \              /
+                   ↓            ↓
+              class C implements I1, I2
+
+
+    - MULTIPLE INHERITANCE WITH RESPECT TO BOTH CLASS AND INTERFACE
+
+            interface I1        interface I2
+                   \             /
+                    \           /
+                     \         /
+                      ↓       ↓
+                       class C
+                         ↑
+                         |
+                       class A
+
+        - class C extends A implements I1, I2
+
+    - NOTE - WHY THERE IS NO DIAMOND PROBLEM WITH INTERFACE
+
+        - In interface there is no diamond problem.
+            - The reason:
+                - They don't have constructors.
+                - Non-static methods are abstract (do not have implementation).
+                - Static methods are not inherited.
+
+        - INHERITANCE OF AN INTERFACE BY THE CLASS:
+            - Class can inherit an interface with the help of implements keywords. (class can be child of interface)
+            - Class can inherit more than one interface. (One class can have more than one interface as parent)
+            - Class can inherit a class and an interface at a time.
+
+        - Note: A class can't be a Parent of interface.
+
+    - CLASS CAN'T BE THE PARENT OF INTERFACE
+
+             class A
+                X
+                |
+                |
+           interface I1
+
+        - WHY CLASS CAN'T BE THE PARENT OF INTERFACE
+
+            - Class can't be the parent of the interface because in every class there can be non-static concrete methods of object class which are inherited.
+            - If we make class as parent, then all methods will be inherited to the child but inside the interface concrete non-static methods are not allowed.
+    
+    - NOTE :
+        - IMPLEMENTATION OF INTERFACE METHODS
+            - If the class inherits an interface then it should give implementation to the abstract non-static methods of an interface.
+            - If the class is not ready to give implementation to the abstract methods of an interface then it is mandatory to make that class an abstract class.
+            - The next level of child class is responsible for giving implementation to the rest of the abstract methods of an interface.
