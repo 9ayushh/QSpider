@@ -13,7 +13,8 @@ const LifeCycleInFbc = () => {
     }, [count]) // [variable] array with changing variable -> means updating and updation phase
 
     useEffect(() => {
-        return () => {
+        // cleanup function -> used to remove eventListner
+        return () => { 
             console.log("Un-mounting Phase");
         }
     }, []) // [] empty array but having return function...

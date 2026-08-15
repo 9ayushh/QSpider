@@ -822,7 +822,7 @@ Control Statement
                 }
             - In this syntax, else is optional.
             - execution workflow
-                - If the condition is satisfied then the instruction written inside the if block gets executed if not satisfied, the condition is checked in the else if block from top to bottom order and if the condition is satisfied in any of the else if block then, only that else if block is gets exevuted if not satisfied else block gets exevuted remaining blocks are skipped.
+                - If the condition is satisfied then the instruction written inside the if block gets executed if not satisfied, the condition is checked in the else if block from top to bottom order and if the condition is satisfied in any of the else if block then, only that else if block is gets executed if not satisfied else block gets exevuted remaining blocks are skipped.
 
             Questions
             - Print the month name based on month number.
@@ -883,7 +883,7 @@ Method:
 
     - Method call statement: It is used to call a method 
         Syntax:
-            Method Name ([actual argument]);
+            Method_Name ([actual argument]);
         - In this syntax actual argument is optional 
         - The syntax will be varied based on the method structure
 
@@ -1132,7 +1132,7 @@ Story
         Loading -> only available
         Storing -> ready to use
 
-------------------------------------------------------------------------
+--------------------------------------------------------------------
 
 Objects
 -------
@@ -1157,7 +1157,7 @@ Static/Non-static
 Class/ Concrete class
 ---------------------
     - design/blueprint 
-    - full complete
+    - fully completed
     - allowed only concrete methods
 
 Abstract class 
@@ -1390,7 +1390,7 @@ Return type
             - to specify return type we use primitive datatype 
             - there are 8 primitive datatypes
         3. Non-Primitive Return Type
-            - to specify return type we use is non-primitive
+            - to specify return type we use is non-primitive datatype
             - String, ClassName, ArrayList, etc.
 
     - To return the values, we are using return statement
@@ -1433,7 +1433,7 @@ Void with return statement
 Primitive return type and return statement
 ------------------------------------------
     - if method promises to return primitive values, we should make our method return type as primitive return type, by the help of primitive datatype 
-    - (such as byte, short, chat, int, long, boolean, float, boolean)
+    - (such as byte, short, char, int, long, boolean, float, double)
 
     - in this case, return statement is compulsory.
     - passing the value to return statement is compulsory.
@@ -1470,25 +1470,25 @@ Array
 -----
     - sequence of multiple values of same datatype
     - ways to create
-    - Syntax 1
-        datatype [] variable = {val1, val2, ...};
+        - Syntax 1
+            datatype [] variable = {val1, val2, ...};
 
-    - Syntax 2
-        - Declaration
-        datatype [] var;
-        OR
-        datatype[] var;
-        OR
-        datatype[]var;
-        OR
-        datatype []var;
-        OR
-        datatype var[];
-        OR
-        datatype var [];
+        - Syntax 2
+            - Declaration
+            datatype [] var;
+            OR
+            datatype[] var;
+            OR
+            datatype[]var;
+            OR
+            datatype []var;
+            OR
+            datatype var[];
+            OR
+            datatype var [];
 
-        - with initialization
-        datatype[] variable = new datatype[size];
+            - with initialization
+            datatype[] variable = new datatype[size];
 
 
     - WAJP to create a method which will print the integer array elements
@@ -3341,3 +3341,289 @@ POLYMORPHISM
 ### Abstraction
 hiding the implementation
 - achive by the either abstract class and interface.
+
+- Abstraction by interface
+    - By default all methods are abstract inside interface
+    - By default it is public 
+    - By default all variables are static
+    - access variable by directly or by using interface name
+    
+    - components allowed in interface (upto 1.8)
+        - abstract method
+        - static variable which is final
+        - static method
+        - non-static default concrete is allowed (by using default keyword)
+
+    - components are not allowed
+        - non-static concrete is not allowed
+        - constructor is not allowed
+
+Interface
+----------
+    - There are 3 types of interface
+        1. Regular interface
+            - more than 1 abstract methods
+            - ex:
+                List, Set, Map, Collection, etc...
+        2. Functional inteface
+            - only one abstract method
+            - ex:
+                Runnable -> run(), Comparable -> compareTo(), Comparator -> conpare(), etc...
+
+        3. Marker Interface
+            - empty interface
+            - these are having some special abilities (we can gain these ability by using these interface)
+            - ex:
+                Clonable (we can clone the object), Serializable (serialization, deserialization), etc...
+
+- final keyword
+    - prevent inheritance
+        - we cannot create the child class of class with final keyword
+    - prevent override
+        - we cannot change the implementation of a method with final keyword in child class
+    - prevent shadowing
+        - we cannot change the value of variables with final keyword.
+    
+    - NOTE:
+        - we cannot make constructor final because construct is not getting created so there is no need.
+        - we can stop creating child class by making class final or constructor private
+
+## ABSTRACTION
+--------------
+- What is Abstraction?
+    - It is a design process of hiding the implementation and showing only the functionality (only declaration) to the user is known as abstraction.
+
+    - HOW TO ACHIEVE ABSTRACTION IN JAVA?
+        - In java, we can achieve abstraction with the help of abstract classes and interfaces.
+        - We can provide implementation to the abstract component with the help of inheritance and method overriding.
+
+    - ABSTRACT MODIFIER
+        - The abstract is a modifier, it is a keyword.
+        - It is applicable for methods and classes.
+
+    - ABSTRACT CLASS
+        - If the class is prefixed with an abstract keyword / modifier then it is known as abstract class. We can't create object (instance) for the abstract class.
+        - Characteristics:
+            1. We can't create an instance of an abstract class.
+            2. We can have abstract class without an abstract method.
+            3. An abstract class can have both abstract and concrete method.
+            4. If a class has at least one abstract method which is either declared or inherited but not overridden, then it is mandatory to make the class as abstract class.
+
+        - EXAMPLE
+            abstract class Atm
+            {
+                abstract public double withdrawal();
+                abstract public void getBalance();
+                abstract public void deposit();
+            }
+            // hiding implementation by providing only functionality
+            Atm a = new Atm(); // CTE
+        - NOTE:
+            Only subclass of Atm is responsible for giving implementation to the methods declared in an Atm class.
+
+    -  WHEN YOU HAVE TO GO FOR ABSTRACT METHOD
+        1. When we don't have the clear idea about the implementation of the method.
+        2. If want to leave the implementation of the method for the child who should override the method and give the implementation.
+
+
+
+    - IMPLEMENTATION OF ABSTRACT METHOD
+        - If a class extend abstract class then it should give implementation to all the abstract method of the superclass.
+        - If inheriting class doesn't like to give implementation to the abstract method of superclass then it is mandatory to make subclass as an abstract class.
+        - If a subclass is also becoming an abstract class then the next level child class is responsible to give implementation to the abstract methods.
+
+    - STEPS TO IMPLEMENT ABSTRACT METHOD
+        - STEP 1:
+            Create a class.
+        - STEP 2:
+            Inherit the abstract class/component.
+        - STEP 3:
+            Override the abstract method inherited
+            (Provide implementation to the inherited abstract method).
+
+    - EXAMPLE - GIVING IMPLEMENTATION TO ABSTRACT METHOD
+        abstract class WhatsApp {
+            abstract public void send();
+        }
+
+        class Application extends WhatsApp {
+            public void send() {
+                System.out.println("Send() method is implemented");
+            }
+        }
+
+    - CREATING OBJECT AND CALLING ABSTRACT METHOD
+        - ex: 
+            WhatsApp w = new WhatsApp(); // not possible
+            Application a = new Application();
+            a.send();
+
+        - Note:
+            - We can't create the object of abstract class but we can create the reference variable of abstract class and store the child reference which is concrete.
+
+            WhatsApp w = new Application();
+            w.send(); // O/P : Send() method is implemented
+
+        - Here send() is not the child class method, it is declared in the parent and only implementation is given by child. So it is possible to access the member by the parent reference variable.
+
+---------------------------------------------------------------------------
+
+- CONCRETE CLASS
+    - The class which is not prefixed with an abstract modifier and doesn't have any abstract method, either declared or inherited is known as concrete class.
+    - NOTE:
+        - In Java, we can create objects only for the concrete class.
+
+- INTERFACE
+    - It is a component in java which is used to achieve 100% abstraction and multiple inheritance.
+
+    - Syntax:
+        [Access Modifier] interface InterfaceName {
+            // declare members
+        }
+
+    - When an interface is compiled we get a class file with an extension .class only.
+
+    - Example: 
+        Case 1:
+            interface Demo1 {
+                public static void main(String[] args) {
+                    System.out.println("Hello World....!!!!");
+                }
+            }
+
+        Case 2:
+            interface Demo1 {
+                int a; // CTE : Variable a is by default public, static, final.
+                    //       A final variable must be initialized.
+            }
+
+
+    - INTERFACE - MEMBERS
+        - EXAMPLE:
+            interface Demo
+            {
+                void m1();
+                void m2();
+                public void m3();
+                static final int y = 7;
+            }
+
+        - The Demo is an interface.
+
+        - In the interface all the members by defaultly public in nature.
+        - And abstract methods are by defaultly public and abstract.
+
+    - MEMBERS THAT CAN BE DECLARED IN AN INTERFACE
+        - What all are the members that can be declared in an interface?
+        
+            ---------------------------------------------------------------------------
+            S.No.| Members              | Class | Interface
+            ---------------------------------------------------------------------------
+            1.  | Static variables     | Yes   | Yes, but only final static variables
+
+            2.  | Non-static variables | Yes   | No
+
+            3.  | Static methods       | Yes   | Yes, From JDK 1.8 v.
+                |                      |       |
+                |                      |       | NOTE:
+                |                      |       | They are by default public in nature
+
+            4.  | Non-static methods   | Yes   | Yes, but we can have only abstract
+                |                      |       | non-static methods
+                |                      |       |
+                |                      |       | NOTE: Non-static methods are by default
+                |                      |       | • public
+                |                      |       | • abstract
+
+            5.  | Constructors         | Yes   | No
+
+            6.  | Initializers         | Yes   | No
+                |(Static & non-static) |       |
+
+
+        - NOTE:
+            - In interface, all the members are by default have public access modifier.
+
+    - NON-STATIC CONCRETE METHOD IN INTERFACE
+        - ex:
+            interface Demo2 {
+                public void test()   // CTE
+                {
+                }
+            }
+
+        - Note : inside the interface non static concrete method is not allowed.
+
+    - INHERITANCE WITH RESPECT TO INTERFACE
+
+        - An interface can inherit any number of interfaces with the help of an extends keyword.
+        - EXAMPLE: Single inheritance
+            interface I1 {
+            }
+
+            interface I2 extends I1 {
+            }
+
+        - NOTE:
+            - The interface which is inheriting an interface should not give implementation to the abstract methods. It should be given by any of the child class.
+        - Note: 
+            - We can't create the object for the interface, but we can create the reference variable of the interface and store the child type object reference.
+
+    - EXTENDS AND IMPLEMENTS KEYWORD
+        - Extends:
+            - We can achieve inheritance in between class and class, or interface and interface by extends keyword.
+        - Implements:
+            - To achieve inheritance in between interface and class we are using implements keywords.
+
+    - SINGLE LEVEL INHERITANCE
+        - ex:
+            I1...
+                void t1();
+                void t2();
+                static void t3() { }
+                    |
+                    | I2 extends I1
+                    ↓
+
+            I2...
+                void t4();
+
+
+    - SINGLE LEVEL INHERITANCE - CONTINUATION
+        - ex:
+            I1...
+                void t1();
+                void t2();
+
+                    |
+                    | I2 extends I1
+                    ↓
+            I2...
+                void t4();
+
+    - EXAMPLE 1
+        - Interface I1 have 3 methods
+            2 - non static abstract (t1(), t2())
+            1 - static (t3())
+
+        - Interface I2 have 3 methods
+            2 - inherited non static abstract methods (t1(), t2())
+            1 - declared non static abstract methods (t4())
+
+
+    - MULTI LEVEL INHERITANCE
+        - ex:
+            I1...
+                void t1();
+                void t2();
+                static void t3() { }
+                    |
+                    | I2 extends I1
+                    ↓
+
+            I2...
+                void t4();
+                    |
+                    | I3 extends I2
+                    ↓
+            I3...

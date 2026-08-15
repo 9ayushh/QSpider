@@ -9,6 +9,12 @@ import DefaultComponent from './DefaultProps/DefaultComponent';
 import LifeCycleInCbc from './LifeCycle/LifeCycleInCbc';
 import LifeCycleInFbc from './LifeCycle/LifeCycleInFbc';
 import ApplicationOfUseEffect from './useEffect/ApplicationOfUseEffect';
+import UseLayout from './useLayoutEffect/UseLayout';
+import InlineCss from './css/InlineCss';
+import InternalCSS from './css/InternalCSS';
+import ExternalCss from './css/externalCss/ExternalCss';
+import Button from './css/cssModule/Button';
+import Proj1 from './projs/proj1/Proj1';
 
 const App = () => {
     let [toggle, setToggle] = useState(false);
@@ -29,10 +35,22 @@ const App = () => {
             {/* <LifeCycleInCbc/> */}
             
             <br />
-            <button onClick={() => setToggle(!toggle)}>Toggle</button>
+            {/* <button onClick={() => setToggle(!toggle)}>Toggle</button> */}
             {/* {toggle ? <LifeCycleInCbc/> :  <h2>No-Component</h2>} */}
             {/* {toggle ? <LifeCycleInFbc/> :  <h2>No-Component</h2>} */}
-            {toggle ? <ApplicationOfUseEffect/> :  <h2>No-Component</h2>}
+
+            {/* {toggle ? <ApplicationOfUseEffect/> :  <h2>No-Component</h2>} */}
+
+            {/* {toggle ? <UseLayout/> :  <h2>No-Component</h2>} */}
+
+            {/* <InlineCss/>
+            <InternalCSS/>
+
+            <ExternalCss/> */}
+            
+            {/* Css Module */}
+            {/* <Button/> */}
+            <Proj1/>
 
         </div>
     )

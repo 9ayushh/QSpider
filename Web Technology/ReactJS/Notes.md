@@ -228,13 +228,37 @@
             - error handling in react lifecycle is a process where react catches the error and prevents the entire app from crashing
             - react introduce this feature in react 16 with error boundaries
     
-    ### useEffect
-    - useEffect is a React hook, which helps us to handling the side effect in react application.
-    - side effects like, 
-        fetch the data from api
-        removing eventListener
-        updating DOM, etc.
-    - This hook can also be used for checking the phases of function based component
-    - It accepts two argument, 
-        1. Callback function which we wants to execute
-        2. Dependency Array
+    - ### useEffect
+        - useEffect is a React hook, which helps us to handling the side effect in react application.
+        - side effects like, 
+            fetch the data from api
+            removing eventListener
+            updating DOM, etc.
+        - This hook can also be used for checking the phases of function based component
+        - It accepts two argument, 
+            1. Callback function which we wants to execute
+            2. Dependency Array
+
+    - ### useLayoutEffect
+        - It is a react hook that runs synchronusly after the DOM has been updated but before the browser paints the screen.
+        - It accepts 2 arguments 
+            1. callback function
+            2. dependency array
+
+
+    - ### Ways to adding CSS in React
+        - Inline CSS
+            - It means writing styles directly on a jsx. element using the style attribute as a js object
+            - In inline css properties are written in camelCase and the values are written mostly in string
+
+        - Internal CSS 
+            - It is defined inside the same file/component using a style tag in jsx
+            - It is used for small components where css is not reused everywhere.
+
+        - External CSS
+            - In external css, we have to create seperate css file with .css extension and then we have to import the css file in our component.
+
+        - Css Module
+            - Css module allows you to scope css locally to a component avoiding global conflict. 
+            - Each class gets a unique generated name.
+            - In big react project, multiple developers can style components without overriding global css.
