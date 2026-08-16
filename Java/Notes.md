@@ -2313,8 +2313,7 @@ Relationship
             2. Composition
 
         1. AGGREGATION
-            - The dependency between two objects such that one object can
-            exist without the other is known as Aggregation.
+            - The dependency between two objects such that one object can exist without the other is known as Aggregation.
 
             - Examples
                 • Cab – Ola
