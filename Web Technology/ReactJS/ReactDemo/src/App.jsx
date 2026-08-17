@@ -15,6 +15,8 @@ import InternalCSS from './css/InternalCSS';
 import ExternalCss from './css/externalCss/ExternalCss';
 import Button from './css/cssModule/Button';
 import Proj1 from './projs/proj1/Proj1';
+import ContextParent from './contextApi/ContextParent';
+import ContextGrandParent from './contextApi2/ContextGrandParent';
 
 const App = () => {
     let [toggle, setToggle] = useState(false);
@@ -50,8 +52,14 @@ const App = () => {
             
             {/* Css Module */}
             {/* <Button/> */}
-            <Proj1/>
 
+            {/* <Proj1/> */}
+
+            {/* <ContextParent/>
+            <hr /> */}
+
+            <ContextGrandParent />
+ 
         </div>
     )
 }

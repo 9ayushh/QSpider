@@ -1,4 +1,7 @@
-abstract class A {
+class A {
 
-    public abstract void m1();
+    public void m1(){
+        System.out.println("helo");
+    }
+
 }

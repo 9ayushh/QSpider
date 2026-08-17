@@ -501,13 +501,4 @@ V Model (Verification & Validation)
         3. Whenever customer is expecting ver high quality product within short time of span we go for v model
 
 
---------
-- Mock
-        decision
-        looping
-        method
-        object
-        class 
-        static/non-static
-        constructor
-        encapsulation
+

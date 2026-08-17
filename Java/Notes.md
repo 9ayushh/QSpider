@@ -2393,7 +2393,6 @@ Relationship
     2. MULTILEVEL INHERITANCE
         - One superclass having one subclass, and that subclass having another subclass is known as Multilevel Inheritance.
             OR
-
         - One parent class having more than one level of child classes through inheritance is known as Multilevel Inheritance.
 
         - Diagram
@@ -2450,12 +2449,9 @@ Relationship
 
 
         - NOTE ON MULTIPLE INHERITANCE
-            - Multiple inheritance has a problem known as the
-            Diamond Problem.
-            - Because of the Diamond Problem, we cannot achieve
-            multiple inheritance using classes.
-            - In Java, multiple inheritance can be achieved using
-            Interfaces.
+            - Multiple inheritance has a problem known as the Diamond Problem.
+            - Because of the Diamond Problem, we cannot achieve multiple inheritance using classes.
+            - In Java, multiple inheritance can be achieved using Interfaces.
 
         - DIAMOND PROBLEM (BECAUSE OF CONSTRUCTOR)
             - Assume there are two classes A and B.
@@ -2495,7 +2491,7 @@ Relationship
             - This ambiguity is known as the Diamond Problem.
 
 
-- THIS KEYWORD
+THIS KEYWORD
 --------------
     - If we want to differentiate between a local variable and a non-static (instance) variable, we use the 'this' keyword.
 
@@ -2615,7 +2611,7 @@ NON-PRIMITIVE TYPE CASTING (DERIVED TYPE CASTING)
 
             - WHY DO WE NEED UPCASTING?
                 - It is used to achieve Generalization.
-                - It helps create a generalized container so that references of different child objects can be stored using one parent reference.
+                - It helps to create a generalized container so that references of different child objects can be stored using one parent reference.
 
             - GENERALIZATION EXAMPLE
 
@@ -2677,8 +2673,7 @@ INSTANCE OF OPERATOR
         - It is a binary operator.
         - It is used to test whether an object is of the given type.
         - The return type of this operator is boolean.
-        - If the specified object is of the given type,
-        it returns true; otherwise, it returns false.
+        - If the specified object is of the given type, 1it returns true; otherwise, it returns false.
 
     - Syntax
         (object_reference instanceof ClassName)
@@ -3060,7 +3055,7 @@ Wrapper Classes
             System.out.println(l); // 345356334
 
     3. Auto UnBoxing
-        - The process of converting non primitive wrapper data into corresponding primitive type data implicitly is knwon as Auto UnBoxing.
+        - The process of converting non primitive wrapper data into corresponding primitive type data implicitly is known as Auto UnBoxing.
         - ex:
             Integer i = 67;
             System.out.println(i); // 67
@@ -3206,7 +3201,8 @@ POLYMORPHISM
             3. METHOD SHADOWING :
                 - If the subclass and superclass have the static method with the same declaration, but different implementation is known as method shadowing.
                 - Which method implementation gets executed, depending on what?
-                    - In method shadowing binding is done at compile-time, hence it is compile-time polymorphism. The execution of the method depends on the reference type and does not depend on the type of object created.
+                    - In method shadowing binding is done at compile-time, hence it is compile-time polymorphism. 
+                    - The execution of the method depends on the reference type and does not depend on the type of object created.
 
                 - NOTE:
                     - The return type should be the same or it should be a covariant(parent or child) return type.
@@ -3284,7 +3280,7 @@ POLYMORPHISM
             - It is also known as dynamic binding.
             - It is achieved by method overriding.
 
-            * METHOD OVERRIDING :
+            * #### METHOD OVERRIDING :
                 - When the subclass and superclass have non static methods with the same declaration and different in implementation, it is known as method overriding.
 
                 - Rule to achieve method overriding :
@@ -3367,7 +3363,7 @@ Interface
         2. Functional inteface
             - only one abstract method
             - ex:
-                Runnable -> run(), Comparable -> compareTo(), Comparator -> conpare(), etc...
+                Runnable -> run(), Comparable -> compareTo(), Comparator -> compare(), etc...
 
         3. Marker Interface
             - empty interface
@@ -3384,7 +3380,7 @@ Interface
         - we cannot change the value of variables with final keyword.
     
     - NOTE:
-        - we cannot make constructor final because construct is not getting created so there is no need.
+        - we cannot make constructor final because constructor is not getting created so there is no need.
         - we can stop creating child class by making class final or constructor private
 
 ## ABSTRACTION
@@ -3423,8 +3419,6 @@ Interface
     -  WHEN YOU HAVE TO GO FOR ABSTRACT METHOD
         1. When we don't have the clear idea about the implementation of the method.
         2. If want to leave the implementation of the method for the child who should override the method and give the implementation.
-
-
 
     - IMPLEMENTATION OF ABSTRACT METHOD
         - If a class extend abstract class then it should give implementation to all the abstract method of the superclass.

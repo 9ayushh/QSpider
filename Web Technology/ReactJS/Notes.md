@@ -262,3 +262,12 @@
             - Css module allows you to scope css locally to a component avoiding global conflict. 
             - Each class gets a unique generated name.
             - In big react project, multiple developers can style components without overriding global css.
+
+    - Context API
+        - Context Api is a react feature that allows you to share the data globally between different components without passing `props` manually at each level
+        - Previously before Context Api, we cannot share the data directly to the middle component, to pass the data directly to the middle component we have to use Context Api.
+
+        - Steps to create Context API
+            1. Create Context
+            2. Context provider and providing values
+            3. useContext
