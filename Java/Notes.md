@@ -3697,3 +3697,39 @@ Interface
             - If the class inherits an interface then it should give implementation to the abstract non-static methods of an interface.
             - If the class is not ready to give implementation to the abstract methods of an interface then it is mandatory to make that class an abstract class.
             - The next level of child class is responsible for giving implementation to the rest of the abstract methods of an interface.
+
+
+
+## Collection Frameworks
+
+- TreeSet
+    - should be homogeneous (otherwise ClassCastException)
+    - should not null (otherwise NullPointException)
+
+- TreeMap
+    - key should be homogeneous
+    - key should not null
+
+- HashTable
+    - key or value should not null
+
+
+- HashMap
+    - Collection of enteries
+    - key should not be duplicate
+
+- forEach
+    - Syntax
+        for (datatype variable : reference_variable) {
+            // Statement
+        }
+    - no need for condition
+    - fully iterate
+    - only move forward no backward
+    - used in array and collection
+
+- Generic
+    - use to make homogeneous 
+    
+
+

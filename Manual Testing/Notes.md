@@ -461,8 +461,9 @@ DL (Dev Lead) --> 1. Sr. Developer
     
 (spiral skip)
 
---------------------------------------------------------------
+
 V Model (Verification & Validation)
+------------------------------------
 
 - It is the step by step procedure or a standard procedure to develop a new software, in V & V model all the stages are tested.
 - In order to overcome the drawback of both (waterfall and spiral model), we go for V & V model.
@@ -501,4 +502,22 @@ V Model (Verification & Validation)
         3. Whenever customer is expecting ver high quality product within short time of span we go for v model
 
 
+Prototype Model
+---------------
+- Definition
+    - Prototype model is a dummy model prepared by the web designers/ developers/ content developers wherein they convert text formate to image format by using tools like adobe photoshop, paint, Picasa or web HTML/
 
+- Advantages
+    1. Improved communication b/w customer and company.
+    2. Initially itself customer will get to know what is the outcome.
+    3. Initially itself developers will get to know what exactly they have to develop.
+    4. customer can request for changes initially itself.
+
+- Drawback
+    1. there is an investment needed just to build prototype
+    2. Actually development of the application starts very late because they are busy in designing and developing prototype.
+
+- Application
+    1. whenever customer is new to the business
+    2. whenever customer is not are of full req
+    3. when developers are new to domain

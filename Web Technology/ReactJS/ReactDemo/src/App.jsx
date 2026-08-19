@@ -17,6 +17,9 @@ import Button from './css/cssModule/Button';
 import Proj1 from './projs/proj1/Proj1';
 import ContextParent from './contextApi/ContextParent';
 import ContextGrandParent from './contextApi2/ContextGrandParent';
+import Reducer from './useReducer/Reducer';
+import Controlled from './control_Uncontrol/Controlled';
+import Uncontrolled from './control_Uncontrol/Uncontrolled';
 
 const App = () => {
     let [toggle, setToggle] = useState(false);
@@ -58,7 +61,11 @@ const App = () => {
             {/* <ContextParent/>
             <hr /> */}
 
-            <ContextGrandParent />
+            {/* <ContextGrandParent /> */}
+            <Reducer/>
+
+            {/* <Controlled/> */}
+            {/* <Uncontrolled/> */}
  
         </div>
     )
