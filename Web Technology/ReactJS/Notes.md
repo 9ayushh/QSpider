@@ -286,8 +286,8 @@
 
         - use reducer is a react hook which is used to handle complex state logic it accept two argument 
         - first argument is the reducer fun and the second is the reducer state 
-        - reducer fun it is  a fun that decide how state changes it accept two argument first argument is the currennt sttae and second argument is the action and it returns a new updated state .
-        - initial state It is also known as initial value taht we want oue state should hold it returns an array which consist two values first value is the variable which holds the current state and second value is the fun which i sknown as dispatcher function
+        - reducer fun it is a fun that decide how state changes it accept two argument first argument is the currennt state and second argument is the action and it returns a new updated state .
+        - initial state It is also known as initial value taht we want oue state should hold it returns an array which consist two values first value is the variable which holds the current state and second value is the fun which is known as dispatcher function
 
 
     - Controlled and Uncontrolled component
@@ -296,5 +296,5 @@
         - An uncontrolled component is a component in which input element manages their own data using the browsers DOM and the react accesses the values only when required using ref these concepts exist because react needed await to manage form data either through its state or by allowing the browsers to handle it.
 
     - useRef
-        - useRef is a react hook which persists value or it is used ot access DOM Elements without causing a component re-rendering.
+        - useRef is a react hook which persists value or it is used to access DOM Elements without causing a component re-rendering.
         - It returns an object : {current : value}

@@ -3699,7 +3699,6 @@ Interface
             - The next level of child class is responsible for giving implementation to the rest of the abstract methods of an interface.
 
 
-
 ## Collection Frameworks
 
 - TreeSet
@@ -3730,6 +3729,71 @@ Interface
 
 - Generic
     - use to make homogeneous 
-    
+
+- Sorting
+    - Collections.sort(array);
+
+- ArrayList
+    - add(index, value)
+    - remove((Object) 4)
+    - get(index)
+
+- Set
+    - add, clear
+    - foreach loop, iterator
+
+- List
+    - add, remove, get
+    - iterator, foreach and get
+    - list iterator
+
+-------------------------------------------
+## Difference
+
+1. Collection Hierarchy vs Map Hierarchy
+    - Collection Hierarchy
+        - 
+
+    - Map Hierarchy
+
+2. Array vs Collection
+    - Array 
+        - homogeneous
+
+
+        - homogeneous as well as hetrogeneous
+        - many more for crud operation
+
+3. List vs Set
+        - index based
+        - maintain the order
+        - duplicate allowed
+        - multiple null values
+        - access -> iterator, get, foreach loop, 
+
+        - not index based
+
+4. Methods of Collection interface
+5. Methods of Map interface
+6. HashSet vs LinkedHashSet
+7. HashMap vs LinkedHashMap
+8. TreeSet 
+9. TreeMap
+10. ArrayList vs Vector
+11. HashMap vs HashTable
+12. Situation to use or not use ArrayList
+    - easy to access the elements
+    - when we have to add element inbetween the list
+    - because of shift operation
+13. Situation to use or not use LinkedList
+    - easy to add, but hard to access the element in between
+14. ArrayList vs LinkedList
+15. What is node?
+
+
+
+
+
+
 
 
