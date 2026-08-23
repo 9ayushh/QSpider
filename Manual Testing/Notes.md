@@ -171,7 +171,7 @@ WaterFall Model
             - 20% - 30% of small projects BA might not be present, so in that case Senior Developer Or Senior Test Engineer will play the role of BA.
 
 2. Feasibility Study (Stage 2)
-    - once requirement collection will fdone, then we can go to the feasibility study
+    - once requirement collection will done, then we can go to the feasibility study
     - it is done by a team, which consist of Business Analyst, Architect, HR Team, Finance Team and Project manager
     - This is the stage where company will decide to take a project or not (we can work on this project or not) 
     - and if we take up the project, then company will check for sufficient resource, technologies, lab setups and this is the stage, where company will get to know, if the company will get profit or not, this process is known as feasibility study.
@@ -436,6 +436,13 @@ DL (Dev Lead) --> 1. Sr. Developer
     - Retesting (only on the defected part)
         - testing the defects again is known as retesting.
 
+    - Drawback
+        1. Chances are there Developers will utilize testing time.
+        2. Developers will be more consume on the developing rather than testing the s/w
+        3. if developer find any defect he will not try to fix defect
+        4. developer will not test +ve s/w from -ve point of view
+        5. developers will be over confidence
+
 6. Installation
     - Deployment
         - By Devops (Development operation)
@@ -456,8 +463,27 @@ DL (Dev Lead) --> 1. Sr. Developer
         - Modifying a feature
         - Fixing a Bug
 
+- Why it is waterfall model
+    - here, the backtracking is not possible.
+    - it means once after the fesibility study is completed requirement will be freeze so we cannot go back and change requirements
 
+- DrawBack of waterfall model
+    - Testing is the small phase which is done only after coding, if there is a defect in requirement and design, it will flow till end and leads to lot of rework because requirement and design is not tested.
+    - It is not flxible model
+    - It leads to lot of rework that increases the  total cost of the project.
+    - Turn around time taken to deliver the product to the customer is more
+    - Developer were involved in testing
+    - Requirements changes are not allowed inbetween
 
+- Advantage of waterfall model
+    - It is simple to adopt
+    - Initial investment is less
+    - we can stable product at the end because requirements are freezed in the beginning.
+
+- Application
+    - wherever we go short term project
+    - whenever we build small or simple application
+    - whenever we are sure that customer is not going to change requirements. 
     
 (spiral skip)
 
@@ -470,8 +496,8 @@ V Model (Verification & Validation)
 
     - v.excaliDraw.png
 
-    - Verification
-        1. verifying CRS, SRS, HLT, HLD, LLD and check whether it is according to requirement or not, is called as verification
+    - Verification n
+        1. verifying CRS, SRS, HLD, LLD and check whether it is according to requirement or not, is called as verification
         2. it is done by both developer and test engineers
         3. it is done before the software is develop
         4. it is also known as static testing
@@ -492,7 +518,7 @@ V Model (Verification & Validation)
     - Advantages:
         1. Req. changes is allowed in any stage.
         2. Testing starts in very early stage of project development i.e. at req collection stage only
-        3. All the stages are tested because of this it avoids downward flow of defects, which intern reduces lot of re-work.
+        3. All the stages are tested because of this it avoids downward flow of defects, which internally reduces lot of re-work.
         4. Total cost of project will be less.
         5. The output is given simultaneously, because of this project gets completed very fast.
 

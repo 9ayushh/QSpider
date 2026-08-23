@@ -3752,7 +3752,6 @@ Interface
 
 1. Collection Hierarchy vs Map Hierarchy
     - Collection Hierarchy
-        - 
 
     - Map Hierarchy
 
@@ -3760,7 +3759,7 @@ Interface
     - Array 
         - homogeneous
 
-
+    - Collection
         - homogeneous as well as hetrogeneous
         - many more for crud operation
 
@@ -3791,9 +3790,25 @@ Interface
 15. What is node?
 
 
+## Exceptions
+    - ArithmeticException // divide by 0
+    - NullpointerException // ref.x or ref.m1() , ref == null
+    - ClassCastException // downcasting or treeset
+    - StringIndexOutOfBoundsException // chatAt()
+    - ArrayIndexOutOfBoundsException // REF[Index]
+    - NumberFormatException // Parsing
 
 
+    - stack trace
+        - details of exception (java.land.Exception)
+        - program will stop and give the detail in which the location of exception and location of exception occurance is there.
 
+    - default exception handler
+        - generates the details
+        - printStackTrace()
 
-
-
+    - Types
+        - Checked Exception
+            - not reached
+        - Unchecked Exception
+            - reached
