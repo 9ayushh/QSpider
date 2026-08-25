@@ -272,7 +272,7 @@
             2. Context provider and providing values
             3. useContext
 
-    
+### Routing
     - useReduce
         - accepts
             - initial value
@@ -298,3 +298,16 @@
     - useRef
         - useRef is a react hook which persists value or it is used to access DOM Elements without causing a component re-rendering.
         - It returns an object : {current : value}
+
+
+
+
+    - Routes 
+        - Routes is the container component that hold multiple cloud component and renders the component which matches with the URL.
+        
+    - Route 
+        - Route is a component that maps specific url path to a specific react component.
+
+        - Commands
+            - to install the 3rd party application/dependency which is react router-dom
+                npm i react-router-dom

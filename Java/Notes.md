@@ -3698,6 +3698,7 @@ Interface
             - If the class is not ready to give implementation to the abstract methods of an interface then it is mandatory to make that class an abstract class.
             - The next level of child class is responsible for giving implementation to the rest of the abstract methods of an interface.
 
+# Collections
 
 ## Collection Frameworks
 
@@ -3790,7 +3791,7 @@ Interface
 15. What is node?
 
 
-## Exceptions
+# Exceptions
     - ArithmeticException // divide by 0
     - NullpointerException // ref.x or ref.m1() , ref == null
     - ClassCastException // downcasting or treeset
@@ -3802,6 +3803,10 @@ Interface
     - stack trace
         - details of exception (java.land.Exception)
         - program will stop and give the detail in which the location of exception and location of exception occurance is there.
+        - contains
+            - FullyQulaifiedName - i.e. packagename.subpackagename.classname
+            - reason of the exception : why exception occure
+            - location of the exception : packagename.subpackagename.classname.methodname(filename:linenumber)
 
     - default exception handler
         - generates the details
@@ -3812,3 +3817,83 @@ Interface
             - not reached
         - Unchecked Exception
             - reached
+
+Exception handling
+    - by which we can continue our program
+    - we can do by using try and catch block
+
+    - try
+        - statement block which is responible for exception
+
+    - catch
+        - it tells how should you handle the exception
+
+    - what is try with mulitple catch
+        - 
+        - rules
+            - parent should be at bottom and child should be at top otherwise it will give CTE.
+
+===============================================================================
+## COLLECTIONS
+--------------------
+- What is Collection in Java
+    - A Collection represents a single unit of objects, i.e., a group.
+    - What is framework in Java
+        - It provides readymade architecture
+        - It represents a set of classes and interfaces.
+
+- What is Collection framework
+    - The Colelction framework represents a unified architecture for storing and manipulating a group of objects. 
+    - It has:
+        1. Interfaces and its implementations, i.e., classes
+        2. Algorithm (Java Collections can achieve all the operations that you perform on a data such as searching, sorting, inserting, manipulation and deletion.)
+
+    - Why do we need collection framework in java
+        - To store multiple objects or group of objects together we can generally use arrays. But arrays has some limitations.
+
+        - Advantages of Collection over an array:
+            - Array is fixed in size whereas Collection is dynamic in size.
+            - Array is homogeneous whereas Collection is heterogeneous.
+    
+    - Collection framework has 2 important hierarchies:
+        1. Collection hierarchy
+        2. Map hierarchy
+
+    1. Collection Hierarchy
+                                Iterable > lang package
+                                   |
+                               Collection > util package
+                                   |
+         -----------------------------------------------------
+         |                         |                         |
+        List                     Queue                      Set
+         |                       |  |                       | |
+         |-> ArrayList           |  --> PriorityQueue       | |-> HashSet
+         |-> LinkedList          |-> Deque                  | |-> LinkedHashSet
+         |-> Vector                   |-> ArrayDeque        |-> SortedSet
+              |-> Stack                                           |-> TreeSet
+
+
+    2. Map Hierarchy
+                                Map
+                                 |
+                ---------------------------------------------
+                |                   |                       |
+            Hashtable            HashMap                SortedMap
+                                    |                       |
+                              LinkedHashMap            NavigableMap
+                                                            |
+                                                         TreeMap
+
+- Iterable Interface
+    - It is introduced in jdk 1.5
+    - Iterable interface is declared in java.lang package.
+    - Iterable interface contains iterator() method to iterate the elements of Collection interface as Collection is the child of Iterable interface.
+
+    - Method declaration:
+        public abstract Iterator<T> iterator();
+        here, T is the type of elements returned by the Iterator.
+
+- Collection Interface
+
+-------------------------------------------------------------------------------
