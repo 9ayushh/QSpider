@@ -272,7 +272,7 @@
             2. Context provider and providing values
             3. useContext
 
-### Routing
+- ### UseReducer
     - useReduce
         - accepts
             - initial value
@@ -289,18 +289,47 @@
         - reducer fun it is a fun that decide how state changes it accept two argument first argument is the currennt state and second argument is the action and it returns a new updated state .
         - initial state It is also known as initial value taht we want oue state should hold it returns an array which consist two values first value is the variable which holds the current state and second value is the fun which is known as dispatcher function
 
-
-    - Controlled and Uncontrolled component
+- ### Controlled and Uncontrolled component
+    - Controlled Component
         - A control component is a component in which the input elements get their value from react state and any changes in the input is handled through event handler like onChange
 
+    - UnControlled Component
         - An uncontrolled component is a component in which input element manages their own data using the browsers DOM and the react accesses the values only when required using ref these concepts exist because react needed await to manage form data either through its state or by allowing the browsers to handle it.
 
-    - useRef
-        - useRef is a react hook which persists value or it is used to access DOM Elements without causing a component re-rendering.
-        - It returns an object : {current : value}
+        - useRef
+            - useRef is a react hook which persists value or it is used to access DOM Elements without causing a component re-rendering.
+            - It returns an object : {current : value}
 
+- ### Routing
+    - Routing in react is the process of showing different components on different url, without reloading the page.
 
+        - Advantages
+            - no page reload
+            - faster navigation
+            - single page application support
+            - better user experience
+            - easy component base routing
 
+        - Types of routing
+            1. Client Side routing
+                - client side routing is the routing process where every URL changes without reloading the page and the browser renders the components dynamically.
+
+            2. Server Side routing
+                - Server side routing is the process where every URL request is sent to the server and the server returns a new html page for each route.
+
+    - React router
+        - React router is a library that manages routing the login in react application and decides which component have to show base on the URL.
+
+    - React router Dom
+        - React router DOM is a package built on top of the react router that is used specifically for the web applications
+
+    - Browser Router
+        - It is a router component that enables client side routing in react web applications using the browser URL and history API.
+
+        - react router library (Older approach)
+        - enables client side routing in react applications.
+        - Uses html5 history api (pushState, popState, replaceState)
+        - small / simple apps
 
     - Routes 
         - Routes is the container component that hold multiple cloud component and renders the component which matches with the URL.
@@ -311,3 +340,36 @@
         - Commands
             - to install the 3rd party application/dependency which is react router-dom
                 npm i react-router-dom
+
+            * -> wild card route (used for all)
+
+        - path
+            - path defines the url pattern that must be matched in order for a route to be render
+
+        - element
+            - element specifies the react component that should be displayed when the path matches the url
+        
+        - difference between anchor tag (a) and Link tag
+            - Link is a react router higher order component which is used for navigation amoung compnents without reloading the page
+
+            - while anchor is normal html tag used for navigation but it reloads the entire page
+
+    - Create Browser Router
+        - it is a modern api, introduced in the React version 6.4
+        - it let's you to define all your routes, loader, action and errors in single configuration file
+        - it is a part of data router api
+        - it helps you to create a router object that defines what to render for each url and how to fetch data before rendering
+
+- ### Memoization
+    - it is a code optimization technique that makes application more faster and efficient.
+    - It does this by storing computational result in cache and retriving the same information from the cache.
+    - The next time it's needed, istead of computing it again 
+
+    - Types of Memoization
+        1. React.memo
+            - it is a higher order component that memoizes a react component preventing unnecessary re-renders, if it's prop or state have not changed
+        2. UseMemo
+            - It is a react hook that memoizes the result of a computation, so it is not recalculated on every render.
+        3. UseCallback
+            - it is a react hook that memoizes a function ensuring the same function reference is used until its dependency changes
+    

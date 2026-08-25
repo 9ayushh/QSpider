@@ -20,6 +20,7 @@ import ContextGrandParent from './contextApi2/ContextGrandParent';
 import Reducer from './useReducer/Reducer';
 import Controlled from './control_Uncontrol/Controlled';
 import Uncontrolled from './control_Uncontrol/Uncontrolled';
+import MemoParent from './memoization/reactMemo/MemoParent';
 
 const App = () => {
     let [toggle, setToggle] = useState(false);
@@ -66,6 +67,9 @@ const App = () => {
 
             {/* <Controlled/> */}
             {/* <Uncontrolled/> */}
+
+            {/* ---------------Memoization-------------- */}
+            <MemoParent/>
  
         </div>
     )
