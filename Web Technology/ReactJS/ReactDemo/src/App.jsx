@@ -21,6 +21,9 @@ import Reducer from './useReducer/Reducer';
 import Controlled from './control_Uncontrol/Controlled';
 import Uncontrolled from './control_Uncontrol/Uncontrolled';
 import MemoParent from './memoization/reactMemo/MemoParent';
+import UseMemoParent from './memoization/useMemo/UseMemoParent';
+import UseCallbackChild from './memoization/useCallback/UseCallbackChild';
+import UseCallbackParent from './memoization/useCallback/UseCallbackParent';
 
 const App = () => {
     let [toggle, setToggle] = useState(false);
@@ -69,7 +72,9 @@ const App = () => {
             {/* <Uncontrolled/> */}
 
             {/* ---------------Memoization-------------- */}
-            <MemoParent/>
+            {/* <MemoParent/> */}
+            {/* <UseCallbackParent/> */}
+            <UseMemoParent/>
  
         </div>
     )

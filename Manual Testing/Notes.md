@@ -547,3 +547,254 @@ Prototype Model
     1. whenever customer is new to the business
     2. whenever customer is not are of full req
     3. when developers are new to domain
+----------------
+## What is software testing
+- Defination
+    1. The process of identifying the defects in the software is called as software testing
+    2. Verifying the functionality of the software against req specification is called as software testing
+
+
+- What is manual testing ?
+    - Testing the software/Application repeatedly or again and again manually in order to find defects in the software according to the customer requirement is called as 'manual testing'.
+
+- Advantages of manual testing ?
+    - Manual testing is easy to learn, and beginners can start testing without deep technical knowledge.
+    - It is suitable for small projects because it does not require any tools or special setup.
+    - It is helpful for exploratory testing, where test engineers explore the application and test the sw
+    - It gives a real user experience because the TE interacts with the application like a normal user .
+    - It is very effective for UI testing since test engineer can easily check colors, alignment, and overall user interface .
+    - Here test engineer can interacts with the application like a end user would.
+    - Quality is good.
+
+- Disadvantages of manual testing ?
+    - Manual testing is time-consuming
+    - Manual testing is monotonous & tedious job
+    - There will be no consistency in testing
+    - Resource utilization is more
+    - Manual testing becomes difficult and slow when the project has a large number of test cases.
+    - It is difficult to maintain manual test cases for long-term projects.
+
+- What is automation testing ?
+    - TE will write the code/script/pgm by using Tools like Selenium/QTP/Appium and run the programme against the application/software, where in pgm/Tool will automatically test the application and give the result as 'Pass' or 'Fail' this is called Automation testing.       
+            OR
+    - Automation testing is a testing method where we use tools or scripts to test the application automatically instead of testing it manually.
+
+- Advantages of automation testing
+    - It improves accuracy
+    - It saves time by running repeated tests automatically.
+    - Automation makes the testing process more reliable and consistent.
+    - Automation reduces the workload of testers
+    - Automation helps in testing large applications quickly and efficiently.
+    - Automated tests can be reused for different versions of the application.
+
+
+    * http://7.Name some Automation tools
+
+    WEB AUTOMATION TOOLS <<
+    Selenium WebDriver
+    Cypress
+    Playwright
+    QTP/UFT
+    TestCafe
+
+    COMPUTER AUTOMATION TOOLS <<
+    Winium
+    SILK FUNCTONAL TEST
+    RATIONAL FUNCTONAL TEST
+    OATS(ORACLE APPLICATION TEST SUITE)
+    TEST COMPLETE
+    CANNOO
+
+    MOBILE AUTOMATION TOOLS
+    APPIUM
+    SELENDROID
+    MONKEY TALK
+    ROBOTIUM
+    Calabash
+    Perfecto Mobile
+
+- Difference between manual \& automation testing?
+    - Manual Testing :
+        - testing done manually by test engineer 1
+        - Basic testing knowledge is require
+        - time taken is more effort required is more 5
+        - No script maintenance needed / need to maintain test cases 4
+        - No pgm knowledge require 3
+        - Cheaper for short-term 2 
+
+
+Automation Testing :
+Testing is done with the help of tools
+Advance testing knowledge is require
+time taken is less also reduces efforts
+Need to maintain the test scripts 
+basic Pgm knowledge is require  
+Expensive for initial stage ( tools )  
+
+Aug 18 - 5:37 pm
+**PRINCIPLES OF SOFTWARE TESTING**
+
+1.Testing shows the presence of defects, not their absence
+Testing can find bugs, but it cannot prove that the software has zero bugs.
+
+2.Exhaustive testing is impossible
+We cannot test everything. So, we test important and high-risk areas first.
+
+3.Early testing saves time and cost
+Start testing early in the SDLC to catch defects when they are cheap to fix.
+
+4.Defects cluster together
+Most defects are usually found in a few modules or features.
+
+5.Pesticide paradox
+If we run the same tests again and again, they stop finding new bugs.
+So we must update and improve test cases.
+
+6.Testing is context dependent
+Testing approach changes based on product type (banking app vs. game vs. website)
+
+7.Absence of errors fallacy
+Even if the software has no bugs, it is useless if it does NOT meet customer requirements.
+
+-----------------
+# Software testing
+----------------
+    - the process of identifing defects in the software is called as software testing.
+    - verifying the functionality of an software or application against customer requirement specification is called as software testing.
+
+- Why we do software testing
+    1. Every software is developed to support the business, if there are any defects in the software it affects the business. So, before we use any software for the business it must be tested and all the problems must be solved and then should be given to customer.
+    2. To improve the quality of the product.
+    3. To check whether the product is working according to customer requirement
+
+- Types of Software Testing
+    - White box testing 
+        - also known as open box testing / unit testing / transparent box testing
+        - Testing each and every line of code is called as white box testing.
+        - It is done by developers
+        - Since, the code is visible it is also called as open box testing.
+        - The smallest unit of s/w is one line of code, since developers are testing each and every line so it is called as unit testing.
+
+    - Gray box testing (Not to mention) -> not practice in industries
+
+    - Black box testing
+        - also known as close box testing / behavioural testing / functional testing
+        - Verifying the functionality of a s/w againt customer req. specification is called as black box testing.
+        - It is done by test engineers
+        - Since the code is not visible to the test engineer, it is called as close box testing.
+
+
+- Why test engineer should not be involved in fixing defects?
+    - Chances are there test engineer fixing one defect might introduce n number of defects.
+    - Time taken to fix one defect will be more as compare to developers.
+    - Chances are there if test engineer spend time in fixing one defect, he will not get the time to test remaining features and he will also not get the time to catch remaining bugs.
+    
+* Interview Question
+    1. What is the difference b/w white box testing and black box testing?
+        - White box testing
+            1. Developers will do WBT
+            2. Code is Visible
+            3. A person should have programming knowledge to do WBT.
+            4. A person should have knowledge on design.
+            5. Here we test the logic of the code.
+            6. It is done before s/w is developed.
+            7. Here, developer will pass the input to code and check output according to requirement.
+
+        - Black box testing
+            1. TE will do BBT
+            2. Code is not visible
+            3. Programming knowledge is not required for manual BBT
+            4. Knowledge on design is not required 
+            5. Here we test the functionality of s/w
+            6. It is done after s/w is developed
+            7. Here TE will pass the input to s/w and check output according to requirement
+
+## Black Box Testing
+- Definition
+    - Verifying the functionality of a s/w againt customer req. specification is called as black box testing. 
+    - It is done by test engineers.
+    - Since the code is not visible to the test engineer, it is called as close box testing.
+
+    - Types of BBT
+        1. Functionality Testing
+        2. Integration Testing
+        3. System Testing
+        4. Acceptance Testing
+        5. Smoke Testing
+        6. Regression Testing
+        7. Performance Testing
+        8. Adhoc Testing
+        9. Compatibility Testing
+        10. Exploratory Testing
+        11. Globlization Testing
+        12. Usability Testing
+
+    1. Functionality Testing
+        (500 senarios and 100 test case)
+
+        - Testing each and every *component* *thoroughly* against the requirement specification is called as functionality testing.
+
+            *fig 7*
+
+        - Note:
+            - *Components*
+                - link, testfield, text area, drop down, radio buttons, icons, etc.
+
+                - icon components examples
+                    hamburger icon
+                    kebab icon
+                    elipces
+            - *Throughly*
+                - means by entering all possible inputs/values/cases (positive or negative).
+
+        - Types
+            1. Positive Testing
+            2. Negative Testing
+
+        - Testing Scenarios
+            Component Name |                    Scenario                    | Scenario Type | Scenario_Id
+            Mobile No.     | To verify that + mobile no text field + should |      +ve      | MN_001
+            (text field)   | accept only valid 10 digit mobile number       |               | 
+            ...            | To verify that mobile no text field should not |      -ve      | MN_002
+            ...            | accept alphabets                               |               |  
+            ...            | ...                                            |               |  
+            ...            | ...                                            |               |  
+
+
+
+    req. 
+        - min 3
+        - max 20 characters 
+        - letters and numbers only
+
+        1. To verify that username text field should accept min 3 characters.
+        2. To verify that username text field should accept max 20 characters
+        3. To verify that username text field should accept letters
+        4. To verify that username text field should accept numbers
+        5. To verify that username text field should accept letters and numbers
+        6. To verify that username text field should give "The username namefield is required"
+
+        7. To verify that username text field should not accept less than 3 characters
+        8. To verify that username text field should not accept more than 20 characters
+        9. To verify that username text field should not accept symbols
+        10. To verify that username text field should not accept letters with symbols
+        11. To verify that username text field should not accepts numbers with symbols
+        12. To verify that username text field should not accepts numbers, letters and symbols
+        13. To verify that username text field should not accepts blank spaces at starting
+        14. To verify that username text field should not accepts blank space at the end
+        15. To verify that username text field should not accepts blank space in between
+        16. To verify that username text field should not accepts not be blank
+
+        17. To verify that username text field should turn blue when active state
+
+        18. To verify that username text field should turn green when username is correct
+        19. To verify that username text field should give "username is available" as message
+
+        20. To verify that username text field should turn red when username is incorrect
+        21. To verify that username text field should give "username is not available" as message
+
+        22. To verify that username text field should be mandatory
+        23. To verify that username text field should be red when blank
+
+
+

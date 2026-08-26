@@ -3790,6 +3790,447 @@ Interface
 14. ArrayList vs LinkedList
 15. What is node?
 
+-------------------------------------------------------------------------------------------
+## COLLECTIONS
+
+- What is Collection in Java
+    - A Collection represents a single unit of objects, i.e., a group.
+    - What is framework in Java
+        - It provides readymade architecture
+        - It represents a set of classes and interfaces.
+
+- What is Collection framework
+    - The Colelction framework represents a unified architecture for storing and manipulating a group of objects. 
+    - It has:
+        1. Interfaces and its implementations, i.e., classes
+        2. Algorithm (Java Collections can achieve all the operations that you perform on a data such as searching, sorting, inserting, manipulation and deletion.)
+
+    - Why do we need collection framework in java
+        - To store multiple objects or group of objects together we can generally use arrays. But arrays has some limitations.
+
+        - Advantages of Collection over an array:
+            - Array is fixed in size whereas Collection is dynamic in size.
+            - Array is homogeneous whereas Collection is heterogeneous.
+    
+    - Collection framework has 2 important hierarchies:
+        1. Collection hierarchy
+        2. Map hierarchy
+
+        1. Collection Hierarchy
+                                Iterable > lang package
+                                   |
+                               Collection > util package
+                                   |
+         -----------------------------------------------------
+         |                         |                         |
+        List                     Queue                      Set
+         |                       |  |                       | |
+         |-> ArrayList           |  --> PriorityQueue       | |-> HashSet
+         |-> LinkedList          |-> Deque                  | |-> LinkedHashSet
+         |-> Vector                   |-> ArrayDeque        |-> SortedSet
+              |-> Stack                                           |-> TreeSet
+
+
+        2. Map Hierarchy
+                                Map
+                                 |
+                ---------------------------------------------
+                |                   |                       |
+            Hashtable            HashMap                SortedMap
+                                    |                       |
+                              LinkedHashMap            NavigableMap
+                                                            |
+                                                         TreeMap
+
+- Iterable Interface
+    - It is introduced in jdk 1.5
+    - Iterable interface is declared in java.lang package.
+    - Iterable interface contains iterator() method to iterate the elements of Collection interface as Collection is the child of Iterable interface.
+
+    - Method declaration:
+        public abstract Iterator<T> iterator();
+        here, T is the type of elements returned by the Iterator.
+
+- Collection Interface
+    1. Collection is an interface which is one of the pillars of the Collection Framework and is defined in the `java.util` package. It was introduced in JDK 1.2.
+    2. Collection interface provides the mechanism to store a group of objects (elements) together.
+    3. All the elements in the Collection are stored in the form of Objects (i.e. only non-primitive data is allowed).
+
+        - Collection does not store primitive data. When we try to add primitive data, the primitive is auto-boxed into its corresponding non-primitive wrapper type. Then it gets stored in the Collection.
+
+        - Example:
+            ArrayList al = new ArrayList();
+            al.add(10);
+                --> al.add(new Integer(10));
+                    [Autoboxing will occur implicitly like this]
+
+            al.add(true);
+                --> al.add(new Boolean(true));
+                    [Autoboxing will occur implicitly like this]
+
+    4. As Collection interface is the child of Iterable interface, it also contains the `iterator()` method.
+
+    5. It provides some predefined methods which help the programmer to perform the following tasks:
+        - Add an element into the collection
+        - Search an element in the collection
+        - Remove an element from the collection
+        - Access the elements present in the collection
+
+        - Collection Interface Methods
+
+            | Purpose                  | Return Type | Method Signature                    |
+            |--------------------------|-------------|-------------------------------------|
+            | To add the element       | boolean     | add(Object)                         |
+            |                          | boolean     | addAll(Collection)                  |
+            | To remove the element    | boolean     | remove(Object)                      |
+            |                          | boolean     | removeAll(Collection)               |
+            |                          | boolean     | retainAll(Collection)               |
+            |                          | void        | clear()                             |
+            | To search the elements   | boolean     | contains(Object)                    |
+            |                          | boolean     | containsAll(Collection)             |
+            | To access the elements   | Iterator    | iterator()                          |
+            | Miscellaneous operation  | int         | size()                              |
+            |                          | boolean     | isEmpty()                           |
+            |                          | Object      | toArray()                           |
+
+    - Note:
+        All methods are public and abstract.
+
+    6. Collection has 3 child interfaces:
+        - List
+        - Set
+        - Queue
+
+
+- ### General Characteristics of List, Set and Queue
+    - List
+        - Maintains insertion order of elements.
+        - Duplicate elements are allowed.
+    - Set
+        - Doesn't maintain insertion order.
+        - Duplicate elements are not allowed.
+    - Queue
+        - Maintains insertion order.
+        - Duplicate elements are not allowed.
+
+
+- ### Creating Objects of Collection Implementations
+    - As Collection is an interface and List, Set and Queue are also interfaces, we can't directly create objects for them.
+    - But we can create objects for their subclasses and store their references.
+
+    - Example:
+        Collection c  = new ArrayList();
+        Collection c1 = new LinkedList();
+        Collection c2 = new Vector();
+        Collection c3 = new Stack();
+
+        Collection c  = new HashSet();
+        Collection c1 = new LinkedHashSet();
+        Collection c2 = new TreeSet();
+
+        Collection c  = new PriorityQueue();
+        Collection c1 = new ArrayDeque();
+
+
+## GENERICS
+- 
+    - Generics is one of the features of Collection introduced from JDK 1.5.
+    - Generics defines the type of data or element type that can be stored in a collection.
+
+    - Commonly represented as:
+        <E>
+    - Example:
+        Collection<String>
+        +-------+-------+-------+-------+
+        | "Ram" | "Raj" | "Yash"| "Dev" |
+        +-------+-------+-------+-------+
+
+        Collection<Integer>
+        +----+----+----+----+
+        | 10 | 45 | 67 | 89 |
+        +----+----+----+----+
+
+        Collection<Student>
+        +---------------+---------------+---------------+
+        | new Student() | new Student() | new Student() |
+        +---------------+---------------+---------------+
+
+
+- ## Types of Collection
+    - We can classify collections into two categories:
+        1. Non-Generic Collection  
+        2. Generic Collection
+
+
+    1. NON-GENERIC COLLECTION
+        - It is a heterogeneous (different types) collection of elements.
+        - Every element stored in a collection is converted to `java.lang.Object` class type and stored.
+
+        - Syntax to create Non-Generic Collection
+            Collection_type variable;
+
+        - Example:
+            Collection c;
+            ArrayList al;
+            HashSet hs;
+            etc.
+
+        - Syntax to create Non-Generic Collection Object
+            new Collection_name();
+        
+        - Example:
+            new ArrayList();
+            new HashSet();
+            new PriorityQueue();
+            etc.
+
+
+    2. GENERIC COLLECTION
+        - It is a homogeneous collection of elements (collection of same type of elements).
+
+        - Syntax to create Generic Collection
+            Collection_type<Non-primitive Datatype> variable;
+        - Example:
+            Collection<String> c1;
+            ArrayList<Integer> al;
+            HashSet<String> hs;
+            etc.
+
+        - Syntax to create Reference Variable for Generic Collection
+            Collection_type<Non-primitive Datatype> variable;
+        - Example:
+            Collection<String> c1;
+            ArrayList<Integer> al;
+            HashSet<String> hs;
+            etc.
+
+        - Syntax to create Generic Collection Object:
+            new Collection_name<Datatype>();
+        - Example:
+            new ArrayList<Integer>();
+            new HashSet<String>();
+            new LinkedList<String>();
+            etc.
+
+- ## LIST INTERFACE
+    - Structure
+
+                        List
+                         |
+            +------------+------------+
+            |            |            |
+        ArrayList     LinkedList     Vector
+                                       |
+                                     Stack
+
+    - Methods of List Interface
+
+        | Purpose            | Return Type | Method Signature                |
+        | ------------------ | ----------- | ------------------------------- |
+        | To add the element | boolean     | `add(Object)`                   |
+        |                    | boolean     | `addAll(Collection)`            |
+        |                    | void        | `add(int index, Object)`        |
+        |                    | boolean     | `addAll(int index, Collection)` |
+        | To remove element  | boolean     | `remove(Object)`                |
+        |                    | boolean     | `removeAll(Collection)`         |
+        |                    | boolean     | `retainAll(Collection)`         |
+        |                    | void        | `clear()`                       |
+        |                    | Object      | `remove(int index)`             |
+
+    - Situations to use or not use ArrayList
+        - Situations to use ArrayList
+            - ArrayList is good for data retrieval & search operation. Because time taken to search any data in entire List is same.
+
+        - Situations to not use ArrayList
+            - If we try to add the data in between the list, then all the existing data gets shifted to the next position. Because of this shift operation, the performance becomes slow. Hence it is not suitable to insert and remove the data in between.
+
+## LINKEDLIST
+-------------
+- LinkedList
+    - LinkedList is one of the implementation classes of List Interface.
+    - Present since JDK 1.2 and defined in java.util package.
+    - LinkedList stores the data in the form of Nodes, where every node is connected to next and its previous node.
+    - Nodes contain 3 parts. One is used to store the value and another 2 are used to store the address of next and previous nodes.
+    - The first node does not have previous node information and the last node does not have next node information.
+
+    - Situations to Use LinkedList
+        - LinkedList doesn't have any shift operation, hence it is suitable for insertion or removal of data in between.
+
+    - Situations Not to Use LinkedList
+        - LinkedList is not suitable for any search / retrieval operation.
+        - LinkedList are not good for addition / removal because the control has to start / traverse through first node.
+
+- Difference Between ArrayList and LinkedList
+    | ArrayList                                                           | LinkedList                                            |
+    | ------------------------------------------------------------------- | ----------------------------------------------------- |
+    | Stores the data in the form of array                                | Stores the data in the form of nodes                  |
+    | Data Structure: growable / resizable array                          | Data Structure: Doubly LinkedList                     |
+    | 3 overloaded constructors                                           | 2 overloaded constructors                             |
+    | Initial & incremental capacity is applicable                        | Initial & incremental capacity is not applicable      |
+    | Implements marker interfaces: Cloneable, Serializable, RandomAccess | Implements marker interfaces: Cloneable, Serializable |
+    | Has shift operation                                                 | Has no shift operation                                |
+    | Memory is continuous                                                | Memory is not continuous                              |
+
+- Difference Between ArrayList & Vector
+    | ArrayList                                             | Vector                                        |
+    | ----------------------------------------------------- | --------------------------------------------- |
+    | ArrayList is Multi Threaded.                          | Vector is Single Threaded.                    |
+    | Present since JDK 1.2                                 | Present since JDK 1.0                         |
+    | 3 overloaded constructors                             | 4 overloaded constructors                     |
+    | Incremental capacity = `(current capacity × 3/2) + 1` | Incremental capacity = `current capacity × 2` |
+    | Performance-wise faster                               | Performance-wise slower                       |
+
+## ForEach
+- Enhanced For-Each Loop
+    1. It is a feature introduced from JDK 1.5.
+    2. It is mainly used to iterate either a collection or an array completely in forward direction.
+    3. Partial iteration of array or collection is not possible by using this.
+    4. There is no need of providing any condition to run the loop.
+
+    - Difference Between for and for-each
+        | For Loop                                | For-Each Loop                         |
+        | --------------------------------------- | ------------------------------------- |
+        | Can iterate forward as well as backward | Can iterate only in forward direction |
+        | Partial iteration is possible           | Partial iteration is not possible     |
+        | Need to know the condition to use       | Can be used without condition         |
+        | Present since beginning of Java         | Present since JDK 1.5                 |
+
+## TreeSet
+- TreeSet
+    - TreeSet is one of the implementation classes of Set interface.
+    - Present since JDK 1.2 and defined in java.util package.
+    - TreeSet is mainly used for uniqueness and sorting.
+    - TreeSet does not store duplicate data.
+    - TreeSet implements default natural sorting order.
+    - TreeSet cannot store even a single null element. If we add null, we get NullPointerException.
+
+    - Default natural sorting order:
+        Ascending order:
+            • Number: 0 - 9
+            • Alphabet: A - Z and a - z
+
+    - More about TreeSet
+        - TreeSet is not a hash-based collection. The data structure used is a balanced tree.
+        - TreeSet is homogeneous, i.e., TreeSet can store only one type of data.
+        - TreeSet either uses Comparable or Comparator interface.
+            Comparable  → Default natural sorting
+            Comparator  → Custom sorting
+        - The element added to TreeSet must be of a comparable type, otherwise ClassCastException may occur.
+        - All elements in TreeSet should be of the same type (homogeneous), otherwise ClassCastException may occur.
+        - No indexing is available, therefore we cannot add/remove elements using an index.
+        - It also has all the methods of the Collection interface.
+
+    - Difference Between List and Set
+        | List                                | Set                                              |
+        | ----------------------------------- | ------------------------------------------------ |
+        | List is index-based                 | Set is not index-based                           |
+        | List can store duplicate data       | Set can store only unique data                   |
+        | List can store multiple null values | Set can store only a single null value*          |
+        | List maintains insertion order      | Set doesn't necessarily maintain insertion order |
+
+## Map Hierarchy
+- Map
+    - Map is an interface which is a separate pillar/vertical of the Collection Framework and is defined in java.util package.
+    - It is present since JDK 1.2.
+    - Map does not inherit the Collection interface.
+    - Map is a collection of entries, i.e., Map stores multiple entries.
+    - Entry represents data in the form of key-value pairs.
+    - Map is a data structure which helps programmers to store data in the form of key-value pairs.
+    - Key and value together are known as an entry.
+    - Every value is associated with a unique key.
+    - Key must always be unique, but values can be duplicated or null.
+    - One key can be associated with only one value.
+    - Map helps us to access values easily with the help of their associated keys.
+
+
+    - Note: 
+        - One key-value pair is called an Entry or Mapping.
+
+- Generic Map
+    Map<K, V>
+
+    - Example:
+        Map<Integer, String>
+        5 = "Rohan"
+        7 = "Rahul"
+        3 = "Dev"
+        9 = "Subham"
+
+- Map Methods
+    | Return Type | Method Signature                          | Purpose                                                                    |
+    | ----------- | ----------------------------------------- | -------------------------------------------------------------------------- |
+    | `V`         | `put(K key, V value)`                     | 1. Adds an entry to the map (key-value pair).                              |
+    |             |                                           | 2. Replaces the old value with a new value for an existing key in the map. |
+    | `void`      | `putAll(Map<? extends K, ? extends V> m)` | Copies all the entries from the given map into the current map.            |
+    | `boolean`   | `containsKey(Object key)`                 | If the key is present, returns `true`; otherwise, returns `false`.         |
+    | `boolean`   | `containsValue(Object value)`             | If the value is present, returns `true`; otherwise, returns `false`.       |
+    | `V`         | `remove(Object key)`                      | If the key is present, the entry is removed from the map and its value     |
+    |             |                                           | is returned. If the key is not present, nothing is removed and `null`      |
+    |             |                                           | is returned.                                                               |
+    | `int`       | `size()`                                  | Returns the number of key-value mappings in the map.                       |
+    | `boolean`   | `isEmpty()`                               | Returns `true` if the map contains no key-value mappings.                  |
+
+
+
+## TreeMap
+- TreeMap
+    1. It is one of the implementation classes of Map interface.
+    2. Present since JDK 1.2 and declared in java.util package.
+    3. TreeMap is mainly used for sorting data based on key.
+    4. TreeMap implements default natural sorting order on the key using Comparable interface.
+    5. The key in TreeMap must be Comparable type. If not, we will get ClassCastException.
+    6. For custom sorting, we use Comparator interface.
+    7. It cannot store even a single null key.
+    8. TreeMap is homogeneous.
+    9. When we try to add null, we will get NullPointerException.
+
+
+## Hashtable
+- Hashtable
+    1. Hashtable is one of the implementation classes of Map interface.
+    2. Present since JDK 1.0 (legacy class) and present in java.util package.
+    3. It is also a hash-based collection, hence the data structure used is Hashtable.
+    4. Hashtable is single-threaded, i.e., methods are synchronized.
+    5. Initial capacity is 11.
+    6. Load factor or fill ratio is 75%.
+    7. Hashtable is slower than HashMap because it is synchronized.
+    8. Hashtable cannot store even a single null key.
+    9. In Hashtable, both key and value can't be null. If either is null, we will get NullPointerException.
+
+- Difference Between HashMap and Hashtable
+        +---------------------------+-----------------------------+
+        |          HashMap          |          Hashtable          |
+        +---------------------------+-----------------------------+
+        | It is multi-threaded.     | It is single-threaded.      |
+        |                           |                             |
+        | Present since JDK 1.2.    | Present since JDK 1.0.      |
+        |                           |                             |
+        | Can store a single        | Cannot store even a         |
+        | null key.                 | single null key.            |
+        |                           |                             |
+        | Initial capacity = 16.    | Initial capacity = 11.      |
+        |                           |                             |
+        | It is faster.             | It is slower.               |
+        +---------------------------+-----------------------------+
+
+## Collections Class
+- Collections Class
+    1. It is a predefined class in Java for performing operations on the Collection Framework.
+    2. It is defined in the java.util package.
+    3. There are many predefined methods available for different operations such as:
+        - sort()
+        - reverse()
+        - binarySearch()
+        - replace()
+        - etc.
+       All these methods are static in nature.
+    4. Since all methods are static in nature, we can call them using the Collections class name.
+        - We need to import:
+            java.util.Collections
+    5. One important method that we commonly use is sort(), which is used to sort a List.   
+    6. There are two overloaded methods for the sort() method.
+
+-------------------------------------------------------------------------------
 
 # Exceptions
     - ArithmeticException // divide by 0
@@ -3833,67 +4274,28 @@ Exception handling
         - rules
             - parent should be at bottom and child should be at top otherwise it will give CTE.
 
-===============================================================================
-## COLLECTIONS
---------------------
-- What is Collection in Java
-    - A Collection represents a single unit of objects, i.e., a group.
-    - What is framework in Java
-        - It provides readymade architecture
-        - It represents a set of classes and interfaces.
+throw & throws
+--------------
 
-- What is Collection framework
-    - The Colelction framework represents a unified architecture for storing and manipulating a group of objects. 
-    - It has:
-        1. Interfaces and its implementations, i.e., classes
-        2. Algorithm (Java Collections can achieve all the operations that you perform on a data such as searching, sorting, inserting, manipulation and deletion.)
+File handling
+-------------
+    - FileOutputStream 
+        - use to create a file on a particular location
+        - syntax:
+            FileOutputStream o = new FileOutputStream("fileName.txt");
 
-    - Why do we need collection framework in java
-        - To store multiple objects or group of objects together we can generally use arrays. But arrays has some limitations.
+- throws keyword
+    - in checked exception
+        - programmer should either handle or declare the exception
 
-        - Advantages of Collection over an array:
-            - Array is fixed in size whereas Collection is dynamic in size.
-            - Array is homogeneous whereas Collection is heterogeneous.
-    
-    - Collection framework has 2 important hierarchies:
-        1. Collection hierarchy
-        2. Map hierarchy
+    - declare the exception
+        - by using throws
+            - we cannot handle by using throws, we just 
+            - it is used to declare the exception
+            - use to specifies the unchecked / checked exception 
+            - use to propogate the checked exception object from called to calling method
+            - we can do to the unchecked but it is propogated by default
 
-    1. Collection Hierarchy
-                                Iterable > lang package
-                                   |
-                               Collection > util package
-                                   |
-         -----------------------------------------------------
-         |                         |                         |
-        List                     Queue                      Set
-         |                       |  |                       | |
-         |-> ArrayList           |  --> PriorityQueue       | |-> HashSet
-         |-> LinkedList          |-> Deque                  | |-> LinkedHashSet
-         |-> Vector                   |-> ArrayDeque        |-> SortedSet
-              |-> Stack                                           |-> TreeSet
-
-
-    2. Map Hierarchy
-                                Map
-                                 |
-                ---------------------------------------------
-                |                   |                       |
-            Hashtable            HashMap                SortedMap
-                                    |                       |
-                              LinkedHashMap            NavigableMap
-                                                            |
-                                                         TreeMap
-
-- Iterable Interface
-    - It is introduced in jdk 1.5
-    - Iterable interface is declared in java.lang package.
-    - Iterable interface contains iterator() method to iterate the elements of Collection interface as Collection is the child of Iterable interface.
-
-    - Method declaration:
-        public abstract Iterator<T> iterator();
-        here, T is the type of elements returned by the Iterator.
-
-- Collection Interface
-
--------------------------------------------------------------------------------
+- throw keyword
+    - create the exception manually
+    - also used to create the custom exception
