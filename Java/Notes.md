@@ -4233,6 +4233,7 @@ Interface
 -------------------------------------------------------------------------------
 
 # Exceptions
+- RunTime Exceptionsa
     - ArithmeticException // divide by 0
     - NullpointerException // ref.x or ref.m1() , ref == null
     - ClassCastException // downcasting or treeset
@@ -4259,7 +4260,7 @@ Interface
         - Unchecked Exception
             - reached
 
-Exception handling
+- Exception handling
     - by which we can continue our program
     - we can do by using try and catch block
 
@@ -4276,9 +4277,7 @@ Exception handling
 
 throw & throws
 --------------
-
-File handling
--------------
+- File handling
     - FileOutputStream 
         - use to create a file on a particular location
         - syntax:
@@ -4299,3 +4298,553 @@ File handling
 - throw keyword
     - create the exception manually
     - also used to create the custom exception
+
+
+===============================================================
+# EXCEPTION
+
+- DEFINATION
+    - The Exception is an unexpected problem which occurs during the execution of the program (i.e. nothing but RunTime). When an exception occurs, the program execution stops unexpectedly (this is known as abrupt stop of the program).
+
+    - Note:
+        1. Every Exception in Java is one of the child classes of the Throwable class, that's why we can say that every exception in Java is of "Throwable Type".
+        2. Every Exception occurs because of one Statement.
+        3. A statement will throw an exception during an unexpected problem (i.e. nothing but abnormal situation).
+        4. All the exceptions in Java are classes (can be predefined or user-defined).
+
+- WHAT HAPPENS IF EXCEPTION OCCURS
+    - The program will stop suddenly and the rest part of the code after exception creation statements are not going to execute.
+    - EXAMPLE
+        class Demo {
+            public static void main(String[] args) {
+                int a = 6;
+                int b = 0;
+
+                System.out.println(5 + 7);
+
+                System.out.println(a / b);
+                // Because of one statement.
+                // Every Exception in Java is one class and all are Throwable Type.
+            }
+        }
+
+- LISTS OF IMPORTANT EXCEPTIONS AND STATEMENTS
+
+    Statement                           |        Exception
+    --------------------------------------------------------------------------
+    a / b (if b = 0)                    |        ArithmeticException
+    Obj1.reference_varObject.member     |        NullPointerException
+    (ClassName)obj.reference_var        |        ClassCastException
+    Array_reference[index]              |        ArrayIndexOutOfBoundsException
+    String_ref[index]                   |        StringIndexOutOfBoundsException
+
+- TYPES OF EXCEPTION
+    - There are 2 types of Exceptions:
+        1. Checked Exception
+        2. Unchecked Exception
+
+
+    1. CHECKED EXCEPTION
+        - The compiler-aware exception is known as Checked Exception. That means compiler knows which statement is responsible for the Exception.
+        - If this is the scenario, then the compiler will force the programmer to either handle or declare the exception. If it is not done, we will get an unreported compile-time error.
+
+        - Example:
+            // FileNotFoundException
+
+            FileOutputStream f = new FileOutputStream("path");
+
+            FileOutputStream f =
+                new FileOutputStream("d://Part3/abc.txt");
+
+        - FILENOTFOUNDException
+            - FileNotFoundException is defined in the java.io package.
+            - FileNotFoundException is a checked Exception.
+            - We get FileNotFoundException when we try to create a file but the given path is wrong, or there is no permission, or the hard disk has no sufficient memory to store the file.
+
+            - new FileOutputStream("Path/name") -> this line is responsible for FileNotFoundException.
+
+
+        - UNCHECKED EXCEPTION
+            - The compiler-unaware exception is known as Unchecked Exception, i.e., the compiler doesn't know the statements which are responsible for abnormal situations (Exception).
+            - Hence, the compiler will not force the programmer either to handle or declare the exception.
+
+            - Example: ArithmeticException
+                C = a / b;   // if b = 0
+
+
+- EXCEPTION HIERARCHY
+
+                        Throwable
+                       /         \
+                      /           \
+                 Exception       Error
+                   |          
+            +--------------------------+-----------------------------+----------------+---------------+
+            |                          |                             |                |               |
+        RuntimeException              IOException                   SQLException     AWTException    InterruptedException
+        |                              |                          
+        |-> ArithmeticException        |-> FileNotFoundException         
+        |-> NullPointerException       |-> InterruptedIOException  
+        |-> ClassCastException         |-> EOFException             
+        |-> IndexOutOfBoundsException                                     
+            |
+            |-> ArrayIndexOutOfBoundsException
+            |-> StringIndexOutOfBoundsException
+
+        Error:
+            -> VirtualMachineError
+            -> StackOverflowError
+            -> OutOfMemoryError
+            -> AssertionError
+            -> ExceptionInInitializerError
+            -> IOError
+            -> AWTError
+
+    - NOTE
+        1. In Throwable hierarchy, Error class and its subclasses and RuntimeException class and its subclasses are all known as Unchecked Exception.
+        2. All the subclasses of the Exception class except RuntimeException class are considered as Checked Exception.
+        3. Throwable and Exception classes are partially checked and partially unchecked classes.
+        4. RuntimeException and Error classes are fully unchecked Exception classes.
+
+- THROWABLE CLASS
+
+    - Throwable class is defined in the java.lang package.
+    - It is the supermost parent class of the Exception Hierarchy (means parent of all the Exceptions).
+    - As Object class is the parent of all the classes in Java, so for the Throwable class also Object is the parent class.
+    - In the Throwable class, toString() method of Object class is overridden. That is why all the subclasses of Throwable have the overridden toString() method.
+
+    - That's why when any exception occurs, we get the fully qualified name of the exception.
+    - Example:
+        java.lang.ArithmeticException etc.
+
+    - IMPORTANT METHODS OF THROWABLE CLASS
+        1. String getMessage() → 
+            - Used to return the reason of the exception.
+        2. void printStackTrace() → 
+            - Used to give the fully qualified name of the exception and the reason of the exception along with the flow/stack trace of the exception.
+
+        * Both the above methods are non-static methods.
+
+
+## EXCEPTION HANDLING
+
+- Exception Handling:
+    - Exception handling is a mechanism used in Java that is used to continue the normal flow of execution when an exception occurs during runtime.
+
+    - HOW TO HANDLE THE EXCEPTION
+        - In Java, we can handle an exception by using the try{} and catch(){} block.
+        - Syntax to use the try and catch block:
+            try
+            {
+                // statements
+            }
+            catch(declare one variable of Throwable type)
+            {
+                // statements
+            }
+
+    - IF EXCEPTION WILL OCCUR, WHAT WILL HAPPEN?
+        - When an exception occurs:
+            1. Execution of the program will be stopped.
+            2. A Throwable type object will be created and the reference of the created object will be thrown.
+
+    - HOW TO HANDLE THIS BY USING TRY AND CATCH
+        - try{} block:
+            - Create a try block and the statements which are responsible for exception should be written inside the try block.
+            - When an exception occurs:
+                1. Execution of the try block is stopped.
+                2. A Throwable type object is created.
+                3. The reference of the Throwable type object created is passed       to the catch block.
+
+            - Example:
+                try {
+                    stmt 1;
+                    stmt 2;       // Exception occurs
+
+                    // Throwable type object is created
+
+                    stmt 3;
+                    stmt 4;       // stmt 3 and stmt 4 will not execute
+                } catch(variable) {
+                    // statements
+                }
+
+                // Reference of the Throwable type object is thrown to the catch block.
+
+        - catch() block:
+            - The catch block is used to catch the Throwable type reference thrown by the try block.
+                1. If it catches, we say the exception is handled. Statements inside the catch block are executed and the normal flow of the program will continue.
+                2. If it doesn't catch, we can say the exception is not handled. Statements written inside the catch block are not executed and the program is terminated.
+
+    - Q. When do we say exception is handled?
+        - We say exception is handled only if the Exception is caught by the catch block.
+
+        - CASE 1: EXCEPTION OCCURS BUT IS NOT CAUGHT
+            try {
+                sopln(10/0);    // ArithmeticException occurs
+            }
+
+            ArithmeticException@6788
+
+            catch(NullPointerException e) {
+                // Not executed
+            }
+
+            // Not executed
+
+        - Here the exception is not caught by the catch block because it only catches NullPointerException, not ArithmeticException.
+
+
+        - CASE 2: EXCEPTION OCCURS AND IS CAUGHT
+            try {
+                sopln(10/0);    // ArithmeticException occurs
+                Stmt 1;         // Not executed
+            } catch(ArithmeticException e) {
+                stmt 2;         // Execute
+            }
+            Stmt 3;             // Execute
+
+        * Here it is caught by the catch block.
+
+TRY WITH MULTIPLE CATCH BLOCK
+
+Try with multiple catch block:
+• A try block can be associated with more than one catch block.
+
+Syntax:
+
+try
+{
+    // statements
+}
+catch(........)
+{
+    // statements
+}
+catch(........)
+{
+    // statements
+}
+.
+.
+.
+etc.
+
+
+NOTE:
+The exception type object is thrown from top to bottom order.
+
+
+WORKFLOW OF THE TRY WITH MULTIPLE CATCH
+
+Workflow:
+
+try
+{
+    // statements
+}
+catch()
+{
+    // statements
+}
+catch()
+{
+    // statements
+}
+catch()
+{
+    // statements
+}
+.
+.
+.
+
+
+If the exception is caught by a catch block, then the try block does not
+throw the exception to the below catch blocks. Then execution of the rest
+of the catch blocks will be skipped.
+
+
+RULE:
+The order of catch blocks should be maintained such that:
+
+    Child type should be on the top
+    Parent type should be at the bottom.
+
+
+EXAMPLE
+
+CASE 1:
+
+try
+{
+    Sopln(10/0);
+}
+catch(Exception e)
+{
+}
+catch(ArithmeticException e)
+{
+}
+
+CTE: Parent type is declared on the top and child type is declared
+on the bottom.
+
+
+CASE 2:
+
+try
+{
+    soopln(10/0);
+}
+catch(ArithmeticException e)
+{
+}
+catch(Exception e)
+{
+}
+
+CTS: Parent type is declared on the bottom and child type is declared
+on the top.
+
+
+EXCEPTION OBJECT PROPAGATION
+
+The movement of exception from the called method to the calling method
+when it is not handled is known as Exception Object Propagation.
+
+
+Calling Method                    Called Method
+      |                                |
+      |                            Exception occurs
+      |                                |
+      |                         Exception not handled
+      |                                |
+      |<-------------------------------|
+           Exception Object Propagation
+
+
+NOTE:
+• For unchecked exceptions, it is propagated automatically or implicitly.
+• For checked exceptions, it is not done implicitly.
+  We have to do it explicitly by using the throws keyword.
+
+
+CASE 1: EXCEPTION OCCURRED AND HANDLED BY THE CALLING METHOD
+
+class Case1
+{
+    public static void main(String args[])
+    {
+        try
+        {
+            test();
+        }
+        catch(ArithmeticException e)
+        {
+            Sopln("Exception is handled by the calling method");
+        }
+    }
+
+    static void test()
+    {
+        int a = 10/0;
+    }
+}
+
+
+CASE 2: EXCEPTION OCCURRED AND NOT HANDLED BY THE CALLING METHOD
+
+class Case1
+{
+    public static void main(String args[])
+    {
+        test();
+    }
+
+    static void test()
+    {
+        int a = 10/0;
+    }
+}
+
+
+Output:
+
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+    at Case1.test(Case1.java:8)
+    at Case1.main(Case1.java:4)
+
+This is nothing but Exception Object Propagation.
+
+
+STACK TRACE
+
+Stack Trace:
+
+• It provides the order in which the exception occurred and flowed from
+  top to bottom of the stack.
+
+• It contains details of the exception, means:
+  Fully Qualified Name, reason, and location.
+
+• Fully Qualified Name means:
+  package name + sub-package name + class name.
+
+
+Example:
+
+main(String[] args)              test()
+
+       test();                  int a = 10/0;
+          |                           |
+          |                     Exception occurs
+          |                           |
+          |<--------------------------|
+          |
+    Exception Object Propagation
+
+
+Reason:
+Why the exception occurs.
+
+Location:
+• Package name
+• Class name
+• Method name
+• File name
+• Line number
+
+
+Example Stack Trace:
+
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+    at Case1.test(Case1.java:8)
+    at Case1.main(Case1.java:4)
+
+EXAMPLE - 1
+
+import java.io.FileOutputStream;
+
+class FileNotFoundDemo1
+{
+    public static void main(String[] args)
+    {
+        // to create a file demo.txt in e://file
+
+        FileOutputStream fout =
+            new FileOutputStream("e://f1//demo.txt");
+
+        System.out.println("file created");
+    }
+}
+
+
+We will get compile time error because
+new FileOutputStream("e://f1//demo.txt") is responsible for
+FileNotFoundException, which is a checked exception and it is
+neither handled nor declared.
+
+
+
+HANDLING CHECKED EXCEPTION
+
+import java.io.FileOutputStream;
+import java.io.FileNotFoundException;
+
+class FileNotFoundDemo1
+{
+    public static void main(String[] args)
+    {
+        // to create a file demo.txt in e://file
+
+        try
+        {
+            FileOutputStream fout =
+                new FileOutputStream("e://f1//demo.txt");
+
+            System.out.println("file created");
+        }
+        catch(FileNotFoundException e)
+        {
+            System.out.println("Some problem is there with file, check is");
+        }
+    }
+}
+
+
+
+THROWS KEYWORD
+
+throws:
+
+• It is a keyword. It is used to declare an exception which is to be
+  thrown to the caller.
+
+• It does not throw an exception. It specifies that there may occur
+  an exception in the method.
+
+• throws keyword should be used in the method declaration statement.
+
+• It is used to propagate the checked exception object because checked
+  exception is not propagated automatically.
+
+• We can declare more than one exception by providing comma.
+
+
+Syntax:
+
+[AM] [M] return_type methodName([FA])
+    throws exception1, exception2, exception3....
+{
+    // stmt
+}
+
+----------------------------------------------------------------
+
+# String
+    - Literal / Data : Anything enclosed within double quotes and length can be anything is known as String data.
+    - predefined class which is defined in java.lang package
+
+    - How many ways are there to take String in java:
+        - There are 3 ways
+            1. java.lang.String class
+            2. java.lang.StringBuffer class
+            3. java.lang.StringBuilder class
+
+    - String Constant Pool / String Pool Area 
+        - Area / memory block used to store the string type object
+        - It is memory area which is present inside the Heap area and specifically alloacated for string type of object.
+        - Inside this duplicate string object will be not created.
+        - It is not allocated fro StringBuffer and StringBuilder object
+
+    - feature
+        - Secure
+            - String is neither giving original address nor reference address, it is directly giving data and for this java allocated one specific memory area which is String Constant pool or String Pool Area.
+        - String is case sensitive
+            - if we use same value with different cases then it will create new object in SPA.
+            - The time of we are taking duplicate string values in the program, jvm will not create duplicate object in the memory and refer those data with existing object, but if data are changes in cases then different object will be created with new reference.
+            - So we can say that String is case sensitive.
+        - Immutable
+            - The time of we will try to perform some operation over the string, string won't allow to change the original string object, it will create the copy of original object and operation will be applicable on that.
+            - So, we can say string is immutable.
+
+            Advantage : security
+            Disadvantage : memory waste
+        
+    - For StringBuffer & StringBuilder
+        - There is no space in Static Pool Area
+        - They are stored in a block inside Heap Area directly.
+
+
+    - Some important lists of methods
+        1. length()
+        2. charAt(index z)
+        3. indexOf(char e)
+        4. concat(String s)
+
+    
+    StringBuilder
+        - multi thread
+    StringBuffer
+        - single thread
