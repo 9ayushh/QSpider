@@ -5092,3 +5092,18 @@ throw & throws
     - In the String class, equals() method is used to compare the content of the object.
 
 ---------------------------------------------------------------------------------------------
+
+# Important Interview Questions
+## Part I
+-  
+    1. 
+
+
+## Part II
+- 
+    1. 
+
+
+## Part III
+- 
+    1. 
