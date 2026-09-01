@@ -45,10 +45,10 @@
         1. to extend the thread class and the override the method
         2. 
 
-    - run() 
-        - used to store the thread logic
-    - start()
-        - start the thread execution
+- run() 
+    - used to store the thread logic
+- start()
+    - start the thread execution
 
 
     method call --> Thread Schedular --> Operating System --> Thread

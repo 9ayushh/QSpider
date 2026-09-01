@@ -13,8 +13,8 @@ public class Example {
 		
 		Thread1 t1 = new Thread1();
 		
-//		t1.run();
-		t1.start();
+		// t1.run(); // synchronous process
+		t1.start(); // Asynchronous process
 		
 		
 		Thread1 t2 = new Thread1();
