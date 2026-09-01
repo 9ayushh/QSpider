@@ -3765,12 +3765,14 @@ Interface
         - many more for crud operation
 
 3. List vs Set
+    - List
         - index based
         - maintain the order
         - duplicate allowed
         - multiple null values
         - access -> iterator, get, foreach loop, 
-
+        
+    - Set
         - not index based
 
 4. Methods of Collection interface

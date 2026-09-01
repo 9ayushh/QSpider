@@ -373,3 +373,18 @@
         3. UseCallback
             - it is a react hook that memoizes a function ensuring the same function reference is used until its dependency changes
     
+- ### CRUD
+    - install dependencies
+        react-router-dom
+        axios -> to fetch api
+        json-server -> provide server
+
+    - to install dependencies at once
+        npm i react-router-dom axios json-server
+
+    - to start backend server api
+        json-server --watch backend/db.json --port 3030
+
+    1. Create
+        - useNavigate()
+            - to navigate from one component to another
