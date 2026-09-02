@@ -14,6 +14,16 @@ function Home() {
     fetchData();
   },[]);
 
+  async function handleClick(id) {
+    console.log(id);
+    let res = confirm("Are you sure, you want to delete?");
+    // console.log(res);
+    if(res) {
+      await axios.delete(`http://localhost:3030/users/${id}`);
+      location.reload();
+    }
+  }
+
   return (
     <>
       <h1>User Data</h1><button><Link to="/create">Create +</Link></button>
@@ -37,9 +47,9 @@ function Home() {
                   <td>{username}</td>
                   <td>{phone}</td>
                   <td>
-                    <button><Link to="/read">Read</Link></button>
-                    <button><Link to="/update">Update</Link></button>
-                    <button>Delete</button>
+                    <button><Link to={`/read/${id}`}>Read</Link></button>
+                    <button><Link to={`/update/${id}`}>Update</Link></button>
+                    <button onClick={() => handleClick(id)}>Delete</button>
                   </td>
                 </tr>
               </tbody>

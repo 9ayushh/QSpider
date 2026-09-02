@@ -16,12 +16,12 @@ public class Example {
 		// t1.run(); // synchronous process
 		t1.start(); // Asynchronous process
 		
-		
-		Thread1 t2 = new Thread1();
+		Thread2 t2 = new Thread2();
 		t2.start();
 		
 		Thread1 t3 = new Thread1();
 		t3.start();
+		
 		
 		System.out.println("main end");
 

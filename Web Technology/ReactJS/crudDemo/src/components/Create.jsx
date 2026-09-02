@@ -26,7 +26,7 @@ function Create() {
 
   return (
     <>
-      <h1>User Input</h1>
+      <h1>Add User</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder='username' name='username' onChange={handleChange} />
         <br /><br />
