@@ -1,0 +1,62 @@
+
+header {
+    margin: 0;
+    padding: 0;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    margin-top: 40px;
+    width: 70vw;
+    padding: 0 20px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+
+.logo{
+    width: 50%;
+    padding-left: 40px;
+}
+
+ul {
+    width: 50%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+li {
+    /* background-color: yellow; */
+    display: flex;
+    color: blueviolet;
+    flex-direction: column;
+    height: 22px;
+    
+}
+a {
+    text-decoration: none;
+}
+
+span {
+    position: relative;
+    height: 2px;
+}
+.move:hover span{
+    background-color: red;
+    animation: underLine 1s ease-in-out;
+}
+
+@keyframes underLine {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}

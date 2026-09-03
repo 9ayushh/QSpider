@@ -3713,7 +3713,6 @@ Interface
 - HashTable
     - key or value should not null
 
-
 - HashMap
     - Collection of enteries
     - key should not be duplicate
@@ -3771,7 +3770,7 @@ Interface
         - duplicate allowed
         - multiple null values
         - access -> iterator, get, foreach loop, 
-        
+
     - Set
         - not index based
 
@@ -3823,7 +3822,7 @@ Interface
                                    |
                                Collection > util package
                                    |
-         -----------------------------------------------------
+         +---------------------------------------------------+
          |                         |                         |
         List                     Queue                      Set
          |                       |  |                       | |

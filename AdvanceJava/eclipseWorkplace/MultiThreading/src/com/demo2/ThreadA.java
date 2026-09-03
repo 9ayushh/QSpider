@@ -1,12 +1,11 @@
-package com.jsp;
+package com.demo2;
 
-public class Thread1 extends Thread{
-	
+public class ThreadA extends Thread{
 	@Override
 	public void run() {
 		System.out.println(Thread.currentThread().getName());
 		
-		for(int i = 1; i<=10; i++) {
+		for(int i = 1; i<=5; i++) {
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -15,5 +14,4 @@ public class Thread1 extends Thread{
 			System.out.println(i);
 		}
 	}
-
 }

@@ -42,13 +42,20 @@
 
 - How we can create a threads
     - We have 2 ways to create a thread
-        1. to extend the thread class and the override the method
+        1. to extend the thread class or implements the runnable interface and the override the method
         2. 
 
 - run() 
     - used to store the thread logic
 - start()
     - start the thread execution
+    - non-static method
 
+    - NOTE
+        - we cannot use multiple start method for single thread object
+        - means One thread one start method
 
     method call --> Thread Schedular --> Operating System --> Thread
+
+- join()
+    - it is used to wait till the task will complete

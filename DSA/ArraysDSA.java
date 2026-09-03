@@ -1,5 +1,5 @@
 public class ArraysDSA {
-    public static void main(String[] args) {
+    public static void printing(){
         String[] a = new String[5];
         // System.out.println(a[0]);
         // System.out.println(a[1]);
@@ -96,5 +96,70 @@ public class ArraysDSA {
         for(int j=0; j<i.length; j++) {
             System.out.println(i[j]);
         }
+
+    }
+    
+    public static void arr1(){
+        int[] arr = new int[5];
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+        arr[3] = 40;
+        arr[4] = 50;
+        for(int i=0; i<arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+        
+        for(int i = arr.length-1; i>=0; i--){
+            System.out.println(arr[i]);
+        }
+    }
+    
+    public static int maxElement(int[] arr){
+        int max = arr[0];
+        for(int i : arr){
+            if(i > max){
+                max = i;
+            }
+        }
+        return max;
+    }
+    
+    public static int minElement(int[] arr) {
+        int min = arr[0];
+        for(int i : arr){
+            if(i < min){
+                min = i;
+            }
+        }
+        return min;
+    }
+    public static int getSecondLargest(int[] arr) {
+        // code here
+        int max = arr[0];
+        int max2 = -1;
+        for(int i : arr){
+            if(i > max){
+                max2 = max;
+                max = i;
+            } else if(i > max2 && i< max){
+                max2 = i;
+            }
+        }
+        return max2;
+    }
+    
+    public static void main(String[] args) {
+        // arr1();
+
+        // find the maximum element
+        // int[] arr = {4,5,6,1,5,2};
+        // System.out.println(maxElement(arr));
+
+        // 1. sum of elements of array
+        // 2. first part of array
+        // 3. second part of array
+        // 4. reverse the array
+        // 5. copy from one array and paste to another array
     }
 }
