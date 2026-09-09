@@ -18,6 +18,7 @@ public class Example {
 		// t1.run(); // synchronous process
 		t1.start(); // Asynchronous process
 
+		t1.join(10000); // it wait until other task completed
 		
 //		Thread2 t2 = new Thread2();
 //		t2.setName("Ritik");
@@ -28,7 +29,6 @@ public class Example {
 		t3.start();
 		
 				
-		t1.join(10000); // it wait until other task completed
 		t3.join(500);
 		
 		

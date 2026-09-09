@@ -384,6 +384,7 @@
 
     - to start backend server api
         json-server --watch backend/db.json --port 3030
+        npm install -g json-server
 
     1. Create
         - useNavigate()

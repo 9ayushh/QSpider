@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 public class ArraysDSA {
     public static void printing(){
         String[] a = new String[5];
@@ -148,6 +151,53 @@ public class ArraysDSA {
         }
         return max2;
     }
+
+    public static void reverseArray(int arr[]) {
+        // code here
+        int l = 0;
+        int r = arr.length-1;
+        
+        while(l<r){
+            int temp = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+            
+            l++;
+            r--;
+        }
+    }
+
+    public static void merge(int[] a, int[] b){
+        ArrayList<Integer> arr = new ArrayList<>();
+
+        int l = 0;
+        int r = 0;
+        
+        while(l < a.length && r < b.length){
+            if(a[l] > b[r]){
+                arr.add(b[r]);
+                r++;
+            } else if(a[l] < b[r]){
+                arr.add(a[l]);
+                l++;
+            } else {
+                arr.add(a[l]);
+                arr.add(b[r]);
+                r++;
+                l++;
+            }
+        }
+        while(l<a.length){
+            arr.add(a[l]);
+            l++;
+        }
+        while(r<b.length) {
+            arr.add(b[r]);
+            r++;
+        }
+
+        System.out.println(arr);
+    }
     
     public static void main(String[] args) {
         // arr1();
@@ -161,5 +211,16 @@ public class ArraysDSA {
         // 3. second part of array
         // 4. reverse the array
         // 5. copy from one array and paste to another array
+
+        // largest / second largest
+        // smallest / second smallest
+        // reverse the array
+
+        // merge 2 arrays
+        int[] a = {1,4,5,6,7};
+        int[] b = {2,3,4,8,9};
+        merge(a,b);
+
+
     }
 }
