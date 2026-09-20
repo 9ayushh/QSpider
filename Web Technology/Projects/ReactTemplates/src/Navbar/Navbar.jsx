@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router-dom';
+import './Navbar.css';
+import { useState } from 'react';
 
 const Navbar = () => {
+  let user_id = localStorage.getItem(userId);
+  const [data, setData] = useState([]);
   return (
     <nav className="navbar" aria-label="Main navigation">
       {/* <div className="navbar__brand">M7 Web Technologies</div> */}

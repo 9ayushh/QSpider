@@ -114,4 +114,13 @@ Problem
         - stream api
         - date and time
         - optional datatype
-        
+
+
+
+-----------------------
+
+greater than 100
+top 3 highest numbers 
+2nd highest
+
+

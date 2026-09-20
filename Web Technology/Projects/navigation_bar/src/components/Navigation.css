@@ -49,7 +49,7 @@ span {
 }
 .move:hover span{
     background-color: red;
-    animation: underLine 1s ease-in-out;
+    animation: underLine 0.5s ease-in-out;
 }
 
 @keyframes underLine {
