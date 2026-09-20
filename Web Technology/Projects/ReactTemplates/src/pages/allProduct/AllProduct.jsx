@@ -1,5 +1,5 @@
 import axios from "axios";
-import {useState, useEffect, Fragment} from 'react';
+import {useState, useEffect} from 'react';
 import styles from "./allproduct.module.css";
 
 const AllProduct = () => {
@@ -41,7 +41,7 @@ const AllProduct = () => {
   }
 
   return (
-    <Fragment className={styles.AllProduct}>
+    <div className={styles.AllProduct}>
       <h1>All Productsss</h1>
       {
         allProduct.map((res)=> {
@@ -58,7 +58,7 @@ const AllProduct = () => {
           )
         })
       }
-    </Fragment>
+    </div>
   )
 }
 
