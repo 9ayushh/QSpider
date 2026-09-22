@@ -124,3 +124,9 @@ top 3 highest numbers
 2nd highest
 
 
+-----------------------------
+# JDBC
+
+execute() -> for generic DDL
+execute update() -> for DML
+execute query() -> DQL
