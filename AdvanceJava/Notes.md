@@ -130,3 +130,60 @@ top 3 highest numbers
 execute() -> for generic DDL
 execute update() -> for DML
 execute query() -> DQL
+
+-----------------------------
+# Spring
+
+- Features
+    - Application level framework
+    - loose coupling
+    - IOC / DI
+
+- LifeCycle of Spring Bean
+    - App Started
+        |
+    - Container Start (create all the object of the pojo class)
+        |
+    - Object is created
+        |
+    - Post construct methods
+        |
+    - Dependency Injection
+        | (Ready to use )
+    - Pre Destroy method
+
+- Maven
+    - pom -> project object model
+
+
+@Configuration
+@ComponentScan(basePackage = {})
+
+@Component
+    - to mark the class as spring bean
+
+ApplicationContext con = new AnnotationConfigApplicationContext();
+
+
+@Component -> class level annotation
+    - @Repository -> db logic
+    - @Service -> business logic
+    - @Controller -> http req and response (return UI)
+        - @RestController   (return -> JSON)
+    - @ControllerAdvice -> Exception handling
+        - @RestControllerAdvice
+
+
+- 3 Ways of DI
+    - Field / Variable Injection
+    - Setter Inject
+    - Constructor Injection
+
+
+    @Value -> use to inject the values
+    @Autowired
+
+    @Primary 
+    @Qualifier
+
+    @Bean
