@@ -187,3 +187,40 @@ ApplicationContext con = new AnnotationConfigApplicationContext();
     @Qualifier
 
     @Bean
+
+
+JEE -> Java Enterprise Edition
+    - JPA   => Java Persistance API
+    - EJB   => Enterprise java beans
+    - Servlet
+    - Validation
+    - JSP => Java servlet pages
+
+Spring
+    - IoC => Inversion of Control
+    - DI => Dependency Injection
+
+1. Spring core (IoC, DI, Annotations, SPEL, Lifecycle)
+2. Spring MVC
+3. Spring Boot
+4. Spring JDBC
+5. Spring JPA
+6. Spring Security
+7. Spring AI
+
+Application Context 
+    - new ClassPathXmlApplicationContext("");
+    - Represent the spring container
+    - It is an implementation the xml class Based
+
+    - ClassPath xml application context
+    - Annoataion config application context
+
+ConfigurableApplicationContext
+    - init-method="welcome"
+    - destroy-method="close"
+
+
+Accurators
+    - use to check the health of the application
+Pagination
