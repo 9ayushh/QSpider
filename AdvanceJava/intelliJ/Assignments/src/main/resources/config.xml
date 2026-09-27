@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+    <!-- register bean -->
+    <!-- field based dependency injection -->
+    <bean id="account" class="com.assignment.a1.model.Account">
+        <!-- giving the property -->
+        <property name="accNo" value="123456789" />
+        <property name="holderName" value="Raj" />
+        <property name="balance" value="8.7" />
+        <property name="bank" ref="bank" />
+    </bean>
+
+    <bean id="bank" class="com.assignment.a1.model.Bank">
+        <!-- giving the property -->
+        <property name="id" value="1" />
+        <property name="name" value="SBI" />
+    </bean>
+
+    <!-- Assignment 4 -->
+    <bean id="product" class="com.assignment.a2.model.Product">
+        <property name="prodId" value="101" />
+        <property name="name" value="toy" />
+        <property name="price" value="500" />
+        <property name="quantity" ref="cart" />
+    </bean>
+
+    <bean id="cart" class="com.assignment.a2.model.ShoppingCart">
+        <property name="quantity" value="2" />
+    </bean>
+
+    <!-- Assignment 5 -->
+    <bean id="customer" class="com.assignment.a3.model.Customer">
+        <property name="custId" value="001" />
+        <property name="name" value="raj" />
+    </bean>
+
+    <bean id="restaurant" class="com.assignment.a3.model.Restaurant">
+        <property name="restId" value="001" />
+        <property name="restName" value="Malabar" />
+    </bean>
+
+    <bean id="food1" class="com.assignment.a3.model.FoodItem">
+        <property name="foodId" value="001" />
+        <property name="foodName" value="Chicken Biryani" />
+        <property name="foodPrice" value="220.00" />
+    </bean>
+    <bean id="food2" class="com.assignment.a3.model.FoodItem">
+        <property name="foodId" value="002" />
+        <property name="foodName" value="Raita" />
+        <property name="foodPrice" value="80.00" />
+    </bean>
+
+    <bean id="order" class="com.assignment.a3.model.Order">
+        <property name="orderId" value="101" />
+        <property name="customer" ref="customer" />
+        <property name="restaurant" ref="restaurant" />
+        <property name="items">
+            <list>
+                <ref bean="food1" />
+                <ref bean="food2" />
+            </list>
+        </property>
+    </bean>
+
+    <!-- Assignment 6 -->
+    <bean id="book1" class="com.assignment.a4.model.Book">
+        <property name="bookId" value="101" />
+        <property name="bookName" value="RigVed" />
+        <property name="price" value="280.00" />
+    </bean>
+    <bean id="book2" class="com.assignment.a4.model.Book">
+        <property name="bookId" value="102" />
+        <property name="bookName" value="Ramayana" />
+        <property name="price" value="500.00" />
+    </bean>
+    <bean id="book3" class="com.assignment.a4.model.Book">
+        <property name="bookId" value="103" />
+        <property name="bookName" value="Gita" />
+        <property name="price" value="450.45" />
+    </bean>
+    <bean id="book4" class="com.assignment.a4.model.Book">
+        <property name="bookId" value="104" />
+        <property name="bookName" value="How to kill your family" />
+        <property name="price" value="100.00" />
+    </bean>
+    <bean id="book5" class="com.assignment.a4.model.Book">
+        <property name="bookId" value="104" />
+        <property name="bookName" value="The Subtle Art of not giving a Fuck!" />
+        <property name="price" value="150.00" />
+    </bean>
+
+    <bean id="library" class="com.assignment.a4.model.Library">
+        <property name="books" >
+            <list>
+                <ref bean="book1" />
+                <ref bean="book2" />
+                <ref bean="book3" />
+                <ref bean="book4" />
+                <ref bean="book5" />
+            </list>
+        </property>
+    </bean>
+
+    <!-- Assignment 7 -->
+    <bean id="student1" class="com.assignment.a5.model.Student">
+        <property name="studId" value="101" />
+        <property name="studName" value="Raj" />
+        <property name="year" value="2027" />
+    </bean>
+    <bean id="student2" class="com.assignment.a5.model.Student">
+        <property name="studId" value="102" />
+        <property name="studName" value="Shivani" />
+        <property name="year" value="2027" />
+    </bean>
+    <bean id="student3" class="com.assignment.a5.model.Student">
+        <property name="studId" value="103" />
+        <property name="studName" value="Radha" />
+        <property name="year" value="2027" />
+    </bean>
+
+    <bean id="principal" class="com.assignment.a5.model.Principal">
+        <property name="name" value="Dr. Natwar Lal Tripathi" />
+    </bean>
+
+    <bean id="college" class="com.assignment.a5.model.College">
+        <property name="collegeName" value="IIT Madras" />
+        <property name="princyName" ref="principal" />
+        <property name="students" >
+            <list>
+                <ref bean="student1" />
+                <ref bean="student2" />
+                <ref bean="student3" />
+            </list>
+        </property>
+    </bean>
+
+    <!-- Assignment 8 -->
+    <bean id="petrol" class="com.assignment.a6.model.PetrolEngine">
+
+    </bean>
+
+</beans>

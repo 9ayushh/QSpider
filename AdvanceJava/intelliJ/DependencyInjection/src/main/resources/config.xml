@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+       <!-- register bean -->
+       <!-- field based dependency injection -->
+       <bean id="student" class="com.jsp.model.Student">
+              <!-- giving the property -->
+              <property name="roll" value="101"></property>
+              <property name="name" value="Raj"></property>
+              <property name="cgpa" value="8.7"></property>
+              <property name="phone" value="9876543210"></property>
+       </bean>
+
+       <!-- constructor based dependency injection -->
+       <bean id="employee" class="com.jsp.model.Employee">
+              <constructor-arg value="001" />
+              <constructor-arg value="Major Vikram" />
+              <constructor-arg value="General" />
+       </bean>
+
+       <bean id="person" class="com.jsp.model.Person">
+              <property name="id" value="1001" />
+              <property name="name" value="Rahul" />
+              <property name="address" ref="add" />
+       </bean>
+
+       <bean id="add" class="com.jsp.model.Address">
+              <property name="hno" value="89" />
+              <property name="city" value="ggn" />
+              <property name="pincode" value="122001" />
+       </bean>
+
+       <bean id="clns" class="com.jsp.model.Clns">
+              <property name="list">
+                     <list>
+                            <value>10</value>
+                            <value>20</value>
+                            <value>30</value>
+                            <value>40</value>
+                            <value>10</value>
+                     </list>
+              </property>
+              <property name="set">
+                     <set>
+                            <value>10</value>
+                            <value>20</value>
+                            <value>30</value>
+                            <value>40</value>
+                            <value>10</value>
+                     </set>
+              </property>
+              <property name="map">
+                     <map>
+                            <entry key="1" value="Hello" />
+                            <entry key="2" value="how" />
+                            <entry key="3" value="are" />
+                            <entry key="4" value="you" />
+                     </map>
+              </property>
+              <property name="address">
+                     <list>
+                            <ref bean="add" />
+                            <ref bean="add" />
+                            <ref bean="add" />
+                     </list>
+              </property>
+       </bean>
+
+
+</beans>

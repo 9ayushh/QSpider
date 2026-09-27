@@ -200,6 +200,7 @@ Spring
     - IoC => Inversion of Control
     - DI => Dependency Injection
 
+Modules
 1. Spring core (IoC, DI, Annotations, SPEL, Lifecycle)
 2. Spring MVC
 3. Spring Boot
@@ -207,6 +208,8 @@ Spring
 5. Spring JPA
 6. Spring Security
 7. Spring AI
+8. Spring Cloud
+9. Spring AOP
 
 Application Context 
     - new ClassPathXmlApplicationContext("");
@@ -216,11 +219,46 @@ Application Context
     - ClassPath xml application context
     - Annoataion config application context
 
+    - Syntax
+        ApplicationContext con = new ClassPathXmlApplicationContext("config.xml");
+
 ConfigurableApplicationContext
     - init-method="welcome"
     - destroy-method="close"
 
-
 Accurators
     - use to check the health of the application
 Pagination
+
+LifeCycle of 
+
+Container start
+Bean is register 
+create the object
+call the init method
+post contruct method
+dependency injection
+ready to use
+pre destroy method
+
+
+- What is bean ?
+    - if the object is created by object container/ spring container is known as bean.
+
+dependency injection
+    - ways to assign value
+    - there are three ways
+        1. field injection
+        2. setter injection
+        3. constructor injection
+
+- dependency injection by field
+    - using property in config while registering bean
+        <bean id="student" class="com.jsp.model.Student">
+              <!-- giving the property -->
+              <property name="roll" value="101"></property>
+              <property name="name" value="Raj"></property>
+              <property name="cgpa" value="8.7"></property>
+              <property name="phone" value="9876543210"></property>
+
+        </bean>

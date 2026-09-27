@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1f11c40d-98e1-4cbc-b612-b9d2aacdf497" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a1/main/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a1/model/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a1/model/Bank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a1/model/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a2/model/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a3/main/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a3/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a3/model/FoodItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a3/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a3/model/Restaurant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a4/main/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a4/model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a4/model/Library.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a5/model/College.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a5/model/Principal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assignment/a5/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DependencyInjection/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DependencyInjection/src/main/java/com/jsp/main/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DependencyInjection/src/main/java/com/jsp/main/Driver2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DependencyInjection/src/main/java/com/jsp/model/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DependencyInjection/src/main/java/com/jsp/model/Clns.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DependencyInjection/src/main/java/com/jsp/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DependencyInjection/src/main/java/com/jsp/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DependencyInjection/src/main/java/com/jsp/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DependencyInjection/src/main/resources/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notes.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "9ayushh"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/9ayushh/QSpider.git",
+    "accountId": "644ff2a5-f5a3-43f6-929d-6e68462dfbb5"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3JrBmcKeg5YeqFGnsMi6VgmmDZb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Driver.executor": "Run",
+    "Application.com.assignment.a2.main.Driver.executor": "Run",
+    "Application.com.assignment.a3.main.Driver.executor": "Run",
+    "Application.com.assignment.a4.main.Driver.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/vivek/OneDrive/Desktop/Ayush/QSpider/AdvanceJava/intelliJ/Assignments/src/main/java/com/assignment/a2",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/vivek/OneDrive/Desktop/Ayush/QSpider/AdvanceJava/intelliJ/Assignments/src/main/java/com/eazybytes/Main.java"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vivek\OneDrive\Desktop\Ayush\QSpider\AdvanceJava\intelliJ\Assignments\src\main\java\com\assignment\a2" />
+      <recent name="C:\Users\vivek\OneDrive\Desktop\Ayush\QSpider\AdvanceJava\intelliJ\Assignments\src\main\java\com\assignment\a1\model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.com.assignment.a5.main.Driver">
+    <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.assignment.a1.main.Driver" />
+      <module name="Assignments" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assignment.a1.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.assignment.a2.main.Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.assignment.a2.main.Driver" />
+      <module name="Assignments" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assignment.a2.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.assignment.a3.main.Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.assignment.a3.main.Driver" />
+      <module name="Assignments" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assignment.a3.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.assignment.a4.main.Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.assignment.a4.main.Driver" />
+      <module name="Assignments" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assignment.a4.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.assignment.a5.main.Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.assignment.a5.main.Driver" />
+      <module name="Assignments" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assignment.a5.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.com.assignment.a5.main.Driver" />
+        <item itemvalue="Application.com.assignment.a4.main.Driver" />
+        <item itemvalue="Application.com.assignment.a3.main.Driver" />
+        <item itemvalue="Application.com.assignment.a2.main.Driver" />
+        <item itemvalue="Application.Driver" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1f11c40d-98e1-4cbc-b612-b9d2aacdf497" name="Changes" comment="" />
+      <created>1790409470355</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1790409470355</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/eazybytes/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
