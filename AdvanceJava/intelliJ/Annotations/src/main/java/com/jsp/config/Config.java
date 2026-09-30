@@ -1,0 +1,4 @@
+package com.jsp.config;
+
+public class Config {
+}
