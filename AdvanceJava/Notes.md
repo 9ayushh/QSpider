@@ -262,3 +262,23 @@ dependency injection
               <property name="phone" value="9876543210"></property>
 
         </bean>
+
+
+- Configuration
+- Bean
+
+- @Component
+- @ComponentScan
+- @Primary
+- @Qualifier
+
+
+- Scope of the Bean
+    - Singleton - only one object
+    - Prototype - multiple object
+
+app.properties
+@PropertySource to config file
+add value to the app.properties file
+
+

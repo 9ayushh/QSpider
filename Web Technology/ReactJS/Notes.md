@@ -167,7 +167,7 @@
 
     - Modules allows you to split your code into smaller manageable pieces
     - Instead of writing everything inside one big file, you can divide the code into multiple files and connect them using import and export.
-
+  
     - Types of Modules in JS
         1. Common JS
             - It is the module system which is used in node.js
@@ -244,7 +244,6 @@
         - It accepts 2 arguments 
             1. callback function
             2. dependency array
-
 
     - ### Ways to adding CSS in React
         - Inline CSS
