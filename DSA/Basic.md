@@ -101,3 +101,17 @@
         ccccc
         ddddd
         eeeee
+
+
+String 
+
+split() -> split the string 
+
+
+1. Count the alphabets, numbers and symbols from a string
+2. Remove from the strings
+3. Find the vowels from a given string
+4. Remove the special characters from a string
+5. Remove the all characters excepts except numbers
+6. Upper case to lower case and lower case to upper case
+7. 

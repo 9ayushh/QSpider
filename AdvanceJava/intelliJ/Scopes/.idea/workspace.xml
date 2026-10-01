@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10bdee42-ca47-42c3-be2a-16f8ac22ff14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Annotations/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Annotations/src/main/java/com/jsp/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Annotations/src/main/java/com/jsp/main/Driver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Annotations/src/main/java/com/jsp/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jsp/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jsp/main/Driver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jsp/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jsp/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Web Technology/ReactJS/Notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Web Technology/ReactJS/Notes.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

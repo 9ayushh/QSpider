@@ -282,3 +282,34 @@ app.properties
 add value to the app.properties file
 
 
+# Spring Boot
+@SpringBootApplication
+    - addition of @Configuration + @ComponentScan + @EnableAutoConfiguration
+
+
+- Http methods
+100
+200
+201
+202
+204
+300
+301
+400
+401
+402
+403
+404
+405
+406
+408
+409
+413
+429
+500
+501
+502
+503
+504
+505
+507
