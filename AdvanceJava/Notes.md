@@ -288,28 +288,42 @@ add value to the app.properties file
 
 
 - Http methods
-100
-200
-201
-202
-204
-300
-301
-400
-401
-402
-403
-404
-405
-406
-408
-409
-413
-429
-500
-501
-502
-503
-504
-505
-507
+Code  |  Name	                        |    Meaning
+
+100	  |   Continue	                    |     Server got the request headers; client can send the body
+200	  |   OK	                        |     Request succeeded
+201	  |   Created              	        |     A new resource was created
+202	  |   Accepted          	        |     Request accepted but not yet processed
+204	  |   No Content        	        |     Success, but nothing to return
+300	  |   Multiple Choices	            |     Several possible responses for the resource
+301	  |   Moved Permanently	            |     Resource has a new permanent URL
+400	  |   Bad Request	                |     Malformed or invalid request
+401	  |   Unauthorized	                |     Authentication missing or invalid
+402	  |   Payment Required	            |     Reserved; sometimes used for paywalls or billing
+403	  |   Forbidden	                    |     Authenticated, but not allowed
+404	  |   Not Found	                    |     Resource doesn't exist
+405	  |   Method Not Allowed	        |     HTTP method not supported for this resource
+406	  |   Not Acceptable	            |     Can't produce a response matching the Accept headers
+408	  |   Request Timeout	            |     Server timed out waiting for the request
+409	  |   Conflict	                    |     Conflicts with the current state of the resource
+413	  |   Payload Too Large	            |     Request body exceeds the server's limit
+429	  |   Too Many Requests	            |     Rate limit exceeded
+500	  |   Internal Server Error	        |     Generic server failure
+501	  |   Not Implemented	            |     Server doesn't support the requested functionality
+502	  |   Bad Gateway	                |     Invalid response from an upstream server
+503	  |   Service Unavailable	        |     Server overloaded or down for maintenance
+504	  |   Gateway Timeout	            |     Upstream server didn't respond in time
+505	  |   HTTP Version Not Supported	|     Server doesn't support the HTTP version used
+507	  |   Insufficient Storage	        |     Server can't store what's needed to complete the request (WebDAV)
+
+HTTP methods
+    - Get
+    - Post
+    - Put 
+    - Patch
+    - Delete
+    - Header
+
+- Tomcat Server
+    - servlet who can convert json into java as well as java into json
+    
