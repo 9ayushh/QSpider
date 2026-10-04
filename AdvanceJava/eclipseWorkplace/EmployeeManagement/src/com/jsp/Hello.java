@@ -3,7 +3,6 @@ package com.jsp;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-import java.util.Scanner;
 
 public class Hello {
 	public static void main(String[] args) {
