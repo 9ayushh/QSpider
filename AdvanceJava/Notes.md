@@ -326,4 +326,25 @@ HTTP methods
 
 - Tomcat Server
     - servlet who can convert json into java as well as java into json
+
+@RequestBody
+@RequestParam
+@PathVariable
+
+
+-------------------
+Hibernate ORM
+    - ORM framework - JDBC
+    - Object Realational Model/Mapping
+
+    - class -> mapped to the table
+    - object -> row or records
+    - variable -> columns
     
+    JDT (java datatypes) -> SDT (sql datatypes)
+
+
+JPA
+---
+    - Java Persistance API
+        
