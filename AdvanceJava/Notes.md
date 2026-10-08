@@ -347,4 +347,39 @@ Hibernate ORM
 JPA
 ---
     - Java Persistance API
-        
+    
+    - Automatic Table
+    - SQL Exception Handled
+    - JPQL
+        - Java Persistance Query Language
+    - Cacheing tech
+
+- Entity
+    - @Entity
+    - @Id -> Primary key
+    - public, non-final, abstract
+    - private variables
+    - getter/setter methods
+    - No-args Constructor
+    - implements Serialiable -> Optional
+
+Assignment
+    - Create 5 project - order, customer, product, payment, cart
+
+
+ORM tools
+    - Hibernate
+    - 
+
+EMF - Entity Manger Factory
+EM - Entity Managers => provide all the methods
+ET - Entity Transaction => commit, rollback, savepoint
+
+---------------------------------
+JPQL/HQL
+    - Java Persistant Query Language
+    - Object-oriented query language
+    - select c from ClassName c  ==> Alias
+    - select c.name, c.sal from ClassName c;
+    - select c from ClassName c
+      where c.name = 'smith';

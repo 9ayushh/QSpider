@@ -1,6 +1,13 @@
 package com.jsp.SpringBootDemo.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "persons")
 public class Person {
+    @Id
     private int id;
     private String name;
     private String email;
