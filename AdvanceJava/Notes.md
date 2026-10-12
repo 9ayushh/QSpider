@@ -383,3 +383,5 @@ JPQL/HQL
     - select c.name, c.sal from ClassName c;
     - select c from ClassName c
       where c.name = 'smith';
+
+\! cls => for clear
