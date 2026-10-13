@@ -1,57 +1,66 @@
 package com.jpa.user_api.entity;
 
+import org.springframework.validation.annotation.Validated;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-//import lombok.AllArgsConstructor;
-//import lombok.Getter;
-//import lombok.Setter;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-//@Getter
-//@Setter
-//@AllArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 @Entity
 @Table(name = "user_table")
+@Validated 
 public class User {
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name="username")
     private String name;
+
     @Column(unique = true)
     private long phone;
+
     @Column(unique = true)
     private String email;
 
-    public String getEmail() {
-        return email;
-    }
+    // public String getEmail() {
+    //     return email;
+    // }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    // public void setEmail(String email) {
+    //     this.email = email;
+    // }
 
-    public int getId() {
-        return id;
-    }
+    // public int getId() {
+    //     return id;
+    // }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    // public void setId(int id) {
+    //     this.id = id;
+    // }
 
-    public String getName() {
-        return name;
-    }
+    // public String getName() {
+    //     return name;
+    // }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    // public void setName(String name) {
+    //     this.name = name;
+    // }
 
-    public long getPhone() {
-        return phone;
-    }
+    // public long getPhone() {
+    //     return phone;
+    // }
 
-    public void setPhone(long phone) {
-        this.phone = phone;
-    }
+    // public void setPhone(long phone) {
+    //     this.phone = phone;
+    // }
 }

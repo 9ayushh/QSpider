@@ -385,3 +385,18 @@ JPQL/HQL
       where c.name = 'smith';
 
 \! cls => for clear
+
+Lombok
+@Setter
+@Getter
+@Size
+@NotNull
+@NotBlank
+@NotFound
+
+@Validated
+@Valid
+
+@AllArgsConstructor
+@NoArgsConstructor
+@RequiredArgsConstructor

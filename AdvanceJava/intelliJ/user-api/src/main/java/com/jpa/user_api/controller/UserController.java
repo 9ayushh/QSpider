@@ -2,15 +2,17 @@ package com.jpa.user_api.controller;
 
 import com.jpa.user_api.entity.User;
 import com.jpa.user_api.service.impl.UserServicesImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
+@RequiredArgsConstructor
 public class UserController {
 
-    @Autowired
-    UserServicesImpl userServices;
+    private final UserServicesImpl userServices;
 
     @PostMapping("/register")
     public User register(@RequestBody User user) {

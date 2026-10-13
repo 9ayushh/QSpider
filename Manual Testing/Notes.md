@@ -798,3 +798,9 @@ Even if the software has no bugs, it is useless if it does NOT meet customer req
 
 
 
+Build
+    1. program
+    2. combine
+    3. compile
+    4. compress
+    5. Byte (Build)

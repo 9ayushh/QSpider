@@ -2,25 +2,32 @@ package com.jpa.user_api.service.impl;
 
 import com.jpa.user_api.dao.UserRepository;
 import com.jpa.user_api.entity.User;
+import com.jpa.user_api.exception.UserAlreadyPresent;
 import com.jpa.user_api.exception.UserNotFoundException;
 import com.jpa.user_api.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import lombok.RequiredArgsConstructor;
+
+// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Objects;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class UserServicesImpl implements UserService {
 
     private final UserRepository userRepository;
 
-    public UserServicesImpl(@Autowired UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    // public UserServicesImpl(@Autowired UserRepository userRepository) {
+    //     this.userRepository = userRepository;
+    // }
 
     @Override
     public User register(User user) {
+        if(userRepository.existsByEmail(user.getEmail())){
+            throw new UserAlreadyPresent("User with email " + user.getEmail() + " is already present");
+        }
         return userRepository.save(user);
     }
 
