@@ -400,3 +400,20 @@ Lombok
 @AllArgsConstructor
 @NoArgsConstructor
 @RequiredArgsConstructor
+
+
+Modules
+    - Spring Core
+    - Spring MVC (web)
+    - Spring Boot
+    - Spring JDBC
+    - Spring Data JPA
+    - Spring Security
+    - Spring Cloud
+    - Spring AOP (Aspect Oriented Programming)
+    - Spring Profile
+    - Spring Actuator
+    - Logging
+    - Spring AI
+
+    https://student.qspiders.com/stream/QDV-GROGRD-E33
